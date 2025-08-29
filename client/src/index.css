@@ -377,20 +377,41 @@
   }
 }
 
-/* Mobile Scaling - Make everything 67% of original size */
+/* Mobile Scaling - Make everything 75% of original size */
 @media (max-width: 768px) {
   html {
-    font-size: 67%;
+    font-size: 75%;
+    overflow-x: hidden;
   }
   
   body {
-    transform: scale(0.67);
+    transform: scale(0.75);
     transform-origin: top left;
-    width: 149.25%; /* 100% / 0.67 to compensate for scale */
+    width: 133.33%; /* 100% / 0.75 to compensate for scale */
+    overflow-x: hidden;
+    position: relative;
   }
   
-  /* Adjust viewport for proper scrolling */
+  /* Fix viewport and prevent void scrolling */
   #root {
     min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  /* Ensure sidebar extends full height */
+  [data-sidebar] {
+    height: 100vh !important;
+    position: fixed !important;
+  }
+  
+  /* Prevent horizontal scroll */
+  * {
+    max-width: 100vw !important;
+  }
+  
+  /* Fix main content area */
+  main {
+    width: 100% !important;
+    overflow-x: hidden;
   }
 }

@@ -1,0 +1,58 @@
+GITHUB PAGES DEPLOYMENT INSTRUCTIONS
+=====================================
+
+IMPORTANT: Download the file "github-pages-ready.tar.gz" - this contains all the fixed files you need.
+
+The previous issue was that the paths weren't configured correctly for GitHub Pages. This has been fixed.
+
+DEPLOYMENT STEPS:
+-----------------
+
+1. Extract github-pages-ready.tar.gz on your computer
+
+2. Create a new GitHub repository or use an existing one
+
+3. Upload the extracted files to GitHub:
+
+   METHOD 1 - Using GitHub Web Interface (Easiest):
+   ------------------------------------------------
+   a. Go to your repository on GitHub
+   b. Click "Add file" > "Upload files"
+   c. Drag ALL the extracted files and folders (index.html, 404.html, assets folder)
+   d. Commit the changes
+
+   METHOD 2 - Using Git Command Line:
+   ----------------------------------
+   a. Clone your repository: git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+   b. Copy all extracted files to the repository folder
+   c. Run:
+      git add .
+      git commit -m "Deploy political insights blog"
+      git push
+
+4. Enable GitHub Pages:
+   - Go to Settings > Pages
+   - Source: Deploy from a branch
+   - Branch: main (or master)
+   - Folder: / (root)
+   - Click Save
+
+5. Wait 2-5 minutes for deployment
+
+6. Your site will be available at:
+   https://YOUR_USERNAME.github.io/YOUR_REPOSITORY_NAME/
+
+WHAT'S INCLUDED:
+----------------
+- index.html (with fixed relative paths)
+- 404.html (handles client-side routing)
+- assets/ folder (CSS and JavaScript files)
+
+TROUBLESHOOTING:
+----------------
+- If you see a blank page, check the browser console for errors
+- Make sure ALL files are uploaded (especially the assets folder)
+- GitHub Pages can take up to 10 minutes to deploy initially
+- Clear your browser cache if you don't see updates
+
+The site is a Single Page Application (SPA) with client-side routing, which is why the 404.html file is needed - it redirects all routes back to the main app.

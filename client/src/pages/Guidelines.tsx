@@ -17,7 +17,7 @@ export default function Guidelines() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">My Commitment</h2>
               <p className="leading-relaxed">
-                As an independent political commentator, I, Velo, am committed to thoughtful, honest analysis. While this is a personal blog reflecting my views, I hold myself to certain standards to ensure my commentary contributes meaningfully to political discourse.
+                As an independent political commentator focusing on Indonesian politics, I, Velo, am committed to thoughtful, honest analysis. While this is a personal blog reflecting my views, I hold myself to certain standards aligned with Indonesian Press Council (Dewan Pers) ethics and Pancasila values to ensure my commentary contributes meaningfully to democratic discourse in Indonesia.
               </p>
             </section>
 
@@ -57,21 +57,22 @@ export default function Guidelines() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Respectful Discourse</h2>
               <p className="leading-relaxed">
-                I aim to criticize ideas and policies, not attack individuals personally. While political commentary can be sharp, I avoid ad hominem attacks, unnecessary inflammatory language, and content designed purely to provoke rather than illuminate.
+                I aim to criticize ideas and policies, not attack individuals personally, respecting the Indonesian principle of "kritik yang membangun" (constructive criticism). While political commentary can be sharp, I avoid ad hominem attacks, SARA (ethnic, religious, racial, and inter-group) provocations as prohibited under Indonesian law, and content designed purely to provoke rather than illuminate. I respect Indonesian cultural values while maintaining critical independence.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Coverage Scope</h2>
               <p className="leading-relaxed mb-3">
-                My commentary focuses on:
+                My commentary focuses on Indonesian politics:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Political systems and democratic processes</li>
-                <li>Digital transformation of politics and governance</li>
-                <li>Media analysis and information ecosystems</li>
-                <li>Policy impacts on society and individuals</li>
-                <li>Historical context for contemporary events</li>
+                <li>Indonesian democratic processes and Reformasi legacy</li>
+                <li>Digital transformation of Indonesian politics and e-governance</li>
+                <li>Indonesian media landscape and information ecosystems</li>
+                <li>Policy impacts on Indonesian society and citizens</li>
+                <li>Historical context from Orde Baru to contemporary Indonesia</li>
+                <li>Regional politics and decentralization (otonomi daerah)</li>
               </ul>
             </section>
 
@@ -85,7 +86,7 @@ export default function Guidelines() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Ethical Boundaries</h2>
               <p className="leading-relaxed">
-                I do not publish private information about individuals unless it's already public and directly relevant to political analysis. I respect embargoes and do not share information obtained in confidence. I distinguish between public figures open to criticism and private citizens.
+                I do not publish private information about individuals unless it's already public and directly relevant to political analysis, respecting Indonesian privacy laws and UU ITE provisions. I distinguish between public officials (pejabat publik) open to criticism under Indonesian law and private citizens. I avoid content that could be considered pencemaran nama baik (defamation) while maintaining the right to criticize public policies and governance.
               </p>
             </section>
 

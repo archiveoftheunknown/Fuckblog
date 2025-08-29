@@ -24,7 +24,7 @@ export default function Privacy() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Information Collection</h2>
               <p className="leading-relaxed mb-3">
-                This website operates as a public archive and does not actively collect personal information. No user accounts, comments, or contact forms are provided. The site may use:
+                This website operates as a public archive and does not actively collect personal information, in compliance with Indonesian UU ITE (Law No. 11 of 2008 as amended). No user accounts, comments, or contact forms are provided. The site may use:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Standard web server logs (IP addresses, browser types, referring pages)</li>
@@ -50,7 +50,7 @@ export default function Privacy() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Your Rights</h2>
               <p className="leading-relaxed">
-                Under GDPR (EU) and CCPA (California), you have rights regarding your personal data. Since this site collects minimal data, there's little to request, but you may contact me about any privacy concerns. You can browse with privacy tools like VPNs or Tor if you prefer complete anonymity.
+                Under Indonesian Law No. 27 of 2022 on Personal Data Protection (UU PDP), as well as GDPR (EU) and CCPA (California), you have rights regarding your personal data. Indonesian citizens have the right to access, correct, and request deletion of their data. Since this site collects minimal data, there's little to request, but you may contact me about any privacy concerns. You can browse with privacy tools like VPNs or Tor if you prefer complete anonymity.
               </p>
             </section>
 

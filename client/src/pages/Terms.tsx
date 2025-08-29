@@ -24,11 +24,12 @@ export default function Terms() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Content Nature</h2>
               <p className="leading-relaxed mb-3">
-                Everything published here represents my personal political analysis and commentary. The content is:
+                Everything published here represents my personal political analysis and commentary about Indonesian politics. The content is:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Opinion-based and should not be taken as factual reporting</li>
-                <li>Protected under freedom of expression laws</li>
+                <li>Protected under Article 28E and 28F of the Indonesian Constitution regarding freedom of expression</li>
+                <li>Compliant with Indonesian Press Law (UU Pers No. 40/1999) as independent commentary</li>
                 <li>Not intended as professional political or legal advice</li>
                 <li>Subject to my own biases and perspectives</li>
               </ul>
@@ -65,14 +66,14 @@ export default function Terms() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Limitation of Liability</h2>
               <p className="leading-relaxed">
-                I am not liable for any damages arising from your use of this site or reliance on its content. This includes any political, financial, or personal decisions you make based on my commentary. Always verify information independently and consult appropriate professionals for advice.
+                In accordance with Indonesian Civil Code (KUHPerdata) principles, I am not liable for any damages arising from your use of this site or reliance on its content. This includes any political, financial, or personal decisions you make based on my commentary. Always verify information independently and consult appropriate professionals for advice. Content here does not violate Indonesian defamation laws (Article 310-321 KUHP) as it focuses on public discourse and criticism of public policies.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Governing Law</h2>
               <p className="leading-relaxed">
-                These terms are governed by international copyright law and the principle of freedom of expression as recognized in democratic societies. Disputes should be resolved through good faith discussion.
+                These terms are governed by the laws of the Republic of Indonesia, including UU ITE and relevant civil laws, alongside international copyright law and the principle of freedom of expression as recognized in democratic societies. Any disputes should first be resolved through musyawarah (deliberation) in accordance with Indonesian cultural values, before considering formal legal channels.
               </p>
             </section>
 

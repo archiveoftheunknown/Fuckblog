@@ -24,20 +24,21 @@ export default function Copyright() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Copyright Protection</h2>
               <p className="leading-relaxed">
-                © 2024 Velo. All rights reserved. This includes all text, analysis, commentary, and the unique selection and arrangement of content. The creative expression of political ideas and the specific way they are presented here are protected intellectual property.
+                © 2024 Velo. Hak Cipta Dilindungi. All rights reserved under Indonesian Copyright Law (UU No. 28 of 2014 on Copyright). This includes all text, analysis, commentary, and the unique selection and arrangement of content. The creative expression of political ideas and the specific way they are presented here are protected intellectual property. As per Indonesian law, copyright protection is automatic upon creation and lasts for my lifetime plus 70 years.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Fair Use & Permissions</h2>
               <p className="leading-relaxed mb-3">
-                I support the principle of fair use for educational, commentary, and criticism purposes. You may:
+                I support the principle of pembatasan hak cipta (copyright limitations) under Article 43-51 of Indonesian Copyright Law for educational, commentary, and criticism purposes. You may:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Quote brief excerpts with proper attribution to "Velo's Political Insights"</li>
                 <li>Link to articles when discussing or critiquing them</li>
-                <li>Use content for non-commercial educational purposes with citation</li>
+                <li>Use content for non-commercial educational purposes with citation (pendidikan)</li>
                 <li>Share articles on social media with intact attribution</li>
+                <li>Use for research and scientific development as allowed under Indonesian law</li>
               </ul>
             </section>
 
@@ -60,9 +61,9 @@ export default function Copyright() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-foreground mb-3">DMCA Compliance</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-3">Copyright Infringement</h2>
               <p className="leading-relaxed">
-                While I operate as an independent writer, I respect others' intellectual property rights. If you believe content here infringes your copyright, please provide specific details of the alleged infringement. I will review claims in good faith under DMCA principles.
+                While I operate as an independent writer, I respect others' intellectual property rights under both Indonesian and international law. If you believe content here infringes your copyright, please provide specific details of the alleged infringement as required by Indonesian Copyright Law and DMCA principles. I will review claims in good faith. Note that criticism and commentary on public figures and government policies are protected under Indonesian law.
               </p>
             </section>
 

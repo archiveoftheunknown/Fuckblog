@@ -49,32 +49,30 @@ export default function BlogPost() {
   
   const handleShare = async () => {
     try {
-      // Check if Web Share API is available
-      if (navigator.share && typeof navigator.share === 'function') {
-        await navigator.share({
-          title: post.title,
-          text: post.excerpt,
-          url: window.location.href,
-        });
-      } else {
-        // Fallback to copying URL
-        await navigator.clipboard.writeText(window.location.href);
-        toast({
-          title: t("blog.linkCopied"),
-          description: t("blog.linkCopiedDesc"),
-        });
-      }
+      // Always copy to clipboard first
+      await navigator.clipboard.writeText(window.location.href);
+      
+      // Show toast notification
+      toast({
+        title: t("blog.linkCopied"),
+        description: t("blog.linkCopiedDesc"),
+        duration: 3000,
+      });
     } catch (error) {
-      // Fallback to copying URL
-      try {
-        await navigator.clipboard.writeText(window.location.href);
-        toast({
-          title: t("blog.linkCopied"),
-          description: t("blog.linkCopiedDesc"),
-        });
-      } catch (clipboardError) {
-        console.error('Failed to copy to clipboard:', clipboardError);
-      }
+      console.error('Failed to copy:', error);
+      // Try fallback method
+      const textArea = document.createElement("textarea");
+      textArea.value = window.location.href;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      
+      toast({
+        title: t("blog.linkCopied"),
+        description: t("blog.linkCopiedDesc"),
+        duration: 3000,
+      });
     }
   };
 

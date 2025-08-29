@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Twitter, Linkedin, Github } from "lucide-react";
 
 const footerLinks = {
   quickLinks: [
@@ -22,15 +21,8 @@ const footerLinks = {
     { label: "Terms of Service", href: "/terms" },
     { label: "Copyright", href: "/copyright" },
     { label: "Editorial Guidelines", href: "/guidelines" },
-    { label: "Contact", href: "/contact" },
   ],
 };
-
-const socialLinks = [
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Github, href: "#", label: "GitHub" },
-];
 
 export default function Footer() {
   return (
@@ -47,26 +39,9 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent">
               Political Insights
             </h3>
-            <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed">
               Delivering in-depth political analysis and commentary to help you understand the complexities of modern governance and democracy.
             </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <motion.a
-                    key={social.label}
-                    href={social.href}
-                    className="w-10 h-10 bg-muted rounded-xl flex items-center justify-center hover:bg-primary transition-all duration-300"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    data-testid={`link-social-${social.label.toLowerCase()}`}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </motion.a>
-                );
-              })}
-            </div>
           </motion.div>
 
           {/* Quick Links */}
@@ -155,9 +130,9 @@ export default function Footer() {
                 Fact-Checking
               </a>
             </Link>
-            <Link href="/support">
-              <a className="text-muted-foreground hover:text-primary transition-colors duration-300" data-testid="link-support">
-                Support
+            <Link href="/archives">
+              <a className="text-muted-foreground hover:text-primary transition-colors duration-300" data-testid="link-archives">
+                Archives
               </a>
             </Link>
           </div>

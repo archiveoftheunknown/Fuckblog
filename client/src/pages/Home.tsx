@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import HeroSection from "@/components/hero-section";
 import BlogCard from "@/components/blog-card";
-import Newsletter from "@/components/newsletter";
 import { blogPosts, getFeaturedPosts, getRecentPosts } from "@/data/blog-posts";
 
 export default function Home() {
@@ -54,8 +53,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
-      <Newsletter />
     </div>
   );
 }

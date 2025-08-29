@@ -33,15 +33,7 @@ export default function BlogCard({ post, index = 0, featured = false }: BlogCard
         <Link href={`/blog/${post.slug}`}>
           <a className="block">
             <div className="glass-card rounded-2xl overflow-hidden blog-card" data-testid={`featured-post-${post.id}`}>
-              <div className="grid md:grid-cols-2 gap-0">
-                {post.image && (
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-80 md:h-full object-cover"
-                  />
-                )}
-                <div className="p-8">
+              <div className="p-8">
                   <div className="mb-4">
                     <span className="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium">
                       {post.category}
@@ -69,7 +61,6 @@ export default function BlogCard({ post, index = 0, featured = false }: BlogCard
                       Read Article
                     </button>
                   </div>
-                </div>
               </div>
             </div>
           </a>
@@ -87,11 +78,6 @@ export default function BlogCard({ post, index = 0, featured = false }: BlogCard
       <Link href={`/blog/${post.slug}`}>
         <a className="block">
           <div className="glass-card rounded-2xl overflow-hidden blog-card" data-testid={`blog-post-${post.id}`}>
-            <img
-              src={`https://images.unsplash.com/photo-${getImageId(index)}?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250`}
-              alt={post.title}
-              className="w-full h-48 object-cover"
-            />
             <div className="p-6">
               <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 ${getCategoryColor(post.category)}`}>
                 {post.category}
@@ -120,18 +106,6 @@ export default function BlogCard({ post, index = 0, featured = false }: BlogCard
       </Link>
     </motion.div>
   );
-}
-
-function getImageId(index: number): string {
-  const imageIds = [
-    "1560472354-b33ff0c44a43", // conference room
-    "1451187580459-43490279c0fa", // futuristic cityscape
-    "1558494949-ef010cbdcc31", // network visualization
-    "1504711434969-e33886168f5c", // newsroom
-    "1611224923853-80b023f02d71", // data visualization
-    "1551288049-bebda4e38f71"  // digital workspace
-  ];
-  return imageIds[index % imageIds.length];
 }
 
 function getCategoryColor(category: string): string {

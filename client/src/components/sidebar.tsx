@@ -146,9 +146,14 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                   </motion.div>
                   <motion.span 
                     key={`text-${theme}`}
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.4, delay: 0.1 }}
+                    initial={{ x: -10, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ 
+                      duration: 0.3,
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 20
+                    }}
                     className="text-sm font-medium"
                   >
                     {theme === "dark" ? "Light Mode" : "Dark Mode"}

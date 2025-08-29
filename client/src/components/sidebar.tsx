@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "wouter";
-import { Home, FileText, Info, Archive, X } from "lucide-react";
+import { Home, FileText, Info, Archive, X, Sun, Moon } from "lucide-react";
 import SearchBar from "./search-bar";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const navigation = [
   { name: "Home", href: "/", icon: Home },
@@ -17,6 +18,7 @@ interface SidebarProps {
 
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const [location] = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <>
@@ -112,6 +114,40 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                   );
                 })}
               </motion.nav>
+
+              {/* Theme Toggle */}
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.9 }}
+                className="absolute bottom-6 left-6 right-6"
+              >
+                <button
+                  onClick={toggleTheme}
+                  className="w-full glass-button px-4 py-3 rounded-xl flex items-center justify-center space-x-3 group"
+                  data-testid="theme-toggle"
+                >
+                  <motion.div
+                    initial={false}
+                    animate={{ rotate: theme === "light" ? 180 : 0 }}
+                    transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    className="relative"
+                  >
+                    {theme === "dark" ? (
+                      <Sun className="w-5 h-5 text-chart-3" />
+                    ) : (
+                      <Moon className="w-5 h-5 text-primary" />
+                    )}
+                  </motion.div>
+                  <span className="text-sm font-medium">
+                    {theme === "dark" ? "Light Mode" : "Dark Mode"}
+                  </span>
+                  <motion.div
+                    className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 to-chart-3/20 opacity-0 group-hover:opacity-100"
+                    transition={{ duration: 0.3 }}
+                  />
+                </button>
+              </motion.div>
             </div>
           </motion.aside>
         )}

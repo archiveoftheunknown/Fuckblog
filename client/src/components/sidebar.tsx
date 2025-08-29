@@ -46,11 +46,11 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -300, opacity: 0 }}
             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="fixed left-0 top-0 h-screen w-72 glass z-40 border-r border-border"
+            className="fixed left-0 top-0 h-screen max-h-screen w-72 glass z-40 border-r border-border flex flex-col"
             data-testid="sidebar"
           >
-            <div className="p-6">
-              {/* Close button - visible on all screen sizes */}
+            {/* Header with close button */}
+            <div className="p-6 pb-0 relative">
               <motion.button
                 onClick={onClose}
                 className="absolute top-4 right-4 p-2 glass-button rounded-lg"
@@ -67,20 +67,23 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="mb-8"
+                className="mb-4"
               >
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent">
                   {t("brand.title")}
                 </h1>
                 <p className="text-muted-foreground text-sm mt-1">{t("brand.tagline")}</p>
               </motion.div>
+            </div>
 
+            {/* Scrollable content area */}
+            <div className="flex-1 overflow-y-auto px-6 pb-4">
               {/* Search Bar */}
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
-                className="mb-8"
+                className="mb-6"
               >
                 <SearchBar />
               </motion.div>
@@ -90,7 +93,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="space-y-2"
+                className="space-y-2 mb-6"
               >
                 {navigation.map((item, index) => {
                   const Icon = item.icon;
@@ -126,12 +129,12 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 })}
               </motion.nav>
 
-              {/* Theme Toggle */}
+              {/* Theme Toggle - inside scrollable area for mobile */}
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.9 }}
-                className="absolute bottom-6 left-6 right-6"
+                transition={{ delay: 0.7 }}
+                className="mt-auto"
               >
                 <motion.button
                   onClick={toggleTheme}
@@ -174,6 +177,50 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                   </motion.span>
                 </motion.button>
               </motion.div>
+            </div>
+
+            {/* Fixed theme toggle for desktop - always visible at bottom */}
+            <div className="hidden lg:block p-6 pt-0 border-t border-border">
+              <motion.button
+                onClick={toggleTheme}
+                className="w-full glass-button px-4 py-3 rounded-xl flex items-center justify-center space-x-3 group overflow-hidden"
+                data-testid="theme-toggle-desktop"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                <motion.div
+                  key={`desktop-${theme}`}
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ 
+                    duration: 0.6,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                    type: "spring",
+                    stiffness: 200
+                  }}
+                >
+                  {theme === "dark" ? (
+                    <Sun className="w-5 h-5 text-chart-3" />
+                  ) : (
+                    <Moon className="w-5 h-5 text-primary" />
+                  )}
+                </motion.div>
+                <motion.span 
+                  key={`desktop-text-${theme}`}
+                  initial={{ x: -10, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ 
+                    duration: 0.3,
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 20
+                  }}
+                  className="text-sm font-medium"
+                >
+                  {theme === "dark" ? t("nav.lightMode") : t("nav.darkMode")}
+                </motion.span>
+              </motion.button>
             </div>
           </motion.aside>
         )}

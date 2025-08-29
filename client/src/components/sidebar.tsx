@@ -107,7 +107,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                             isActive ? "active bg-accent" : ""
                           }`}
                           data-testid={`nav-link-${item.name.toLowerCase()}`}
-                          onClick={() => window.innerWidth < 1024 && onClose()}
+                          onClick={() => {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            window.innerWidth < 1024 && onClose();
+                          }}
                           whileHover={{ scale: 1.02, x: 5 }}
                           whileTap={{ scale: 0.98 }}
                           transition={{ type: "spring", stiffness: 400, damping: 17 }}

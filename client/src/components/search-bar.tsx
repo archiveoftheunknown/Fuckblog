@@ -31,6 +31,7 @@ export default function SearchBar() {
   };
 
   const handleResultClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setIsOpen(false);
     setQuery("");
     setIsFocused(false);

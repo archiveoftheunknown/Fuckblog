@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link, useParams } from "wouter";
 import { ArrowLeft, Calendar, Clock, User, Share2, BookOpen } from "lucide-react";
@@ -8,6 +9,10 @@ import { useToast } from "@/hooks/use-toast";
 export default function BlogPost() {
   const { id } = useParams<{ id: string }>();
   const { toast } = useToast();
+  
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [id]);
   
   const post = getBlogPostBySlug(id || "") || blogPosts.find(p => p.id === id);
 

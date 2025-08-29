@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import BlogCard from "@/components/blog-card";
 import { blogPosts } from "@/data/blog-posts";
@@ -18,6 +18,10 @@ const categories = [
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
 
   const filteredPosts = blogPosts
     .filter(post => selectedCategory === "All" || post.category === selectedCategory)

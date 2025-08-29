@@ -48,16 +48,9 @@ export default function BlogCard({ post, index = 0, featured = false }: BlogCard
                     {post.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-primary to-chart-3 rounded-full flex items-center justify-center">
-                        <span className="text-sm font-bold text-primary-foreground">
-                          {post.author.avatar}
-                        </span>
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">{post.author.name}</p>
-                        <p className="text-sm text-muted-foreground">{post.author.role}</p>
-                      </div>
+                    <div>
+                      <p className="font-semibold text-foreground">{post.author.name}</p>
+                      <p className="text-sm text-muted-foreground">{post.author.role}</p>
                     </div>
                     <motion.span 
                       className="glass-button px-6 py-2 rounded-lg text-sm font-medium inline-block"

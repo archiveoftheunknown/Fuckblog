@@ -115,16 +115,9 @@ export default function BlogPost() {
           
           {/* Meta Information */}
           <div className="flex flex-wrap items-center gap-6 text-muted-foreground">
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-chart-3 rounded-full flex items-center justify-center">
-                <span className="text-sm font-bold text-primary-foreground">
-                  {post.author.avatar}
-                </span>
-              </div>
-              <div>
-                <p className="font-semibold text-foreground">{post.author.name}</p>
-                <p className="text-sm">{post.author.role}</p>
-              </div>
+            <div>
+              <p className="font-semibold text-foreground">{post.author.name}</p>
+              <p className="text-sm">{post.author.role}</p>
             </div>
             
             <div className="flex items-center space-x-1">
@@ -150,21 +143,6 @@ export default function BlogPost() {
           </div>
         </motion.div>
 
-        {/* Featured Image */}
-        {post.image && (
-          <motion.div
-            className="mb-12 rounded-2xl overflow-hidden"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-          >
-            <img
-              src={post.image}
-              alt={post.title}
-              className="w-full h-96 object-cover"
-            />
-          </motion.div>
-        )}
 
         {/* Article Content */}
         <motion.div

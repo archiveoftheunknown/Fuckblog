@@ -8,13 +8,11 @@ export interface BlogPost {
   tags: string[];
   author: {
     name: string;
-    avatar: string;
     role: string;
   };
   publishedAt: string;
   readTime: number;
   featured: boolean;
-  image?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -62,13 +60,11 @@ Skandal 'fufufafa' berhasil diredam, tetapi tidak pernah diselesaikan. Ia kini b
     tags: ["Indonesia", "Digital Politics", "Investigation", "Credibility"],
     author: {
       name: "Analysis Team",
-      avatar: "AI",
       role: "Political Correspondent"
     },
     publishedAt: "2024-12-15",
     readTime: 12,
-    featured: true,
-    image: "https://pixabay.com/get/g27d5637524273dee62ee14345dae39d88c41a918ba3a43583b4f4033c4fdd12fb48518c07202af403c8c2558d8c501f76725857d9bd2cfe39617951a46aa91c0_1280.jpg"
+    featured: true
   },
   {
     id: "2",
@@ -96,7 +92,6 @@ As we move forward, the balance between transparency and privacy in political di
     tags: ["Digital Forensics", "Accountability", "Technology"],
     author: {
       name: "Dr. Sarah Chen",
-      avatar: "SC",
       role: "Digital Rights Researcher"
     },
     publishedAt: "2024-12-12",
@@ -128,7 +123,6 @@ The democratization of political communication has both positive and negative im
     tags: ["Social Media", "Communication", "Democracy"],
     author: {
       name: "Prof. Michael Rodriguez",
-      avatar: "MR",
       role: "Political Communication Expert"
     },
     publishedAt: "2024-12-10",
@@ -167,7 +161,6 @@ The challenge lies in creating systems that protect legitimate anonymous speech 
     tags: ["Anonymity", "Digital Identity", "Political Discourse"],
     author: {
       name: "Emma Thompson",
-      avatar: "ET",
       role: "Investigative Journalist"
     },
     publishedAt: "2024-12-08",
@@ -206,7 +199,6 @@ Successful crisis communication in the digital age requires preparation, authent
     tags: ["Crisis Management", "Communication", "Strategy"],
     author: {
       name: "David Kim",
-      avatar: "DK",
       role: "Communications Strategist"
     },
     publishedAt: "2024-12-05",
@@ -249,7 +241,6 @@ As data collection and analysis capabilities continue to advance, the political 
     tags: ["Analytics", "Big Data", "Political Science", "Trends"],
     author: {
       name: "Dr. Lisa Wang",
-      avatar: "LW",
       role: "Data Scientist"
     },
     publishedAt: "2024-12-03",

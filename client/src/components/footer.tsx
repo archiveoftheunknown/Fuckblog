@@ -7,7 +7,6 @@ const footerLinks = {
     { label: "Latest Articles", href: "/blog" },
     { label: "Political Analysis", href: "/blog" },
     { label: "Digital Democracy", href: "/blog" },
-    { label: "About Us", href: "/about" },
   ],
   categories: [
     { label: "Government Policy", href: "/blog" },
@@ -120,14 +119,9 @@ export default function Footer() {
             © 2024 Created by Velo. All rights reserved.
           </p>
           <div className="flex items-center space-x-6 mt-4 md:mt-0 text-sm">
-            <Link href="/standards">
-              <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" data-testid="link-editorial-standards">
-                Editorial Standards
-              </a>
-            </Link>
-            <Link href="/fact-checking">
-              <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" data-testid="link-fact-checking">
-                Fact-Checking
+            <Link href="/about">
+              <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" data-testid="link-about">
+                About
               </a>
             </Link>
             <Link href="/archives">

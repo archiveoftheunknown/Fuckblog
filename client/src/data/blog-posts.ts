@@ -1,4 +1,15 @@
-import { BlogPost } from '../types/blog';
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  category: string;
+  tags: string[];
+  publishedAt: Date;
+  readTime: number;
+  image?: string;
+}
 
 export const blogPosts: BlogPost[] = [
   {
@@ -1710,6 +1721,11 @@ The data revolution in politics is not coming—it's here. The question is not w
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3'
   }
 ];
+
+// Helper function to get blog post by slug (id)
+export function getBlogPostBySlug(slug: string): BlogPost | undefined {
+  return blogPosts.find(post => post.id === slug);
+}
 
 // Helper function to get featured posts
 export function getFeaturedPosts(limit: number = 3): BlogPost[] {

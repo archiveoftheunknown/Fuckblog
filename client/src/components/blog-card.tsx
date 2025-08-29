@@ -29,10 +29,12 @@ export default function BlogCard({ post, index = 0, featured = false }: BlogCard
         initial="hidden"
         animate="visible"
         className="mb-16"
+        whileHover={{ scale: 1.01 }}
+        whileTap={{ scale: 0.99 }}
+        transition={{ type: "spring", stiffness: 400, damping: 20 }}
       >
         <Link href={`/blog/${post.slug}`}>
-          <a className="block">
-            <div className="glass-card rounded-2xl overflow-hidden blog-card" data-testid={`featured-post-${post.id}`}>
+          <div className="glass-card rounded-2xl overflow-hidden blog-card cursor-pointer" data-testid={`featured-post-${post.id}`}>
               <div className="p-8">
                   <div className="mb-4">
                     <span className="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium">
@@ -57,13 +59,17 @@ export default function BlogCard({ post, index = 0, featured = false }: BlogCard
                         <p className="text-sm text-muted-foreground">{post.author.role}</p>
                       </div>
                     </div>
-                    <button className="glass-button px-6 py-2 rounded-lg text-sm font-medium">
+                    <motion.span 
+                      className="glass-button px-6 py-2 rounded-lg text-sm font-medium inline-block"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                    >
                       Read Article
-                    </button>
+                    </motion.span>
                   </div>
               </div>
             </div>
-          </a>
         </Link>
       </motion.div>
     );
@@ -74,10 +80,12 @@ export default function BlogCard({ post, index = 0, featured = false }: BlogCard
       variants={cardVariants}
       initial="hidden"
       animate="visible"
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: "spring", stiffness: 400, damping: 20 }}
     >
       <Link href={`/blog/${post.slug}`}>
-        <a className="block">
-          <div className="glass-card rounded-2xl overflow-hidden blog-card" data-testid={`blog-post-${post.id}`}>
+          <div className="glass-card rounded-2xl overflow-hidden blog-card cursor-pointer" data-testid={`blog-post-${post.id}`}>
             <div className="p-6">
               <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 ${getCategoryColor(post.category)}`}>
                 {post.category}
@@ -96,13 +104,12 @@ export default function BlogCard({ post, index = 0, featured = false }: BlogCard
                     day: 'numeric' 
                   })}
                 </span>
-                <button className="text-primary text-sm font-medium hover:text-primary/80 transition-colors">
+                <span className="text-primary text-sm font-medium hover:text-primary/80 transition-colors">
                   Read More →
-                </button>
+                </span>
               </div>
             </div>
           </div>
-        </a>
       </Link>
     </motion.div>
   );

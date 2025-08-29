@@ -105,6 +105,18 @@
 }
 
 @layer components {
+  /* Buttery smooth button animations */
+  button, a, [role="button"], .clickable {
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  button:active:not(:disabled), 
+  a:active, 
+  [role="button"]:active,
+  .clickable:active {
+    transform: scale(0.95);
+  }
+  
   /* Smooth theme transitions with staggered timing */
   .theme-transitioning * {
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
@@ -172,12 +184,23 @@
   .light .glass-button {
     background: linear-gradient(145deg, rgba(216, 109, 85, 0.15), rgba(216, 109, 85, 0.08));
     border: 1px solid rgba(216, 109, 85, 0.25);
+    color: hsl(20, 14%, 10%);
   }
 
   .glass-button:hover {
     background: linear-gradient(145deg, rgba(216, 109, 85, 0.3), rgba(216, 109, 85, 0.2));
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 8px 32px rgba(216, 109, 85, 0.3);
+  }
+  
+  .light .glass-button:hover {
+    background: linear-gradient(145deg, rgba(216, 109, 85, 0.2), rgba(216, 109, 85, 0.1));
+    color: hsl(20, 14%, 8%);
+  }
+  
+  .glass-button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .nav-link {
@@ -216,8 +239,13 @@
   }
 
   .blog-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-4px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  .blog-card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .search-input {

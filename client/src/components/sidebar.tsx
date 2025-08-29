@@ -49,13 +49,16 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           >
             <div className="p-6">
               {/* Close button - visible on all screen sizes */}
-              <button
+              <motion.button
                 onClick={onClose}
                 className="absolute top-4 right-4 p-2 glass-button rounded-lg"
                 data-testid="sidebar-close"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 <X className="w-5 h-5" />
-              </button>
+              </motion.button>
 
               {/* Logo */}
               <motion.div
@@ -99,16 +102,19 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                       transition={{ delay: 0.5 + index * 0.1 }}
                     >
                       <Link href={item.href}>
-                        <a
+                        <motion.a
                           className={`nav-link flex items-center px-4 py-3 rounded-xl text-foreground hover:bg-accent transition-all duration-300 ${
                             isActive ? "active bg-accent" : ""
                           }`}
                           data-testid={`nav-link-${item.name.toLowerCase()}`}
                           onClick={() => window.innerWidth < 1024 && onClose()}
+                          whileHover={{ scale: 1.02, x: 5 }}
+                          whileTap={{ scale: 0.98 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         >
                           <Icon className="w-5 h-5 mr-3" />
                           {item.name}
-                        </a>
+                        </motion.a>
                       </Link>
                     </motion.div>
                   );
@@ -122,10 +128,13 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 transition={{ delay: 0.9 }}
                 className="absolute bottom-6 left-6 right-6"
               >
-                <button
+                <motion.button
                   onClick={toggleTheme}
                   className="w-full glass-button px-4 py-3 rounded-xl flex items-center justify-center space-x-3 group overflow-hidden"
                   data-testid="theme-toggle"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
                   <motion.div
                     key={theme}
@@ -158,7 +167,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                   >
                     {theme === "dark" ? "Light Mode" : "Dark Mode"}
                   </motion.span>
-                </button>
+                </motion.button>
               </motion.div>
             </div>
           </motion.aside>

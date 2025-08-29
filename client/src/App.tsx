@@ -17,6 +17,7 @@ import Copyright from "@/pages/Copyright";
 import Guidelines from "@/pages/Guidelines";
 import NotFound from "@/pages/not-found";
 import { Menu } from "lucide-react";
+import { motion } from "framer-motion";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -28,24 +29,36 @@ function App() {
           <div className="min-h-screen bg-background text-foreground overflow-x-hidden transition-colors duration-500">
           {/* Mobile menu button - only show when sidebar is closed */}
           {!sidebarOpen && (
-            <button
+            <motion.button
               onClick={() => setSidebarOpen(true)}
               className="fixed top-4 left-4 z-50 p-2 glass-button rounded-lg lg:hidden"
               data-testid="menu-toggle-mobile"
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              exit={{ scale: 0, rotate: 180 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <Menu className="w-6 h-6" />
-            </button>
+            </motion.button>
           )}
 
           {/* Desktop menu button - only show when sidebar is closed */}
           {!sidebarOpen && (
-            <button
+            <motion.button
               onClick={() => setSidebarOpen(true)}
               className="fixed top-4 left-4 z-50 p-2 glass-button rounded-lg hidden lg:block"
               data-testid="menu-toggle-desktop"
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              exit={{ scale: 0, rotate: 180 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <Menu className="w-6 h-6" />
-            </button>
+            </motion.button>
           )}
 
           <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />

@@ -10,6 +10,10 @@ import Home from "@/pages/Home";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import About from "@/pages/About";
+import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
+import Copyright from "@/pages/Copyright";
+import Guidelines from "@/pages/Guidelines";
 import NotFound from "@/pages/not-found";
 import { Menu } from "lucide-react";
 
@@ -51,6 +55,10 @@ function App() {
               <Route path="/blog/:id" component={BlogPost} />
               <Route path="/about" component={About} />
               <Route path="/archives" component={Blog} />
+              <Route path="/privacy" component={Privacy} />
+              <Route path="/terms" component={Terms} />
+              <Route path="/copyright" component={Copyright} />
+              <Route path="/guidelines" component={Guidelines} />
               <Route component={NotFound} />
             </Switch>
             <Footer />

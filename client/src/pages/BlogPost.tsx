@@ -49,18 +49,32 @@ export default function BlogPost() {
   
   const handleShare = async () => {
     try {
-      await navigator.share({
-        title: post.title,
-        text: post.excerpt,
-        url: window.location.href,
-      });
+      // Check if Web Share API is available
+      if (navigator.share && typeof navigator.share === 'function') {
+        await navigator.share({
+          title: post.title,
+          text: post.excerpt,
+          url: window.location.href,
+        });
+      } else {
+        // Fallback to copying URL
+        await navigator.clipboard.writeText(window.location.href);
+        toast({
+          title: t("blog.linkCopied"),
+          description: t("blog.linkCopiedDesc"),
+        });
+      }
     } catch (error) {
       // Fallback to copying URL
-      navigator.clipboard.writeText(window.location.href);
-      toast({
-        title: t("blog.linkCopied"),
-        description: t("blog.linkCopiedDesc"),
-      });
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        toast({
+          title: t("blog.linkCopied"),
+          description: t("blog.linkCopiedDesc"),
+        });
+      } catch (clipboardError) {
+        console.error('Failed to copy to clipboard:', clipboardError);
+      }
     }
   };
 

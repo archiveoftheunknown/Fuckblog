@@ -91,9 +91,9 @@ export function InteractiveBarChart({
       {title && (
         <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <div className="w-full overflow-hidden">
-        <ResponsiveContainer width="100%" height={250}>
-        <BarChart data={data}>
+      <div className="w-full overflow-hidden" style={{ maxWidth: 'calc(100vw - 3rem)' }}>
+        <ResponsiveContainer width="99%" height={200}>
+        <BarChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
           <XAxis 
             dataKey={xKey} 
@@ -149,16 +149,16 @@ export function InteractivePieChart({
       {title && (
         <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <div className="w-full overflow-hidden">
-        <ResponsiveContainer width="100%" height={250}>
+      <div className="w-full overflow-hidden" style={{ maxWidth: 'calc(100vw - 3rem)' }}>
+        <ResponsiveContainer width="99%" height={200}>
         <PieChart>
           <Pie
             data={data}
             cx="50%"
             cy="50%"
             labelLine={false}
-            label={showLabel ? renderLabel : undefined}
-            outerRadius={80}
+            label={false}
+            outerRadius={window.innerWidth < 768 ? 50 : 70}
             fill="#8884d8"
             dataKey={dataKey}
             animationBegin={0}
@@ -193,9 +193,9 @@ export function InteractiveLineChart({
       {title && (
         <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <div className="w-full overflow-hidden">
-        <ResponsiveContainer width="100%" height={250}>
-        <LineChart data={data}>
+      <div className="w-full overflow-hidden" style={{ maxWidth: 'calc(100vw - 3rem)' }}>
+        <ResponsiveContainer width="99%" height={200}>
+        <LineChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
           <XAxis 
             dataKey={xKey} 
@@ -248,9 +248,9 @@ export function InteractiveAreaChart({
       {title && (
         <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <div className="w-full overflow-hidden">
-        <ResponsiveContainer width="100%" height={250}>
-        <AreaChart data={data}>
+      <div className="w-full overflow-hidden" style={{ maxWidth: 'calc(100vw - 3rem)' }}>
+        <ResponsiveContainer width="99%" height={200}>
+        <AreaChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
           <XAxis 
             dataKey={xKey} 
@@ -302,9 +302,9 @@ export function InteractiveRadarChart({
       {title && (
         <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <div className="w-full overflow-hidden">
-        <ResponsiveContainer width="100%" height={250}>
-        <RadarChart data={data}>
+      <div className="w-full overflow-hidden" style={{ maxWidth: 'calc(100vw - 3rem)' }}>
+        <ResponsiveContainer width="99%" height={200}>
+        <RadarChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
           <PolarGrid stroke="hsl(var(--border))" strokeOpacity={0.3} />
           <PolarAngleAxis 
             dataKey="name" 

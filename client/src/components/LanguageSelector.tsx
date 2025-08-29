@@ -3,6 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Globe } from "lucide-react";
 import { useLanguage, Language } from "@/contexts/LanguageContext";
 
+interface LanguageSelectorProps {
+  isSidebarOpen?: boolean;
+}
+
 const languages: { code: Language; label: string; flag: string }[] = [
   { code: "id", label: "Indonesia", flag: "🇮🇩" },
   { code: "en", label: "English", flag: "🇺🇸" },
@@ -11,7 +15,7 @@ const languages: { code: Language; label: string; flag: string }[] = [
   { code: "ja", label: "日本語", flag: "🇯🇵" },
 ];
 
-export default function LanguageSelector() {
+export default function LanguageSelector({ isSidebarOpen = false }: LanguageSelectorProps) {
   const { language, setLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   
@@ -32,30 +36,57 @@ export default function LanguageSelector() {
         )}
       </AnimatePresence>
 
-      {/* Language Button */}
-      <motion.button
-        className="fixed bottom-6 left-6 z-50 w-12 h-12 glass-button rounded-full flex items-center justify-center group"
-        onClick={() => setIsOpen(!isOpen)}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        data-testid="language-selector-button"
-      >
-        <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="relative"
-        >
-          <Globe className="w-5 h-5 text-primary" />
-          <span className="absolute -bottom-1 -right-1 text-xs font-bold text-primary uppercase">
-            {currentLang.code}
-          </span>
-        </motion.div>
-      </motion.button>
+      {/* Language Button with Sidebar-aware Animation */}
+      <AnimatePresence>
+        {!isSidebarOpen && (
+          <motion.button
+            className="fixed bottom-6 left-6 z-50 w-12 h-12 glass-button rounded-full flex items-center justify-center group"
+            onClick={() => setIsOpen(!isOpen)}
+            initial={{ scale: 0, opacity: 0, x: -20 }}
+            animate={{ 
+              scale: 1, 
+              opacity: 1, 
+              x: 0,
+              transition: {
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                delay: 0.2
+              }
+            }}
+            exit={{ 
+              scale: 0, 
+              opacity: 0, 
+              x: -20,
+              rotate: -180,
+              transition: {
+                type: "spring",
+                stiffness: 400,
+                damping: 25,
+                duration: 0.3
+              }
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            data-testid="language-selector-button"
+          >
+            <motion.div
+              animate={{ rotate: isOpen ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative"
+            >
+              <Globe className="w-5 h-5 text-primary" />
+              <span className="absolute -bottom-1 -right-1 text-xs font-bold text-primary uppercase">
+                {currentLang.code}
+              </span>
+            </motion.div>
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* Language Options */}
       <AnimatePresence>
-        {isOpen && (
+        {isOpen && !isSidebarOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}

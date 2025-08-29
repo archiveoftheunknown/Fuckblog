@@ -81,7 +81,7 @@ function App() {
             </Switch>
             <Footer />
           </main>
-            <LanguageSelector />
+            <LanguageSelector isSidebarOpen={sidebarOpen} />
             <Toaster />
             </div>
           </TooltipProvider>

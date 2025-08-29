@@ -265,6 +265,56 @@
   .prose h1, .prose h2, .prose h3 {
     color: hsl(45, 25%, 91%);
   }
+  
+  /* Light mode text fixes */
+  .light .prose {
+    color: hsl(20, 14%, 15%);
+  }
+  
+  .light .prose h1,
+  .light .prose h2,
+  .light .prose h3,
+  .light .prose h4,
+  .light .prose h5,
+  .light .prose h6 {
+    color: hsl(20, 14%, 8%);
+  }
+  
+  .light .prose p,
+  .light .prose li,
+  .light .prose blockquote {
+    color: hsl(20, 14%, 25%);
+  }
+  
+  .light .prose strong {
+    color: hsl(20, 14%, 10%);
+  }
+  
+  .light .prose a {
+    color: hsl(9, 75%, 51%);
+  }
+  
+  .light .prose a:hover {
+    color: hsl(9, 75%, 41%);
+  }
+  
+  .light .prose code {
+    color: hsl(20, 14%, 10%);
+    background: hsl(30, 20%, 94%);
+  }
+  
+  .light .prose pre {
+    background: hsl(30, 20%, 94%);
+    color: hsl(20, 14%, 10%);
+  }
+  
+  .light .text-muted-foreground {
+    color: hsl(20, 14%, 45%) !important;
+  }
+  
+  .light .text-foreground {
+    color: hsl(20, 14%, 10%) !important;
+  }
 }
 
 @layer utilities {

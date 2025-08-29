@@ -31,22 +31,24 @@ export default function Footer() {
   return (
     <footer className="bg-[hsl(20,14%,8%)] backdrop-blur-sm border-t border-[hsl(25,20%,12%)]" data-testid="footer">
       <div className="container mx-auto px-8 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* Brand Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            data-testid="footer-brand"
-          >
-            <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-[hsl(9,75%,61%)] to-[hsl(42,92%,56%)] bg-clip-text text-transparent">
-              Political Insights
-            </h3>
-            <p className="text-[hsl(25,5%,60%)] text-sm leading-relaxed">
-              A personal archive of political analysis and commentary by Velo, exploring the complexities of modern governance and democracy.
-            </p>
-          </motion.div>
+        {/* Brand Section - Full width on all sizes */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          data-testid="footer-brand"
+          className="mb-8"
+        >
+          <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-[hsl(9,75%,61%)] to-[hsl(42,92%,56%)] bg-clip-text text-transparent">
+            Political Insights
+          </h3>
+          <p className="text-[hsl(25,5%,60%)] text-sm leading-relaxed max-w-2xl">
+            A personal archive of political analysis and commentary by Velo, exploring the complexities of modern governance and democracy.
+          </p>
+        </motion.div>
 
+        {/* Links Section - 3 columns on mobile, 3 columns on desktop */}
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-6 md:gap-8">
           {/* Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -54,8 +56,8 @@ export default function Footer() {
             transition={{ delay: 0.1, duration: 0.6 }}
             data-testid="footer-quick-links"
           >
-            <h4 className="font-semibold text-[hsl(0,0%,95%)] mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="font-semibold text-[hsl(0,0%,95%)] mb-3 md:mb-4 text-sm md:text-base">Quick Links</h4>
+            <ul className="space-y-1 md:space-y-2 text-xs md:text-sm">
               {footerLinks.quickLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href}>
@@ -77,8 +79,8 @@ export default function Footer() {
             transition={{ delay: 0.2, duration: 0.6 }}
             data-testid="footer-categories"
           >
-            <h4 className="font-semibold text-[hsl(0,0%,95%)] mb-4">Categories</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="font-semibold text-[hsl(0,0%,95%)] mb-3 md:mb-4 text-sm md:text-base">Categories</h4>
+            <ul className="space-y-1 md:space-y-2 text-xs md:text-sm">
               {footerLinks.categories.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href}>
@@ -100,8 +102,8 @@ export default function Footer() {
             transition={{ delay: 0.3, duration: 0.6 }}
             data-testid="footer-legal"
           >
-            <h4 className="font-semibold text-[hsl(0,0%,95%)] mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="font-semibold text-[hsl(0,0%,95%)] mb-3 md:mb-4 text-sm md:text-base">Legal</h4>
+            <ul className="space-y-1 md:space-y-2 text-xs md:text-sm">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href}>

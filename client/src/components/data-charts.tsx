@@ -83,15 +83,15 @@ export function InteractiveBarChart({
 }: BarChartProps) {
   return (
     <motion.div
-      className={`glass-card rounded-xl p-4 ${className}`}
+      className={`glass-card rounded-xl p-2 md:p-4 ${className}`}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
     >
       {title && (
-        <h3 className="text-lg font-semibold text-foreground mb-4">{title}</h3>
+        <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={window.innerWidth < 768 ? 200 : 300}>
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
           <XAxis 
@@ -138,15 +138,15 @@ export function InteractivePieChart({
 
   return (
     <motion.div
-      className={`glass-card rounded-xl p-4 ${className}`}
+      className={`glass-card rounded-xl p-2 md:p-4 ${className}`}
       initial={{ opacity: 0, rotate: -180 }}
       animate={{ opacity: 1, rotate: 0 }}
       transition={{ duration: 0.8 }}
     >
       {title && (
-        <h3 className="text-lg font-semibold text-foreground mb-4">{title}</h3>
+        <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={window.innerWidth < 768 ? 200 : 300}>
         <PieChart>
           <Pie
             data={data}
@@ -180,15 +180,15 @@ export function InteractiveLineChart({
 }: LineChartProps) {
   return (
     <motion.div
-      className={`glass-card rounded-xl p-4 ${className}`}
+      className={`glass-card rounded-xl p-2 md:p-4 ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       {title && (
-        <h3 className="text-lg font-semibold text-foreground mb-4">{title}</h3>
+        <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={window.innerWidth < 768 ? 200 : 300}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
           <XAxis 
@@ -233,15 +233,15 @@ export function InteractiveAreaChart({
 }: LineChartProps) {
   return (
     <motion.div
-      className={`glass-card rounded-xl p-4 ${className}`}
+      className={`glass-card rounded-xl p-2 md:p-4 ${className}`}
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6 }}
     >
       {title && (
-        <h3 className="text-lg font-semibold text-foreground mb-4">{title}</h3>
+        <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={window.innerWidth < 768 ? 200 : 300}>
         <AreaChart data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
           <XAxis 
@@ -285,15 +285,15 @@ export function InteractiveRadarChart({
 }: BaseChartProps) {
   return (
     <motion.div
-      className={`glass-card rounded-xl p-4 ${className}`}
+      className={`glass-card rounded-xl p-2 md:p-4 ${className}`}
       initial={{ opacity: 0, rotate: 90 }}
       animate={{ opacity: 1, rotate: 0 }}
       transition={{ duration: 0.7 }}
     >
       {title && (
-        <h3 className="text-lg font-semibold text-foreground mb-4">{title}</h3>
+        <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={window.innerWidth < 768 ? 200 : 300}>
         <RadarChart data={data}>
           <PolarGrid stroke="hsl(var(--border))" strokeOpacity={0.3} />
           <PolarAngleAxis 

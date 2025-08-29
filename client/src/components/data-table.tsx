@@ -45,12 +45,13 @@ export function DataTable({ headers, rows, caption, className = '' }: DataTableP
 
   return (
     <motion.div 
-      className={`overflow-x-auto rounded-xl glass-card p-1 ${className}`}
+      className={`rounded-xl glass-card ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <table className="w-full">
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[640px]">
         {caption && (
           <caption className="text-lg font-semibold text-foreground mb-4 text-left px-4 py-2">
             {caption}
@@ -116,6 +117,7 @@ export function DataTable({ headers, rows, caption, className = '' }: DataTableP
           ))}
         </tbody>
       </table>
+      </div>
     </motion.div>
   );
 }

@@ -387,5 +387,64 @@
   /* Fix main content area */
   main {
     width: 100% !important;
+    padding: 0.5rem !important;
+  }
+  
+  /* Fix blog content on mobile */
+  .prose {
+    font-size: 0.875rem;
+  }
+  
+  .prose h1 {
+    font-size: 1.75rem;
+  }
+  
+  .prose h2 {
+    font-size: 1.5rem;
+  }
+  
+  .prose h3 {
+    font-size: 1.25rem;
+  }
+  
+  /* Fix table scrolling on mobile */
+  .glass-card {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+  
+  /* Table responsive styles */
+  table {
+    font-size: 0.75rem;
+  }
+  
+  th {
+    padding: 0.5rem !important;
+    font-size: 0.75rem;
+  }
+  
+  td {
+    padding: 0.5rem !important;
+    font-size: 0.75rem;
+  }
+  
+  /* Ensure charts are responsive */
+  .recharts-wrapper {
+    width: 100% !important;
+  }
+  
+  .recharts-surface {
+    width: 100% !important;
+  }
+  
+  /* Fix overflow issues */
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  
+  /* Blog card adjustments */
+  .blog-card {
+    margin: 0.5rem;
   }
 }

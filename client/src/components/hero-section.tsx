@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
+  const scrollToFeatured = () => {
+    const element = document.querySelector('[data-testid="featured-articles-section"]');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -55,6 +62,7 @@ export default function HeroSection() {
               className="glass-button px-8 py-4 rounded-xl font-semibold text-primary-foreground"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
+              onClick={scrollToFeatured}
               data-testid="button-explore-articles"
             >
               Explore Articles

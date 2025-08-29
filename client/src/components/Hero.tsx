@@ -2,6 +2,13 @@ import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer, staggerItem, glassButton } from '@/lib/animations';
 
 export default function Hero() {
+  const scrollToFeatured = () => {
+    const element = document.querySelector('[data-testid="featured-articles-section"]');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section className="hero-gradient min-h-screen flex items-center relative overflow-hidden">
       {/* Background Image */}
@@ -43,6 +50,7 @@ export default function Hero() {
             <motion.button
               className="glass-button px-8 py-4 rounded-xl font-semibold text-primary-foreground"
               {...glassButton}
+              onClick={scrollToFeatured}
               data-testid="button-explore-articles"
             >
               Explore Articles

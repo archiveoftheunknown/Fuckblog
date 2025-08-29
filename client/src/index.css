@@ -388,6 +388,7 @@
   main {
     width: 100% !important;
     padding: 0.5rem !important;
+    overflow-x: hidden !important;
   }
   
   /* Fix blog content on mobile */
@@ -434,10 +435,22 @@
   /* Ensure charts are responsive */
   .recharts-wrapper {
     width: 100% !important;
+    max-width: calc(100vw - 2rem) !important;
   }
   
   .recharts-surface {
     width: 100% !important;
+  }
+  
+  .recharts-responsive-container {
+    width: 100% !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+  
+  /* Fix glass card on mobile */
+  .glass-card {
+    max-width: calc(100vw - 1rem) !important;
+    margin: 0 auto !important;
   }
   
   /* Fix overflow issues */
@@ -449,5 +462,11 @@
   /* Blog card adjustments */
   .blog-card {
     margin: 0.5rem;
+  }
+  
+  /* Blog post content */
+  article, .prose {
+    max-width: 100vw !important;
+    padding: 0 0.5rem !important;
   }
 }

@@ -175,7 +175,7 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
   }, [content]);
 
   return (
-    <div className={`prose prose-lg dark:prose-invert max-w-none ${className}`}>
+    <div className={`prose prose-lg dark:prose-invert w-full overflow-x-hidden ${className}`}>
       {renderContent.map((section, index) => {
         if (section.type === 'markdown') {
           return (

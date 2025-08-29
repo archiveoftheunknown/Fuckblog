@@ -23,12 +23,12 @@ import {
 } from 'recharts';
 
 const COLORS = [
-  'hsl(var(--primary))',
-  'hsl(var(--chart-1))',
-  'hsl(var(--chart-2))',
-  'hsl(var(--chart-3))',
-  'hsl(var(--chart-4))',
-  'hsl(var(--chart-5))',
+  '#d86d55', // primary color
+  '#3598d4', // chart-1 blue
+  '#14b868', // chart-2 green  
+  '#f5bf38', // chart-3 yellow
+  '#22c569', // chart-4 teal
+  '#c73e7f', // chart-5 pink
 ];
 
 interface ChartData {
@@ -83,7 +83,7 @@ export function InteractiveBarChart({
 }: BarChartProps) {
   return (
     <motion.div
-      className={`glass-card rounded-xl p-2 md:p-4 ${className}`}
+      className={`glass-card rounded-xl p-2 md:p-4 w-full ${className}`}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
@@ -91,7 +91,8 @@ export function InteractiveBarChart({
       {title && (
         <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <ResponsiveContainer width="100%" height={window.innerWidth < 768 ? 200 : 300}>
+      <div className="w-full overflow-hidden">
+        <ResponsiveContainer width="100%" height={250}>
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
           <XAxis 
@@ -121,6 +122,7 @@ export function InteractiveBarChart({
           </Bar>
         </BarChart>
       </ResponsiveContainer>
+      </div>
     </motion.div>
   );
 }
@@ -133,12 +135,13 @@ export function InteractivePieChart({
   showLabel = true 
 }: PieChartProps) {
   const renderLabel = (entry: any) => {
+    if (window.innerWidth < 768) return null;
     return `${entry.name}: ${entry.value}`;
   };
 
   return (
     <motion.div
-      className={`glass-card rounded-xl p-2 md:p-4 ${className}`}
+      className={`glass-card rounded-xl p-2 md:p-4 w-full ${className}`}
       initial={{ opacity: 0, rotate: -180 }}
       animate={{ opacity: 1, rotate: 0 }}
       transition={{ duration: 0.8 }}
@@ -146,7 +149,8 @@ export function InteractivePieChart({
       {title && (
         <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <ResponsiveContainer width="100%" height={window.innerWidth < 768 ? 200 : 300}>
+      <div className="w-full overflow-hidden">
+        <ResponsiveContainer width="100%" height={250}>
         <PieChart>
           <Pie
             data={data}
@@ -167,6 +171,7 @@ export function InteractivePieChart({
           <Tooltip content={<CustomTooltip />} />
         </PieChart>
       </ResponsiveContainer>
+      </div>
     </motion.div>
   );
 }
@@ -180,7 +185,7 @@ export function InteractiveLineChart({
 }: LineChartProps) {
   return (
     <motion.div
-      className={`glass-card rounded-xl p-2 md:p-4 ${className}`}
+      className={`glass-card rounded-xl p-2 md:p-4 w-full ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -188,7 +193,8 @@ export function InteractiveLineChart({
       {title && (
         <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <ResponsiveContainer width="100%" height={window.innerWidth < 768 ? 200 : 300}>
+      <div className="w-full overflow-hidden">
+        <ResponsiveContainer width="100%" height={250}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
           <XAxis 
@@ -220,6 +226,7 @@ export function InteractiveLineChart({
           ))}
         </LineChart>
       </ResponsiveContainer>
+      </div>
     </motion.div>
   );
 }
@@ -233,7 +240,7 @@ export function InteractiveAreaChart({
 }: LineChartProps) {
   return (
     <motion.div
-      className={`glass-card rounded-xl p-2 md:p-4 ${className}`}
+      className={`glass-card rounded-xl p-2 md:p-4 w-full ${className}`}
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6 }}
@@ -241,7 +248,8 @@ export function InteractiveAreaChart({
       {title && (
         <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <ResponsiveContainer width="100%" height={window.innerWidth < 768 ? 200 : 300}>
+      <div className="w-full overflow-hidden">
+        <ResponsiveContainer width="100%" height={250}>
         <AreaChart data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
           <XAxis 
@@ -273,6 +281,7 @@ export function InteractiveAreaChart({
           ))}
         </AreaChart>
       </ResponsiveContainer>
+      </div>
     </motion.div>
   );
 }
@@ -285,7 +294,7 @@ export function InteractiveRadarChart({
 }: BaseChartProps) {
   return (
     <motion.div
-      className={`glass-card rounded-xl p-2 md:p-4 ${className}`}
+      className={`glass-card rounded-xl p-2 md:p-4 w-full ${className}`}
       initial={{ opacity: 0, rotate: 90 }}
       animate={{ opacity: 1, rotate: 0 }}
       transition={{ duration: 0.7 }}
@@ -293,7 +302,8 @@ export function InteractiveRadarChart({
       {title && (
         <h3 className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">{title}</h3>
       )}
-      <ResponsiveContainer width="100%" height={window.innerWidth < 768 ? 200 : 300}>
+      <div className="w-full overflow-hidden">
+        <ResponsiveContainer width="100%" height={250}>
         <RadarChart data={data}>
           <PolarGrid stroke="hsl(var(--border))" strokeOpacity={0.3} />
           <PolarAngleAxis 
@@ -316,6 +326,7 @@ export function InteractiveRadarChart({
           <Tooltip content={<CustomTooltip />} />
         </RadarChart>
       </ResponsiveContainer>
+      </div>
     </motion.div>
   );
 }

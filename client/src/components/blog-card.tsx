@@ -47,11 +47,7 @@ export default function BlogCard({ post, index = 0, featured = false }: BlogCard
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="font-semibold text-foreground">{post.author.name}</p>
-                      <p className="text-sm text-muted-foreground">{post.author.role}</p>
-                    </div>
+                  <div className="flex justify-end">
                     <motion.span 
                       className="glass-button px-6 py-2 rounded-lg text-sm font-medium inline-block"
                       whileHover={{ scale: 1.05 }}

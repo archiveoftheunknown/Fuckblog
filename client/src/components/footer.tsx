@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 const footerLinks = {
   quickLinks: [
     { label: "Home", href: "/" },
@@ -55,7 +59,9 @@ export default function Footer() {
               {footerLinks.quickLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href}>
-                    <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" data-testid={`link-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
+                    <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
+                       onClick={scrollToTop}
+                       data-testid={`link-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
                       {link.label}
                     </a>
                   </Link>
@@ -76,7 +82,9 @@ export default function Footer() {
               {footerLinks.categories.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href}>
-                    <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" data-testid={`link-category-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
+                    <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
+                       onClick={scrollToTop}
+                       data-testid={`link-category-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
                       {link.label}
                     </a>
                   </Link>
@@ -97,7 +105,9 @@ export default function Footer() {
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href}>
-                    <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" data-testid={`link-legal-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
+                    <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
+                       onClick={scrollToTop}
+                       data-testid={`link-legal-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
                       {link.label}
                     </a>
                   </Link>
@@ -120,12 +130,16 @@ export default function Footer() {
           </p>
           <div className="flex items-center space-x-6 mt-4 md:mt-0 text-sm">
             <Link href="/about">
-              <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" data-testid="link-about">
+              <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
+                 onClick={scrollToTop}
+                 data-testid="link-about">
                 About
               </a>
             </Link>
             <Link href="/archives">
-              <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" data-testid="link-archives">
+              <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
+                 onClick={scrollToTop}
+                 data-testid="link-archives">
                 Archives
               </a>
             </Link>

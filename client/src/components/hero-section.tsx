@@ -37,9 +37,7 @@ export default function HeroSection() {
             variants={itemVariants}
             className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-chart-3 bg-clip-text text-transparent leading-tight"
             data-testid="hero-title"
-          >
-            Modern Political Analysis
-          </motion.h1>
+          >The fufufafa controversy</motion.h1>
           
           <motion.p
             variants={itemVariants}

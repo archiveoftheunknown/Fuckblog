@@ -2,7 +2,7 @@ import { useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Link, useParams } from "wouter";
 import { ArrowLeft, Calendar, Clock, User, Share2, BookOpen } from "lucide-react";
-import ReactMarkdown from "react-markdown";
+import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { blogPosts, getBlogPostBySlug } from "@/data/blog-posts";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -179,29 +179,7 @@ export default function BlogPost() {
         >
           {/* Main Content */}
           <div className="lg:col-span-3">
-            <div className="prose prose-lg max-w-none">
-              <ReactMarkdown
-                components={{
-                  h1: ({ children }) => {
-                    const text = String(children);
-                    const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-                    return <h1 id={id}>{children}</h1>;
-                  },
-                  h2: ({ children }) => {
-                    const text = String(children);
-                    const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-                    return <h2 id={id}>{children}</h2>;
-                  },
-                  h3: ({ children }) => {
-                    const text = String(children);
-                    const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-                    return <h3 id={id}>{children}</h3>;
-                  },
-                }}
-              >
-                {post.content}
-              </ReactMarkdown>
-            </div>
+            <MarkdownRenderer content={post.content} />
             
             {/* Tags */}
             <div className="mt-12 pt-8 border-t border-border">

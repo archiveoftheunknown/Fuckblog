@@ -1,0 +1,17 @@
+WORKING DOWNLOAD LINK
+=====================
+
+Click the link below in the webview panel (the browser preview on the right side of Replit):
+
+http://localhost:5000/github-deployment.tar.gz
+
+OR use this direct link in your browser:
+https://cef05239-ccfd-418c-8162-f3a93b72cacc-00-2jz34tpses5w5.kirk.replit.dev/github-deployment.tar.gz
+
+The file contains:
+- index.html
+- 404.html  
+- assets/index-CbGclCZN.css
+- assets/index-DJbFQDOQ.js
+
+Extract and upload these to GitHub to deploy your site.

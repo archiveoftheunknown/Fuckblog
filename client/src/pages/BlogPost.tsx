@@ -93,8 +93,8 @@ export default function BlogPost() {
   };
 
   return (
-    <div className="py-20 px-8" data-testid="page-blog-post">
-      <div className="container mx-auto">
+    <div className="py-20 px-4 md:px-8 overflow-x-hidden" data-testid="page-blog-post">
+      <div className="container mx-auto max-w-full">
         {/* Navigation */}
         <motion.div
           className="mb-8"
@@ -178,8 +178,8 @@ export default function BlogPost() {
           transition={{ delay: 0.4, duration: 0.8 }}
         >
           {/* Main Content */}
-          <div className="lg:col-span-3">
-            <MarkdownRenderer content={post.content} />
+          <div className="lg:col-span-3 overflow-x-hidden">
+            <MarkdownRenderer content={post.content} className="max-w-full" />
             
             {/* Tags */}
             <div className="mt-12 pt-8 border-t border-border">

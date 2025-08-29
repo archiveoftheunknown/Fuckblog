@@ -49,9 +49,10 @@ export function DataTable({ headers, rows, caption, className = '' }: DataTableP
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
+      style={{ maxWidth: '100vw' }}
     >
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[640px]">
+      <div className="overflow-x-auto" style={{ maxWidth: '100%' }}>
+        <table className="w-full">
         {caption && (
           <caption className="text-lg font-semibold text-foreground mb-4 text-left px-4 py-2">
             {caption}

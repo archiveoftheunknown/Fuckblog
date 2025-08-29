@@ -409,23 +409,26 @@
   
   /* Fix table scrolling on mobile */
   .glass-card {
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
+    margin: 0;
+    border-radius: 0.5rem;
   }
   
   /* Table responsive styles */
   table {
     font-size: 0.75rem;
+    min-width: 500px;
   }
   
   th {
     padding: 0.5rem !important;
     font-size: 0.75rem;
+    white-space: nowrap;
   }
   
   td {
     padding: 0.5rem !important;
     font-size: 0.75rem;
+    white-space: nowrap;
   }
   
   /* Ensure charts are responsive */

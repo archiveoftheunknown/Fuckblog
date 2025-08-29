@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Link, useParams } from "wouter";
 import { ArrowLeft, Calendar, Clock, User, Share2, BookOpen } from "lucide-react";
@@ -65,6 +65,30 @@ export default function BlogPost() {
   const relatedPosts = blogPosts
     .filter(p => p.id !== post.id && p.category === post.category)
     .slice(0, 3);
+
+  // Extract headings from markdown content for table of contents
+  const tableOfContents = useMemo(() => {
+    const headingRegex = /^(#{1,3})\s+(.+)$/gm;
+    const headings: { level: number; text: string; id: string }[] = [];
+    let match;
+    
+    while ((match = headingRegex.exec(post.content)) !== null) {
+      const level = match[1].length;
+      const text = match[2];
+      const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      headings.push({ level, text, id });
+    }
+    
+    return headings;
+  }, [post.content]);
+
+  // Scroll to heading when clicking on TOC item
+  const scrollToHeading = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <div className="py-20 px-8" data-testid="page-blog-post">
@@ -154,7 +178,27 @@ export default function BlogPost() {
           {/* Main Content */}
           <div className="lg:col-span-3">
             <div className="prose prose-lg max-w-none">
-              <ReactMarkdown>{post.content}</ReactMarkdown>
+              <ReactMarkdown
+                components={{
+                  h1: ({ children }) => {
+                    const text = String(children);
+                    const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                    return <h1 id={id}>{children}</h1>;
+                  },
+                  h2: ({ children }) => {
+                    const text = String(children);
+                    const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                    return <h2 id={id}>{children}</h2>;
+                  },
+                  h3: ({ children }) => {
+                    const text = String(children);
+                    const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                    return <h3 id={id}>{children}</h3>;
+                  },
+                }}
+              >
+                {post.content}
+              </ReactMarkdown>
             </div>
             
             {/* Tags */}
@@ -177,26 +221,29 @@ export default function BlogPost() {
           <div className="lg:col-span-1">
             <div className="sticky top-8 space-y-8">
               {/* Table of Contents */}
-              <div className="glass-card p-6 rounded-xl">
-                <h3 className="font-semibold mb-4 text-foreground flex items-center">
-                  <BookOpen className="w-5 h-5 mr-2" />
-                  Table of Contents
-                </h3>
-                <div className="space-y-2 text-sm">
-                  <div className="text-muted-foreground hover:text-primary cursor-pointer transition-colors">
-                    Genesis Kontroversi Digital
-                  </div>
-                  <div className="text-muted-foreground hover:text-primary cursor-pointer transition-colors">
-                    Investigasi Digital
-                  </div>
-                  <div className="text-muted-foreground hover:text-primary cursor-pointer transition-colors">
-                    Teater Politik
-                  </div>
-                  <div className="text-muted-foreground hover:text-primary cursor-pointer transition-colors">
-                    Dampak dan Masa Depan
+              {tableOfContents.length > 0 && (
+                <div className="glass-card p-6 rounded-xl">
+                  <h3 className="font-semibold mb-4 text-foreground flex items-center">
+                    <BookOpen className="w-5 h-5 mr-2" />
+                    Table of Contents
+                  </h3>
+                  <div className="space-y-2 text-sm">
+                    {tableOfContents.map((heading, index) => (
+                      <motion.div
+                        key={index}
+                        className={`text-muted-foreground hover:text-primary cursor-pointer transition-colors ${
+                          heading.level === 1 ? 'font-semibold' : heading.level === 2 ? 'ml-4' : 'ml-8'
+                        }`}
+                        onClick={() => scrollToHeading(heading.id)}
+                        whileHover={{ x: 4 }}
+                        data-testid={`toc-${heading.id}`}
+                      >
+                        {heading.text}
+                      </motion.div>
+                    ))}
                   </div>
                 </div>
-              </div>
+              )}
 
               {/* Related Articles */}
               {relatedPosts.length > 0 && (

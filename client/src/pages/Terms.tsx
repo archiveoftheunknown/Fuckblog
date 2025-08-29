@@ -17,21 +17,21 @@ export default function Terms() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Selamat Datang</h2>
               <p className="leading-relaxed">
-                Ketentuan ini mengatur penggunaan Anda atas arsip komentar politik saya. Saya Velo, seorang penulis independen, dan situs ini mewakili analisis dan opini pribadi saya. Dengan mengakses situs ini, Anda menyetujui ketentuan sederhana ini.
+                Ketentuan ini mengatur penggunaan situs web analisis politik ini. Dengan mengakses situs ini, Anda menyetujui ketentuan yang berlaku.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Sifat Konten</h2>
               <p className="leading-relaxed mb-3">
-                Semua yang dipublikasikan di sini mewakili analisis dan komentar politik pribadi saya tentang politik Indonesia. Kontennya:
+                Semua yang dipublikasikan di sini merupakan analisis dan komentar politik tentang politik Indonesia. Kontennya:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Berbasis opini dan tidak boleh dianggap sebagai pelaporan faktual</li>
                 <li>Dilindungi berdasarkan Pasal 28E dan 28F UUD 1945 tentang kebebasan berekspresi</li>
                 <li>Sesuai dengan Undang-Undang Pers Indonesia (UU Pers No. 40/1999) sebagai komentar independen</li>
                 <li>Tidak dimaksudkan sebagai nasihat politik atau hukum profesional</li>
-                <li>Tunduk pada bias dan perspektif saya sendiri</li>
+                <li>Merupakan perspektif editorial dari platform ini</li>
               </ul>
             </section>
 
@@ -50,7 +50,7 @@ export default function Terms() {
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Menerbitkan ulang artikel lengkap tanpa izin</li>
-                <li>Menyalahartikan pandangan saya atau mengambil kutipan di luar konteks</li>
+                <li>Menyalahartikan konten atau mengambil kutipan di luar konteks</li>
                 <li>Menggunakan alat otomatis untuk mengikis atau mengunduh konten secara massal</li>
                 <li>Mencoba mengakses area terbatas dari situs web</li>
               </ul>
@@ -59,14 +59,14 @@ export default function Terms() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Penafian Jaminan</h2>
               <p className="leading-relaxed">
-                Situs ini disediakan "apa adanya" tanpa jaminan apa pun. Saya tidak memberikan jaminan tentang keakuratan, kelengkapan, atau ketepatan waktu konten. Situasi politik berkembang pesat, dan posting lama mungkin tidak mencerminkan realitas saat ini atau pandangan saya saat ini.
+                Situs ini disediakan "apa adanya" tanpa jaminan apa pun. Tidak ada jaminan tentang keakuratan, kelengkapan, atau ketepatan waktu konten. Situasi politik berkembang pesat, dan posting lama mungkin tidak mencerminkan realitas atau pandangan terkini.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Pembatasan Tanggung Jawab</h2>
               <p className="leading-relaxed">
-                Sesuai dengan prinsip-prinsip Kitab Undang-Undang Hukum Perdata Indonesia (KUHPerdata), saya tidak bertanggung jawab atas kerusakan apa pun yang timbul dari penggunaan situs ini atau ketergantungan pada kontennya. Ini termasuk keputusan politik, keuangan, atau pribadi yang Anda buat berdasarkan komentar saya. Selalu verifikasi informasi secara independen dan konsultasikan dengan profesional yang tepat untuk mendapatkan nasihat. Konten di sini tidak melanggar undang-undang pencemaran nama baik Indonesia (Pasal 310-321 KUHP) karena berfokus pada wacana publik dan kritik terhadap kebijakan publik.
+                Sesuai dengan prinsip-prinsip Kitab Undang-Undang Hukum Perdata Indonesia (KUHPerdata), situs ini tidak bertanggung jawab atas kerusakan apa pun yang timbul dari penggunaan atau ketergantungan pada kontennya. Ini termasuk keputusan politik, keuangan, atau pribadi yang dibuat berdasarkan konten ini. Selalu verifikasi informasi secara independen dan konsultasikan dengan profesional yang tepat untuk mendapatkan nasihat. Konten di sini tidak melanggar undang-undang pencemaran nama baik Indonesia (Pasal 310-321 KUHP) karena berfokus pada wacana publik dan kritik terhadap kebijakan publik.
               </p>
             </section>
 
@@ -80,14 +80,14 @@ export default function Terms() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Perubahan Ketentuan</h2>
               <p className="leading-relaxed">
-                Saya dapat memperbarui ketentuan ini sesuai kebutuhan. Penggunaan situs yang berkelanjutan setelah perubahan merupakan penerimaan terhadap ketentuan baru.
+                Ketentuan ini dapat diperbarui sesuai kebutuhan. Penggunaan situs yang berkelanjutan setelah perubahan merupakan penerimaan terhadap ketentuan baru.
               </p>
             </section>
 
             <div className="pt-6 border-t border-border">
               <p className="text-sm text-muted-foreground">
                 Terakhir diperbarui: Desember 2024<br />
-                Oleh Velo - Komentator Politik Independen
+                © Wawasan Politik Indonesia
               </p>
             </div>
           </div>

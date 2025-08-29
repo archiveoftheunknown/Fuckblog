@@ -17,24 +17,24 @@ export default function Copyright() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Kepemilikan</h2>
               <p className="leading-relaxed">
-                Semua konten asli di situs web ini, termasuk artikel, analisis, dan komentar, dibuat dan dimiliki oleh saya, Velo. Karya ini secara otomatis dilindungi di bawah hukum hak cipta internasional sejak saat pembuatan, seperti yang ditetapkan oleh Konvensi Berne.
+                Semua konten asli di situs web ini, termasuk artikel, analisis, dan komentar, dilindungi hak cipta. Karya ini secara otomatis dilindungi di bawah hukum hak cipta internasional sejak saat pembuatan, seperti yang ditetapkan oleh Konvensi Berne.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Perlindungan Hak Cipta</h2>
               <p className="leading-relaxed">
-                © 2024 Velo. Hak Cipta Dilindungi. Semua hak dilindungi berdasarkan Undang-Undang Hak Cipta Indonesia (UU No. 28 Tahun 2014 tentang Hak Cipta). Ini mencakup semua teks, analisis, komentar, dan pemilihan serta pengaturan konten yang unik. Ekspresi kreatif ide-ide politik dan cara spesifik penyajiannya di sini adalah kekayaan intelektual yang dilindungi. Sesuai hukum Indonesia, perlindungan hak cipta otomatis sejak penciptaan dan berlangsung seumur hidup saya ditambah 70 tahun.
+                © 2024 Wawasan Politik. Hak Cipta Dilindungi. Semua hak dilindungi berdasarkan Undang-Undang Hak Cipta Indonesia (UU No. 28 Tahun 2014 tentang Hak Cipta). Ini mencakup semua teks, analisis, komentar, dan pemilihan serta pengaturan konten yang unik. Ekspresi kreatif ide-ide politik dan cara spesifik penyajiannya di sini adalah kekayaan intelektual yang dilindungi. Sesuai hukum Indonesia, perlindungan hak cipta otomatis sejak penciptaan.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Penggunaan Wajar & Izin</h2>
               <p className="leading-relaxed mb-3">
-                Saya mendukung prinsip pembatasan hak cipta berdasarkan Pasal 43-51 Undang-Undang Hak Cipta Indonesia untuk tujuan pendidikan, komentar, dan kritik. Anda dapat:
+                Situs ini mendukung prinsip pembatasan hak cipta berdasarkan Pasal 43-51 Undang-Undang Hak Cipta Indonesia untuk tujuan pendidikan, komentar, dan kritik. Anda dapat:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Mengutip kutipan singkat dengan atribusi yang tepat ke "Wawasan Politik Velo"</li>
+                <li>Mengutip kutipan singkat dengan atribusi yang tepat ke "Wawasan Politik"</li>
                 <li>Menautkan ke artikel saat mendiskusikan atau mengkritiknya</li>
                 <li>Menggunakan konten untuk tujuan pendidikan non-komersial dengan kutipan (pendidikan)</li>
                 <li>Membagikan artikel di media sosial dengan atribusi yang utuh</li>
@@ -45,10 +45,10 @@ export default function Copyright() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Format Atribusi</h2>
               <p className="leading-relaxed mb-3">
-                Saat mengutip atau mengutip karya saya, silakan gunakan format ini:
+                Saat mengutip atau mengambil konten, silakan gunakan format ini:
               </p>
               <div className="bg-muted/30 p-4 rounded-lg font-mono text-sm">
-                "Kutipan atau cuplikan" - Velo, Wawasan Politik, [Judul Artikel], [Tanggal]<br />
+                "Kutipan atau cuplikan" - Wawasan Politik, [Judul Artikel], [Tanggal]<br />
                 URL: [Tautan ke artikel asli]
               </div>
             </section>
@@ -56,14 +56,14 @@ export default function Copyright() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Penggunaan Komersial</h2>
               <p className="leading-relaxed">
-                Penggunaan komersial konten saya, termasuk publikasi ulang dalam buku, majalah, atau buletin berbayar, memerlukan izin tertulis eksplisit. Ini termasuk hak terjemahan dan adaptasi untuk format media lain. Institusi akademik dapat menggunakan konten untuk pengajaran tanpa izin, tetapi harus memberi tahu saya sebagai bentuk kesopanan.
+                Penggunaan komersial konten, termasuk publikasi ulang dalam buku, majalah, atau buletin berbayar, memerlukan izin tertulis eksplisit. Ini termasuk hak terjemahan dan adaptasi untuk format media lain. Institusi akademik dapat menggunakan konten untuk pengajaran tanpa izin untuk tujuan pendidikan.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Pelanggaran Hak Cipta</h2>
               <p className="leading-relaxed">
-                Meskipun saya beroperasi sebagai penulis independen, saya menghormati hak kekayaan intelektual orang lain berdasarkan hukum Indonesia dan internasional. Jika Anda yakin konten di sini melanggar hak cipta Anda, silakan berikan rincian spesifik tentang dugaan pelanggaran seperti yang dipersyaratkan oleh Undang-Undang Hak Cipta Indonesia dan prinsip DMCA. Saya akan meninjau klaim dengan itikad baik. Perhatikan bahwa kritik dan komentar terhadap tokoh publik dan kebijakan pemerintah dilindungi berdasarkan hukum Indonesia.
+                Situs ini menghormati hak kekayaan intelektual orang lain berdasarkan hukum Indonesia dan internasional. Jika Anda yakin konten di sini melanggar hak cipta Anda, silakan berikan rincian spesifik tentang dugaan pelanggaran seperti yang dipersyaratkan oleh Undang-Undang Hak Cipta Indonesia dan prinsip DMCA. Klaim akan ditinjau dengan itikad baik. Perhatikan bahwa kritik dan komentar terhadap tokoh publik dan kebijakan pemerintah dilindungi berdasarkan hukum Indonesia.
               </p>
             </section>
 

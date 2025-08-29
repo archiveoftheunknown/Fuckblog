@@ -17,7 +17,7 @@ export default function Privacy() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Tentang Kebijakan Ini</h2>
               <p className="leading-relaxed">
-                Saya Velo, dan ini adalah arsip komentar politik pribadi saya. Saya menghormati privasi Anda dan berkomitmen untuk melindungi informasi apa pun yang mungkin Anda bagikan saat mengunjungi situs ini. Kebijakan ini menjelaskan data apa, jika ada, yang dikumpulkan dan bagaimana penanganannya.
+                Situs web ini menghormati privasi pengunjung dan berkomitmen untuk melindungi informasi yang mungkin dibagikan saat mengunjungi platform ini. Kebijakan ini menjelaskan data apa yang dikumpulkan dan bagaimana penanganannya.
               </p>
             </section>
 
@@ -36,7 +36,7 @@ export default function Privacy() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Penggunaan Data</h2>
               <p className="leading-relaxed">
-                Data yang dikumpulkan secara otomatis hanya digunakan untuk memelihara dan meningkatkan fungsionalitas situs web. Saya tidak menjual, memperdagangkan, atau membagikan informasi pengunjung dengan pihak ketiga. Log server disimpan untuk tujuan keamanan dan dihapus setelah 30 hari.
+                Data yang dikumpulkan secara otomatis hanya digunakan untuk memelihara dan meningkatkan fungsionalitas situs web. Situs ini tidak menjual, memperdagangkan, atau membagikan informasi pengunjung dengan pihak ketiga. Log server disimpan untuk tujuan keamanan dan dihapus setelah 30 hari.
               </p>
             </section>
 
@@ -50,7 +50,7 @@ export default function Privacy() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Hak Anda</h2>
               <p className="leading-relaxed">
-                Berdasarkan Undang-Undang Indonesia No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP), serta GDPR (UE) dan CCPA (California), Anda memiliki hak terkait data pribadi Anda. Warga negara Indonesia memiliki hak untuk mengakses, mengoreksi, dan meminta penghapusan data mereka. Karena situs ini mengumpulkan data minimal, ada sedikit yang dapat diminta, tetapi Anda dapat menghubungi saya tentang masalah privasi apa pun. Anda dapat menjelajah dengan alat privasi seperti VPN atau Tor jika Anda lebih suka anonimitas lengkap.
+                Berdasarkan Undang-Undang Indonesia No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP), serta GDPR (UE) dan CCPA (California), Anda memiliki hak terkait data pribadi Anda. Warga negara Indonesia memiliki hak untuk mengakses, mengoreksi, dan meminta penghapusan data mereka. Karena situs ini mengumpulkan data minimal, opsi yang tersedia terbatas. Pengunjung dapat menggunakan alat privasi seperti VPN atau Tor untuk anonimitas tambahan.
               </p>
             </section>
 

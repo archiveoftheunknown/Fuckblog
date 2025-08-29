@@ -17,19 +17,19 @@ export default function Guidelines() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Komitmen Saya</h2>
               <p className="leading-relaxed">
-                Sebagai komentator politik independen yang berfokus pada politik Indonesia, saya, Velo, berkomitmen pada analisis yang bijaksana dan jujur. Meskipun ini adalah blog pribadi yang mencerminkan pandangan saya, saya memegang standar tertentu yang selaras dengan etika Dewan Pers Indonesia dan nilai-nilai Pancasila untuk memastikan komentar saya berkontribusi secara bermakna pada wacana demokrasi di Indonesia.
+                Platform analisis politik ini berkomitmen pada penyajian analisis yang bijaksana dan jujur tentang politik Indonesia. Standar editorial yang diterapkan selaras dengan etika Dewan Pers Indonesia dan nilai-nilai Pancasila untuk memastikan kontribusi bermakna pada wacana demokrasi di Indonesia.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Transparansi</h2>
               <p className="leading-relaxed mb-3">
-                Saya percaya pada keterbukaan tentang perspektif saya:
+                Platform ini berkomitmen pada transparansi:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Ini adalah opini dan analisis, bukan laporan netral</li>
-                <li>Saya memiliki kecenderungan politik saya sendiri yang mempengaruhi komentar saya</li>
-                <li>Ketika saya mengubah posisi saya pada isu-isu, saya mengakuinya</li>
+                <li>Konten merupakan opini dan analisis, bukan laporan netral</li>
+                <li>Platform memiliki perspektif editorial yang konsisten</li>
+                <li>Perubahan posisi pada isu-isu akan diakui secara terbuka</li>
                 <li>Koreksi dibuat dengan jelas ketika kesalahan faktual terjadi</li>
               </ul>
             </section>
@@ -37,7 +37,7 @@ export default function Guidelines() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Standar Riset</h2>
               <p className="leading-relaxed mb-3">
-                Meskipun ini adalah komentar, saya berusaha untuk mendasarkan analisis saya pada:
+                Analisis yang disajikan didasarkan pada:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Informasi terverifikasi dari berbagai sumber jika memungkinkan</li>
@@ -50,21 +50,21 @@ export default function Guidelines() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Independensi</h2>
               <p className="leading-relaxed">
-                Blog ini sepenuhnya independen. Saya tidak berafiliasi dengan partai politik, kampanye, atau organisasi advokasi mana pun. Tidak ada yang membayar saya untuk liputan atau mempengaruhi keputusan editorial saya. Pendapat saya adalah milik saya sendiri, terbentuk melalui penelitian dan refleksi.
+                Platform ini sepenuhnya independen. Tidak berafiliasi dengan partai politik, kampanye, atau organisasi advokasi mana pun. Tidak ada pihak yang mempengaruhi keputusan editorial. Konten yang disajikan merupakan hasil penelitian dan analisis independen.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Wacana yang Santun</h2>
               <p className="leading-relaxed">
-                Saya bertujuan untuk mengkritik ide dan kebijakan, bukan menyerang individu secara pribadi, menghormati prinsip Indonesia tentang "kritik yang membangun". Meskipun komentar politik bisa tajam, saya menghindari serangan ad hominem, provokasi SARA (suku, agama, ras, dan antar golongan) seperti yang dilarang berdasarkan hukum Indonesia, dan konten yang dirancang murni untuk memprovokasi daripada mencerahkan. Saya menghormati nilai-nilai budaya Indonesia sambil mempertahankan independensi kritis.
+                Platform ini bertujuan mengkritik ide dan kebijakan, bukan menyerang individu secara pribadi, menghormati prinsip Indonesia tentang "kritik yang membangun". Meskipun komentar politik bisa tajam, dihindari serangan ad hominem, provokasi SARA (suku, agama, ras, dan antar golongan) seperti yang dilarang berdasarkan hukum Indonesia, dan konten yang dirancang murni untuk memprovokasi. Nilai-nilai budaya Indonesia dihormati sambil mempertahankan independensi kritis.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Cakupan Liputan</h2>
               <p className="leading-relaxed mb-3">
-                Komentar saya berfokus pada politik Indonesia:
+                Cakupan analisis berfokus pada politik Indonesia:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Proses demokrasi Indonesia dan warisan Reformasi</li>
@@ -79,28 +79,28 @@ export default function Guidelines() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Kebijakan Koreksi</h2>
               <p className="leading-relaxed">
-                Ketika saya membuat kesalahan faktual, saya mengoreksinya dengan segera dan transparan. Koreksi dicatat di bagian atas artikel yang terpengaruh dengan tanggal dan sifat koreksi. Perubahan pendapat dari waktu ke waktu berbeda dari kesalahan dan ditangani dalam posting baru daripada koreksi.
+                Kesalahan faktual akan dikoreksi dengan segera dan transparan. Koreksi dicatat di bagian atas artikel yang terpengaruh dengan tanggal dan sifat koreksi. Perubahan pendapat dari waktu ke waktu berbeda dari kesalahan dan ditangani dalam posting baru.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Batasan Etika</h2>
               <p className="leading-relaxed">
-                Saya tidak mempublikasikan informasi pribadi tentang individu kecuali sudah publik dan relevan langsung dengan analisis politik, menghormati undang-undang privasi Indonesia dan ketentuan UU ITE. Saya membedakan antara pejabat publik yang terbuka untuk kritik berdasarkan hukum Indonesia dan warga pribadi. Saya menghindari konten yang dapat dianggap sebagai pencemaran nama baik sambil mempertahankan hak untuk mengkritik kebijakan publik dan tata kelola.
+                Platform ini tidak mempublikasikan informasi pribadi tentang individu kecuali sudah publik dan relevan langsung dengan analisis politik, menghormati undang-undang privasi Indonesia dan ketentuan UU ITE. Dibedakan antara pejabat publik yang terbuka untuk kritik berdasarkan hukum Indonesia dan warga pribadi. Dihindari konten yang dapat dianggap sebagai pencemaran nama baik sambil mempertahankan hak untuk mengkritik kebijakan publik dan tata kelola.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Kepercayaan Pembaca</h2>
               <p className="leading-relaxed">
-                Kepercayaan Anda diperoleh melalui konsistensi, kejujuran, dan analisis berkualitas. Saya mungkin tidak selalu benar, tetapi saya akan selalu berusaha untuk bijaksana, adil dalam kritik saya, dan transparan tentang alasan saya.
+                Kepercayaan pembaca diperoleh melalui konsistensi, kejujuran, dan analisis berkualitas. Platform ini berusaha untuk selalu bijaksana, adil dalam kritik, dan transparan dalam penyajian analisis.
               </p>
             </section>
 
             <div className="pt-6 border-t border-border">
               <p className="text-sm text-muted-foreground">
                 Terakhir diperbarui: Desember 2024<br />
-                Pedoman ini mencerminkan komitmen pribadi saya terhadap komentar yang bertanggung jawab.
+                Pedoman ini mencerminkan komitmen platform terhadap jurnalisme yang bertanggung jawab.
               </p>
             </div>
           </div>

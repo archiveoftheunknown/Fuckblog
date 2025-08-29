@@ -8,7 +8,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Blog() {
   const { t } = useLanguage();
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   
   const categories = [
@@ -20,6 +20,13 @@ export default function Blog() {
     t("categories.mediaAnalysis"),
     t("categories.dataScience")
   ];
+
+  useEffect(() => {
+    // Set default category to "All" on first load
+    if (!selectedCategory) {
+      setSelectedCategory(t("categories.all"));
+    }
+  }, [selectedCategory, t]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });

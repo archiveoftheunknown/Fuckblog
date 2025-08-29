@@ -20,23 +20,27 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="fixed top-4 left-4 z-50 p-2 glass-button rounded-lg lg:hidden"
-            data-testid="menu-toggle-mobile"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
+          {/* Mobile menu button - only show when sidebar is closed */}
+          {!sidebarOpen && (
+            <button
+              onClick={() => setSidebarOpen(true)}
+              className="fixed top-4 left-4 z-50 p-2 glass-button rounded-lg lg:hidden"
+              data-testid="menu-toggle-mobile"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          )}
 
-          {/* Desktop menu button */}
-          <button
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="fixed top-4 left-4 z-50 p-2 glass-button rounded-lg hidden lg:block"
-            data-testid="menu-toggle-desktop"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
+          {/* Desktop menu button - only show when sidebar is closed */}
+          {!sidebarOpen && (
+            <button
+              onClick={() => setSidebarOpen(true)}
+              className="fixed top-4 left-4 z-50 p-2 glass-button rounded-lg hidden lg:block"
+              data-testid="menu-toggle-desktop"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          )}
 
           <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
           

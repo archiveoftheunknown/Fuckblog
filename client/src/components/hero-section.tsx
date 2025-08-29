@@ -26,15 +26,6 @@ export default function HeroSection() {
 
   return (
     <section className="hero-gradient min-h-screen flex items-center relative overflow-hidden" data-testid="hero-section">
-      {/* Background Image */}
-      <div className="absolute inset-0 opacity-20">
-        <img
-          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&h=1000"
-          alt="Modern digital workspace"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
       <div className="container mx-auto px-8 relative z-10">
         <motion.div
           variants={containerVariants}
@@ -69,15 +60,6 @@ export default function HeroSection() {
               data-testid="button-explore-articles"
             >
               Explore Articles
-            </motion.button>
-            
-            <motion.button
-              className="px-8 py-4 rounded-xl font-semibold border border-border text-foreground hover:bg-accent transition-all duration-300"
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              data-testid="button-subscribe"
-            >
-              Subscribe
             </motion.button>
           </motion.div>
         </motion.div>

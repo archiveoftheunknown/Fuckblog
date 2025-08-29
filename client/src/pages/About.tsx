@@ -1,266 +1,175 @@
 import { motion } from "framer-motion";
-import { Users, Target, Award, Globe, Shield, TrendingUp } from "lucide-react";
-
-const teamMembers = [
-  {
-    name: "Dr. Sarah Chen",
-    role: "Chief Political Analyst",
-    expertise: "Digital Democracy & Policy Analysis",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-  },
-  {
-    name: "Mark Johnson",
-    role: "Senior Investigative Journalist",
-    expertise: "Political Investigations & Data Forensics",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-  },
-  {
-    name: "Dr. Lisa Park",
-    role: "Communication Strategist",
-    expertise: "Crisis Communication & Media Analysis",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
-  },
-];
-
-const values = [
-  {
-    icon: Shield,
-    title: "Editorial Independence",
-    description: "We maintain strict editorial independence and are committed to factual, unbiased reporting.",
-  },
-  {
-    icon: Target,
-    title: "Analytical Rigor",
-    description: "Our analysis is grounded in thorough research, data-driven insights, and expert knowledge.",
-  },
-  {
-    icon: Globe,
-    title: "Democratic Values",
-    description: "We champion transparency, accountability, and the principles of democratic governance.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Forward-Thinking",
-    description: "We explore emerging trends in digital democracy and contemporary political discourse.",
-  },
-];
+import { AlertCircle, Info, Search, Shield } from "lucide-react";
 
 export default function About() {
   return (
     <div className="py-20 px-8" data-testid="page-about">
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-4xl">
         {/* Header */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent">
-            About Political Insights
+            About This Archive
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We are a team of dedicated political analysts, journalists, and researchers committed to providing 
-            in-depth analysis of contemporary politics and digital democracy.
+            An independent political commentary archive by Velo, focused on Indonesian politics and governance
           </p>
         </motion.div>
 
-        {/* Mission Statement */}
+        {/* Disclaimer Section */}
         <motion.section
-          className="mb-20"
+          className="mb-12"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          data-testid="mission-section"
+          data-testid="disclaimer-section"
         >
-          <div className="glass-card p-12 rounded-2xl text-center">
-            <motion.h2
-              className="text-3xl font-bold mb-6 text-foreground"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-            >
-              Our Mission
-            </motion.h2>
-            <motion.p
-              className="text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-            >
-              To bridge the gap between complex political realities and public understanding through rigorous 
-              analysis, investigative journalism, and accessible commentary. We believe that informed citizens 
-              are the cornerstone of healthy democracies, and our work aims to equip readers with the knowledge 
-              and insights needed to engage meaningfully with contemporary political issues.
-            </motion.p>
-          </div>
-        </motion.section>
-
-        {/* Values */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          data-testid="values-section"
-        >
-          <motion.h2
-            className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-          >
-            Our Values
-          </motion.h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => {
-              const Icon = value.icon;
-              return (
-                <motion.div
-                  key={value.title}
-                  className="glass-card p-6 rounded-xl text-center"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7 + index * 0.1, duration: 0.6 }}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  data-testid={`value-card-${index}`}
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-chart-3 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-8 h-8 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-3 text-foreground">{value.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{value.description}</p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.section>
-
-        {/* Team */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.1, duration: 0.6 }}
-          data-testid="team-section"
-        >
-          <motion.h2
-            className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.6 }}
-          >
-            Our Expert Team
-          </motion.h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={member.name}
-                className="glass-card p-6 rounded-xl text-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.3 + index * 0.1, duration: 0.6 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                data-testid={`team-member-${index}`}
-              >
-                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-foreground">{member.name}</h3>
-                <p className="text-primary font-medium mb-2">{member.role}</p>
-                <p className="text-muted-foreground text-sm">{member.expertise}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* Statistics */}
-        <motion.section
-          className="mb-20"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.6, duration: 0.6 }}
-          data-testid="statistics-section"
-        >
-          <div className="glass-card p-12 rounded-2xl">
-            <motion.h2
-              className="text-3xl font-bold text-center mb-12 text-foreground"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.7, duration: 0.6 }}
-            >
-              Our Impact
-            </motion.h2>
-            
-            <div className="grid md:grid-cols-4 gap-8 text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.8, duration: 0.6 }}
-              >
-                <div className="text-4xl font-bold text-primary mb-2">50+</div>
-                <div className="text-muted-foreground">In-depth Articles</div>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.9, duration: 0.6 }}
-              >
-                <div className="text-4xl font-bold text-primary mb-2">10K+</div>
-                <div className="text-muted-foreground">Monthly Readers</div>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 2.0, duration: 0.6 }}
-              >
-                <div className="text-4xl font-bold text-primary mb-2">5</div>
-                <div className="text-muted-foreground">Years of Analysis</div>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 2.1, duration: 0.6 }}
-              >
-                <div className="text-4xl font-bold text-primary mb-2">95%</div>
-                <div className="text-muted-foreground">Fact-Check Rate</div>
-              </motion.div>
+          <div className="glass-card p-10 rounded-2xl">
+            <div className="flex items-center mb-6">
+              <AlertCircle className="w-8 h-8 text-primary mr-3" />
+              <h2 className="text-3xl font-bold text-foreground">Important Disclaimer</h2>
+            </div>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                This is a personal archive of political commentary and analysis. I am Velo, an independent observer of Indonesian politics. The views expressed here are entirely my own and do not represent any organization, political party, or government entity.
+              </p>
+              <p>
+                All content published here is commentary and opinion based on publicly available information. This is not investigative journalism or official reporting - it's my personal analysis and interpretation of political events and trends in Indonesia.
+              </p>
+              <p>
+                Readers should understand that political commentary is inherently subjective. I encourage you to verify information independently and form your own opinions based on multiple sources.
+              </p>
             </div>
           </div>
         </motion.section>
 
-        {/* Contact CTA */}
+        {/* Information Sources */}
         <motion.section
-          className="text-center"
+          className="mb-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          data-testid="sources-section"
+        >
+          <div className="glass-card p-10 rounded-2xl">
+            <div className="flex items-center mb-6">
+              <Search className="w-8 h-8 text-chart-3 mr-3" />
+              <h2 className="text-3xl font-bold text-foreground">Information Sources</h2>
+            </div>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p className="font-semibold text-foreground">
+                The commentary and analysis in this archive are based on information gathered from:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>
+                  <strong>Public discourse and society:</strong> Observations from public forums, social media discussions, and community dialogues about Indonesian politics
+                </li>
+                <li>
+                  <strong>Internet and digital sources:</strong> Online news portals, government websites, official statements, press releases, and publicly accessible documents
+                </li>
+                <li>
+                  <strong>Real evidence and documentation:</strong> Official government publications, legislative records, court decisions, and policy documents that are matters of public record
+                </li>
+                <li>
+                  <strong>Media reports:</strong> Coverage from established Indonesian and international media outlets, cross-referenced where possible
+                </li>
+                <li>
+                  <strong>Academic sources:</strong> Published research, policy papers, and academic studies on Indonesian politics and governance
+                </li>
+              </ul>
+              <p className="mt-4 italic">
+                Note: I do not have access to classified information or insider sources. All analysis is based on information available in the public domain.
+              </p>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Purpose and Approach */}
+        <motion.section
+          className="mb-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          data-testid="purpose-section"
+        >
+          <div className="glass-card p-10 rounded-2xl">
+            <div className="flex items-center mb-6">
+              <Info className="w-8 h-8 text-chart-1 mr-3" />
+              <h2 className="text-3xl font-bold text-foreground">Purpose & Approach</h2>
+            </div>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                This archive exists as a personal project to document and analyze Indonesian political developments. My approach is to:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Provide context for complex political events</li>
+                <li>Analyze patterns in governance and policy-making</li>
+                <li>Comment on the implications of political decisions</li>
+                <li>Track the evolution of Indonesian democracy</li>
+                <li>Offer perspective on digital transformation in politics</li>
+              </ul>
+              <p>
+                I aim for thoughtful analysis rather than sensationalism, though my personal perspectives inevitably influence the commentary. This is not neutral reporting - it's informed opinion.
+              </p>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Limitations and Corrections */}
+        <motion.section
+          className="mb-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          data-testid="limitations-section"
+        >
+          <div className="glass-card p-10 rounded-2xl">
+            <div className="flex items-center mb-6">
+              <Shield className="w-8 h-8 text-chart-2 mr-3" />
+              <h2 className="text-3xl font-bold text-foreground">Limitations & Corrections</h2>
+            </div>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                <strong className="text-foreground">Limitations:</strong>
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Analysis may become outdated as situations evolve</li>
+                <li>Limited to publicly available information</li>
+                <li>Subject to my personal interpretations and biases</li>
+                <li>Cannot verify all information independently</li>
+                <li>May not capture all perspectives on complex issues</li>
+              </ul>
+              <p className="mt-4">
+                <strong className="text-foreground">Corrections:</strong>
+              </p>
+              <p>
+                When factual errors are identified, corrections are made promptly at the top of the relevant article. However, changes in opinion or interpretation over time are addressed in new posts rather than retroactive edits.
+              </p>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Final Note */}
+        <motion.section
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.2, duration: 0.8 }}
-          data-testid="contact-cta-section"
+          transition={{ delay: 1.0, duration: 0.8 }}
+          data-testid="final-note-section"
         >
-          <h2 className="text-3xl font-bold mb-6 text-foreground">
-            Ready to Collaborate?
-          </h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            We welcome partnerships, story tips, and collaboration opportunities. 
-            Get in touch to discuss how we can work together.
-          </p>
-          <motion.button
-            className="glass-button px-8 py-4 rounded-xl font-semibold text-primary-foreground"
-            whileHover={{ scale: 1.02, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            data-testid="button-contact-us"
-          >
-            Contact Us
-          </motion.button>
+          <div className="glass-card p-8 rounded-2xl bg-accent/20">
+            <p className="text-center text-muted-foreground leading-relaxed">
+              <strong className="text-foreground">Remember:</strong> This is one person's perspective on Indonesian politics. 
+              Use this archive as one of many sources to inform your understanding, not as definitive truth. 
+              Critical thinking and diverse sources are essential for understanding complex political realities.
+            </p>
+            <p className="text-center text-sm text-muted-foreground mt-4">
+              — Velo, Independent Political Commentator
+            </p>
+          </div>
         </motion.section>
       </div>
     </div>

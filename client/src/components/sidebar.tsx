@@ -124,14 +124,19 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               >
                 <button
                   onClick={toggleTheme}
-                  className="w-full glass-button px-4 py-3 rounded-xl flex items-center justify-center space-x-3 group"
+                  className="w-full glass-button px-4 py-3 rounded-xl flex items-center justify-center space-x-3 group overflow-hidden"
                   data-testid="theme-toggle"
                 >
                   <motion.div
-                    initial={false}
-                    animate={{ rotate: theme === "light" ? 180 : 0 }}
-                    transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="relative"
+                    key={theme}
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ 
+                      duration: 0.6,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                      type: "spring",
+                      stiffness: 200
+                    }}
                   >
                     {theme === "dark" ? (
                       <Sun className="w-5 h-5 text-chart-3" />
@@ -139,13 +144,15 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                       <Moon className="w-5 h-5 text-primary" />
                     )}
                   </motion.div>
-                  <span className="text-sm font-medium">
+                  <motion.span 
+                    key={`text-${theme}`}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.4, delay: 0.1 }}
+                    className="text-sm font-medium"
+                  >
                     {theme === "dark" ? "Light Mode" : "Dark Mode"}
-                  </span>
-                  <motion.div
-                    className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 to-chart-3/20 opacity-0 group-hover:opacity-100"
-                    transition={{ duration: 0.3 }}
-                  />
+                  </motion.span>
                 </button>
               </motion.div>
             </div>

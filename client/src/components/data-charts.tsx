@@ -141,7 +141,15 @@ export function InteractivePieChart({
 }: PieChartProps) {
   const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
   
-  const professionalColors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899'];
+  // Gradient colors with glass effect
+  const gradientColors = [
+    { start: '#60a5fa', end: '#3b82f6' }, // Blue gradient
+    { start: '#34d399', end: '#10b981' }, // Green gradient  
+    { start: '#fbbf24', end: '#f59e0b' }, // Yellow gradient
+    { start: '#f87171', end: '#ef4444' }, // Red gradient
+    { start: '#a78bfa', end: '#8b5cf6' }, // Purple gradient
+    { start: '#f472b6', end: '#ec4899' }, // Pink gradient
+  ];
   
   const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }: any) => {
     if (percent < 5) return null;
@@ -156,8 +164,8 @@ export function InteractivePieChart({
         fill="white" 
         textAnchor={x > cx ? 'start' : 'end'} 
         dominantBaseline="central"
-        className="font-semibold text-xs"
-        style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.5))' }}
+        className="font-bold text-sm"
+        style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.8))' }}
       >
         {`${percent.toFixed(0)}%`}
       </text>
@@ -174,33 +182,46 @@ export function InteractivePieChart({
 
   return (
     <motion.div
-      className={`glass-card rounded-xl p-4 md:p-6 w-full ${className}`}
+      className={`rounded-2xl p-4 md:p-6 w-full backdrop-blur-md bg-background/30 ${className}`}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
+      style={{
+        background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+      }}
     >
       {title && (
         <h3 className="text-lg md:text-xl font-semibold text-foreground mb-4 md:mb-6">{title}</h3>
       )}
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-        {/* Pie Chart */}
-        <div className="w-full">
-          <ResponsiveContainer width="100%" height={320}>
+      <div className="flex flex-col items-center">
+        {/* Pie Chart with gradients */}
+        <div className="w-full max-w-md">
+          <ResponsiveContainer width="100%" height={350}>
             <PieChart>
+              <defs>
+                {gradientColors.map((color, index) => (
+                  <linearGradient key={`gradient-${index}`} id={`gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor={color.start} stopOpacity={0.9} />
+                    <stop offset="100%" stopColor={color.end} stopOpacity={1} />
+                  </linearGradient>
+                ))}
+              </defs>
               <Pie
                 data={data}
                 cx="50%"
                 cy="50%"
                 labelLine={false}
                 label={renderCustomizedLabel}
-                innerRadius={40}
-                outerRadius={80}
-                paddingAngle={3}
+                innerRadius={window.innerWidth < 768 ? 50 : 60}
+                outerRadius={window.innerWidth < 768 ? 100 : 120}
+                paddingAngle={2}
+                cornerRadius={8}
                 fill="#8884d8"
                 dataKey={dataKey}
                 animationBegin={0}
-                animationDuration={1200}
+                animationDuration={1500}
                 animationEasing="ease-out"
                 onMouseEnter={onPieEnter}
                 onMouseLeave={onPieLeave}
@@ -208,12 +229,16 @@ export function InteractivePieChart({
                 {data.map((entry, index) => (
                   <Cell 
                     key={`cell-${index}`} 
-                    fill={professionalColors[index % professionalColors.length]}
+                    fill={`url(#gradient-${index % gradientColors.length})`}
                     style={{
-                      filter: activeIndex !== undefined && activeIndex !== index ? 'brightness(0.7) opacity(0.7)' : 'none',
+                      filter: activeIndex === index 
+                        ? 'drop-shadow(0 8px 16px rgba(0,0,0,0.3))' 
+                        : activeIndex !== undefined 
+                          ? 'opacity(0.5) blur(0.5px)' 
+                          : 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))',
                       cursor: 'pointer',
-                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                      transform: activeIndex === index ? 'scale(1.05)' : 'scale(1)',
+                      transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                      transform: activeIndex === index ? 'scale(1.08)' : 'scale(1)',
                       transformOrigin: 'center'
                     }}
                   />
@@ -221,75 +246,74 @@ export function InteractivePieChart({
               </Pie>
               <Tooltip 
                 contentStyle={{
-                  backgroundColor: 'rgba(31, 41, 55, 0.95)',
+                  background: 'rgba(0, 0, 0, 0.85)',
+                  backdropFilter: 'blur(10px)',
                   border: 'none',
                   borderRadius: '12px',
-                  boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)',
+                  boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5)',
                   padding: '12px 16px'
                 }}
                 itemStyle={{
-                  color: '#e5e7eb',
+                  color: '#ffffff',
                   fontSize: '14px',
-                  fontWeight: '500'
+                  fontWeight: '600'
                 }}
               />
             </PieChart>
           </ResponsiveContainer>
         </div>
 
-        {/* Legend */}
-        <div className="space-y-3">
-          {data.map((entry, index) => (
-            <motion.div 
-              key={entry.name}
-              className="flex items-center justify-between p-3 rounded-lg transition-all duration-200 hover:translate-x-1 cursor-pointer"
-              onMouseEnter={() => setActiveIndex(index)}
-              onMouseLeave={() => setActiveIndex(undefined)}
-              style={{
-                opacity: activeIndex !== undefined && activeIndex !== index ? 0.4 : 0.85,
-                backgroundColor: activeIndex === index ? 'rgba(55, 65, 81, 0.15)' : 'transparent',
-              }}
-              whileHover={{ x: 4 }}
-            >
-              <div className="flex items-center gap-3">
-                <div 
-                  className="w-4 h-4 rounded-sm flex-shrink-0"
-                  style={{ 
-                    backgroundColor: professionalColors[index % professionalColors.length],
-                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
-                  }}
-                />
-                <div>
-                  <p className="text-sm font-semibold text-foreground">{entry.name}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {typeof entry.value === 'number' ? `${entry.value.toLocaleString()} votes` : entry.value}
+        {/* Legend with glass effect */}
+        <div className="w-full max-w-lg mt-6 space-y-2">
+          {data.map((entry, index) => {
+            const color = gradientColors[index % gradientColors.length];
+            return (
+              <motion.div 
+                key={entry.name}
+                className="flex items-center justify-between p-3 rounded-xl backdrop-blur-sm transition-all duration-300 cursor-pointer"
+                onMouseEnter={() => setActiveIndex(index)}
+                onMouseLeave={() => setActiveIndex(undefined)}
+                style={{
+                  background: activeIndex === index 
+                    ? `linear-gradient(135deg, ${color.start}20 0%, ${color.end}15 100%)`
+                    : 'rgba(255, 255, 255, 0.03)',
+                  border: activeIndex === index ? `1px solid ${color.end}40` : '1px solid transparent',
+                  opacity: activeIndex !== undefined && activeIndex !== index ? 0.5 : 1,
+                }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="flex items-center gap-3">
+                  <div 
+                    className="w-4 h-4 rounded-md flex-shrink-0"
+                    style={{ 
+                      background: `linear-gradient(135deg, ${color.start} 0%, ${color.end} 100%)`,
+                      boxShadow: '0 3px 6px rgba(0, 0, 0, 0.2)'
+                    }}
+                  />
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">{entry.name}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {typeof entry.value === 'number' ? `${entry.value.toLocaleString()} suara` : entry.value}
+                    </p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="text-lg font-bold" 
+                     style={{ 
+                       background: `linear-gradient(135deg, ${color.start} 0%, ${color.end} 100%)`,
+                       WebkitBackgroundClip: 'text',
+                       WebkitTextFillColor: 'transparent',
+                       backgroundClip: 'text'
+                     }}>
+                    {typeof entry.value === 'number' ? entry.value.toFixed(0) : entry.value}
                   </p>
                 </div>
-              </div>
-              <div className="text-right">
-                <p className="text-sm font-bold" style={{ color: professionalColors[index % professionalColors.length] }}>
-                  {typeof entry.value === 'number' ? entry.value.toFixed(0) : entry.value}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
-
-      {/* Info box */}
-      {activeIndex !== undefined && (
-        <motion.div 
-          className="mt-6 p-4 bg-muted/30 backdrop-blur-sm rounded-lg text-center"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <p className="text-lg font-bold text-foreground">{data[activeIndex].name}</p>
-          <p className="text-2xl font-bold" style={{ color: professionalColors[activeIndex % professionalColors.length] }}>
-            {typeof data[activeIndex].value === 'number' ? data[activeIndex].value.toFixed(0) : data[activeIndex].value}
-          </p>
-        </motion.div>
-      )}
     </motion.div>
   );
 }

@@ -1,9 +1,14 @@
 export interface BlogPost {
   id: string;
+  slug: string;
   title: string;
   excerpt: string;
   content: string;
-  author: string;
+  author: {
+    name: string;
+    role: string;
+    avatar: string;
+  };
   category: string;
   tags: string[];
   publishedAt: Date;
@@ -159,7 +164,12 @@ Kasus Fufufafa menandai titik balik dalam politik Indonesia di mana:
 Skandal "fufufafa" bukan sekadar kontroversi personal, melainkan cerminan transformasi fundamental lanskap politik Indonesia di era digital. Kasus ini mendemonstrasikan bagaimana jejak digital masa lalu dapat menjadi bom waktu politik, sekaligus mengekspos kerentanan demokrasi terhadap manipulasi informasi digital.
 
 Terlepas dari kebenaran tuduhan, dampaknya sudah terlanjur mengikis kepercayaan publik dan menciptakan preseden berbahaya untuk politik Indonesia ke depan. Era di mana setiap keystroke dapat menjadi skandal masa depan telah tiba.`,
-    author: 'Tim Investigasi Politik',
+    author: {
+      name: 'Dr. Ahmad Suryadi',
+      role: 'Analis Politik Senior',
+      avatar: 'AS'
+    },
+    slug: 'konspirasi-gibran-fufufafa',
     category: 'Investigasi',
     tags: ['Gibran', 'Fufufafa', 'Skandal Digital', 'Politik 2024', 'Forensik Digital'],
     publishedAt: new Date('2024-09-15'),
@@ -405,7 +415,12 @@ Namun, efektivitasnya bergantung pada:
 - Public awareness dan participation
 
 Ke depan, dengan meningkatnya digitalisasi governance dan politik, forensik digital akan menjadi semakin central dalam menjaga integritas demokrasi Indonesia.`,
-    author: 'Divisi Analisis Forensik',
+    author: {
+      name: 'Maya Puspita',
+      role: 'Ahli Forensik Digital',
+      avatar: 'MP'
+    },
+    slug: 'forensik-digital-politik',
     category: 'Teknologi Pemerintah',
     tags: ['Forensik Digital', 'Akuntabilitas', 'e-KTP', 'Teknologi', 'Anti-Korupsi'],
     publishedAt: new Date('2024-08-20'),
@@ -714,7 +729,12 @@ Media sosial telah irreversibly mengubah politik Indonesia. Pemilu 2024 mendemon
 Pilihan yang dibuat sekarang—oleh pemerintah, platforms, dan civil society—akan menentukan apakah teknologi digital memperkuat atau menghancurkan demokrasi Indonesia. Window untuk action semakin menyempit; tanpa intervensi decisive, spiral decline mungkin menjadi irreversible.
 
 *Data dan analisis berdasarkan riset dari Mafindo, SafeNet, Drone Emprit, dan Freedom House 2024*`,
-    author: 'Tim Riset Media Digital',
+    author: {
+      name: 'Rini Setiawati',
+      role: 'Jurnalis Media Digital',
+      avatar: 'RS'
+    },
+    slug: 'media-sosial-komunikasi-politik',
     category: 'Analisis Media',
     tags: ['Media Sosial', 'Buzzer', 'AI', 'Pemilu 2024', 'Disinformasi'],
     publishedAt: new Date('2024-07-15'),
@@ -1010,7 +1030,12 @@ Without decisive action, the toxicity of anonymous political discourse threatens
 The solution lies not in eliminating anonymity, but in creating systems that incentivize responsible use while deterring abuse—a challenging balance that will define Indonesia's democratic future in the digital age.
 
 *Analysis compiled from data by SafeNet, Mafindo, Article 19, and Freedom House*`,
-    author: 'Unit Keamanan Digital',
+    author: {
+      name: 'Budi Santoso',
+      role: 'Peneliti Cybersecurity',
+      avatar: 'BS'
+    },
+    slug: 'identitas-digital-anonim',
     category: 'Demokrasi Digital',
     tags: ['Anonimitas', 'Whistleblower', 'Buzzer', 'Privasi', 'Demokrasi'],
     publishedAt: new Date('2024-06-10'),
@@ -1370,7 +1395,12 @@ As AI and synthetic media proliferate, the crisis communication landscape will b
 The ultimate lesson: In digital politics, the cover-up has become impossible, making the best crisis strategy prevention through integrity.
 
 *Compiled from crisis analysis by PR Society Indonesia, Digital Democracy Forum, and Reuters Institute studies*`,
-    author: 'Tim Komunikasi Strategis',
+    author: {
+      name: 'Indra Wijaya',
+      role: 'Konsultan Komunikasi Politik',
+      avatar: 'IW'
+    },
+    slug: 'strategi-komunikasi-krisis',
     category: 'Analisis Politik',
     tags: ['Komunikasi Krisis', 'Digital Strategy', 'Damage Control', 'Reputation Management'],
     publishedAt: new Date('2024-05-25'),
@@ -1713,7 +1743,12 @@ As we approach 2029, the stakes only increase. Those who master data while maint
 The data revolution in politics is not coming—it's here. The question is not whether to embrace it, but how to do so responsibly.
 
 *Analysis compiled from KPU data, Litbang Kompas, LSI, Indikator Politik, and Cyrus Network insights*`,
-    author: 'Divisi Data Science Politik',
+    author: {
+      name: 'Sarah Chen',
+      role: 'Data Scientist Politik',
+      avatar: 'SC'
+    },
+    slug: 'analitik-data-politik',
     category: 'Ilmu Data',
     tags: ['Big Data', 'Analytics', 'Pemilu 2024', 'Prediksi Politik', 'Machine Learning'],
     publishedAt: new Date('2024-04-30'),

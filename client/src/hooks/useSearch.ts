@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import Fuse from 'fuse.js';
-import { BlogPost } from '@/data/blogPosts';
+import { BlogPost } from '@/data/blog-posts';
 
 interface UseSearchProps {
   data: BlogPost[];

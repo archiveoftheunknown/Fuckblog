@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search, X } from 'lucide-react';
 import { useSearch } from '@/hooks/useSearch';
-import { blogPosts } from '@/data/blogPosts';
+import { blogPosts } from '@/data/blog-posts';
 import { useLocation } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 

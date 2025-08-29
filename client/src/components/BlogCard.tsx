@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { Calendar, Clock, User, ArrowRight } from 'lucide-react';
-import { BlogPost } from '@/data/blogPosts';
+import { BlogPost } from '@/data/blog-posts';
 import { hoverScale } from '@/lib/animations';
 
 interface BlogCardProps {

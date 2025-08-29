@@ -3,13 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Home, FileText, Info, Archive, X, Sun, Moon } from "lucide-react";
 import SearchBar from "./search-bar";
 import { useTheme } from "@/contexts/ThemeContext";
-
-const navigation = [
-  { name: "Home", href: "/", icon: Home },
-  { name: "Blog", href: "/blog", icon: FileText },
-  { name: "About", href: "/about", icon: Info },
-  { name: "Archives", href: "/archives", icon: Archive },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -19,6 +13,14 @@ interface SidebarProps {
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const [location] = useLocation();
   const { theme, toggleTheme } = useTheme();
+  const { t } = useLanguage();
+
+  const navigation = [
+    { name: t("nav.home"), href: "/", icon: Home },
+    { name: t("nav.blog"), href: "/blog", icon: FileText },
+    { name: t("nav.about"), href: "/about", icon: Info },
+    { name: t("nav.archives"), href: "/archives", icon: Archive },
+  ];
 
   return (
     <>
@@ -68,9 +70,9 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 className="mb-8"
               >
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent">
-                  Political Insights
+                  {t("brand.title")}
                 </h1>
-                <p className="text-muted-foreground text-sm mt-1">Modern Analysis & Commentary</p>
+                <p className="text-muted-foreground text-sm mt-1">{t("brand.tagline")}</p>
               </motion.div>
 
               {/* Search Bar */}
@@ -168,7 +170,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                     }}
                     className="text-sm font-medium"
                   >
-                    {theme === "dark" ? "Light Mode" : "Dark Mode"}
+                    {theme === "dark" ? t("nav.lightMode") : t("nav.darkMode")}
                   </motion.span>
                 </motion.button>
               </motion.div>

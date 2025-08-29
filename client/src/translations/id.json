@@ -1,0 +1,170 @@
+{
+  "brand": {
+    "title": "Wawasan Politik",
+    "tagline": "Analisis & Komentar Modern"
+  },
+  "nav": {
+    "home": "Beranda",
+    "blog": "Blog",
+    "about": "Tentang",
+    "archives": "Arsip",
+    "contact": "Kontak",
+    "lightMode": "Mode Terang",
+    "darkMode": "Mode Gelap"
+  },
+  "hero": {
+    "title": "Menguraikan Kompleksitas Politik Indonesia",
+    "subtitle": "Wawasan mendalam tentang demokrasi digital, transformasi tata kelola, dan lanskap media kontemporer.",
+    "author": "Oleh Velo",
+    "cta": "Jelajahi Artikel"
+  },
+  "home": {
+    "featuredTitle": "Analisis Unggulan",
+    "featuredSubtitle": "Komentar dan analisis politik mendalam dari kontributor ahli kami",
+    "noArticles": "Belum ada artikel."
+  },
+  "blog": {
+    "title": "Blog Analisis Politik",
+    "subtitle": "Jelajahi koleksi lengkap wawasan politik, analisis demokrasi digital, dan komentar tata kelola kontemporer kami.",
+    "search": "Cari artikel...",
+    "allCategories": "Semua",
+    "showing": "Menampilkan",
+    "of": "dari",
+    "articles": "artikel",
+    "in": "dalam",
+    "matching": "sesuai",
+    "noResults": "Tidak ada artikel ditemukan",
+    "noResultsDesc": "Coba sesuaikan kriteria pencarian atau jelajahi semua kategori.",
+    "clearFilters": "Hapus Filter",
+    "minRead": "menit baca",
+    "readMore": "Baca Selengkapnya",
+    "backToBlog": "Kembali ke Blog",
+    "share": "Bagikan",
+    "linkCopied": "Tautan disalin!",
+    "linkCopiedDesc": "Tautan artikel telah disalin ke clipboard.",
+    "tableOfContents": "Daftar Isi",
+    "relatedArticles": "Artikel Terkait",
+    "tags": "Tag",
+    "articleNotFound": "Artikel Tidak Ditemukan",
+    "articleNotFoundDesc": "Artikel yang Anda cari tidak ada."
+  },
+  "categories": {
+    "indonesianPolitics": "Politik Indonesia",
+    "digitalDemocracy": "Demokrasi Digital",
+    "electionAnalysis": "Analisis Pemilu",
+    "policyReview": "Tinjauan Kebijakan",
+    "regionalPolitics": "Politik Regional",
+    "politicalReform": "Reformasi Politik",
+    "governmentPolicy": "Kebijakan Pemerintah",
+    "digitalRights": "Hak Digital",
+    "mediaAnalysis": "Analisis Media",
+    "politicalCommentary": "Komentar Politik",
+    "investigation": "Investigasi",
+    "governmentTech": "Teknologi Pemerintah",
+    "dataScience": "Ilmu Data",
+    "politicalAnalysis": "Analisis Politik"
+  },
+  "footer": {
+    "description": "Arsip pribadi analisis dan komentar politik oleh Velo, mengeksplorasi kompleksitas tata kelola dan demokrasi modern.",
+    "quickLinks": "Tautan Cepat",
+    "categories": "Kategori",
+    "legal": "Legal",
+    "home": "Beranda",
+    "latestArticles": "Artikel Terbaru",
+    "about": "Tentang",
+    "archives": "Arsip",
+    "privacyPolicy": "Kebijakan Privasi",
+    "termsOfService": "Syarat Layanan",
+    "copyright": "Hak Cipta",
+    "editorialGuidelines": "Pedoman Editorial",
+    "contact": "Kontak",
+    "allRightsReserved": "Hak cipta dilindungi.",
+    "createdBy": "Dibuat oleh Velo."
+  },
+  "about": {
+    "title": "Tentang Wawasan Politik",
+    "subtitle": "Platform terdepan untuk analisis politik dan komentar di Indonesia",
+    "missionTitle": "Misi Kami",
+    "missionText": "Wawasan Politik didedikasikan untuk menyediakan analisis mendalam dan komentar bijaksana tentang lanskap politik Indonesia. Kami berusaha mendemokratisasi pemahaman politik melalui jurnalisme berbasis data dan investigasi menyeluruh.",
+    "storyTitle": "Cerita Kami",
+    "storyText": "Didirikan pada tahun 2024, Wawasan Politik muncul dari kebutuhan akan analisis politik yang lebih bernuansa di era digital. Apa yang dimulai sebagai blog pribadi telah berkembang menjadi platform yang dihormati untuk diskusi politik.",
+    "founderTitle": "Tentang Pendiri",
+    "founderName": "Velo",
+    "founderRole": "Pendiri & Analis Politik Utama",
+    "founderBio": "Dengan lebih dari satu dekade pengalaman dalam jurnalisme politik dan analisis data, Velo membawa perspektif unik untuk memahami politik Indonesia kontemporer.",
+    "valuesTitle": "Nilai Kami",
+    "value1Title": "Independensi",
+    "value1Text": "Kami mempertahankan independensi editorial yang ketat",
+    "value2Title": "Transparansi",
+    "value2Text": "Sumber dan metodologi kami selalu jelas",
+    "value3Title": "Integritas",
+    "value3Text": "Pelaporan berbasis fakta adalah landasan kami",
+    "statsTitle": "Dampak Kami",
+    "stat1Number": "500+",
+    "stat1Label": "Artikel Diterbitkan",
+    "stat2Number": "1M+",
+    "stat2Label": "Pembaca Bulanan",
+    "stat3Number": "50+",
+    "stat3Label": "Penghargaan",
+    "stat4Number": "24/7",
+    "stat4Label": "Cakupan Berita"
+  },
+  "archives": {
+    "title": "Arsip",
+    "subtitle": "Jelajahi koleksi lengkap analisis politik dan komentar kami",
+    "searchPlaceholder": "Cari arsip...",
+    "filterByYear": "Filter berdasarkan tahun",
+    "allYears": "Semua Tahun",
+    "showing": "Menampilkan",
+    "posts": "pos",
+    "from": "dari"
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "subtitle": "Kami akan senang mendengar dari Anda",
+    "namePlaceholder": "Nama Anda",
+    "emailPlaceholder": "email@example.com",
+    "subjectPlaceholder": "Subjek pesan Anda",
+    "messagePlaceholder": "Pesan Anda...",
+    "submit": "Kirim Pesan",
+    "success": "Pesan terkirim!",
+    "successDesc": "Terima kasih telah menghubungi. Kami akan segera merespons.",
+    "error": "Gagal mengirim pesan. Silakan coba lagi."
+  },
+  "privacy": {
+    "title": "Kebijakan Privasi",
+    "subtitle": "Cara kami menangani informasi Anda",
+    "lastUpdated": "Terakhir diperbarui"
+  },
+  "terms": {
+    "title": "Syarat Layanan",
+    "subtitle": "Syarat dan ketentuan penggunaan platform kami",
+    "lastUpdated": "Terakhir diperbarui"
+  },
+  "copyright": {
+    "title": "Informasi Hak Cipta",
+    "subtitle": "Memahami hak kekayaan intelektual kami"
+  },
+  "guidelines": {
+    "title": "Pedoman Editorial",
+    "subtitle": "Standar dan prinsip kami dalam jurnalisme"
+  },
+  "notFound": {
+    "title": "404 - Halaman Tidak Ditemukan",
+    "message": "Halaman yang Anda cari tidak ada.",
+    "backHome": "Kembali ke Beranda"
+  },
+  "newsletter": {
+    "title": "Tetap Terinformasi",
+    "subtitle": "Bergabunglah dengan newsletter kami untuk analisis politik mingguan",
+    "placeholder": "Masukkan email Anda",
+    "subscribe": "Berlangganan",
+    "success": "Berhasil berlangganan!",
+    "successDesc": "Terima kasih telah berlangganan newsletter kami."
+  },
+  "search": {
+    "placeholder": "Cari artikel...",
+    "noResults": "Tidak ada hasil ditemukan",
+    "tryAdjusting": "Coba sesuaikan pencarian Anda"
+  }
+}

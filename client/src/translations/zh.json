@@ -1,0 +1,170 @@
+{
+  "brand": {
+    "title": "政治洞察",
+    "tagline": "现代分析与评论"
+  },
+  "nav": {
+    "home": "首页",
+    "blog": "博客",
+    "about": "关于",
+    "archives": "档案",
+    "contact": "联系",
+    "lightMode": "浅色模式",
+    "darkMode": "深色模式"
+  },
+  "hero": {
+    "title": "解读印尼政治的复杂性",
+    "subtitle": "深入洞察数字民主、治理转型和当代媒体格局。",
+    "author": "作者：Velo",
+    "cta": "探索文章"
+  },
+  "home": {
+    "featuredTitle": "精选分析",
+    "featuredSubtitle": "来自我们专家贡献者的深度政治评论和分析",
+    "noArticles": "暂无文章。"
+  },
+  "blog": {
+    "title": "政治分析博客",
+    "subtitle": "探索我们全面的政治见解、数字民主分析和当代治理评论集合。",
+    "search": "搜索文章...",
+    "allCategories": "全部",
+    "showing": "显示",
+    "of": "的",
+    "articles": "文章",
+    "in": "在",
+    "matching": "匹配",
+    "noResults": "未找到文章",
+    "noResultsDesc": "尝试调整搜索条件或浏览所有类别。",
+    "clearFilters": "清除筛选",
+    "minRead": "分钟阅读",
+    "readMore": "阅读更多",
+    "backToBlog": "返回博客",
+    "share": "分享",
+    "linkCopied": "链接已复制！",
+    "linkCopiedDesc": "文章链接已复制到剪贴板。",
+    "tableOfContents": "目录",
+    "relatedArticles": "相关文章",
+    "tags": "标签",
+    "articleNotFound": "文章未找到",
+    "articleNotFoundDesc": "您要查找的文章不存在。"
+  },
+  "categories": {
+    "indonesianPolitics": "印尼政治",
+    "digitalDemocracy": "数字民主",
+    "electionAnalysis": "选举分析",
+    "policyReview": "政策评论",
+    "regionalPolitics": "地区政治",
+    "politicalReform": "政治改革",
+    "governmentPolicy": "政府政策",
+    "digitalRights": "数字权利",
+    "mediaAnalysis": "媒体分析",
+    "politicalCommentary": "政治评论",
+    "investigation": "调查",
+    "governmentTech": "政府科技",
+    "dataScience": "数据科学",
+    "politicalAnalysis": "政治分析"
+  },
+  "footer": {
+    "description": "Velo的个人政治分析和评论档案，探索现代治理和民主的复杂性。",
+    "quickLinks": "快速链接",
+    "categories": "类别",
+    "legal": "法律",
+    "home": "首页",
+    "latestArticles": "最新文章",
+    "about": "关于",
+    "archives": "档案",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "copyright": "版权",
+    "editorialGuidelines": "编辑准则",
+    "contact": "联系",
+    "allRightsReserved": "版权所有。",
+    "createdBy": "由Velo创建。"
+  },
+  "about": {
+    "title": "关于政治洞察",
+    "subtitle": "印尼领先的政治分析和评论平台",
+    "missionTitle": "我们的使命",
+    "missionText": "政治洞察致力于提供深度分析和对印尼政治格局的深思熟虑的评论。我们努力通过数据驱动的新闻和彻底的调查使政治理解民主化。",
+    "storyTitle": "我们的故事",
+    "storyText": "成立于2024年，政治洞察源于数字时代对更细致政治分析的需求。从个人博客开始，已发展成为受人尊敬的政治话语平台。",
+    "founderTitle": "关于创始人",
+    "founderName": "Velo",
+    "founderRole": "创始人兼首席政治分析师",
+    "founderBio": "拥有超过十年的政治新闻和数据分析经验，Velo为理解当代印尼政治带来了独特的视角。",
+    "valuesTitle": "我们的价值观",
+    "value1Title": "独立性",
+    "value1Text": "我们保持严格的编辑独立性",
+    "value2Title": "透明度",
+    "value2Text": "我们的来源和方法始终清晰",
+    "value3Title": "诚信",
+    "value3Text": "基于事实的报道是我们的基础",
+    "statsTitle": "我们的影响",
+    "stat1Number": "500+",
+    "stat1Label": "发表文章",
+    "stat2Number": "1M+",
+    "stat2Label": "月读者",
+    "stat3Number": "50+",
+    "stat3Label": "获奖",
+    "stat4Number": "24/7",
+    "stat4Label": "新闻报道"
+  },
+  "archives": {
+    "title": "档案",
+    "subtitle": "浏览我们完整的政治分析和评论集合",
+    "searchPlaceholder": "搜索档案...",
+    "filterByYear": "按年份筛选",
+    "allYears": "所有年份",
+    "showing": "显示",
+    "posts": "帖子",
+    "from": "来自"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "我们很乐意听到您的意见",
+    "namePlaceholder": "您的姓名",
+    "emailPlaceholder": "email@example.com",
+    "subjectPlaceholder": "消息主题",
+    "messagePlaceholder": "您的消息...",
+    "submit": "发送消息",
+    "success": "消息已发送！",
+    "successDesc": "感谢您的联系。我们会尽快回复。",
+    "error": "发送消息失败。请重试。"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "subtitle": "我们如何处理您的信息",
+    "lastUpdated": "最后更新"
+  },
+  "terms": {
+    "title": "服务条款",
+    "subtitle": "使用我们平台的条款和条件",
+    "lastUpdated": "最后更新"
+  },
+  "copyright": {
+    "title": "版权信息",
+    "subtitle": "了解我们的知识产权"
+  },
+  "guidelines": {
+    "title": "编辑准则",
+    "subtitle": "我们在新闻报道中的标准和原则"
+  },
+  "notFound": {
+    "title": "404 - 页面未找到",
+    "message": "您要查找的页面不存在。",
+    "backHome": "返回首页"
+  },
+  "newsletter": {
+    "title": "保持知情",
+    "subtitle": "加入我们的通讯获取每周政治分析",
+    "placeholder": "输入您的邮箱",
+    "subscribe": "订阅",
+    "success": "订阅成功！",
+    "successDesc": "感谢您订阅我们的通讯。"
+  },
+  "search": {
+    "placeholder": "搜索文章...",
+    "noResults": "未找到结果",
+    "tryAdjusting": "尝试调整您的搜索"
+  }
+}

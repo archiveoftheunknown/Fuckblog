@@ -5,8 +5,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useState } from "react";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import Sidebar from "@/components/sidebar";
 import Footer from "@/components/footer";
+import LanguageSelector from "@/components/LanguageSelector";
 import Home from "@/pages/Home";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
@@ -25,8 +27,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
-        <TooltipProvider>
-          <div className="min-h-screen bg-background text-foreground overflow-x-hidden transition-colors duration-500">
+        <LanguageProvider>
+          <TooltipProvider>
+            <div className="min-h-screen bg-background text-foreground overflow-x-hidden transition-colors duration-500">
           {/* Mobile menu button - only show when sidebar is closed */}
           {!sidebarOpen && (
             <motion.button
@@ -78,9 +81,11 @@ function App() {
             </Switch>
             <Footer />
           </main>
+            <LanguageSelector />
             <Toaster />
-          </div>
-        </TooltipProvider>
+            </div>
+          </TooltipProvider>
+        </LanguageProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );

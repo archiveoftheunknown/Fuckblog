@@ -5,9 +5,11 @@ import { ArrowLeft, Calendar, Clock, User, Share2, BookOpen } from "lucide-react
 import ReactMarkdown from "react-markdown";
 import { blogPosts, getBlogPostBySlug } from "@/data/blog-posts";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function BlogPost() {
   const { id } = useParams<{ id: string }>();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
   
   useEffect(() => {
@@ -20,8 +22,8 @@ export default function BlogPost() {
     return (
       <div className="py-20 px-8" data-testid="blog-post-not-found">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4 text-foreground">Article Not Found</h1>
-          <p className="text-muted-foreground mb-8">The article you're looking for doesn't exist.</p>
+          <h1 className="text-4xl font-bold mb-4 text-foreground">{t("blog.articleNotFound")}</h1>
+          <p className="text-muted-foreground mb-8">{t("blog.articleNotFoundDesc")}</p>
           <Link href="/blog">
             <a>
               <motion.button
@@ -30,7 +32,7 @@ export default function BlogPost() {
                 whileTap={{ scale: 0.98 }}
                 data-testid="button-back-to-blog"
               >
-                Back to Blog
+                {t("blog.backToBlog")}
               </motion.button>
             </a>
           </Link>
@@ -39,7 +41,7 @@ export default function BlogPost() {
     );
   }
 
-  const formattedDate = new Date(post.publishedAt).toLocaleDateString('en-US', { 
+  const formattedDate = new Date(post.publishedAt).toLocaleDateString(language === 'zh' ? 'zh-CN' : language === 'ja' ? 'ja-JP' : language === 'es' ? 'es-ES' : language === 'id' ? 'id-ID' : 'en-US', { 
     year: 'numeric', 
     month: 'long', 
     day: 'numeric' 
@@ -56,8 +58,8 @@ export default function BlogPost() {
       // Fallback to copying URL
       navigator.clipboard.writeText(window.location.href);
       toast({
-        title: "Link copied!",
-        description: "Article link has been copied to your clipboard.",
+        title: t("blog.linkCopied"),
+        description: t("blog.linkCopiedDesc"),
       });
     }
   };
@@ -108,7 +110,7 @@ export default function BlogPost() {
                 data-testid="button-back-to-blog"
               >
                 <ArrowLeft className="w-5 h-5" />
-                <span>Back to Blog</span>
+                <span>{t("blog.backToBlog")}</span>
               </motion.button>
             </a>
           </Link>
@@ -151,7 +153,7 @@ export default function BlogPost() {
             
             <div className="flex items-center space-x-1">
               <Clock className="w-5 h-5" />
-              <span>{post.readTime} min read</span>
+              <span>{post.readTime} {t("blog.minRead")}</span>
             </div>
             
             <motion.button
@@ -162,7 +164,7 @@ export default function BlogPost() {
               data-testid="button-share-article"
             >
               <Share2 className="w-5 h-5" />
-              <span>Share</span>
+              <span>{t("blog.share")}</span>
             </motion.button>
           </div>
         </motion.div>
@@ -203,7 +205,7 @@ export default function BlogPost() {
             
             {/* Tags */}
             <div className="mt-12 pt-8 border-t border-border">
-              <h3 className="text-lg font-semibold mb-4 text-foreground">Tags</h3>
+              <h3 className="text-lg font-semibold mb-4 text-foreground">{t("blog.tags")}</h3>
               <div className="flex flex-wrap gap-2">
                 {post.tags.map(tag => (
                   <span
@@ -225,7 +227,7 @@ export default function BlogPost() {
                 <div className="glass-card p-6 rounded-xl">
                   <h3 className="font-semibold mb-4 text-foreground flex items-center">
                     <BookOpen className="w-5 h-5 mr-2" />
-                    Table of Contents
+                    {t("blog.tableOfContents")}
                   </h3>
                   <div className="space-y-2 text-sm">
                     {tableOfContents.map((heading, index) => (
@@ -248,7 +250,7 @@ export default function BlogPost() {
               {/* Related Articles */}
               {relatedPosts.length > 0 && (
                 <div className="glass-card p-6 rounded-xl">
-                  <h3 className="font-semibold mb-4 text-foreground">Related Articles</h3>
+                  <h3 className="font-semibold mb-4 text-foreground">{t("blog.relatedArticles")}</h3>
                   <div className="space-y-4">
                     {relatedPosts.map(relatedPost => (
                       <Link key={relatedPost.id} href={`/blog/${relatedPost.slug}`}>
@@ -258,7 +260,7 @@ export default function BlogPost() {
                               {relatedPost.title}
                             </h4>
                             <p className="text-xs text-muted-foreground mt-1">
-                              {new Date(relatedPost.publishedAt).toLocaleDateString('en-US', { 
+                              {new Date(relatedPost.publishedAt).toLocaleDateString(language === 'zh' ? 'zh-CN' : language === 'ja' ? 'ja-JP' : language === 'es' ? 'es-ES' : language === 'id' ? 'id-ID' : 'en-US', { 
                                 year: 'numeric', 
                                 month: 'short', 
                                 day: 'numeric' 

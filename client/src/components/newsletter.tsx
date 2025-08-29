@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Newsletter() {
+  const { t } = useLanguage();
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -17,8 +19,8 @@ export default function Newsletter() {
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     toast({
-      title: "Successfully subscribed!",
-      description: "Thank you for subscribing to our newsletter.",
+      title: t("newsletter.successTitle"),
+      description: t("newsletter.successMessage"),
     });
     
     setEmail("");
@@ -41,7 +43,7 @@ export default function Newsletter() {
             className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent"
             data-testid="newsletter-title"
           >
-            Stay Informed
+            {t("newsletter.title")}
           </motion.h3>
           
           <motion.p
@@ -51,7 +53,7 @@ export default function Newsletter() {
             className="text-muted-foreground mb-8 max-w-2xl mx-auto"
             data-testid="newsletter-description"
           >
-            Get the latest political analysis and insights delivered directly to your inbox. Join our community of informed readers.
+            {t("newsletter.description")}
           </motion.p>
           
           <motion.form
@@ -63,7 +65,7 @@ export default function Newsletter() {
           >
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder={t("newsletter.emailPlaceholder")}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -79,7 +81,7 @@ export default function Newsletter() {
               whileTap={{ scale: 0.98 }}
               data-testid="button-newsletter-subscribe"
             >
-              {isLoading ? "Subscribing..." : "Subscribe"}
+              {isLoading ? t("newsletter.subscribing") : t("newsletter.subscribe")}
             </motion.button>
           </motion.form>
         </motion.div>

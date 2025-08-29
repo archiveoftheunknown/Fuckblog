@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HeroSection() {
+  const { t } = useLanguage();
+  
   const scrollToFeatured = () => {
     const element = document.querySelector('[data-testid="featured-articles-section"]');
     if (element) {
@@ -44,14 +47,14 @@ export default function HeroSection() {
             variants={itemVariants}
             className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-chart-3 bg-clip-text text-transparent leading-tight"
             data-testid="hero-title"
-          >The fufufafa controversy</motion.h1>
+          >{t("hero.title")}</motion.h1>
           
           <motion.p
             variants={itemVariants}
             className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed"
             data-testid="hero-description"
           >
-            Deep insights into contemporary politics, digital democracy, and the evolving landscape of public discourse in the digital age.
+            {t("hero.subtitle")}
           </motion.p>
           
           <motion.div
@@ -65,7 +68,7 @@ export default function HeroSection() {
               onClick={scrollToFeatured}
               data-testid="button-explore-articles"
             >
-              Explore Articles
+              {t("hero.cta")}
             </motion.button>
           </motion.div>
         </motion.div>

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import type { BlogPost } from "@/data/blog-posts";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface BlogCardProps {
   post: BlogPost;
@@ -9,6 +10,8 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ post, index = 0, featured = false }: BlogCardProps) {
+  const { t, language } = useLanguage();
+  
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -54,7 +57,7 @@ export default function BlogCard({ post, index = 0, featured = false }: BlogCard
                       whileTap={{ scale: 0.95 }}
                       transition={{ type: "spring", stiffness: 400, damping: 17 }}
                     >
-                      Read Article
+                      {t("blog.readArticle")}
                     </motion.span>
                   </div>
               </div>
@@ -87,14 +90,14 @@ export default function BlogCard({ post, index = 0, featured = false }: BlogCard
               </p>
               <div className="flex items-center justify-between">
                 <span className="text-xs text-muted-foreground">
-                  {new Date(post.publishedAt).toLocaleDateString('en-US', { 
+                  {new Date(post.publishedAt).toLocaleDateString(language === 'zh' ? 'zh-CN' : language === 'ja' ? 'ja-JP' : language === 'es' ? 'es-ES' : language === 'id' ? 'id-ID' : 'en-US', { 
                     year: 'numeric', 
                     month: 'short', 
                     day: 'numeric' 
                   })}
                 </span>
                 <span className="text-primary text-sm font-medium hover:text-primary/80 transition-colors">
-                  Read More →
+                  {t("blog.readMore")} →
                 </span>
               </div>
             </div>

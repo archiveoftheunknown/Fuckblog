@@ -1,0 +1,170 @@
+{
+  "brand": {
+    "title": "政治的洞察",
+    "tagline": "現代の分析と論評"
+  },
+  "nav": {
+    "home": "ホーム",
+    "blog": "ブログ",
+    "about": "について",
+    "archives": "アーカイブ",
+    "contact": "お問い合わせ",
+    "lightMode": "ライトモード",
+    "darkMode": "ダークモード"
+  },
+  "hero": {
+    "title": "インドネシア政治の複雑さを解読する",
+    "subtitle": "デジタル民主主義、ガバナンスの変革、現代のメディア環境への深い洞察。",
+    "author": "著者：Velo",
+    "cta": "記事を探る"
+  },
+  "home": {
+    "featuredTitle": "注目の分析",
+    "featuredSubtitle": "専門家による詳細な政治的論評と分析",
+    "noArticles": "まだ記事がありません。"
+  },
+  "blog": {
+    "title": "政治分析ブログ",
+    "subtitle": "政治的洞察、デジタル民主主義分析、現代のガバナンス論評の包括的なコレクションをご覧ください。",
+    "search": "記事を検索...",
+    "allCategories": "すべて",
+    "showing": "表示中",
+    "of": "の",
+    "articles": "記事",
+    "in": "内",
+    "matching": "一致",
+    "noResults": "記事が見つかりません",
+    "noResultsDesc": "検索条件を調整するか、すべてのカテゴリを参照してください。",
+    "clearFilters": "フィルタをクリア",
+    "minRead": "分で読む",
+    "readMore": "続きを読む",
+    "backToBlog": "ブログに戻る",
+    "share": "共有",
+    "linkCopied": "リンクをコピーしました！",
+    "linkCopiedDesc": "記事のリンクがクリップボードにコピーされました。",
+    "tableOfContents": "目次",
+    "relatedArticles": "関連記事",
+    "tags": "タグ",
+    "articleNotFound": "記事が見つかりません",
+    "articleNotFoundDesc": "お探しの記事は存在しません。"
+  },
+  "categories": {
+    "indonesianPolitics": "インドネシア政治",
+    "digitalDemocracy": "デジタル民主主義",
+    "electionAnalysis": "選挙分析",
+    "policyReview": "政策レビュー",
+    "regionalPolitics": "地域政治",
+    "politicalReform": "政治改革",
+    "governmentPolicy": "政府政策",
+    "digitalRights": "デジタル権利",
+    "mediaAnalysis": "メディア分析",
+    "politicalCommentary": "政治論評",
+    "investigation": "調査",
+    "governmentTech": "政府テクノロジー",
+    "dataScience": "データサイエンス",
+    "politicalAnalysis": "政治分析"
+  },
+  "footer": {
+    "description": "Veloによる政治分析と論評の個人アーカイブ。現代のガバナンスと民主主義の複雑さを探求。",
+    "quickLinks": "クイックリンク",
+    "categories": "カテゴリ",
+    "legal": "法的情報",
+    "home": "ホーム",
+    "latestArticles": "最新記事",
+    "about": "について",
+    "archives": "アーカイブ",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfService": "利用規約",
+    "copyright": "著作権",
+    "editorialGuidelines": "編集ガイドライン",
+    "contact": "お問い合わせ",
+    "allRightsReserved": "すべての権利を保有。",
+    "createdBy": "Veloによって作成。"
+  },
+  "about": {
+    "title": "政治的洞察について",
+    "subtitle": "インドネシアの政治分析と論評の主要プラットフォーム",
+    "missionTitle": "私たちの使命",
+    "missionText": "政治的洞察は、インドネシアの政治的風景について深い分析と思慮深い論評を提供することに専念しています。データ駆動型ジャーナリズムと徹底的な調査を通じて、政治的理解を民主化することを目指しています。",
+    "storyTitle": "私たちの物語",
+    "storyText": "2024年に設立された政治的洞察は、デジタル時代におけるより微妙な政治分析の必要性から生まれました。個人ブログとして始まったものが、政治的談話のための尊敬されるプラットフォームに成長しました。",
+    "founderTitle": "創設者について",
+    "founderName": "Velo",
+    "founderRole": "創設者兼主席政治アナリスト",
+    "founderBio": "政治ジャーナリズムとデータ分析において10年以上の経験を持つVeloは、現代インドネシア政治を理解するためのユニークな視点をもたらします。",
+    "valuesTitle": "私たちの価値観",
+    "value1Title": "独立性",
+    "value1Text": "厳格な編集の独立性を維持します",
+    "value2Title": "透明性",
+    "value2Text": "私たちの情報源と方法論は常に明確です",
+    "value3Title": "誠実さ",
+    "value3Text": "事実に基づく報道が私たちの基盤です",
+    "statsTitle": "私たちの影響",
+    "stat1Number": "500+",
+    "stat1Label": "公開記事",
+    "stat2Number": "1M+",
+    "stat2Label": "月間読者",
+    "stat3Number": "50+",
+    "stat3Label": "受賞歴",
+    "stat4Number": "24/7",
+    "stat4Label": "ニュース報道"
+  },
+  "archives": {
+    "title": "アーカイブ",
+    "subtitle": "政治分析と論評の完全なコレクションをご覧ください",
+    "searchPlaceholder": "アーカイブを検索...",
+    "filterByYear": "年でフィルタ",
+    "allYears": "すべての年",
+    "showing": "表示中",
+    "posts": "投稿",
+    "from": "から"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "ご連絡をお待ちしています",
+    "namePlaceholder": "お名前",
+    "emailPlaceholder": "email@example.com",
+    "subjectPlaceholder": "メッセージの件名",
+    "messagePlaceholder": "メッセージ...",
+    "submit": "メッセージを送信",
+    "success": "メッセージを送信しました！",
+    "successDesc": "お問い合わせいただきありがとうございます。できるだけ早く返信いたします。",
+    "error": "メッセージの送信に失敗しました。もう一度お試しください。"
+  },
+  "privacy": {
+    "title": "プライバシーポリシー",
+    "subtitle": "お客様の情報の取り扱いについて",
+    "lastUpdated": "最終更新"
+  },
+  "terms": {
+    "title": "利用規約",
+    "subtitle": "プラットフォーム利用の規約と条件",
+    "lastUpdated": "最終更新"
+  },
+  "copyright": {
+    "title": "著作権情報",
+    "subtitle": "私たちの知的財産権について"
+  },
+  "guidelines": {
+    "title": "編集ガイドライン",
+    "subtitle": "ジャーナリズムにおける私たちの基準と原則"
+  },
+  "notFound": {
+    "title": "404 - ページが見つかりません",
+    "message": "お探しのページは存在しません。",
+    "backHome": "ホームに戻る"
+  },
+  "newsletter": {
+    "title": "最新情報を入手",
+    "subtitle": "毎週の政治分析ニュースレターにご登録ください",
+    "placeholder": "メールアドレスを入力",
+    "subscribe": "購読",
+    "success": "購読に成功しました！",
+    "successDesc": "ニュースレターにご登録いただきありがとうございます。"
+  },
+  "search": {
+    "placeholder": "記事を検索...",
+    "noResults": "結果が見つかりません",
+    "tryAdjusting": "検索を調整してみてください"
+  }
+}

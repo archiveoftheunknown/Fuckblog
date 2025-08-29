@@ -2,8 +2,10 @@ import { motion } from "framer-motion";
 import HeroSection from "@/components/hero-section";
 import BlogCard from "@/components/blog-card";
 import { blogPosts, getFeaturedPosts, getRecentPosts } from "@/data/blog-posts";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
+  const { t } = useLanguage();
   const featuredPost = getFeaturedPosts()[0];
   const recentPosts = getRecentPosts(6).filter(post => !post.featured);
 
@@ -21,10 +23,10 @@ export default function Home() {
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent">
-              Featured Analysis
+              {t("home.featuredAnalysis")}
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              In-depth political commentary and analysis from our expert contributors
+              {t("home.featuredDescription")}
             </p>
           </motion.div>
 

@@ -1,0 +1,170 @@
+{
+  "brand": {
+    "title": "Political Insights",
+    "tagline": "Modern Analysis & Commentary"
+  },
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "about": "About",
+    "archives": "Archives",
+    "contact": "Contact",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode"
+  },
+  "hero": {
+    "title": "Decoding the Complexities of Indonesian Politics",
+    "subtitle": "Deep insights into digital democracy, governance transformation, and contemporary media landscapes.",
+    "author": "By Velo",
+    "cta": "Explore Articles"
+  },
+  "home": {
+    "featuredTitle": "Featured Analysis",
+    "featuredSubtitle": "In-depth political commentary and analysis from our expert contributors",
+    "noArticles": "No articles yet."
+  },
+  "blog": {
+    "title": "Political Analysis Blog",
+    "subtitle": "Explore our comprehensive collection of political insights, digital democracy analysis, and contemporary governance commentary.",
+    "search": "Search articles...",
+    "allCategories": "All",
+    "showing": "Showing",
+    "of": "of",
+    "articles": "articles",
+    "in": "in",
+    "matching": "matching",
+    "noResults": "No articles found",
+    "noResultsDesc": "Try adjusting your search criteria or browse all categories.",
+    "clearFilters": "Clear Filters",
+    "minRead": "min read",
+    "readMore": "Read More",
+    "backToBlog": "Back to Blog",
+    "share": "Share",
+    "linkCopied": "Link copied!",
+    "linkCopiedDesc": "Article link has been copied to your clipboard.",
+    "tableOfContents": "Table of Contents",
+    "relatedArticles": "Related Articles",
+    "tags": "Tags",
+    "articleNotFound": "Article Not Found",
+    "articleNotFoundDesc": "The article you're looking for doesn't exist."
+  },
+  "categories": {
+    "indonesianPolitics": "Indonesian Politics",
+    "digitalDemocracy": "Digital Democracy",
+    "electionAnalysis": "Election Analysis",
+    "policyReview": "Policy Review",
+    "regionalPolitics": "Regional Politics",
+    "politicalReform": "Political Reform",
+    "governmentPolicy": "Government Policy",
+    "digitalRights": "Digital Rights",
+    "mediaAnalysis": "Media Analysis",
+    "politicalCommentary": "Political Commentary",
+    "investigation": "Investigation",
+    "governmentTech": "Government Tech",
+    "dataScience": "Data Science",
+    "politicalAnalysis": "Political Analysis"
+  },
+  "footer": {
+    "description": "A personal archive of political analysis and commentary by Velo, exploring the complexities of modern governance and democracy.",
+    "quickLinks": "Quick Links",
+    "categories": "Categories",
+    "legal": "Legal",
+    "home": "Home",
+    "latestArticles": "Latest Articles",
+    "about": "About",
+    "archives": "Archives",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "copyright": "Copyright",
+    "editorialGuidelines": "Editorial Guidelines",
+    "contact": "Contact",
+    "allRightsReserved": "All rights reserved.",
+    "createdBy": "Created by Velo."
+  },
+  "about": {
+    "title": "About Political Insights",
+    "subtitle": "Indonesia's leading platform for political analysis and commentary",
+    "missionTitle": "Our Mission",
+    "missionText": "Political Insights is dedicated to providing in-depth analysis and thoughtful commentary on Indonesia's political landscape. We strive to democratize political understanding through data-driven journalism and thorough investigations.",
+    "storyTitle": "Our Story",
+    "storyText": "Founded in 2024, Political Insights emerged from a need for more nuanced political analysis in the digital age. What started as a personal blog has grown into a respected platform for political discourse.",
+    "founderTitle": "About the Founder",
+    "founderName": "Velo",
+    "founderRole": "Founder & Chief Political Analyst",
+    "founderBio": "With over a decade of experience in political journalism and data analysis, Velo brings a unique perspective to understanding contemporary Indonesian politics.",
+    "valuesTitle": "Our Values",
+    "value1Title": "Independence",
+    "value1Text": "We maintain strict editorial independence",
+    "value2Title": "Transparency",
+    "value2Text": "Our sources and methodologies are always clear",
+    "value3Title": "Integrity",
+    "value3Text": "Fact-based reporting is our foundation",
+    "statsTitle": "Our Impact",
+    "stat1Number": "500+",
+    "stat1Label": "Articles Published",
+    "stat2Number": "1M+",
+    "stat2Label": "Monthly Readers",
+    "stat3Number": "50+",
+    "stat3Label": "Awards Won",
+    "stat4Number": "24/7",
+    "stat4Label": "News Coverage"
+  },
+  "archives": {
+    "title": "Archives",
+    "subtitle": "Browse our complete collection of political analysis and commentary",
+    "searchPlaceholder": "Search archives...",
+    "filterByYear": "Filter by year",
+    "allYears": "All Years",
+    "showing": "Showing",
+    "posts": "posts",
+    "from": "from"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "email@example.com",
+    "subjectPlaceholder": "Subject of your message",
+    "messagePlaceholder": "Your message...",
+    "submit": "Send Message",
+    "success": "Message sent!",
+    "successDesc": "Thank you for reaching out. We'll respond as soon as possible.",
+    "error": "Failed to send message. Please try again."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "How we handle your information",
+    "lastUpdated": "Last updated"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "subtitle": "Terms and conditions for using our platform",
+    "lastUpdated": "Last updated"
+  },
+  "copyright": {
+    "title": "Copyright Information",
+    "subtitle": "Understanding our intellectual property rights"
+  },
+  "guidelines": {
+    "title": "Editorial Guidelines",
+    "subtitle": "Our standards and principles in journalism"
+  },
+  "notFound": {
+    "title": "404 - Page Not Found",
+    "message": "The page you're looking for doesn't exist.",
+    "backHome": "Back to Home"
+  },
+  "newsletter": {
+    "title": "Stay Informed",
+    "subtitle": "Join our newsletter for weekly political analysis",
+    "placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "success": "Successfully subscribed!",
+    "successDesc": "Thank you for subscribing to our newsletter."
+  },
+  "search": {
+    "placeholder": "Search articles...",
+    "noResults": "No results found",
+    "tryAdjusting": "Try adjusting your search"
+  }
+}

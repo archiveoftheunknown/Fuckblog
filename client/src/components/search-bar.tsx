@@ -4,8 +4,10 @@ import { Search, X } from "lucide-react";
 import { Link } from "wouter";
 import { searchPosts } from "@/lib/search";
 import type { BlogPost } from "@/data/blog-posts";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function SearchBar() {
+  const { t } = useLanguage();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<BlogPost[]>([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +45,7 @@ export default function SearchBar() {
         <input
           ref={inputRef}
           type="search"
-          placeholder="Search articles..."
+          placeholder={t("search.placeholder")}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => setIsFocused(true)}
@@ -103,7 +105,7 @@ export default function SearchBar() {
                               {post.category}
                             </span>
                             <span className="text-xs text-muted-foreground">
-                              {post.readTime} min read
+                              {post.readTime} {t("blog.minRead")}
                             </span>
                           </div>
                         </div>

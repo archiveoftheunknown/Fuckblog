@@ -1,0 +1,170 @@
+{
+  "brand": {
+    "title": "Perspectivas Políticas",
+    "tagline": "Análisis y Comentarios Modernos"
+  },
+  "nav": {
+    "home": "Inicio",
+    "blog": "Blog",
+    "about": "Acerca de",
+    "archives": "Archivos",
+    "contact": "Contacto",
+    "lightMode": "Modo Claro",
+    "darkMode": "Modo Oscuro"
+  },
+  "hero": {
+    "title": "Descifrando las Complejidades de la Política Indonesia",
+    "subtitle": "Perspectivas profundas sobre democracia digital, transformación de la gobernanza y paisajes mediáticos contemporáneos.",
+    "author": "Por Velo",
+    "cta": "Explorar Artículos"
+  },
+  "home": {
+    "featuredTitle": "Análisis Destacado",
+    "featuredSubtitle": "Comentarios y análisis políticos profundos de nuestros colaboradores expertos",
+    "noArticles": "Sin artículos aún."
+  },
+  "blog": {
+    "title": "Blog de Análisis Político",
+    "subtitle": "Explore nuestra colección completa de perspectivas políticas, análisis de democracia digital y comentarios de gobernanza contemporánea.",
+    "search": "Buscar artículos...",
+    "allCategories": "Todos",
+    "showing": "Mostrando",
+    "of": "de",
+    "articles": "artículos",
+    "in": "en",
+    "matching": "coincidentes",
+    "noResults": "No se encontraron artículos",
+    "noResultsDesc": "Intente ajustar sus criterios de búsqueda o explore todas las categorías.",
+    "clearFilters": "Limpiar Filtros",
+    "minRead": "min de lectura",
+    "readMore": "Leer Más",
+    "backToBlog": "Volver al Blog",
+    "share": "Compartir",
+    "linkCopied": "¡Enlace copiado!",
+    "linkCopiedDesc": "El enlace del artículo ha sido copiado a su portapapeles.",
+    "tableOfContents": "Tabla de Contenidos",
+    "relatedArticles": "Artículos Relacionados",
+    "tags": "Etiquetas",
+    "articleNotFound": "Artículo No Encontrado",
+    "articleNotFoundDesc": "El artículo que está buscando no existe."
+  },
+  "categories": {
+    "indonesianPolitics": "Política Indonesia",
+    "digitalDemocracy": "Democracia Digital",
+    "electionAnalysis": "Análisis Electoral",
+    "policyReview": "Revisión de Políticas",
+    "regionalPolitics": "Política Regional",
+    "politicalReform": "Reforma Política",
+    "governmentPolicy": "Política Gubernamental",
+    "digitalRights": "Derechos Digitales",
+    "mediaAnalysis": "Análisis de Medios",
+    "politicalCommentary": "Comentario Político",
+    "investigation": "Investigación",
+    "governmentTech": "Tecnología Gubernamental",
+    "dataScience": "Ciencia de Datos",
+    "politicalAnalysis": "Análisis Político"
+  },
+  "footer": {
+    "description": "Un archivo personal de análisis y comentarios políticos por Velo, explorando las complejidades de la gobernanza y democracia modernas.",
+    "quickLinks": "Enlaces Rápidos",
+    "categories": "Categorías",
+    "legal": "Legal",
+    "home": "Inicio",
+    "latestArticles": "Últimos Artículos",
+    "about": "Acerca de",
+    "archives": "Archivos",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "copyright": "Derechos de Autor",
+    "editorialGuidelines": "Directrices Editoriales",
+    "contact": "Contacto",
+    "allRightsReserved": "Todos los derechos reservados.",
+    "createdBy": "Creado por Velo."
+  },
+  "about": {
+    "title": "Acerca de Perspectivas Políticas",
+    "subtitle": "La plataforma líder de Indonesia para análisis y comentarios políticos",
+    "missionTitle": "Nuestra Misión",
+    "missionText": "Perspectivas Políticas está dedicada a proporcionar análisis profundos y comentarios reflexivos sobre el panorama político de Indonesia. Nos esforzamos por democratizar la comprensión política a través del periodismo basado en datos e investigaciones exhaustivas.",
+    "storyTitle": "Nuestra Historia",
+    "storyText": "Fundada en 2024, Perspectivas Políticas surgió de la necesidad de un análisis político más matizado en la era digital. Lo que comenzó como un blog personal ha crecido hasta convertirse en una plataforma respetada para el discurso político.",
+    "founderTitle": "Sobre el Fundador",
+    "founderName": "Velo",
+    "founderRole": "Fundador y Analista Político Principal",
+    "founderBio": "Con más de una década de experiencia en periodismo político y análisis de datos, Velo aporta una perspectiva única para comprender la política indonesia contemporánea.",
+    "valuesTitle": "Nuestros Valores",
+    "value1Title": "Independencia",
+    "value1Text": "Mantenemos una estricta independencia editorial",
+    "value2Title": "Transparencia",
+    "value2Text": "Nuestras fuentes y metodologías son siempre claras",
+    "value3Title": "Integridad",
+    "value3Text": "El periodismo basado en hechos es nuestra base",
+    "statsTitle": "Nuestro Impacto",
+    "stat1Number": "500+",
+    "stat1Label": "Artículos Publicados",
+    "stat2Number": "1M+",
+    "stat2Label": "Lectores Mensuales",
+    "stat3Number": "50+",
+    "stat3Label": "Premios Ganados",
+    "stat4Number": "24/7",
+    "stat4Label": "Cobertura de Noticias"
+  },
+  "archives": {
+    "title": "Archivos",
+    "subtitle": "Explore nuestra colección completa de análisis y comentarios políticos",
+    "searchPlaceholder": "Buscar archivos...",
+    "filterByYear": "Filtrar por año",
+    "allYears": "Todos los Años",
+    "showing": "Mostrando",
+    "posts": "publicaciones",
+    "from": "de"
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "subtitle": "Nos encantaría saber de usted",
+    "namePlaceholder": "Su Nombre",
+    "emailPlaceholder": "email@ejemplo.com",
+    "subjectPlaceholder": "Asunto de su mensaje",
+    "messagePlaceholder": "Su mensaje...",
+    "submit": "Enviar Mensaje",
+    "success": "¡Mensaje enviado!",
+    "successDesc": "Gracias por contactarnos. Responderemos lo antes posible.",
+    "error": "Error al enviar el mensaje. Por favor, inténtelo de nuevo."
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "subtitle": "Cómo manejamos su información",
+    "lastUpdated": "Última actualización"
+  },
+  "terms": {
+    "title": "Términos de Servicio",
+    "subtitle": "Términos y condiciones para usar nuestra plataforma",
+    "lastUpdated": "Última actualización"
+  },
+  "copyright": {
+    "title": "Información de Derechos de Autor",
+    "subtitle": "Comprendiendo nuestros derechos de propiedad intelectual"
+  },
+  "guidelines": {
+    "title": "Directrices Editoriales",
+    "subtitle": "Nuestros estándares y principios en el periodismo"
+  },
+  "notFound": {
+    "title": "404 - Página No Encontrada",
+    "message": "La página que está buscando no existe.",
+    "backHome": "Volver al Inicio"
+  },
+  "newsletter": {
+    "title": "Manténgase Informado",
+    "subtitle": "Únase a nuestro boletín para análisis político semanal",
+    "placeholder": "Ingrese su correo",
+    "subscribe": "Suscribirse",
+    "success": "¡Suscripción exitosa!",
+    "successDesc": "Gracias por suscribirse a nuestro boletín."
+  },
+  "search": {
+    "placeholder": "Buscar artículos...",
+    "noResults": "No se encontraron resultados",
+    "tryAdjusting": "Intente ajustar su búsqueda"
+  }
+}

@@ -4,27 +4,29 @@ import BlogCard from "@/components/blog-card";
 import { blogPosts } from "@/data/blog-posts";
 import { searchPosts } from "@/lib/search";
 import { Search, Filter } from "lucide-react";
-
-const categories = [
-  "All",
-  "Political Analysis",
-  "Digital Democracy",
-  "Government Tech",
-  "Investigation",
-  "Media Analysis",
-  "Data Science"
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Blog() {
+  const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  
+  const categories = [
+    t("categories.all"),
+    t("categories.politicalAnalysis"),
+    t("categories.digitalDemocracy"),
+    t("categories.governmentTech"),
+    t("categories.investigation"),
+    t("categories.mediaAnalysis"),
+    t("categories.dataScience")
+  ];
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
   const filteredPosts = blogPosts
-    .filter(post => selectedCategory === "All" || post.category === selectedCategory)
+    .filter(post => selectedCategory === t("categories.all") || post.category === selectedCategory)
     .filter(post => 
       searchQuery === "" || 
       searchPosts(searchQuery).some(searchedPost => searchedPost.id === post.id)
@@ -41,10 +43,10 @@ export default function Blog() {
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent">
-            Political Analysis Blog
+            {t("blog.title")}
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Explore our comprehensive collection of political insights, digital democracy analysis, and contemporary governance commentary.
+            {t("blog.description")}
           </p>
         </motion.div>
 
@@ -60,7 +62,7 @@ export default function Blog() {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Search articles..."
+              placeholder={t("blog.searchPlaceholder")}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-3 bg-input border border-border rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-all duration-300"
@@ -119,9 +121,9 @@ export default function Blog() {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           <p className="text-muted-foreground text-sm">
-            Showing {filteredPosts.length} of {blogPosts.length} articles
-            {selectedCategory !== "All" && ` in ${selectedCategory}`}
-            {searchQuery && ` matching "${searchQuery}"`}
+            {t("blog.showing")} {filteredPosts.length} {t("blog.of")} {blogPosts.length} {t("blog.articles")}
+            {selectedCategory !== t("categories.all") && ` ${t("blog.in")} ${selectedCategory}`}
+            {searchQuery && ` ${t("blog.matching")} "${searchQuery}"`}
           </p>
         </motion.div>
 
@@ -145,13 +147,13 @@ export default function Blog() {
             animate={{ opacity: 1, y: 0 }}
             data-testid="no-results-message"
           >
-            <h3 className="text-2xl font-bold mb-4 text-foreground">No articles found</h3>
+            <h3 className="text-2xl font-bold mb-4 text-foreground">{t("blog.noArticlesFound")}</h3>
             <p className="text-muted-foreground mb-6">
-              Try adjusting your search criteria or browse all categories.
+              {t("blog.tryAdjusting")}
             </p>
             <motion.button
               onClick={() => {
-                setSelectedCategory("All");
+                setSelectedCategory(t("categories.all"));
                 setSearchQuery("");
               }}
               className="glass-button px-6 py-3 rounded-xl font-semibold text-primary-foreground"
@@ -159,7 +161,7 @@ export default function Blog() {
               whileTap={{ scale: 0.98 }}
               data-testid="button-clear-filters"
             >
-              Clear Filters
+              {t("blog.clearFilters")}
             </motion.button>
           </motion.div>
         )}

@@ -376,3 +376,21 @@
     opacity: 0.8;
   }
 }
+
+/* Mobile Scaling - Make everything 67% of original size */
+@media (max-width: 768px) {
+  html {
+    font-size: 67%;
+  }
+  
+  body {
+    transform: scale(0.67);
+    transform-origin: top left;
+    width: 149.25%; /* 100% / 0.67 to compensate for scale */
+  }
+  
+  /* Adjust viewport for proper scrolling */
+  #root {
+    min-height: 100vh;
+  }
+}

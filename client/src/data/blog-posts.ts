@@ -19,8 +19,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "1",
     slug: "fufufafa-dossier-digital-ghosts-political-credibility",
-    title: "The Fufufafa Dossier: Digital Ghosts and Political Credibility",
-    excerpt: "An in-depth investigation into digital controversies, political alliances, and the crisis of credibility in Indonesia's new government. Exploring how anonymous digital footprints can reshape political narratives.",
+    title: "Dossier Fufufafa: Hantu Digital dan Kredibilitas Politik",
+    excerpt: "Investigasi mendalam tentang kontroversi digital, aliansi politik, dan krisis kredibilitas dalam pemerintahan baru Indonesia. Mengeksplorasi bagaimana jejak digital anonim dapat membentuk kembali narasi politik.",
     content: `# The Fufufafa Dossier: Hantu Digital, Aliansi Politik, dan Krisis Kredibilitas dalam Pemerintahan Baru Indonesia
 
 ## Bagian I: Genesis Kontroversi Digital
@@ -56,11 +56,11 @@ Seiring dengan terungkapnya bukti-bukti digital, kontroversi 'fufufafa' beralih 
 ## Kesimpulan
 
 Skandal 'fufufafa' berhasil diredam, tetapi tidak pernah diselesaikan. Ia kini berfungsi sebagai elemen fundamental dalam hubungan kekuasaan antara Presiden Prabowo Subianto dan Wakil Presiden Gibran Rakabuming Raka.`,
-    category: "Political Analysis",
-    tags: ["Indonesia", "Digital Politics", "Investigation", "Credibility"],
+    category: "Analisis Politik",
+    tags: ["Indonesia", "Politik Digital", "Investigasi", "Kredibilitas"],
     author: {
-      name: "Analysis Team",
-      role: "Political Correspondent"
+      name: "Tim Analisis",
+      role: "Koresponden Politik"
     },
     publishedAt: "2024-12-15",
     readTime: 12,
@@ -69,8 +69,8 @@ Skandal 'fufufafa' berhasil diredam, tetapi tidak pernah diselesaikan. Ia kini b
   {
     id: "2",
     slug: "digital-forensics-political-accountability",
-    title: "Digital Forensics in Political Accountability",
-    excerpt: "How digital evidence shapes modern political discourse and accountability mechanisms.",
+    title: "Forensik Digital dalam Akuntabilitas Politik",
+    excerpt: "Bagaimana bukti digital membentuk wacana politik modern dan mekanisme akuntabilitas.",
     content: `# Digital Forensics in Political Accountability
 
 ## Introduction
@@ -88,11 +88,11 @@ While digital evidence provides unprecedented transparency, it also raises quest
 ## Conclusion
 
 As we move forward, the balance between transparency and privacy in political discourse remains a critical challenge for democratic societies.`,
-    category: "Digital Democracy",
-    tags: ["Digital Forensics", "Accountability", "Technology"],
+    category: "Demokrasi Digital",
+    tags: ["Forensik Digital", "Akuntabilitas", "Teknologi"],
     author: {
       name: "Dr. Sarah Chen",
-      role: "Digital Rights Researcher"
+      role: "Peneliti Hak Digital"
     },
     publishedAt: "2024-12-12",
     readTime: 8,
@@ -101,8 +101,8 @@ As we move forward, the balance between transparency and privacy in political di
   {
     id: "3",
     slug: "social-media-political-communication",
-    title: "Social Media and Political Communication",
-    excerpt: "The evolution of political messaging in the age of instant digital communication.",
+    title: "Media Sosial dan Komunikasi Politik",
+    excerpt: "Evolusi pesan politik di era komunikasi digital instan.",
     content: `# Social Media and Political Communication
 
 ## The Digital Revolution in Politics
@@ -119,11 +119,11 @@ Social media platforms have fundamentally transformed how politicians communicat
 ## Impact on Democracy
 
 The democratization of political communication has both positive and negative implications for democratic discourse and participation.`,
-    category: "Government Tech",
-    tags: ["Social Media", "Communication", "Democracy"],
+    category: "Teknologi Pemerintahan",
+    tags: ["Media Sosial", "Komunikasi", "Demokrasi"],
     author: {
       name: "Prof. Michael Rodriguez",
-      role: "Political Communication Expert"
+      role: "Ahli Komunikasi Politik"
     },
     publishedAt: "2024-12-10",
     readTime: 6,
@@ -132,8 +132,8 @@ The democratization of political communication has both positive and negative im
   {
     id: "4",
     slug: "anonymous-digital-identities-politics",
-    title: "Anonymous Digital Identities in Politics",
-    excerpt: "Understanding the impact of anonymous accounts on political discourse and transparency.",
+    title: "Identitas Digital Anonim dalam Politik",
+    excerpt: "Memahami dampak akun anonim terhadap wacana politik dan transparansi.",
     content: `# Anonymous Digital Identities in Politics
 
 ## The Double-Edged Sword of Anonymity
@@ -157,11 +157,11 @@ Anonymous digital identities play a crucial role in political discourse, providi
 ## Finding Balance
 
 The challenge lies in creating systems that protect legitimate anonymous speech while preventing abuse and maintaining accountability.`,
-    category: "Investigation",
-    tags: ["Anonymity", "Digital Identity", "Political Discourse"],
+    category: "Investigasi",
+    tags: ["Anonimitas", "Identitas Digital", "Wacana Politik"],
     author: {
       name: "Emma Thompson",
-      role: "Investigative Journalist"
+      role: "Jurnalis Investigasi"
     },
     publishedAt: "2024-12-08",
     readTime: 7,
@@ -170,8 +170,8 @@ The challenge lies in creating systems that protect legitimate anonymous speech 
   {
     id: "5",
     slug: "crisis-communication-strategies",
-    title: "Crisis Communication Strategies",
-    excerpt: "How political figures navigate digital controversies in the modern media landscape.",
+    title: "Strategi Komunikasi Krisis",
+    excerpt: "Bagaimana tokoh politik menavigasi kontroversi digital dalam lanskap media modern.",
     content: `# Crisis Communication Strategies in the Digital Age
 
 ## Modern Crisis Management
@@ -195,11 +195,11 @@ In today's interconnected world, political crises can escalate rapidly across di
 ## Best Practices
 
 Successful crisis communication in the digital age requires preparation, authenticity, and strategic thinking about long-term reputation management.`,
-    category: "Media Analysis",
-    tags: ["Crisis Management", "Communication", "Strategy"],
+    category: "Analisis Media",
+    tags: ["Manajemen Krisis", "Komunikasi", "Strategi"],
     author: {
       name: "David Kim",
-      role: "Communications Strategist"
+      role: "Ahli Strategi Komunikasi"
     },
     publishedAt: "2024-12-05",
     readTime: 9,
@@ -208,8 +208,8 @@ Successful crisis communication in the digital age requires preparation, authent
   {
     id: "6",
     slug: "political-data-analytics-trends",
-    title: "Political Data Analytics and Trends",
-    excerpt: "Using data science to understand political behavior and voting patterns.",
+    title: "Analitik Data Politik dan Tren",
+    excerpt: "Menggunakan ilmu data untuk memahami perilaku politik dan pola pemilihan.",
     content: `# Political Data Analytics and Trends
 
 ## The Data-Driven Political Landscape
@@ -237,11 +237,11 @@ The use of big data in politics raises important questions about privacy, manipu
 ## Future Implications
 
 As data collection and analysis capabilities continue to advance, the political landscape will likely become increasingly sophisticated and data-driven.`,
-    category: "Data Science",
-    tags: ["Analytics", "Big Data", "Political Science", "Trends"],
+    category: "Ilmu Data",
+    tags: ["Analitik", "Data Besar", "Ilmu Politik", "Tren"],
     author: {
       name: "Dr. Lisa Wang",
-      role: "Data Scientist"
+      role: "Ilmuwan Data"
     },
     publishedAt: "2024-12-03",
     readTime: 10,

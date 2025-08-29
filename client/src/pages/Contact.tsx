@@ -2,29 +2,31 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, MessageSquare } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const contactInfo = [
   {
     icon: Mail,
-    title: "Email Us",
-    details: "contact@politicalinsights.com",
-    description: "Send us your questions or story tips",
+    title: "Email Kami",
+    details: "kontak@wawasanpolitik.id",
+    description: "Kirimkan pertanyaan atau tips berita Anda",
   },
   {
     icon: Phone,
-    title: "Call Us",
-    details: "+1 (555) 123-4567",
-    description: "Available Monday to Friday, 9 AM - 6 PM",
+    title: "Hubungi Kami",
+    details: "+62 (21) 123-4567",
+    description: "Tersedia Senin hingga Jumat, 09.00 - 18.00 WIB",
   },
   {
     icon: MapPin,
-    title: "Visit Us",
-    details: "123 Democracy Street, Political District",
-    description: "Washington, DC 20001",
+    title: "Kunjungi Kami",
+    details: "Jl. Demokrasi No. 123, Jakarta",
+    description: "Jakarta Pusat 10110",
   },
 ];
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -43,8 +45,8 @@ export default function Contact() {
     await new Promise(resolve => setTimeout(resolve, 1500));
 
     toast({
-      title: "Message sent successfully!",
-      description: "We'll get back to you within 24 hours.",
+      title: "Pesan berhasil dikirim!",
+      description: "Kami akan membalas dalam 24 jam.",
     });
 
     setFormData({
@@ -75,11 +77,10 @@ export default function Contact() {
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent">
-            Get in Touch
+            {t('contact.title')}
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Have a story tip, collaboration proposal, or just want to share your thoughts? 
-            We'd love to hear from you.
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -132,9 +133,9 @@ export default function Contact() {
                 transition={{ delay: 0.7, duration: 0.6 }}
               >
                 <MessageSquare className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h2 className="text-3xl font-bold mb-4 text-foreground">Send Us a Message</h2>
+                <h2 className="text-3xl font-bold mb-4 text-foreground">Kirim Pesan</h2>
                 <p className="text-muted-foreground">
-                  Fill out the form below and we'll get back to you as soon as possible.
+                  Isi formulir di bawah ini dan kami akan segera menghubungi Anda.
                 </p>
               </motion.div>
 
@@ -148,7 +149,7 @@ export default function Contact() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Full Name *
+                      Nama Lengkap *
                     </label>
                     <input
                       type="text"
@@ -158,14 +159,14 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-input border border-border rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-all duration-300"
-                      placeholder="Enter your full name"
+                      placeholder="Masukkan nama lengkap Anda"
                       data-testid="input-contact-name"
                     />
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email Address *
+                      Alamat Email *
                     </label>
                     <input
                       type="email"
@@ -175,7 +176,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-input border border-border rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-all duration-300"
-                      placeholder="Enter your email address"
+                      placeholder="Masukkan alamat email Anda"
                       data-testid="input-contact-email"
                     />
                   </div>
@@ -184,7 +185,7 @@ export default function Contact() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="type" className="block text-sm font-medium text-foreground mb-2">
-                      Inquiry Type
+                      Jenis Pertanyaan
                     </label>
                     <select
                       id="type"
@@ -194,17 +195,17 @@ export default function Contact() {
                       className="w-full px-4 py-3 bg-input border border-border rounded-xl text-foreground focus:outline-none focus:border-primary transition-all duration-300"
                       data-testid="select-contact-type"
                     >
-                      <option value="general">General Inquiry</option>
-                      <option value="story-tip">Story Tip</option>
-                      <option value="collaboration">Collaboration</option>
-                      <option value="feedback">Feedback</option>
-                      <option value="press">Press Inquiry</option>
+                      <option value="general">Pertanyaan Umum</option>
+                      <option value="story-tip">Tips Berita</option>
+                      <option value="collaboration">Kolaborasi</option>
+                      <option value="feedback">Umpan Balik</option>
+                      <option value="press">Pertanyaan Media</option>
                     </select>
                   </div>
 
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                      Subject *
+                      Subjek *
                     </label>
                     <input
                       type="text"
@@ -214,7 +215,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-input border border-border rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-all duration-300"
-                      placeholder="Brief subject line"
+                      placeholder="Subjek singkat"
                       data-testid="input-contact-subject"
                     />
                   </div>
@@ -222,7 +223,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Message *
+                    Pesan *
                   </label>
                   <textarea
                     id="message"
@@ -232,7 +233,7 @@ export default function Contact() {
                     required
                     rows={6}
                     className="w-full px-4 py-3 bg-input border border-border rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-all duration-300 resize-none"
-                    placeholder="Tell us more about your inquiry..."
+                    placeholder="Ceritakan lebih lanjut tentang pertanyaan Anda..."
                     data-testid="textarea-contact-message"
                   />
                 </div>
@@ -248,12 +249,12 @@ export default function Contact() {
                   {isLoading ? (
                     <>
                       <div className="w-5 h-5 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin" />
-                      <span>Sending...</span>
+                      <span>Mengirim...</span>
                     </>
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
-                      <span>Send Message</span>
+                      <span>Kirim Pesan</span>
                     </>
                   )}
                 </motion.button>
@@ -271,11 +272,11 @@ export default function Contact() {
           data-testid="additional-info-section"
         >
           <div className="glass-card p-8 rounded-xl max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 text-foreground">Response Time</h3>
+            <h3 className="text-2xl font-bold mb-4 text-foreground">Waktu Respon</h3>
             <p className="text-muted-foreground leading-relaxed">
-              We typically respond to all inquiries within 24 hours during business days. 
-              For urgent matters or breaking news tips, please mention it in your subject line 
-              for priority handling.
+              Kami biasanya merespon semua pertanyaan dalam 24 jam pada hari kerja. 
+              Untuk hal mendesak atau tips berita terkini, mohon sebutkan di subjek 
+              untuk penanganan prioritas.
             </p>
           </div>
         </motion.section>

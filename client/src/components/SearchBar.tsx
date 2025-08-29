@@ -4,10 +4,12 @@ import { Search, X } from 'lucide-react';
 import { useSearch } from '@/hooks/useSearch';
 import { blogPosts } from '@/data/blogPosts';
 import { useLocation } from 'wouter';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function SearchBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [, setLocation] = useLocation();
+  const { t } = useLanguage();
   
   const { query, setQuery, results } = useSearch({
     data: blogPosts,
@@ -25,7 +27,7 @@ export default function SearchBar() {
       <div className="relative">
         <motion.input
           type="search"
-          placeholder="Search articles..."
+          placeholder={t('blog.searchPlaceholder')}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => setIsOpen(true)}
@@ -82,13 +84,13 @@ export default function SearchBar() {
               ))}
               {results.length > 5 && (
                 <div className="px-3 py-2 text-center text-muted-foreground text-xs">
-                  And {results.length - 5} more results...
+                  Dan {results.length - 5} hasil lainnya...
                 </div>
               )}
             </div>
           ) : (
             <div className="p-4 text-center text-muted-foreground text-sm">
-              No articles found for "{query}"
+              Tidak ada artikel ditemukan untuk "{query}"
             </div>
           )}
         </motion.div>

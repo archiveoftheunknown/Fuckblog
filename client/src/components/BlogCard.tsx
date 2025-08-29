@@ -10,7 +10,7 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ post, featured = false }: BlogCardProps) {
-  const formattedDate = new Date(post.publishedAt).toLocaleDateString('en-US', { 
+  const formattedDate = new Date(post.publishedAt).toLocaleDateString('id-ID', { 
     year: 'numeric', 
     month: 'short', 
     day: 'numeric' 
@@ -85,7 +85,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Read Article
+                  Baca Artikel
                 </motion.button>
               </Link>
             </motion.div>
@@ -150,7 +150,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
             </div>
             <div className="flex items-center space-x-1">
               <Clock className="w-4 h-4" />
-              <span>{post.readTime} min read</span>
+              <span>{post.readTime} menit baca</span>
             </div>
           </div>
         </motion.div>
@@ -175,7 +175,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
               className="text-primary text-sm font-medium hover:text-primary/80 transition-colors flex items-center space-x-1"
               whileHover={{ x: 4 }}
             >
-              <span>Read More</span>
+              <span>Baca Selengkapnya</span>
               <ArrowRight className="w-4 h-4" />
             </motion.button>
           </Link>
@@ -187,24 +187,24 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
 
 function getDefaultImage(category: string): string {
   const imageMap = {
-    "Political Analysis": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
-    "Digital Democracy": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
-    "Government Tech": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
-    "Investigation": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
-    "Media Analysis": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
-    "Data Science": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
+    "Analisis Politik": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    "Demokrasi Digital": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    "Teknologi Pemerintahan": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    "Investigasi": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    "Analisis Media": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    "Ilmu Data": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
   };
-  return imageMap[category as keyof typeof imageMap] || imageMap["Political Analysis"];
+  return imageMap[category as keyof typeof imageMap] || imageMap["Analisis Politik"];
 }
 
 function getCategoryColor(category: string): string {
   const colors = {
-    "Political Analysis": "bg-primary/20 text-primary",
-    "Digital Democracy": "bg-chart-1/20 text-chart-1", 
-    "Government Tech": "bg-chart-2/20 text-chart-2",
-    "Investigation": "bg-chart-3/20 text-chart-3",
-    "Media Analysis": "bg-chart-4/20 text-chart-4",
-    "Data Science": "bg-chart-5/20 text-chart-5"
+    "Analisis Politik": "bg-primary/20 text-primary",
+    "Demokrasi Digital": "bg-chart-1/20 text-chart-1", 
+    "Teknologi Pemerintahan": "bg-chart-2/20 text-chart-2",
+    "Investigasi": "bg-chart-3/20 text-chart-3",
+    "Analisis Media": "bg-chart-4/20 text-chart-4",
+    "Ilmu Data": "bg-chart-5/20 text-chart-5"
   };
   return colors[category as keyof typeof colors] || "bg-muted/20 text-muted-foreground";
 }

@@ -10,19 +10,19 @@ export default function Terms() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent">
-            Terms of Service
+            Ketentuan Layanan
           </h1>
           
           <div className="glass-card rounded-2xl p-8 space-y-6 text-muted-foreground">
             <section>
-              <h2 className="text-2xl font-semibold text-foreground mb-3">Welcome</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-3">Selamat Datang</h2>
               <p className="leading-relaxed">
                 These terms govern your use of my political commentary archive. I'm Velo, an independent writer, and this site represents my personal analysis and opinions. By accessing this site, you agree to these simple terms.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-foreground mb-3">Content Nature</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-3">Sifat Konten</h2>
               <p className="leading-relaxed mb-3">
                 Everything published here represents my personal political analysis and commentary about Indonesian politics. The content is:
               </p>
@@ -36,7 +36,7 @@ export default function Terms() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-foreground mb-3">Acceptable Use</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-3">Penggunaan yang Diperbolehkan</h2>
               <p className="leading-relaxed mb-3">
                 You are welcome to:
               </p>
@@ -57,28 +57,28 @@ export default function Terms() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-foreground mb-3">Disclaimer of Warranties</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-3">Penafian Jaminan</h2>
               <p className="leading-relaxed">
                 This site is provided "as is" without any warranties. I make no guarantees about the accuracy, completeness, or timeliness of the content. Political situations evolve rapidly, and older posts may not reflect current realities or my current views.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-foreground mb-3">Limitation of Liability</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-3">Pembatasan Tanggung Jawab</h2>
               <p className="leading-relaxed">
                 In accordance with Indonesian Civil Code (KUHPerdata) principles, I am not liable for any damages arising from your use of this site or reliance on its content. This includes any political, financial, or personal decisions you make based on my commentary. Always verify information independently and consult appropriate professionals for advice. Content here does not violate Indonesian defamation laws (Article 310-321 KUHP) as it focuses on public discourse and criticism of public policies.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-foreground mb-3">Governing Law</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-3">Hukum yang Berlaku</h2>
               <p className="leading-relaxed">
                 These terms are governed by the laws of the Republic of Indonesia, including UU ITE and relevant civil laws, alongside international copyright law and the principle of freedom of expression as recognized in democratic societies. Any disputes should first be resolved through musyawarah (deliberation) in accordance with Indonesian cultural values, before considering formal legal channels.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-foreground mb-3">Changes to Terms</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-3">Perubahan Ketentuan</h2>
               <p className="leading-relaxed">
                 I may update these terms as needed. Continued use of the site after changes constitutes acceptance of the new terms.
               </p>
@@ -86,8 +86,8 @@ export default function Terms() {
 
             <div className="pt-6 border-t border-border">
               <p className="text-sm text-muted-foreground">
-                Last updated: December 2024<br />
-                By Velo - Independent Political Commentator
+                Terakhir diperbarui: Desember 2024<br />
+                Oleh Velo - Komentator Politik Independen
               </p>
             </div>
           </div>

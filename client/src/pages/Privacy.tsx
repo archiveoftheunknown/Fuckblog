@@ -17,47 +17,47 @@ export default function Privacy() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Tentang Kebijakan Ini</h2>
               <p className="leading-relaxed">
-                I'm Velo, and this is my personal political commentary archive. I respect your privacy and am committed to protecting any information you might share while visiting this site. This policy explains what data, if any, is collected and how it's handled.
+                Saya Velo, dan ini adalah arsip komentar politik pribadi saya. Saya menghormati privasi Anda dan berkomitmen untuk melindungi informasi apa pun yang mungkin Anda bagikan saat mengunjungi situs ini. Kebijakan ini menjelaskan data apa, jika ada, yang dikumpulkan dan bagaimana penanganannya.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Pengumpulan Informasi</h2>
               <p className="leading-relaxed mb-3">
-                This website operates as a public archive and does not actively collect personal information, in compliance with Indonesian UU ITE (Law No. 11 of 2008 as amended). No user accounts, comments, or contact forms are provided. The site may use:
+                Situs web ini beroperasi sebagai arsip publik dan tidak secara aktif mengumpulkan informasi pribadi, sesuai dengan UU ITE Indonesia (Undang-Undang No. 11 Tahun 2008 sebagaimana telah diubah). Tidak ada akun pengguna, komentar, atau formulir kontak yang disediakan. Situs ini mungkin menggunakan:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Standard web server logs (IP addresses, browser types, referring pages)</li>
-                <li>Analytics cookies to understand readership patterns (if implemented)</li>
-                <li>Session storage for site preferences (theme, layout)</li>
+                <li>Log server web standar (alamat IP, jenis browser, halaman rujukan)</li>
+                <li>Cookie analitik untuk memahami pola pembaca (jika diterapkan)</li>
+                <li>Penyimpanan sesi untuk preferensi situs (tema, tata letak)</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Penggunaan Data</h2>
               <p className="leading-relaxed">
-                Any automatically collected data is used solely to maintain and improve the website's functionality. I do not sell, trade, or share visitor information with third parties. Server logs are retained for security purposes and deleted after 30 days.
+                Data yang dikumpulkan secara otomatis hanya digunakan untuk memelihara dan meningkatkan fungsionalitas situs web. Saya tidak menjual, memperdagangkan, atau membagikan informasi pengunjung dengan pihak ketiga. Log server disimpan untuk tujuan keamanan dan dihapus setelah 30 hari.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Layanan Pihak Ketiga</h2>
               <p className="leading-relaxed">
-                This site is hosted on Replit, which may collect its own analytics. Please refer to Replit's privacy policy for their data practices. No other third-party tracking or advertising services are intentionally implemented.
+                Situs ini di-host di Replit, yang mungkin mengumpulkan analitiknya sendiri. Silakan merujuk ke kebijakan privasi Replit untuk praktik data mereka. Tidak ada layanan pelacakan atau periklanan pihak ketiga lainnya yang sengaja diterapkan.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Hak Anda</h2>
               <p className="leading-relaxed">
-                Under Indonesian Law No. 27 of 2022 on Personal Data Protection (UU PDP), as well as GDPR (EU) and CCPA (California), you have rights regarding your personal data. Indonesian citizens have the right to access, correct, and request deletion of their data. Since this site collects minimal data, there's little to request, but you may contact me about any privacy concerns. You can browse with privacy tools like VPNs or Tor if you prefer complete anonymity.
+                Berdasarkan Undang-Undang Indonesia No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP), serta GDPR (UE) dan CCPA (California), Anda memiliki hak terkait data pribadi Anda. Warga negara Indonesia memiliki hak untuk mengakses, mengoreksi, dan meminta penghapusan data mereka. Karena situs ini mengumpulkan data minimal, ada sedikit yang dapat diminta, tetapi Anda dapat menghubungi saya tentang masalah privasi apa pun. Anda dapat menjelajah dengan alat privasi seperti VPN atau Tor jika Anda lebih suka anonimitas lengkap.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Pembaruan</h2>
               <p className="leading-relaxed">
-                This policy may be updated occasionally to reflect changes in practices or legal requirements. The last update was made in December 2024.
+                Kebijakan ini dapat diperbarui sesekali untuk mencerminkan perubahan dalam praktik atau persyaratan hukum. Pembaruan terakhir dilakukan pada Desember 2024.
               </p>
             </section>
 

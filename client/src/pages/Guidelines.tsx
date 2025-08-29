@@ -17,83 +17,83 @@ export default function Guidelines() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Komitmen Saya</h2>
               <p className="leading-relaxed">
-                As an independent political commentator focusing on Indonesian politics, I, Velo, am committed to thoughtful, honest analysis. While this is a personal blog reflecting my views, I hold myself to certain standards aligned with Indonesian Press Council (Dewan Pers) ethics and Pancasila values to ensure my commentary contributes meaningfully to democratic discourse in Indonesia.
+                Sebagai komentator politik independen yang berfokus pada politik Indonesia, saya, Velo, berkomitmen pada analisis yang bijaksana dan jujur. Meskipun ini adalah blog pribadi yang mencerminkan pandangan saya, saya memegang standar tertentu yang selaras dengan etika Dewan Pers Indonesia dan nilai-nilai Pancasila untuk memastikan komentar saya berkontribusi secara bermakna pada wacana demokrasi di Indonesia.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Transparansi</h2>
               <p className="leading-relaxed mb-3">
-                I believe in being upfront about my perspective:
+                Saya percaya pada keterbukaan tentang perspektif saya:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>This is opinion and analysis, not neutral reporting</li>
-                <li>I have my own political leanings which influence my commentary</li>
-                <li>When I change my position on issues, I acknowledge it</li>
-                <li>Corrections are made clearly when factual errors occur</li>
+                <li>Ini adalah opini dan analisis, bukan laporan netral</li>
+                <li>Saya memiliki kecenderungan politik saya sendiri yang mempengaruhi komentar saya</li>
+                <li>Ketika saya mengubah posisi saya pada isu-isu, saya mengakuinya</li>
+                <li>Koreksi dibuat dengan jelas ketika kesalahan faktual terjadi</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Standar Riset</h2>
               <p className="leading-relaxed mb-3">
-                While this is commentary, I strive to base my analysis on:
+                Meskipun ini adalah komentar, saya berusaha untuk mendasarkan analisis saya pada:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Verified information from multiple sources when possible</li>
-                <li>Primary sources like official documents and transcripts</li>
-                <li>Clear distinction between facts, analysis, and speculation</li>
-                <li>Context that helps readers understand complex issues</li>
+                <li>Informasi terverifikasi dari berbagai sumber jika memungkinkan</li>
+                <li>Sumber primer seperti dokumen resmi dan transkrip</li>
+                <li>Pembedaan yang jelas antara fakta, analisis, dan spekulasi</li>
+                <li>Konteks yang membantu pembaca memahami isu-isu kompleks</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Independensi</h2>
               <p className="leading-relaxed">
-                This blog is entirely independent. I am not affiliated with any political party, campaign, or advocacy organization. No one pays me for coverage or influences my editorial decisions. My opinions are my own, formed through research and reflection.
+                Blog ini sepenuhnya independen. Saya tidak berafiliasi dengan partai politik, kampanye, atau organisasi advokasi mana pun. Tidak ada yang membayar saya untuk liputan atau mempengaruhi keputusan editorial saya. Pendapat saya adalah milik saya sendiri, terbentuk melalui penelitian dan refleksi.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Wacana yang Santun</h2>
               <p className="leading-relaxed">
-                I aim to criticize ideas and policies, not attack individuals personally, respecting the Indonesian principle of "kritik yang membangun" (constructive criticism). While political commentary can be sharp, I avoid ad hominem attacks, SARA (ethnic, religious, racial, and inter-group) provocations as prohibited under Indonesian law, and content designed purely to provoke rather than illuminate. I respect Indonesian cultural values while maintaining critical independence.
+                Saya bertujuan untuk mengkritik ide dan kebijakan, bukan menyerang individu secara pribadi, menghormati prinsip Indonesia tentang "kritik yang membangun". Meskipun komentar politik bisa tajam, saya menghindari serangan ad hominem, provokasi SARA (suku, agama, ras, dan antar golongan) seperti yang dilarang berdasarkan hukum Indonesia, dan konten yang dirancang murni untuk memprovokasi daripada mencerahkan. Saya menghormati nilai-nilai budaya Indonesia sambil mempertahankan independensi kritis.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Cakupan Liputan</h2>
               <p className="leading-relaxed mb-3">
-                My commentary focuses on Indonesian politics:
+                Komentar saya berfokus pada politik Indonesia:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Indonesian democratic processes and Reformasi legacy</li>
-                <li>Digital transformation of Indonesian politics and e-governance</li>
-                <li>Indonesian media landscape and information ecosystems</li>
-                <li>Policy impacts on Indonesian society and citizens</li>
-                <li>Historical context from Orde Baru to contemporary Indonesia</li>
-                <li>Regional politics and decentralization (otonomi daerah)</li>
+                <li>Proses demokrasi Indonesia dan warisan Reformasi</li>
+                <li>Transformasi digital politik Indonesia dan e-governance</li>
+                <li>Lanskap media Indonesia dan ekosistem informasi</li>
+                <li>Dampak kebijakan terhadap masyarakat dan warga Indonesia</li>
+                <li>Konteks sejarah dari Orde Baru hingga Indonesia kontemporer</li>
+                <li>Politik regional dan desentralisasi (otonomi daerah)</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Kebijakan Koreksi</h2>
               <p className="leading-relaxed">
-                When I make factual errors, I correct them promptly and transparently. Corrections are noted at the top of the affected article with the date and nature of the correction. Opinion changes over time are different from errors and are addressed in new posts rather than corrections.
+                Ketika saya membuat kesalahan faktual, saya mengoreksinya dengan segera dan transparan. Koreksi dicatat di bagian atas artikel yang terpengaruh dengan tanggal dan sifat koreksi. Perubahan pendapat dari waktu ke waktu berbeda dari kesalahan dan ditangani dalam posting baru daripada koreksi.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Batasan Etika</h2>
               <p className="leading-relaxed">
-                I do not publish private information about individuals unless it's already public and directly relevant to political analysis, respecting Indonesian privacy laws and UU ITE provisions. I distinguish between public officials (pejabat publik) open to criticism under Indonesian law and private citizens. I avoid content that could be considered pencemaran nama baik (defamation) while maintaining the right to criticize public policies and governance.
+                Saya tidak mempublikasikan informasi pribadi tentang individu kecuali sudah publik dan relevan langsung dengan analisis politik, menghormati undang-undang privasi Indonesia dan ketentuan UU ITE. Saya membedakan antara pejabat publik yang terbuka untuk kritik berdasarkan hukum Indonesia dan warga pribadi. Saya menghindari konten yang dapat dianggap sebagai pencemaran nama baik sambil mempertahankan hak untuk mengkritik kebijakan publik dan tata kelola.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Kepercayaan Pembaca</h2>
               <p className="leading-relaxed">
-                Your trust is earned through consistency, honesty, and quality analysis. I may not always be right, but I will always strive to be thoughtful, fair in my criticism, and transparent about my reasoning.
+                Kepercayaan Anda diperoleh melalui konsistensi, kejujuran, dan analisis berkualitas. Saya mungkin tidak selalu benar, tetapi saya akan selalu berusaha untuk bijaksana, adil dalam kritik saya, dan transparan tentang alasan saya.
               </p>
             </section>
 

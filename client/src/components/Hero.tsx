@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer, staggerItem, glassButton } from '@/lib/animations';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Hero() {
+  const { t } = useLanguage();
   const scrollToFeatured = () => {
     const element = document.querySelector('[data-testid="featured-articles-section"]');
     if (element) {
@@ -32,7 +34,7 @@ export default function Hero() {
             variants={staggerItem}
             data-testid="hero-title"
           >
-            Modern Political Analysis
+            {t('hero.title')}
           </motion.h1>
           
           <motion.p
@@ -40,7 +42,7 @@ export default function Hero() {
             variants={staggerItem}
             data-testid="hero-description"
           >
-            Deep insights into contemporary politics, digital democracy, and the evolving landscape of public discourse in the digital age.
+            {t('hero.subtitle')}
           </motion.p>
           
           <motion.div
@@ -53,7 +55,7 @@ export default function Hero() {
               onClick={scrollToFeatured}
               data-testid="button-explore-articles"
             >
-              Explore Articles
+              {t('home.categories.featuredTitle')}
             </motion.button>
             
             <motion.button
@@ -62,7 +64,7 @@ export default function Hero() {
               whileTap={{ scale: 0.98 }}
               data-testid="button-subscribe"
             >
-              Subscribe
+              Berlangganan
             </motion.button>
           </motion.div>
         </motion.div>

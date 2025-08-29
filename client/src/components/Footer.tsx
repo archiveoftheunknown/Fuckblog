@@ -2,28 +2,29 @@ import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { Twitter, Linkedin, Github } from 'lucide-react';
 import { fadeInUp } from '@/lib/animations';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const footerLinks = {
   quickLinks: [
-    { label: 'Home', href: '/' },
-    { label: 'Latest Articles', href: '/blog' },
-    { label: 'Political Analysis', href: '/blog' },
-    { label: 'Digital Democracy', href: '/blog' },
-    { label: 'About Us', href: '/about' },
+    { label: 'Beranda', href: '/' },
+    { label: 'Artikel Terbaru', href: '/blog' },
+    { label: 'Analisis Politik', href: '/blog' },
+    { label: 'Demokrasi Digital', href: '/blog' },
+    { label: 'Tentang Kami', href: '/about' },
   ],
   categories: [
-    { label: 'Government Policy', href: '/blog' },
-    { label: 'Digital Rights', href: '/blog' },
-    { label: 'Media Analysis', href: '/blog' },
-    { label: 'Political Commentary', href: '/blog' },
-    { label: 'Investigation', href: '/blog' },
+    { label: 'Kebijakan Pemerintah', href: '/blog' },
+    { label: 'Hak Digital', href: '/blog' },
+    { label: 'Analisis Media', href: '/blog' },
+    { label: 'Komentar Politik', href: '/blog' },
+    { label: 'Investigasi', href: '/blog' },
   ],
   legal: [
-    { label: 'Privacy Policy', href: '/privacy' },
-    { label: 'Terms of Service', href: '/terms' },
-    { label: 'Copyright', href: '/copyright' },
-    { label: 'Editorial Guidelines', href: '/guidelines' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Kebijakan Privasi', href: '/privacy' },
+    { label: 'Ketentuan Layanan', href: '/terms' },
+    { label: 'Hak Cipta', href: '/copyright' },
+    { label: 'Pedoman Editorial', href: '/guidelines' },
+    { label: 'Kontak', href: '/contact' },
   ],
 };
 
@@ -34,6 +35,7 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="bg-card/50 backdrop-blur-sm border-t border-border" data-testid="footer">
       <div className="container mx-auto px-8 py-12">
@@ -44,10 +46,10 @@ export default function Footer() {
             data-testid="footer-brand"
           >
             <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent">
-              Political Insights
+              {t('hero.title')}
             </h3>
             <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-              Delivering in-depth political analysis and commentary to help you understand the complexities of modern governance and democracy.
+              Memberikan analisis dan komentar politik mendalam untuk membantu Anda memahami kompleksitas pemerintahan modern dan demokrasi.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => {
@@ -74,7 +76,7 @@ export default function Footer() {
             transition={{ delay: 0.1 }}
             data-testid="footer-quick-links"
           >
-            <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-foreground mb-4">Tautan Cepat</h4>
             <ul className="space-y-2 text-sm">
               {footerLinks.quickLinks.map((link) => (
                 <li key={link.label}>
@@ -94,7 +96,7 @@ export default function Footer() {
             transition={{ delay: 0.2 }}
             data-testid="footer-categories"
           >
-            <h4 className="font-semibold text-foreground mb-4">Categories</h4>
+            <h4 className="font-semibold text-foreground mb-4">Kategori</h4>
             <ul className="space-y-2 text-sm">
               {footerLinks.categories.map((link) => (
                 <li key={link.label}>
@@ -114,7 +116,7 @@ export default function Footer() {
             transition={{ delay: 0.3 }}
             data-testid="footer-legal"
           >
-            <h4 className="font-semibold text-foreground mb-4">Legal</h4>
+            <h4 className="font-semibold text-foreground mb-4">Hukum</h4>
             <ul className="space-y-2 text-sm">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
@@ -138,22 +140,22 @@ export default function Footer() {
           data-testid="footer-bottom"
         >
           <p className="text-muted-foreground text-sm">
-            © 2024 Political Insights. All rights reserved.
+            © 2024 {t('hero.title')}. Hak cipta dilindungi.
           </p>
           <div className="flex items-center space-x-6 mt-4 md:mt-0 text-sm">
             <Link href="/standards" data-testid="link-editorial-standards">
               <span className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">
-                Editorial Standards
+                Standar Editorial
               </span>
             </Link>
             <Link href="/fact-checking" data-testid="link-fact-checking">
               <span className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">
-                Fact-Checking
+                Verifikasi Fakta
               </span>
             </Link>
             <Link href="/support" data-testid="link-support">
               <span className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">
-                Support
+                Dukungan
               </span>
             </Link>
           </div>

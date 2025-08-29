@@ -10,17 +10,19 @@ import {
 } from 'lucide-react';
 import SearchBar from './SearchBar';
 import { slideInLeft } from '@/lib/animations';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const navigationItems = [
-  { href: '/', label: 'Home', icon: Home },
+  { href: '/', label: 'Beranda', icon: Home },
   { href: '/blog', label: 'Blog', icon: FileText },
-  { href: '/about', label: 'About', icon: Info },
-  { href: '/archives', label: 'Archives', icon: Archive },
-  { href: '/contact', label: 'Contact', icon: MessageCircle },
+  { href: '/about', label: 'Tentang', icon: Info },
+  { href: '/archives', label: 'Arsip', icon: Archive },
+  { href: '/contact', label: 'Kontak', icon: MessageCircle },
 ];
 
 export default function Sidebar() {
   const [location] = useLocation();
+  const { t } = useLanguage();
 
   return (
     <motion.aside 
@@ -38,10 +40,10 @@ export default function Sidebar() {
         >
           <Link href="/" data-testid="link-home">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent cursor-pointer">
-              Political Insights
+              {t('hero.title')}
             </h1>
           </Link>
-          <p className="text-muted-foreground text-sm mt-1">Modern Analysis & Commentary</p>
+          <p className="text-muted-foreground text-sm mt-1">{t('hero.subtitle')}</p>
         </motion.div>
 
         {/* Search Bar */}

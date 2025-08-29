@@ -17,70 +17,70 @@ export default function Terms() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Selamat Datang</h2>
               <p className="leading-relaxed">
-                These terms govern your use of my political commentary archive. I'm Velo, an independent writer, and this site represents my personal analysis and opinions. By accessing this site, you agree to these simple terms.
+                Ketentuan ini mengatur penggunaan Anda atas arsip komentar politik saya. Saya Velo, seorang penulis independen, dan situs ini mewakili analisis dan opini pribadi saya. Dengan mengakses situs ini, Anda menyetujui ketentuan sederhana ini.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Sifat Konten</h2>
               <p className="leading-relaxed mb-3">
-                Everything published here represents my personal political analysis and commentary about Indonesian politics. The content is:
+                Semua yang dipublikasikan di sini mewakili analisis dan komentar politik pribadi saya tentang politik Indonesia. Kontennya:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Opinion-based and should not be taken as factual reporting</li>
-                <li>Protected under Article 28E and 28F of the Indonesian Constitution regarding freedom of expression</li>
-                <li>Compliant with Indonesian Press Law (UU Pers No. 40/1999) as independent commentary</li>
-                <li>Not intended as professional political or legal advice</li>
-                <li>Subject to my own biases and perspectives</li>
+                <li>Berbasis opini dan tidak boleh dianggap sebagai pelaporan faktual</li>
+                <li>Dilindungi berdasarkan Pasal 28E dan 28F UUD 1945 tentang kebebasan berekspresi</li>
+                <li>Sesuai dengan Undang-Undang Pers Indonesia (UU Pers No. 40/1999) sebagai komentar independen</li>
+                <li>Tidak dimaksudkan sebagai nasihat politik atau hukum profesional</li>
+                <li>Tunduk pada bias dan perspektif saya sendiri</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Penggunaan yang Diperbolehkan</h2>
               <p className="leading-relaxed mb-3">
-                You are welcome to:
+                Anda dipersilakan untuk:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Read and share articles with proper attribution</li>
-                <li>Quote portions for criticism, commentary, or educational purposes under fair use</li>
-                <li>Link to content from your own platforms</li>
+                <li>Membaca dan membagikan artikel dengan atribusi yang tepat</li>
+                <li>Mengutip sebagian untuk kritik, komentar, atau tujuan pendidikan berdasarkan penggunaan wajar</li>
+                <li>Menautkan ke konten dari platform Anda sendiri</li>
               </ul>
               <p className="leading-relaxed mt-3">
-                You may not:
+                Anda tidak boleh:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Republish full articles without permission</li>
-                <li>Misrepresent my views or take quotes out of context</li>
-                <li>Use automated tools to scrape or download content in bulk</li>
-                <li>Attempt to access restricted areas of the website</li>
+                <li>Menerbitkan ulang artikel lengkap tanpa izin</li>
+                <li>Menyalahartikan pandangan saya atau mengambil kutipan di luar konteks</li>
+                <li>Menggunakan alat otomatis untuk mengikis atau mengunduh konten secara massal</li>
+                <li>Mencoba mengakses area terbatas dari situs web</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Penafian Jaminan</h2>
               <p className="leading-relaxed">
-                This site is provided "as is" without any warranties. I make no guarantees about the accuracy, completeness, or timeliness of the content. Political situations evolve rapidly, and older posts may not reflect current realities or my current views.
+                Situs ini disediakan "apa adanya" tanpa jaminan apa pun. Saya tidak memberikan jaminan tentang keakuratan, kelengkapan, atau ketepatan waktu konten. Situasi politik berkembang pesat, dan posting lama mungkin tidak mencerminkan realitas saat ini atau pandangan saya saat ini.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Pembatasan Tanggung Jawab</h2>
               <p className="leading-relaxed">
-                In accordance with Indonesian Civil Code (KUHPerdata) principles, I am not liable for any damages arising from your use of this site or reliance on its content. This includes any political, financial, or personal decisions you make based on my commentary. Always verify information independently and consult appropriate professionals for advice. Content here does not violate Indonesian defamation laws (Article 310-321 KUHP) as it focuses on public discourse and criticism of public policies.
+                Sesuai dengan prinsip-prinsip Kitab Undang-Undang Hukum Perdata Indonesia (KUHPerdata), saya tidak bertanggung jawab atas kerusakan apa pun yang timbul dari penggunaan situs ini atau ketergantungan pada kontennya. Ini termasuk keputusan politik, keuangan, atau pribadi yang Anda buat berdasarkan komentar saya. Selalu verifikasi informasi secara independen dan konsultasikan dengan profesional yang tepat untuk mendapatkan nasihat. Konten di sini tidak melanggar undang-undang pencemaran nama baik Indonesia (Pasal 310-321 KUHP) karena berfokus pada wacana publik dan kritik terhadap kebijakan publik.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Hukum yang Berlaku</h2>
               <p className="leading-relaxed">
-                These terms are governed by the laws of the Republic of Indonesia, including UU ITE and relevant civil laws, alongside international copyright law and the principle of freedom of expression as recognized in democratic societies. Any disputes should first be resolved through musyawarah (deliberation) in accordance with Indonesian cultural values, before considering formal legal channels.
+                Ketentuan ini diatur oleh hukum Republik Indonesia, termasuk UU ITE dan hukum perdata yang relevan, bersama dengan hukum hak cipta internasional dan prinsip kebebasan berekspresi seperti yang diakui dalam masyarakat demokratis. Setiap perselisihan harus diselesaikan terlebih dahulu melalui musyawarah sesuai dengan nilai-nilai budaya Indonesia, sebelum mempertimbangkan jalur hukum formal.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Perubahan Ketentuan</h2>
               <p className="leading-relaxed">
-                I may update these terms as needed. Continued use of the site after changes constitutes acceptance of the new terms.
+                Saya dapat memperbarui ketentuan ini sesuai kebutuhan. Penggunaan situs yang berkelanjutan setelah perubahan merupakan penerimaan terhadap ketentuan baru.
               </p>
             </section>
 

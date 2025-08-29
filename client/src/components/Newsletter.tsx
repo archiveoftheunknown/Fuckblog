@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { scaleIn, glassButton } from '@/lib/animations';
 import { useToast } from '@/hooks/use-toast';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Newsletter() {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const { t } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,8 +18,8 @@ export default function Newsletter() {
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     toast({
-      title: "Successfully subscribed!",
-      description: "Thank you for subscribing to our newsletter.",
+      title: "Berhasil berlangganan!",
+      description: "Terima kasih telah berlangganan buletin kami.",
     });
 
     setEmail('');
@@ -38,7 +40,7 @@ export default function Newsletter() {
             transition={{ delay: 0.2 }}
             data-testid="newsletter-title"
           >
-            Stay Informed
+            Tetap Terinformasi
           </motion.h3>
           
           <motion.p
@@ -48,7 +50,7 @@ export default function Newsletter() {
             transition={{ delay: 0.3 }}
             data-testid="newsletter-description"
           >
-            Get the latest political analysis and insights delivered directly to your inbox. Join our community of informed readers.
+            Dapatkan analisis dan wawasan politik terbaru langsung ke kotak masuk Anda. Bergabunglah dengan komunitas pembaca kami yang terinformasi.
           </motion.p>
           
           <motion.form
@@ -60,7 +62,7 @@ export default function Newsletter() {
           >
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder="Masukkan email Anda"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -75,7 +77,7 @@ export default function Newsletter() {
               {...glassButton}
               data-testid="button-newsletter-subscribe"
             >
-              {isLoading ? 'Subscribing...' : 'Subscribe'}
+              {isLoading ? 'Mendaftar...' : 'Berlangganan'}
             </motion.button>
           </motion.form>
         </motion.div>

@@ -40,7 +40,7 @@ export default function Footer() {
               Political Insights
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Delivering in-depth political analysis and commentary to help you understand the complexities of modern governance and democracy.
+              A personal archive of political analysis and commentary by Velo, exploring the complexities of modern governance and democracy.
             </p>
           </motion.div>
 
@@ -117,7 +117,7 @@ export default function Footer() {
           data-testid="footer-bottom"
         >
           <p className="text-muted-foreground text-sm">
-            © 2024 Political Insights. All rights reserved.
+            © 2024 Created by Velo. All rights reserved.
           </p>
           <div className="flex items-center space-x-6 mt-4 md:mt-0 text-sm">
             <Link href="/standards">

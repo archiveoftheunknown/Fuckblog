@@ -46,10 +46,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             data-testid="sidebar"
           >
             <div className="p-6">
-              {/* Close button for mobile */}
+              {/* Close button - visible on all screen sizes */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 p-2 glass-button rounded-lg lg:hidden"
+                className="absolute top-4 right-4 p-2 glass-button rounded-lg"
                 data-testid="sidebar-close"
               >
                 <X className="w-5 h-5" />

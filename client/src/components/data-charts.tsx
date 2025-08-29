@@ -8,6 +8,7 @@ import {
   PieChart,
   Pie,
   Cell,
+  Sector,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -140,6 +141,7 @@ export function InteractivePieChart({
   showLabel = true 
 }: PieChartProps) {
   const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
+  const [animatedData, setAnimatedData] = useState(data);
   
   // Gradient colors with glass effect
   const gradientColors = [
@@ -151,8 +153,8 @@ export function InteractivePieChart({
     { start: '#f472b6', end: '#ec4899' }, // Pink gradient
   ];
   
-  const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }: any) => {
-    if (percent < 5) return null;
+  const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }: any) => {
+    if (percent < 5 || activeIndex !== undefined && activeIndex !== index) return null;
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
     const x = cx + radius * Math.cos(-midAngle * Math.PI / 180);
     const y = cy + radius * Math.sin(-midAngle * Math.PI / 180);
@@ -164,11 +166,41 @@ export function InteractivePieChart({
         fill="white" 
         textAnchor={x > cx ? 'start' : 'end'} 
         dominantBaseline="central"
-        className="font-bold text-sm"
+        className="font-bold text-sm pointer-events-none"
         style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.8))' }}
       >
         {`${percent.toFixed(0)}%`}
       </text>
+    );
+  };
+
+  const CustomActiveShape = (props: any) => {
+    const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent } = props;
+    
+    return (
+      <g>
+        <Sector
+          cx={cx}
+          cy={cy}
+          innerRadius={innerRadius}
+          outerRadius={outerRadius + 8}
+          startAngle={startAngle}
+          endAngle={endAngle}
+          fill={fill}
+          cornerRadius={12}
+        />
+        <Sector
+          cx={cx}
+          cy={cy}
+          innerRadius={innerRadius - 2}
+          outerRadius={outerRadius + 10}
+          startAngle={startAngle}
+          endAngle={endAngle}
+          fill={fill}
+          fillOpacity={0.3}
+          cornerRadius={12}
+        />
+      </g>
     );
   };
 
@@ -216,13 +248,14 @@ export function InteractivePieChart({
                 label={renderCustomizedLabel}
                 innerRadius={window.innerWidth < 768 ? 50 : 60}
                 outerRadius={window.innerWidth < 768 ? 100 : 120}
-                paddingAngle={2}
-                cornerRadius={8}
+                paddingAngle={0}
                 fill="#8884d8"
                 dataKey={dataKey}
                 animationBegin={0}
                 animationDuration={1500}
                 animationEasing="ease-out"
+                activeIndex={activeIndex}
+                activeShape={CustomActiveShape}
                 onMouseEnter={onPieEnter}
                 onMouseLeave={onPieLeave}
               >
@@ -230,16 +263,12 @@ export function InteractivePieChart({
                   <Cell 
                     key={`cell-${index}`} 
                     fill={`url(#gradient-${index % gradientColors.length})`}
+                    stroke="none"
+                    strokeWidth={0}
                     style={{
-                      filter: activeIndex === index 
-                        ? 'drop-shadow(0 8px 16px rgba(0,0,0,0.3))' 
-                        : activeIndex !== undefined 
-                          ? 'opacity(0.5) blur(0.5px)' 
-                          : 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))',
+                      filter: activeIndex !== undefined && activeIndex !== index ? 'opacity(0.6)' : 'none',
                       cursor: 'pointer',
-                      transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                      transform: activeIndex === index ? 'scale(1.08)' : 'scale(1)',
-                      transformOrigin: 'center'
+                      transition: 'all 0.3s ease'
                     }}
                   />
                 ))}

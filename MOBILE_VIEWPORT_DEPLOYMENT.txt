@@ -1,0 +1,37 @@
+MOBILE VIEWPORT ZOOM - GITHUB PAGES DEPLOYMENT
+==============================================
+
+Download: "mobile-viewport-zoom.tar.gz"
+
+WHAT'S CHANGED:
+---------------
+✓ Site now starts zoomed out to 75% on mobile (like pinch-to-zoom)
+✓ Users can zoom in/out from 75% to 500% 
+✓ Removed CSS scaling - site elements stay normal size
+✓ Content appears smaller in viewport (shows more at once)
+✓ Works like Chrome's mobile zoom feature
+
+HOW IT WORKS:
+-------------
+The viewport meta tag now sets:
+- initial-scale=0.75 (starts at 75% zoom)
+- minimum-scale=0.75 (can't zoom out more than 75%)
+- maximum-scale=5 (can zoom in up to 500%)
+
+This makes the browser show more content at once on mobile,
+similar to pinching to zoom out on your phone.
+
+DEPLOYMENT STEPS:
+-----------------
+1. Extract mobile-viewport-zoom.tar.gz
+2. Upload ALL files to your GitHub repository
+3. Enable GitHub Pages (Settings → Pages → main branch → root folder)
+4. Wait 2-5 minutes for deployment
+
+Your site: https://[username].github.io/[repository-name]/
+
+FILES INCLUDED:
+--------------
+- index.html (with viewport zoom settings)
+- 404.html (for client-side routing)
+- assets/ folder (CSS & JavaScript)

@@ -24,7 +24,7 @@ export default function Copyright() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Perlindungan Hak Cipta</h2>
               <p className="leading-relaxed">
-                © 2024 Wawasan Politik. Hak Cipta Dilindungi. Semua hak dilindungi berdasarkan Undang-Undang Hak Cipta Indonesia (UU No. 28 Tahun 2014 tentang Hak Cipta). Ini mencakup semua teks, analisis, komentar, dan pemilihan serta pengaturan konten yang unik. Ekspresi kreatif ide-ide politik dan cara spesifik penyajiannya di sini adalah kekayaan intelektual yang dilindungi. Sesuai hukum Indonesia, perlindungan hak cipta otomatis sejak penciptaan.
+                © 2025. Hak Cipta Dilindungi. Semua hak dilindungi berdasarkan Undang-Undang Hak Cipta Indonesia (UU No. 28 Tahun 2014 tentang Hak Cipta). Ini mencakup semua teks, analisis, komentar, dan pemilihan serta pengaturan konten yang unik. Ekspresi kreatif ide-ide politik dan cara spesifik penyajiannya di sini adalah kekayaan intelektual yang dilindungi. Sesuai hukum Indonesia, perlindungan hak cipta otomatis sejak penciptaan.
               </p>
             </section>
 
@@ -34,7 +34,7 @@ export default function Copyright() {
                 Situs ini mendukung prinsip pembatasan hak cipta berdasarkan Pasal 43-51 Undang-Undang Hak Cipta Indonesia untuk tujuan pendidikan, komentar, dan kritik. Anda dapat:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Mengutip kutipan singkat dengan atribusi yang tepat ke "Wawasan Politik"</li>
+                <li>Mengutip kutipan singkat dengan atribusi yang tepat</li>
                 <li>Menautkan ke artikel saat mendiskusikan atau mengkritiknya</li>
                 <li>Menggunakan konten untuk tujuan pendidikan non-komersial dengan kutipan (pendidikan)</li>
                 <li>Membagikan artikel di media sosial dengan atribusi yang utuh</li>
@@ -48,7 +48,7 @@ export default function Copyright() {
                 Saat mengutip atau mengambil konten, silakan gunakan format ini:
               </p>
               <div className="bg-muted/30 p-4 rounded-lg font-mono text-sm">
-                "Kutipan atau cuplikan" - Wawasan Politik, [Judul Artikel], [Tanggal]<br />
+                "Kutipan atau cuplikan" - [Judul Artikel], [Tanggal]<br />
                 URL: [Tautan ke artikel asli]
               </div>
             </section>

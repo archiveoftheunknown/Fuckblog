@@ -87,7 +87,7 @@ export default function Terms() {
             <div className="pt-6 border-t border-border">
               <p className="text-sm text-muted-foreground">
                 Terakhir diperbarui: Desember 2024<br />
-                © Wawasan Politik Indonesia
+                © 2025
               </p>
             </div>
           </div>

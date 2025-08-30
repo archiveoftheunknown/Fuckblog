@@ -7,7 +7,12 @@ import type { BlogPost } from "@/data/blog-posts";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function SearchBar() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  
+  // Add language prefix for English routes
+  const getLocalizedPath = (path: string) => {
+    return language === 'en' ? `/en${path}` : path;
+  };
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<BlogPost[]>([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -86,7 +91,7 @@ export default function SearchBar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
                 >
-                  <Link href={`/blog/${post.slug}`}>
+                  <Link href={getLocalizedPath(`/blog/${post.slug}`)}>
                     <a
                       onClick={handleResultClick}
                       className="block p-3 rounded-lg hover:bg-accent transition-colors duration-200"

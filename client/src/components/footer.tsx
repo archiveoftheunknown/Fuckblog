@@ -7,26 +7,31 @@ const scrollToTop = () => {
 };
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  
+  // Add language prefix for English routes
+  const getLocalizedPath = (path: string) => {
+    return language === 'en' ? `/en${path}` : path;
+  };
   
   const footerLinks = {
     quickLinks: [
-      { label: t("footer.home"), href: "/" },
-      { label: t("footer.latestArticles"), href: "/blog" },
-      { label: t("categories.politicalAnalysis"), href: "/blog" },
-      { label: t("categories.digitalDemocracy"), href: "/blog" },
+      { label: t("footer.home"), href: getLocalizedPath("/") },
+      { label: t("footer.latestArticles"), href: getLocalizedPath("/blog") },
+      { label: t("categories.politicalAnalysis"), href: getLocalizedPath("/blog") },
+      { label: t("categories.digitalDemocracy"), href: getLocalizedPath("/blog") },
     ],
     categories: [
-      { label: t("categories.governmentPolicy"), href: "/blog" },
-      { label: t("categories.digitalRights"), href: "/blog" },
-      { label: t("categories.mediaAnalysis"), href: "/blog" },
-      { label: t("categories.politicalCommentary"), href: "/blog" },
-      { label: t("categories.investigation"), href: "/blog" },
+      { label: t("categories.governmentPolicy"), href: getLocalizedPath("/blog") },
+      { label: t("categories.digitalRights"), href: getLocalizedPath("/blog") },
+      { label: t("categories.mediaAnalysis"), href: getLocalizedPath("/blog") },
+      { label: t("categories.politicalCommentary"), href: getLocalizedPath("/blog") },
+      { label: t("categories.investigation"), href: getLocalizedPath("/blog") },
     ],
     legal: [
-      { label: t("footer.privacyPolicy"), href: "/privacy" },
-      { label: t("footer.termsOfService"), href: "/terms" },
-      { label: t("footer.copyright"), href: "/copyright" },
+      { label: t("footer.privacyPolicy"), href: getLocalizedPath("/privacy") },
+      { label: t("footer.termsOfService"), href: getLocalizedPath("/terms") },
+      { label: t("footer.copyright"), href: getLocalizedPath("/copyright") },
     ],
   };
   return (
@@ -132,14 +137,14 @@ export default function Footer() {
             © 2025 velocitysbeta.com {t("footer.allRightsReserved")}
           </p>
           <div className="flex items-center space-x-6 mt-4 md:mt-0 text-sm">
-            <Link href="/about">
+            <Link href={getLocalizedPath("/about")}>
               <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
                  onClick={scrollToTop}
                  data-testid="link-about">
                 {t("footer.about")}
               </a>
             </Link>
-            <Link href="/archives">
+            <Link href={getLocalizedPath("/archives")}>
               <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
                  onClick={scrollToTop}
                  data-testid="link-archives">

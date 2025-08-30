@@ -12,6 +12,9 @@
     "lightMode": "Light Mode",
     "darkMode": "Dark Mode"
   },
+  "archives": {
+    "description": "Complete collection of political articles and analysis"
+  },
   "hero": {
     "title": "Decoding the Complexities of Indonesian Politics",
     "subtitle": "Deep insights into digital democracy, governance transformation, and contemporary media landscapes.",

@@ -14,6 +14,7 @@ import Home from "@/pages/Home";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import About from "@/pages/About";
+import Archives from "@/pages/Archives";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
 import Copyright from "@/pages/Copyright";
@@ -73,7 +74,7 @@ function App() {
               <Route path="/blog" component={Blog} />
               <Route path="/blog/:id" component={BlogPost} />
               <Route path="/about" component={About} />
-              <Route path="/archives" component={Blog} />
+              <Route path="/archives" component={Archives} />
               <Route path="/privacy" component={Privacy} />
               <Route path="/terms" component={Terms} />
               <Route path="/copyright" component={Copyright} />

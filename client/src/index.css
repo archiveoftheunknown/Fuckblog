@@ -380,46 +380,46 @@
 /* Blog content spacing */
 .prose {
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.65;
 }
 
 .prose h1 {
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.prose h2 {
   margin-top: 2rem;
   margin-bottom: 1.25rem;
 }
 
-.prose h3 {
+.prose h2 {
   margin-top: 1.75rem;
   margin-bottom: 1rem;
 }
 
+.prose h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.875rem;
+}
+
 .prose p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .prose ul,
 .prose ol {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .prose li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.375rem;
 }
 
 .prose blockquote {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
 }
 
 .prose pre {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 /* Mobile viewport fixes */

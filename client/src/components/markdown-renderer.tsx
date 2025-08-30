@@ -192,16 +192,16 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
                   <h3 className="text-2xl font-semibold mt-8 mb-5 text-foreground">{children}</h3>
                 ),
                 p: ({ children }) => (
-                  <p className="mb-6 text-foreground/90 leading-7 text-base">{children}</p>
+                  <p className="mb-5 text-foreground/90 leading-relaxed text-base">{children}</p>
                 ),
                 ul: ({ children }) => (
-                  <ul className="list-disc list-inside mb-6 space-y-3 text-foreground/90 pl-4">{children}</ul>
+                  <ul className="list-disc list-inside mb-5 space-y-2 text-foreground/90 pl-4">{children}</ul>
                 ),
                 ol: ({ children }) => (
-                  <ol className="list-decimal list-inside mb-6 space-y-3 text-foreground/90 pl-4">{children}</ol>
+                  <ol className="list-decimal list-inside mb-5 space-y-2 text-foreground/90 pl-4">{children}</ol>
                 ),
                 li: ({ children }) => (
-                  <li className="mb-3 text-foreground/90 leading-7">{children}</li>
+                  <li className="mb-2 text-foreground/90 leading-relaxed">{children}</li>
                 ),
                 blockquote: ({ children }) => (
                   <blockquote className="border-l-4 border-primary pl-6 italic my-8 py-4 text-foreground/80">

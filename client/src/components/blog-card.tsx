@@ -46,10 +46,10 @@ export default function BlogCard({ post, index = 0, featured = false, from = 'bl
                     </span>
                   </div>
                   <h3 className="text-3xl font-bold mb-4 text-foreground">
-                    {language === 'en' ? post.title_en : post.title}
+                    {language === 'en' && post.title_en ? post.title_en : post.title}
                   </h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {language === 'en' ? post.excerpt_en : post.excerpt}
+                    {language === 'en' && post.excerpt_en ? post.excerpt_en : post.excerpt}
                   </p>
                   <div className="flex justify-end">
                     <motion.span 
@@ -84,10 +84,10 @@ export default function BlogCard({ post, index = 0, featured = false, from = 'bl
                 {post.category}
               </span>
               <h4 className="text-xl font-bold mb-3 text-foreground">
-                {language === 'en' ? post.title_en : post.title}
+                {language === 'en' && post.title_en ? post.title_en : post.title}
               </h4>
               <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
-                {language === 'en' ? post.excerpt_en : post.excerpt}
+                {language === 'en' && post.excerpt_en ? post.excerpt_en : post.excerpt}
               </p>
               <div className="flex items-center justify-between">
                 <span className="text-xs text-muted-foreground">

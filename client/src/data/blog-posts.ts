@@ -2,11 +2,11 @@ export interface BlogPost {
   id: string;
   slug: string;
   title: string;
-  title_en: string;
+  title_en?: string;
   excerpt: string;
-  excerpt_en: string;
+  excerpt_en?: string;
   content: string;
-  content_en: string;
+  content_en?: string;
   author: {
     name: string;
     role: string;

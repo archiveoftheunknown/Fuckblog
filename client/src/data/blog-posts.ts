@@ -26,7 +26,7 @@ export const blogPosts: BlogPost[] = [
     title_en: 'The "Fufufafa" Scandal: In-Depth Analysis of Gibran Rakabuming Raka\'s Digital Controversy',
     excerpt: 'Investigasi komprehensif mengenai tuduhan kepemilikan akun anonim "fufufafa" oleh Wakil Presiden terpilih Gibran Rakabuming Raka, yang memposting konten kontroversial tentang Presiden Prabowo Subianto.',
     excerpt_en: 'A comprehensive investigation into allegations that Vice President-elect Gibran Rakabuming Raka owned the anonymous "fufufafa" account that posted controversial content about President Prabowo Subianto.',
-    content: `# Skandal "Fufufafa": Anatomí Kontroversi Digital yang Mengguncang Politik Indonesia
+    content: `# Skandal "Fufufafa": Anatomi Kontroversi Digital yang Mengguncang Politik Indonesia
 
 ## Latar Belakang Kontroversi
 
@@ -38,7 +38,7 @@ Pada Agustus-September 2024, tepat sebelum pelantikan pemerintahan Prabowo-Gibra
 Warganet mulai menggali arsip digital dan menemukan lebih dari 5.000 postingan dari akun "fufufafa" di Kaskus. Akun ini terakhir aktif pada 2019 namun meninggalkan jejak digital yang ekstensif.
 
 ### Fase 2: Viral di Media Sosial (Awal September 2024)
-Screenshot postingan kontroversial mulai beredar luas di platform X (Twitter), dengan hashtag #fufufafa mencapai trending topic nasional. Akun-akun anonim seperti @YourAnonId_ memimpin investigasi publik.
+Tangkapan layar postingan kontroversial mulai beredar luas di platform X (Twitter), dengan tagar #fufufafa mencapai topik teratas nasional. Akun-akun anonim seperti @YourAnonId_ memimpin investigasi publik.
 
 ### Fase 3: Penghapusan Massal (Pertengahan September 2024)
 Pakar telematika Roy Suryo melaporkan penghapusan 2.100 postingan dari akun tersebut dalam waktu satu minggu, menurun dari 5.000+ menjadi di bawah 3.000 postingan.

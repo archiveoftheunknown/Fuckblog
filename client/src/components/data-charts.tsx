@@ -67,8 +67,8 @@ interface RadarChartProps extends BaseChartProps {
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="glass-card p-3 rounded-lg border border-border">
-        <p className="font-semibold text-foreground">{label}</p>
+      <div className="p-3 rounded-lg border" style={{ background: 'rgba(255, 255, 255, 0.95)', borderColor: '#cccccc' }}>
+        <p className="font-semibold" style={{ color: '#000000' }}>{label}</p>
         {payload.map((entry: any, index: number) => (
           <p key={index} className="text-sm" style={{ color: entry.color }}>
             {entry.name}: {entry.value}
@@ -100,21 +100,21 @@ export function InteractiveBarChart({
       <div className="w-full overflow-hidden" style={{ maxWidth: 'calc(100vw - 3rem)' }}>
         <ResponsiveContainer width="99%" height={200}>
         <BarChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#999999" opacity={0.3} />
           <XAxis 
             dataKey={xKey} 
-            stroke="hsl(var(--foreground))"
-            tick={{ fill: 'hsl(var(--foreground))' }}
+            stroke="#333333"
+            tick={{ fill: '#333333' }}
             style={{ fontSize: '12px' }}
           />
           <YAxis 
-            stroke="hsl(var(--foreground))"
-            tick={{ fill: 'hsl(var(--foreground))' }}
+            stroke="#333333"
+            tick={{ fill: '#333333' }}
             style={{ fontSize: '12px' }}
           />
           <Tooltip content={<CustomTooltip />} />
           <Legend 
-            wrapperStyle={{ color: 'hsl(var(--foreground))' }}
+            wrapperStyle={{ color: '#333333' }}
           />
           <Bar 
             dataKey={dataKey} 
@@ -393,21 +393,21 @@ export function InteractiveLineChart({
       <div className="w-full overflow-hidden" style={{ maxWidth: 'calc(100vw - 3rem)' }}>
         <ResponsiveContainer width="99%" height={200}>
         <LineChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#999999" opacity={0.3} />
           <XAxis 
             dataKey={xKey} 
-            stroke="hsl(var(--foreground))"
-            tick={{ fill: 'hsl(var(--foreground))' }}
+            stroke="#333333"
+            tick={{ fill: '#333333' }}
             style={{ fontSize: '12px' }}
           />
           <YAxis 
-            stroke="hsl(var(--foreground))"
-            tick={{ fill: 'hsl(var(--foreground))' }}
+            stroke="#333333"
+            tick={{ fill: '#333333' }}
             style={{ fontSize: '12px' }}
           />
           <Tooltip content={<CustomTooltip />} />
           <Legend 
-            wrapperStyle={{ color: 'hsl(var(--foreground))' }}
+            wrapperStyle={{ color: '#333333' }}
           />
           {dataKeys.map((key, index) => (
             <Line
@@ -448,21 +448,21 @@ export function InteractiveAreaChart({
       <div className="w-full overflow-hidden" style={{ maxWidth: 'calc(100vw - 3rem)' }}>
         <ResponsiveContainer width="99%" height={200}>
         <AreaChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#999999" opacity={0.3} />
           <XAxis 
             dataKey={xKey} 
-            stroke="hsl(var(--foreground))"
-            tick={{ fill: 'hsl(var(--foreground))' }}
+            stroke="#333333"
+            tick={{ fill: '#333333' }}
             style={{ fontSize: '12px' }}
           />
           <YAxis 
-            stroke="hsl(var(--foreground))"
-            tick={{ fill: 'hsl(var(--foreground))' }}
+            stroke="#333333"
+            tick={{ fill: '#333333' }}
             style={{ fontSize: '12px' }}
           />
           <Tooltip content={<CustomTooltip />} />
           <Legend 
-            wrapperStyle={{ color: 'hsl(var(--foreground))' }}
+            wrapperStyle={{ color: '#333333' }}
           />
           {dataKeys.map((key, index) => (
             <Area
@@ -502,22 +502,23 @@ export function InteractiveRadarChart({
       <div className="w-full overflow-hidden" style={{ maxWidth: 'calc(100vw - 3rem)' }}>
         <ResponsiveContainer width="99%" height={200}>
         <RadarChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-          <PolarGrid stroke="hsl(var(--border))" strokeOpacity={0.3} />
+          <PolarGrid stroke="#666666" strokeOpacity={0.4} />
           <PolarAngleAxis 
             dataKey="name" 
-            stroke="hsl(var(--foreground))"
-            tick={{ fill: 'hsl(var(--foreground))', fontSize: 12 }}
+            stroke="#333333"
+            tick={{ fill: '#333333', fontSize: 12 }}
           />
           <PolarRadiusAxis 
-            stroke="hsl(var(--foreground))"
-            tick={{ fill: 'hsl(var(--foreground))', fontSize: 10 }}
+            stroke="#333333"
+            tick={{ fill: '#333333', fontSize: 10 }}
           />
           <Radar 
             name="Value" 
             dataKey={dataKey} 
-            stroke="hsl(var(--primary))" 
-            fill="hsl(var(--primary))" 
-            fillOpacity={0.6}
+            stroke="#d86d55" 
+            fill="#d86d55" 
+            fillOpacity={0.7}
+            strokeWidth={2}
             animationDuration={1500}
           />
           <Tooltip content={<CustomTooltip />} />

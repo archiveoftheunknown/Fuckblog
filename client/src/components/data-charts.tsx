@@ -229,9 +229,9 @@ export function InteractivePieChart({
       
       <div className="flex flex-col items-center">
         {/* Pie Chart with gradients */}
-        <div className="w-full max-w-md">
-          <ResponsiveContainer width="100%" height={350}>
-            <PieChart>
+        <div className="w-full max-w-md" style={{ outline: 'none', border: 'none' }}>
+          <ResponsiveContainer width="100%" height={350} style={{ outline: 'none' }}>
+            <PieChart style={{ outline: 'none' }} tabIndex={-1}>
               <defs>
                 {gradientColors.map((color, index) => (
                   <linearGradient key={`gradient-${index}`} id={`gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -241,6 +241,7 @@ export function InteractivePieChart({
                 ))}
               </defs>
               <Pie
+                isAnimationActive={true}
                 data={data}
                 cx="50%"
                 cy="50%"

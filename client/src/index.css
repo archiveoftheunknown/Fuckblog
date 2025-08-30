@@ -449,15 +449,54 @@
   .recharts-wrapper {
     width: 100% !important;
     max-width: calc(100vw - 2rem) !important;
+    outline: none !important;
+    border: none !important;
+  }
+  
+  .recharts-wrapper:focus {
+    outline: none !important;
+    border: none !important;
   }
   
   .recharts-surface {
     width: 100% !important;
+    outline: none !important;
+    border: none !important;
+  }
+  
+  .recharts-surface:focus {
+    outline: none !important;
+    border: none !important;
   }
   
   .recharts-responsive-container {
     width: 100% !important;
     max-width: calc(100vw - 2rem) !important;
+    outline: none !important;
+    border: none !important;
+  }
+  
+  /* Remove all pie chart borders and focus states */
+  .recharts-pie-sector {
+    outline: none !important;
+    stroke: none !important;
+  }
+  
+  .recharts-pie-sector:focus {
+    outline: none !important;
+    stroke: none !important;
+  }
+  
+  svg:focus {
+    outline: none !important;
+  }
+  
+  g:focus {
+    outline: none !important;
+  }
+  
+  path:focus {
+    outline: none !important;
   }
   
   /* Fix glass card on mobile */

@@ -30,13 +30,8 @@ function App() {
         <LanguageProvider>
           <TooltipProvider>
             <div className="min-h-screen bg-background text-foreground overflow-x-hidden transition-colors duration-500 relative">
-            {/* Animated gradient background */}
+            {/* Simple gradient background */}
             <div className="gradient-bg"></div>
-            
-            {/* Floating orbs */}
-            <div className="orb orb1"></div>
-            <div className="orb orb2"></div>
-            <div className="orb orb3"></div>
           {/* Mobile menu button - only show when sidebar is closed */}
           {!sidebarOpen && (
             <motion.button

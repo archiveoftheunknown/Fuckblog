@@ -7,9 +7,10 @@ interface BlogCardProps {
   post: BlogPost;
   index?: number;
   featured?: boolean;
+  from?: 'blog' | 'archives';
 }
 
-export default function BlogCard({ post, index = 0, featured = false }: BlogCardProps) {
+export default function BlogCard({ post, index = 0, featured = false, from = 'blog' }: BlogCardProps) {
   const { t, language } = useLanguage();
   
   const cardVariants = {
@@ -36,7 +37,7 @@ export default function BlogCard({ post, index = 0, featured = false }: BlogCard
         whileTap={{ scale: 0.99 }}
         transition={{ type: "spring", stiffness: 400, damping: 20 }}
       >
-        <Link href={`/blog/${post.slug}`}>
+        <Link href={`/blog/${post.slug}?from=${from}`}>
           <div className="glass-card rounded-2xl overflow-hidden blog-card cursor-pointer" data-testid={`featured-post-${post.id}`}>
               <div className="p-8">
                   <div className="mb-4">
@@ -76,7 +77,7 @@ export default function BlogCard({ post, index = 0, featured = false }: BlogCard
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", stiffness: 400, damping: 20 }}
     >
-      <Link href={`/blog/${post.slug}`}>
+      <Link href={`/blog/${post.slug}?from=${from}`}>
           <div className="glass-card rounded-2xl overflow-hidden blog-card cursor-pointer" data-testid={`blog-post-${post.id}`}>
             <div className="p-6">
               <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 ${getCategoryColor(post.category)}`}>

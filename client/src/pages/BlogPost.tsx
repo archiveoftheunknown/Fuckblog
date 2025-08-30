@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Link, useParams } from "wouter";
+import { Link, useParams, useLocation } from "wouter";
 import { ArrowLeft, Calendar, Clock, User, Share2, BookOpen } from "lucide-react";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { blogPosts, getBlogPostBySlug } from "@/data/blog-posts";
@@ -11,6 +11,13 @@ export default function BlogPost() {
   const { id } = useParams<{ id: string }>();
   const { t, language } = useLanguage();
   const { toast } = useToast();
+  const [location] = useLocation();
+  
+  // Check if coming from archives
+  const urlParams = new URLSearchParams(window.location.search);
+  const fromArchives = urlParams.get('from') === 'archives';
+  const backUrl = fromArchives ? '/archives' : '/blog';
+  const backText = fromArchives ? t('blog.backToArchives') : t('blog.backToBlog');
   
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -24,7 +31,7 @@ export default function BlogPost() {
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold mb-4 text-foreground">{t("blog.articleNotFound")}</h1>
           <p className="text-muted-foreground mb-8">{t("blog.articleNotFoundDesc")}</p>
-          <Link href="/blog">
+          <Link href={backUrl}>
             <a>
               <motion.button
                 className="glass-button px-6 py-3 rounded-xl font-semibold text-primary-foreground"
@@ -32,7 +39,7 @@ export default function BlogPost() {
                 whileTap={{ scale: 0.98 }}
                 data-testid="button-back-to-blog"
               >
-                {t("blog.backToBlog")}
+                {backText}
               </motion.button>
             </a>
           </Link>
@@ -114,7 +121,7 @@ export default function BlogPost() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Link href="/blog">
+          <Link href={backUrl}>
             <a>
               <motion.button
                 className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors duration-300"
@@ -122,7 +129,7 @@ export default function BlogPost() {
                 data-testid="button-back-to-blog"
               >
                 <ArrowLeft className="w-5 h-5" />
-                <span>{t("blog.backToBlog")}</span>
+                <span>{backText}</span>
               </motion.button>
             </a>
           </Link>

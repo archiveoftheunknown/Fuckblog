@@ -35,7 +35,7 @@ export default function Archives() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * (index % 6), duration: 0.5 }}
             >
-              <BlogCard post={post} />
+              <BlogCard post={post} from="archives" />
             </motion.div>
           ))}
         </motion.div>

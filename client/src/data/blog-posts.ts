@@ -33,7 +33,7 @@ Pada Agustus-September 2024, tepat sebelum pelantikan pemerintahan Prabowo-Gibra
 Warganet mulai menggali arsip digital dan menemukan lebih dari 5.000 postingan dari akun "fufufafa" di Kaskus. Akun ini terakhir aktif pada 2019 namun meninggalkan jejak digital yang ekstensif.
 
 ### Fase 2: Viral di Media Sosial (Awal September 2024)
-Tangkapan layar postingan kontroversial mulai beredar luas di platform X (Twitter), dengan tagar #fufufafa mencapai topik populer nasional. Akun-akun anonim seperti @YourAnonId_ memimpin investigasi publik.
+Screenshot postingan kontroversial mulai beredar luas di platform X (Twitter), dengan hashtag #fufufafa mencapai trending topic nasional. Akun-akun anonim seperti @YourAnonId_ memimpin investigasi publik.
 
 ### Fase 3: Penghapusan Massal (Pertengahan September 2024)
 Pakar telematika Roy Suryo melaporkan penghapusan 2.100 postingan dari akun tersebut dalam waktu satu minggu, menurun dari 5.000+ menjadi di bawah 3.000 postingan.
@@ -406,7 +406,7 @@ Maintaining evidence integrity sangat krusial:
 
 ## Kesimpulan
 
-Forensik digital telah membuktikan diri sebagai pengubah permainan dalam akuntabilitas politik Indonesia. Dari membongkar korupsi sistemik hingga mengungkap manipulasi informasi, teknologi ini menjadi penyeimbang dalam pertarungan melawan penyalahgunaan kekuasaan.
+Forensik digital telah membuktikan diri sebagai game-changer dalam akuntabilitas politik Indonesia. Dari membongkar korupsi sistemik hingga mengungkap manipulasi informasi, teknologi ini menjadi equalizer dalam pertarungan melawan abuse of power.
 
 Namun, efektivitasnya bergantung pada:
 - Investasi berkelanjutan dalam kapabilitas
@@ -779,7 +779,7 @@ Anonimitas digital dalam politik Indonesia menghadirkan paradoks fundamental: ia
 
 ### Operational Security (OpSec) Practices
 
-Level 1 (Dasar): Jaringan pribadi virtual + Surel palsu
+Level 1 (Basic): VPN + Fake email
 Level 2 (Moderate): Tor + ProtonMail + Cryptocurrency
 Level 3 (Advanced): Tails OS + SecureDrop + Multi-hop VPN
 Level 4 (Expert): Air-gapped systems + Steganography + Dead drops

@@ -28,7 +28,7 @@ export default function Privacy() {
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Log server web standar (alamat IP, jenis browser, halaman rujukan)</li>
-                <li>Kuki analitik untuk memahami pola pembaca (jika diterapkan)</li>
+                <li>Cookie analitik untuk memahami pola pembaca (jika diterapkan)</li>
                 <li>Penyimpanan sesi untuk preferensi situs (tema, tata letak)</li>
               </ul>
             </section>
@@ -50,7 +50,7 @@ export default function Privacy() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Hak Anda</h2>
               <p className="leading-relaxed">
-                Berdasarkan Undang-Undang Indonesia No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP), serta GDPR (Uni Eropa) dan CCPA (California), Anda memiliki hak terkait data pribadi Anda. Warga negara Indonesia memiliki hak untuk mengakses, mengoreksi, dan meminta penghapusan data mereka. Karena situs ini mengumpulkan data minimal, opsi yang tersedia terbatas. Pengunjung dapat menggunakan alat privasi seperti jaringan pribadi virtual atau Tor untuk anonimitas tambahan.
+                Berdasarkan Undang-Undang Indonesia No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP), serta GDPR (UE) dan CCPA (California), Anda memiliki hak terkait data pribadi Anda. Warga negara Indonesia memiliki hak untuk mengakses, mengoreksi, dan meminta penghapusan data mereka. Karena situs ini mengumpulkan data minimal, opsi yang tersedia terbatas. Pengunjung dapat menggunakan alat privasi seperti VPN atau Tor untuk anonimitas tambahan.
               </p>
             </section>
 

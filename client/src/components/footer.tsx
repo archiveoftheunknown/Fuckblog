@@ -129,7 +129,7 @@ export default function Footer() {
           data-testid="footer-bottom"
         >
           <p className="text-[hsl(25,5%,60%)] text-sm">
-            © 2025 velocitysbeta.com Hak cipta dilindungi.
+            © 2025 velocitysbeta.com {t("footer.allRightsReserved")}
           </p>
           <div className="flex items-center space-x-6 mt-4 md:mt-0 text-sm">
             <Link href="/about">

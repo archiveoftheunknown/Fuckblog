@@ -3,6 +3,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 
 export default function AnimatedGradientBg() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationFrameId = useRef<number>();
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -14,9 +15,8 @@ export default function AnimatedGradientBg() {
 
     let w = canvas.width = window.innerWidth;
     let h = canvas.height = window.innerHeight;
-    let animationId: number;
 
-    // Use vibrant colors
+    // Colors for the gradient orbs
     const colors = theme === 'dark' 
       ? ['#ff6b35', '#f7931e', '#ffc947', '#ff4757']
       : ['#ff8c42', '#ffd166', '#06ffa5', '#ff6b9d'];
@@ -28,48 +28,46 @@ export default function AnimatedGradientBg() {
       { x: w * 0.6, y: h * 0.2, radius: w * 0.25, color: colors[3], vx: -0.5, vy: 1 }
     ];
 
-    function animate() {
-      if (!ctx) return;
-      
+    const animate = () => {
       // Clear canvas
       ctx.clearRect(0, 0, w, h);
       
-      // Set blur for liquid effect
-      ctx.filter = 'blur(80px)';
+      // Apply blur for liquid effect
+      ctx.filter = 'blur(60px)';
       
-      // Draw all circles with blur applied
       circles.forEach(circle => {
-        // Update position
-        circle.x += circle.vx * 0.5;
-        circle.y += circle.vy * 0.5;
+        // Move circles
+        circle.x += circle.vx * 0.3;
+        circle.y += circle.vy * 0.3;
 
-        // Bounce off walls
+        // Bounce off edges
         if (circle.x - circle.radius < 0 || circle.x + circle.radius > w) {
-          circle.vx = -circle.vx;
+          circle.vx *= -1;
         }
         if (circle.y - circle.radius < 0 || circle.y + circle.radius > h) {
-          circle.vy = -circle.vy;
+          circle.vy *= -1;
         }
 
-        // Create radial gradient
+        // Draw gradient circle
         const gradient = ctx.createRadialGradient(
           circle.x, circle.y, 0,
           circle.x, circle.y, circle.radius
         );
-        
-        // Add color stops for gradient
         gradient.addColorStop(0, circle.color);
+        gradient.addColorStop(0.5, circle.color + 'aa');
         gradient.addColorStop(1, 'transparent');
 
-        // Draw the circle
         ctx.fillStyle = gradient;
         ctx.beginPath();
         ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
         ctx.fill();
       });
+      
+      // Reset filter
+      ctx.filter = 'none';
 
-      animationId = requestAnimationFrame(animate);
-    }
+      animationFrameId.current = requestAnimationFrame(animate);
+    };
 
     animate();
 
@@ -83,7 +81,9 @@ export default function AnimatedGradientBg() {
     window.addEventListener('resize', handleResize);
 
     return () => {
-      cancelAnimationFrame(animationId);
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
       window.removeEventListener('resize', handleResize);
     };
   }, [theme]);
@@ -91,14 +91,10 @@ export default function AnimatedGradientBg() {
   return (
     <canvas
       ref={canvasRef}
+      className="fixed top-0 left-0 w-full h-full"
       style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
         zIndex: -1,
-        opacity: 0.7,
+        opacity: theme === 'dark' ? 0.5 : 0.3,
         pointerEvents: 'none'
       }}
     />

@@ -2,8 +2,11 @@ export interface BlogPost {
   id: string;
   slug: string;
   title: string;
+  title_en: string;
   excerpt: string;
+  excerpt_en: string;
   content: string;
+  content_en: string;
   author: {
     name: string;
     role: string;
@@ -20,7 +23,9 @@ export const blogPosts: BlogPost[] = [
   {
     id: 'konspirasi-gibran-fufufafa',
     title: 'Skandal "Fufufafa": Analisis Mendalam Kontroversi Digital Gibran Rakabuming Raka',
+    title_en: 'The "Fufufafa" Scandal: In-Depth Analysis of Gibran Rakabuming Raka\'s Digital Controversy',
     excerpt: 'Investigasi komprehensif mengenai tuduhan kepemilikan akun anonim "fufufafa" oleh Wakil Presiden terpilih Gibran Rakabuming Raka, yang memposting konten kontroversial tentang Presiden Prabowo Subianto.',
+    excerpt_en: 'A comprehensive investigation into allegations that Vice President-elect Gibran Rakabuming Raka owned the anonymous "fufufafa" account that posted controversial content about President Prabowo Subianto.',
     content: `# Skandal "Fufufafa": Anatomí Kontroversi Digital yang Mengguncang Politik Indonesia
 
 ## Latar Belakang Kontroversi
@@ -164,6 +169,149 @@ Kasus Fufufafa menandai titik balik dalam politik Indonesia di mana:
 Skandal "fufufafa" bukan sekadar kontroversi personal, melainkan cerminan transformasi fundamental lanskap politik Indonesia di era digital. Kasus ini mendemonstrasikan bagaimana jejak digital masa lalu dapat menjadi bom waktu politik, sekaligus mengekspos kerentanan demokrasi terhadap manipulasi informasi digital.
 
 Terlepas dari kebenaran tuduhan, dampaknya sudah terlanjur mengikis kepercayaan publik dan menciptakan preseden berbahaya untuk politik Indonesia ke depan. Era di mana setiap keystroke dapat menjadi skandal masa depan telah tiba.`,
+    content_en: `# The "Fufufafa" Scandal: Anatomy of a Digital Controversy That Shook Indonesian Politics
+
+## Background of the Controversy
+
+In August-September 2024, just before the inauguration of the Prabowo-Gibran administration, Indonesia was rocked by a digital scandal involving Vice President-elect Gibran Rakabuming Raka. The controversy centered on allegations that Gibran owned the anonymous "fufufafa" account on the Kaskus forum that actively posted highly offensive content about Prabowo Subianto between 2014-2019.
+
+## Scandal Timeline
+
+### Phase 1: Digital Excavation (Late August 2024)
+Netizens began digging through digital archives and discovered more than 5,000 posts from the "fufufafa" account on Kaskus. This account was last active in 2019 but left an extensive digital trail.
+
+### Phase 2: Viral on Social Media (Early September 2024)
+Screenshots of controversial posts began circulating widely on X (Twitter), with the hashtag #fufufafa reaching national trending topic. Anonymous accounts like @YourAnonId_ led the public investigation.
+
+### Phase 3: Mass Deletion (Mid-September 2024)
+Telematics expert Roy Suryo reported the deletion of 2,100 posts from the account within one week, dropping from 5,000+ to below 3,000 posts.
+
+## Digital Evidence Uncovered
+
+### Table 1: Summary of "Fufufafa" Case Evidence
+
+| Evidence Category | Finding Details | Credibility Level | Verification Status |
+|-------------------|-----------------|-------------------|---------------------|
+| **Phone Number** | Account recovery number identical to Solo 2020 election documents | High | Verified via GoPay |
+| **Related Email** | Uses "Raka" name variations and Gibran's business domain | Medium | Partial |
+| **Account Connections** | References to @rkgbrn and "Raka Gnarly" | Medium | Indirect |
+| **Posting Pattern** | Parallel with Chilli Pari business account (Nov 3, 2014) | Low-Medium | Indirect |
+| **Deletion Activity** | 2,100+ posts deleted after going viral | High | Confirmed |
+
+### Table 2: Sample of Controversial Posts
+
+| Date | Post Content | Target | Political Context |
+|------|--------------|--------|-------------------|
+| 2014 | "Divorced wife, gay son, who to celebrate Eid with?" | Prabowo & family | 2014 Presidential Election |
+| 2014 | "Discharged soldier, divorced, effeminate son, radical supporters" | Prabowo | Negative campaign |
+| 2015-2019 | Various racist and sexist comments | Public figures | Opposition era |
+
+## Digital Forensic Analysis
+
+### Investigation Methodology
+The digital investigation used several methods:
+
+1. **OSINT (Open Source Intelligence)**
+   - Public data collection from Kaskus
+   - Cross-referencing with other social media
+   - Post metadata analysis
+
+2. **Digital Trail Analysis**
+   - Phone number tracking via fintech services
+   - Email verification through breach databases
+   - Pattern matching with Gibran's online activities
+
+3. **Behavioral Analysis**
+   - Language style and topic preference analysis
+   - Posting time pattern analysis
+   - Correlation with business/political activities
+
+### Key Technical Findings
+
+**GoPay Verification:** When netizens attempted to transfer to the number associated with the account, the name "Gibran Rakabuming Raka" appeared in the app. After going viral, the name changed to "Slamet" - indicating an attempt at concealment.
+
+**Chilli Pari Connection:** On November 3, 2014, both the "fufufafa" account and the @Chilli_Pari Twitter account (Gibran's business) posted about "steak cutting scissors" with nearly identical timing and phrasing.
+
+## Response and Damage Control Strategy
+
+### Government Response
+1. **Ministry of Communication and Information** stated after investigation that the account "does not belong to Gibran"
+2. **Gibran's Legal Team** threatened legal action against those spreading "slander"
+3. **Prabowo's Spokesperson** called this issue an "attempt to divide"
+
+### Political Implications
+
+This scandal created a unique dilemma in Indonesian politics:
+- **Political Irony:** The person allegedly insulting Prabowo is now his deputy
+- **Trust Crisis:** Questioning the sincerity of political alliances
+- **Digital Precedent:** First case of old digital footprints becoming a national scandal
+
+## Legal Context: ITE Law and Its Implications
+
+### Table 3: Potential Legal Violations
+
+| Law Article | Violation Description | Penalty Threat | Case Relevance |
+|-------------|----------------------|----------------|----------------|
+| ITE Law Article 27 paragraph 3 | Insult/defamation | Max 6 years prison | Highly relevant |
+| ITE Law Article 28 paragraph 2 | Spreading racial/religious hatred | Max 6 years prison | Relevant |
+| Criminal Code Articles 310-321 | Defamation | Max 4 years prison | Relevant |
+
+However, legal complexity arises due to:
+1. Statute of limitations for some posts
+2. Difficulty proving anonymous account ownership
+3. Political implications of prosecuting the VP-elect
+
+## Impact on Indonesian Digital Democracy
+
+### Similar Case Statistics (2020-2024)
+- **723 individuals** reported under ITE Law for defamation cases
+- **36 violence cases** against journalists related to digital publications
+- **1,030 documented digital attacks** against activists
+
+### Lessons for Digital Politics
+
+1. **Digital Permanence:** Online activities leave permanent traces
+2. **Anonymous Accountability:** Online anonymity increasingly difficult to maintain
+3. **Political Weaponization:** Digital footprints become new political ammunition
+4. **Trust Deficit:** Digital scandals erode public trust
+
+## International Comparison
+
+### Table 4: Global Political Leaders' Digital Scandals
+
+| Country | Case | Year | Political Impact |
+|---------|------|------|------------------|
+| Indonesia | Fufufafa-Gibran | 2024 | Pre-inauguration trust crisis |
+| Philippines | Duterte drug list | 2016 | International human rights controversy |
+| Malaysia | 1MDB digital trail | 2015-2020 | Fall of Najib government |
+| Thailand | Thaksin SMS scandal | 2006 | Contributed to military coup |
+
+## In-Depth Analysis: Beyond the Scandal
+
+### Indonesia's Digital Political Transformation
+
+The Fufufafa case marks a turning point in Indonesian politics where:
+1. **Digital archaeology** becomes a mainstream political tool
+2. **Online reputation management** becomes crucial for politicians
+3. **Digital literacy** becomes a political survival necessity
+
+### Long-term Implications
+
+**For the Prabowo-Gibran Government:**
+- Trust deficit from the start of administration
+- Potential internal coalition friction
+- Vulnerability to further digital attacks
+
+**For Indonesian Democracy:**
+- Normalization of dirty digital politics
+- Increased online self-censorship
+- Evolution of black campaign tactics
+
+## Conclusion
+
+The "fufufafa" scandal is not merely a personal controversy, but a reflection of the fundamental transformation of Indonesia's political landscape in the digital era. This case demonstrates how past digital footprints can become political time bombs, while exposing democracy's vulnerability to digital information manipulation.
+
+Regardless of the truth of the allegations, the impact has already eroded public trust and created a dangerous precedent for Indonesian politics going forward. The era where every keystroke can become a future scandal has arrived.`,
     author: {
       name: 'Dr. Ahmad Suryadi',
       role: 'Analis Politik Senior',
@@ -179,7 +327,9 @@ Terlepas dari kebenaran tuduhan, dampaknya sudah terlanjur mengikis kepercayaan 
   {
     id: 'forensik-digital-politik',
     title: 'Forensik Digital dalam Akuntabilitas Politik: Kasus-Kasus Landmark Indonesia',
+    title_en: 'Digital Forensics in Political Accountability: Indonesia\'s Landmark Cases',
     excerpt: 'Analisis komprehensif bagaimana forensik digital mengubah lanskap akuntabilitas politik Indonesia, dari kasus e-KTP hingga skandal Fufufafa.',
+    excerpt_en: 'A comprehensive analysis of how digital forensics is transforming Indonesia\'s political accountability landscape, from the e-KTP case to the Fufufafa scandal.',
     content: `# Forensik Digital dalam Akuntabilitas Politik Indonesia
 
 ## Evolusi Forensik Digital dalam Politik Indonesia

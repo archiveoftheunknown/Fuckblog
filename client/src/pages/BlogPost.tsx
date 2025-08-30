@@ -93,7 +93,8 @@ export default function BlogPost() {
     const headings: { level: number; text: string; id: string }[] = [];
     let match;
     
-    while ((match = headingRegex.exec(post.content)) !== null) {
+    const content = language === 'en' ? post.content_en : post.content;
+    while ((match = headingRegex.exec(content)) !== null) {
       const level = match[1].length;
       const text = match[2];
       const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -101,7 +102,7 @@ export default function BlogPost() {
     }
     
     return headings;
-  }, [post.content]);
+  }, [post.content, post.content_en, language]);
 
   // Scroll to heading when clicking on TOC item
   const scrollToHeading = (id: string) => {
@@ -156,11 +157,11 @@ export default function BlogPost() {
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground leading-tight">
-            {post.title}
+            {language === 'en' ? post.title_en : post.title}
           </h1>
           
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            {post.excerpt}
+            {language === 'en' ? post.excerpt_en : post.excerpt}
           </p>
           
           {/* Meta Information */}
@@ -198,7 +199,7 @@ export default function BlogPost() {
         >
           {/* Main Content */}
           <div className="lg:col-span-3 overflow-x-hidden">
-            <MarkdownRenderer content={post.content} className="max-w-full" />
+            <MarkdownRenderer content={language === 'en' ? post.content_en : post.content} className="max-w-full" />
             
             {/* Tags */}
             <div className="mt-12 pt-8 border-t border-border">
@@ -255,7 +256,7 @@ export default function BlogPost() {
                         <a className="block" data-testid={`link-related-${relatedPost.id}`}>
                           <div className="cursor-pointer group">
                             <h4 className="text-sm font-medium text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                              {relatedPost.title}
+                              {language === 'en' ? relatedPost.title_en : relatedPost.title}
                             </h4>
                             <p className="text-xs text-muted-foreground mt-1">
                               {new Date(relatedPost.publishedAt).toLocaleDateString(language === 'zh' ? 'zh-CN' : language === 'ja' ? 'ja-JP' : language === 'es' ? 'es-ES' : language === 'id' ? 'id-ID' : 'en-US', { 

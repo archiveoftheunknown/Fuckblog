@@ -16,12 +16,9 @@ export default function Archives() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent">
             {t("nav.archives")}
           </h1>
-          <p className="text-xl text-muted-foreground">
-            {t("archives.description")}
-          </p>
         </motion.div>
 
         {/* Articles Grid */}

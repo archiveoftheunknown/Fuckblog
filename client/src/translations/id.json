@@ -79,7 +79,6 @@
     "privacyPolicy": "Kebijakan Privasi",
     "termsOfService": "Syarat Layanan",
     "copyright": "Hak Cipta",
-    "editorialGuidelines": "Pedoman Editorial",
     "contact": "Kontak",
     "allRightsReserved": "Hak cipta dilindungi.",
     "createdBy": "Dibuat oleh Velo."
@@ -184,10 +183,6 @@
   "copyright": {
     "title": "Informasi Hak Cipta",
     "subtitle": "Memahami hak kekayaan intelektual kami"
-  },
-  "guidelines": {
-    "title": "Pedoman Editorial",
-    "subtitle": "Standar dan prinsip kami dalam jurnalisme"
   },
   "notFound": {
     "title": "404 - Halaman Tidak Ditemukan",

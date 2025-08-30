@@ -79,7 +79,6 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "copyright": "Copyright",
-    "editorialGuidelines": "Editorial Guidelines",
     "contact": "Contact",
     "allRightsReserved": "All rights reserved.",
     "createdBy": "Created by Velo."
@@ -184,10 +183,6 @@
   "copyright": {
     "title": "Copyright Information",
     "subtitle": "Understanding our intellectual property rights"
-  },
-  "guidelines": {
-    "title": "Editorial Guidelines",
-    "subtitle": "Our standards and principles in journalism"
   },
   "notFound": {
     "title": "404 - Page Not Found",

@@ -76,7 +76,6 @@
     "privacyPolicy": "Política de Privacidad",
     "termsOfService": "Términos de Servicio",
     "copyright": "Derechos de Autor",
-    "editorialGuidelines": "Directrices Editoriales",
     "contact": "Contacto",
     "allRightsReserved": "Todos los derechos reservados.",
     "createdBy": "Creado por Velo."
@@ -144,10 +143,6 @@
   "copyright": {
     "title": "Información de Derechos de Autor",
     "subtitle": "Comprendiendo nuestros derechos de propiedad intelectual"
-  },
-  "guidelines": {
-    "title": "Directrices Editoriales",
-    "subtitle": "Nuestros estándares y principios en el periodismo"
   },
   "notFound": {
     "title": "404 - Página No Encontrada",

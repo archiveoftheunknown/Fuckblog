@@ -27,7 +27,6 @@ export default function Footer() {
       { label: t("footer.privacyPolicy"), href: "/privacy" },
       { label: t("footer.termsOfService"), href: "/terms" },
       { label: t("footer.copyright"), href: "/copyright" },
-      { label: t("footer.editorialGuidelines"), href: "/guidelines" },
     ],
   };
   return (

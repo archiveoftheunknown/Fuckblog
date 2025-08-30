@@ -76,7 +76,6 @@
     "privacyPolicy": "隐私政策",
     "termsOfService": "服务条款",
     "copyright": "版权",
-    "editorialGuidelines": "编辑准则",
     "contact": "联系",
     "allRightsReserved": "版权所有。",
     "createdBy": "由Velo创建。"
@@ -144,10 +143,6 @@
   "copyright": {
     "title": "版权信息",
     "subtitle": "了解我们的知识产权"
-  },
-  "guidelines": {
-    "title": "编辑准则",
-    "subtitle": "我们在新闻报道中的标准和原则"
   },
   "notFound": {
     "title": "404 - 页面未找到",

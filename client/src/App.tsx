@@ -16,7 +16,6 @@ import About from "@/pages/About";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
 import Copyright from "@/pages/Copyright";
-import Guidelines from "@/pages/Guidelines";
 import NotFound from "@/pages/not-found";
 import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
@@ -76,7 +75,6 @@ function App() {
               <Route path="/privacy" component={Privacy} />
               <Route path="/terms" component={Terms} />
               <Route path="/copyright" component={Copyright} />
-              <Route path="/guidelines" component={Guidelines} />
               <Route component={NotFound} />
             </Switch>
             <Footer />

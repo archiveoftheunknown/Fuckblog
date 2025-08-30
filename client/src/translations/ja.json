@@ -76,7 +76,6 @@
     "privacyPolicy": "プライバシーポリシー",
     "termsOfService": "利用規約",
     "copyright": "著作権",
-    "editorialGuidelines": "編集ガイドライン",
     "contact": "お問い合わせ",
     "allRightsReserved": "すべての権利を保有。",
     "createdBy": "Veloによって作成。"
@@ -144,10 +143,6 @@
   "copyright": {
     "title": "著作権情報",
     "subtitle": "私たちの知的財産権について"
-  },
-  "guidelines": {
-    "title": "編集ガイドライン",
-    "subtitle": "ジャーナリズムにおける私たちの基準と原則"
   },
   "notFound": {
     "title": "404 - ページが見つかりません",

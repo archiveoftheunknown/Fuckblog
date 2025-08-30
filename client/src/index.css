@@ -32,15 +32,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Hide scrollbar on sidebar while keeping it scrollable */
-[data-sidebar],
-[data-sidebar] * {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+aside,
+aside *,
+.fixed.left-0,
+.fixed.left-0 * {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
 }
 
-[data-sidebar]::-webkit-scrollbar,
-[data-sidebar] *::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+aside::-webkit-scrollbar,
+aside *::-webkit-scrollbar,
+.fixed.left-0::-webkit-scrollbar,
+.fixed.left-0 *::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+  width: 0 !important;
+  height: 0 !important;
 }
 
 :root {

@@ -273,21 +273,6 @@ export function InteractivePieChart({
                   />
                 ))}
               </Pie>
-              <Tooltip 
-                contentStyle={{
-                  background: 'rgba(0, 0, 0, 0.85)',
-                  backdropFilter: 'blur(10px)',
-                  border: 'none',
-                  borderRadius: '12px',
-                  boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5)',
-                  padding: '12px 16px'
-                }}
-                itemStyle={{
-                  color: '#ffffff',
-                  fontSize: '14px',
-                  fontWeight: '600'
-                }}
-              />
             </PieChart>
           </ResponsiveContainer>
         </div>

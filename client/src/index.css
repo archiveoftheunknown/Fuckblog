@@ -163,6 +163,100 @@ aside *::-webkit-scrollbar,
     pointer-events: none;
     z-index: -1;
   }
+
+  /* Animated gradient background */
+  .gradient-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1e1b16 0%, #2d241c 25%, #1a1614 50%, #241c16 75%, #1e1b16 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    z-index: -2;
+    pointer-events: none;
+  }
+
+  .light .gradient-bg {
+    background: linear-gradient(135deg, #fef8f3 0%, #f9f2ea 25%, #fff5eb 50%, #fdf6ee 75%, #fef8f3 100%);
+    opacity: 0.8;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Floating glow orbs */
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: float 20s infinite ease-in-out;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .orb1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,107,53,0.5) 0%, transparent 70%);
+    top: -200px;
+    left: -200px;
+    animation-delay: 0s;
+  }
+
+  .orb2 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(255,193,7,0.5) 0%, transparent 70%);
+    bottom: -175px;
+    right: -175px;
+    animation-delay: 5s;
+  }
+
+  .orb3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(234,88,12,0.5) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 10s;
+  }
+
+  .light .orb1 {
+    background: radial-gradient(circle, rgba(255,107,53,0.2) 0%, transparent 70%);
+  }
+
+  .light .orb2 {
+    background: radial-gradient(circle, rgba(255,193,7,0.2) 0%, transparent 70%);
+  }
+
+  .light .orb3 {
+    background: radial-gradient(circle, rgba(234,88,12,0.2) 0%, transparent 70%);
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
 }
 
 @layer components {

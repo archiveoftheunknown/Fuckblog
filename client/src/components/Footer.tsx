@@ -23,7 +23,6 @@ const footerLinks = {
     { label: 'Kebijakan Privasi', href: '/privacy' },
     { label: 'Ketentuan Layanan', href: '/terms' },
     { label: 'Hak Cipta', href: '/copyright' },
-    { label: 'Pedoman Editorial', href: '/guidelines' },
     { label: 'Kontak', href: '/contact' },
   ],
 };
@@ -143,11 +142,6 @@ export default function Footer() {
             © 2024 {t('hero.title')}. Hak cipta dilindungi.
           </p>
           <div className="flex items-center space-x-6 mt-4 md:mt-0 text-sm">
-            <Link href="/standards" data-testid="link-editorial-standards">
-              <span className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">
-                Standar Editorial
-              </span>
-            </Link>
             <Link href="/fact-checking" data-testid="link-fact-checking">
               <span className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">
                 Verifikasi Fakta

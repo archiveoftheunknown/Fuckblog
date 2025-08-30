@@ -31,6 +31,18 @@ h1, h2, h3, h4, h5, h6 {
   overflow: visible !important;
 }
 
+/* Hide scrollbar on sidebar while keeping it scrollable */
+[data-sidebar],
+[data-sidebar] * {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+[data-sidebar]::-webkit-scrollbar,
+[data-sidebar] *::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 :root {
   --background: hsl(20, 14%, 4%);
   --foreground: hsl(45, 25%, 91%);

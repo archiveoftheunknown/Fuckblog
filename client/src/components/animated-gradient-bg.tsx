@@ -34,20 +34,20 @@ export default function AnimatedGradientBg() {
 
     const colors = theme === 'dark' ? darkColors : lightColors;
     
-    // Reduce circles on mobile for better performance
+    // Larger circles for better spread
     const isMobile = w < 768;
-    const baseRadius = isMobile ? w * 0.4 : w * 0.3;
-    const smallRadius = isMobile ? w * 0.35 : w * 0.25;
+    const baseRadius = isMobile ? w * 0.6 : w * 0.5;
+    const smallRadius = isMobile ? w * 0.5 : w * 0.4;
 
     const circles = isMobile ? [
-      { x: w * 0.3, y: h * 0.3, radius: baseRadius, color: colors[0], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
-      { x: w * 0.7, y: h * 0.7, radius: baseRadius, color: colors[1], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
+      { x: w * 0.1, y: h * 0.2, radius: baseRadius, color: colors[0], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
+      { x: w * 0.9, y: h * 0.8, radius: baseRadius, color: colors[1], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
       { x: w * 0.5, y: h * 0.5, radius: smallRadius, color: colors[2], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 }
     ] : [
-      { x: w * 0.2, y: h * 0.4, radius: baseRadius, color: colors[0], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
-      { x: w * 0.8, y: h * 0.6, radius: baseRadius, color: colors[1], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
-      { x: w * 0.5, y: h * 0.8, radius: smallRadius, color: colors[2], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
-      { x: w * 0.6, y: h * 0.2, radius: smallRadius, color: colors[3], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 }
+      { x: w * 0.1, y: h * 0.2, radius: baseRadius, color: colors[0], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
+      { x: w * 0.9, y: h * 0.7, radius: baseRadius, color: colors[1], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
+      { x: w * 0.3, y: h * 0.9, radius: smallRadius, color: colors[2], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
+      { x: w * 0.7, y: h * 0.1, radius: smallRadius, color: colors[3], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 }
     ];
 
     const animate = () => {
@@ -71,13 +71,14 @@ export default function AnimatedGradientBg() {
         }
       });
       
-      // Now draw all circles with blur
-      ctx.filter = 'blur(100px)';
+      // Now draw all circles with blur - reduced for better spread
+      ctx.filter = 'blur(60px)';
       
       circles.forEach(circle => {
         // Draw circle with radial gradient
         const gradient = ctx.createRadialGradient(circle.x, circle.y, 0, circle.x, circle.y, circle.radius);
         gradient.addColorStop(0, circle.color);
+        gradient.addColorStop(0.5, circle.color + '80');
         gradient.addColorStop(1, 'transparent');
         
         ctx.fillStyle = gradient;

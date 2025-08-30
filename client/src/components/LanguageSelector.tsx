@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Globe } from "lucide-react";
 import { useLanguage, Language } from "@/contexts/LanguageContext";
+import { useToast } from "@/hooks/use-toast";
 
 interface LanguageSelectorProps {
   isSidebarOpen?: boolean;
@@ -18,8 +19,26 @@ const languages: { code: Language; label: string; flag: string }[] = [
 export default function LanguageSelector({ isSidebarOpen = false }: LanguageSelectorProps) {
   const { language, setLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+  const { toast } = useToast();
   
   const currentLang = languages.find(l => l.code === language) || languages[0];
+  
+  const availableLanguages = ['id', 'en'];
+  
+  const handleLanguageSelect = (langCode: Language) => {
+    if (availableLanguages.includes(langCode)) {
+      setLanguage(langCode);
+      setIsOpen(false);
+    } else {
+      const langName = languages.find(l => l.code === langCode)?.label || langCode;
+      toast({
+        title: language === 'id' ? 'Bahasa Belum Tersedia' : 'Language Not Available',
+        description: language === 'id' 
+          ? `${langName} akan segera tersedia. Saat ini hanya tersedia Bahasa Indonesia dan English.`
+          : `${langName} will be available soon. Currently only Indonesian and English are available.`,
+      });
+    }
+  };
 
   return (
     <>
@@ -102,14 +121,13 @@ export default function LanguageSelector({ isSidebarOpen = false }: LanguageSele
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  onClick={() => {
-                    setLanguage(lang.code);
-                    setIsOpen(false);
-                  }}
-                  className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                  onClick={() => handleLanguageSelect(lang.code)}
+                  className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 relative ${
                     language === lang.code 
                       ? "bg-primary/20 text-primary" 
-                      : "hover:bg-accent text-foreground"
+                      : availableLanguages.includes(lang.code)
+                        ? "hover:bg-accent text-foreground"
+                        : "hover:bg-accent/50 text-foreground/60"
                   }`}
                   whileHover={{ x: 4 }}
                   data-testid={`language-option-${lang.code}`}
@@ -117,7 +135,14 @@ export default function LanguageSelector({ isSidebarOpen = false }: LanguageSele
                   <span className="text-2xl">{lang.flag}</span>
                   <div className="flex-1 text-left">
                     <div className="font-medium">{lang.label}</div>
-                    <div className="text-xs text-muted-foreground uppercase">{lang.code}</div>
+                    <div className="text-xs text-muted-foreground uppercase">
+                      {lang.code}
+                      {!availableLanguages.includes(lang.code) && (
+                        <span className="ml-2 text-xs text-amber-500">
+                          {language === 'id' ? 'Segera' : 'Soon'}
+                        </span>
+                      )}
+                    </div>
                   </div>
                   {language === lang.code && (
                     <motion.div

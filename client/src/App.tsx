@@ -9,6 +9,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import Sidebar from "@/components/sidebar";
 import Footer from "@/components/footer";
 import LanguageSelector from "@/components/LanguageSelector";
+import AnimatedGradientBg from "@/components/animated-gradient-bg";
 import Home from "@/pages/Home";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
@@ -30,8 +31,7 @@ function App() {
         <LanguageProvider>
           <TooltipProvider>
             <div className="min-h-screen bg-background text-foreground overflow-x-hidden transition-colors duration-500 relative">
-            {/* Simple gradient background */}
-            <div className="gradient-bg"></div>
+            <AnimatedGradientBg />
           {/* Mobile menu button - only show when sidebar is closed */}
           {!sidebarOpen && (
             <motion.button

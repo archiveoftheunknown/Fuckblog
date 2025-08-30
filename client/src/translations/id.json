@@ -18,7 +18,7 @@
   "hero": {
     "title": "Menguraikan Kompleksitas Politik Indonesia",
     "subtitle": "Wawasan mendalam tentang demokrasi digital, transformasi tata kelola, dan lanskap media kontemporer.",
-    "author": "Oleh Velo",
+    "author": "Tim Editorial",
     "cta": "Jelajahi Artikel"
   },
   "home": {
@@ -85,13 +85,13 @@
     "copyright": "Hak Cipta",
     "contact": "Kontak",
     "allRightsReserved": "Hak cipta dilindungi.",
-    "createdBy": "Dibuat oleh Velo."
+    "createdBy": "Platform Independen."
   },
   "about": {
     "title": "Tentang Arsip Ini",
     "subtitle": "Platform analisis politik independen. Semua konten berdasarkan opini publik.",
     "disclaimerTitle": "Pemberitahuan Penting",
-    "disclaimer1": "Ini adalah arsip pribadi komentar dan analisis politik. Saya adalah Velo, pengamat independen politik Indonesia. Pandangan yang diungkapkan di sini sepenuhnya milik saya dan tidak mewakili organisasi, partai politik, atau entitas pemerintah mana pun.",
+    "disclaimer1": "Ini adalah arsip komentar dan analisis politik independen. Pandangan yang diungkapkan di sini adalah hasil analisis independen dan tidak mewakili organisasi, partai politik, atau entitas pemerintah mana pun.",
     "disclaimer2": "Semua konten yang diterbitkan di sini adalah komentar dan opini berdasarkan informasi yang tersedia untuk umum. Ini bukan jurnalisme investigasi atau pelaporan resmi - ini adalah analisis dan interpretasi pribadi saya tentang peristiwa dan tren politik di Indonesia.",
     "disclaimer3": "Pembaca harus memahami bahwa komentar politik pada dasarnya subjektif. Saya mendorong Anda untuk memverifikasi informasi secara independen dan membentuk opini Anda sendiri berdasarkan berbagai sumber.",
     "sourcesTitle": "Sumber Informasi",
@@ -125,8 +125,8 @@
     "correctionsSubtitle": "Koreksi:",
     "correctionsText": "Ketika kesalahan faktual diidentifikasi, koreksi dibuat segera di bagian atas artikel yang relevan. Namun, perubahan pendapat atau interpretasi dari waktu ke waktu ditangani dalam posting baru daripada pengeditan retroaktif.",
     "remember": "Ingat:",
-    "finalNote": "Ini adalah perspektif satu orang tentang politik Indonesia. Gunakan arsip ini sebagai salah satu dari banyak sumber untuk menginformasikan pemahaman Anda, bukan sebagai kebenaran definitif. Pemikiran kritis dan sumber yang beragam sangat penting untuk memahami realitas politik yang kompleks.",
-    "signature": "Velo, Komentator Politik Independen",
+    "finalNote": "Ini adalah perspektif independen tentang politik Indonesia. Gunakan arsip ini sebagai salah satu dari banyak sumber untuk menginformasikan pemahaman Anda, bukan sebagai kebenaran definitif. Pemikiran kritis dan sumber yang beragam sangat penting untuk memahami realitas politik yang kompleks.",
+    "signature": "Tim Editorial",
     "needHelp": "Butuh bantuan?",
     "contact": "Hubungi",
     "missionTitle": "Misi Kami",
@@ -134,9 +134,9 @@
     "storyTitle": "Cerita Kami",
     "storyText": "Didirikan pada tahun 2025, platform ini muncul dari kebutuhan akan analisis politik yang lebih bernuansa di era digital. Apa yang dimulai sebagai blog pribadi telah berkembang menjadi platform yang dihormati untuk diskusi politik.",
     "founderTitle": "Tentang Pendiri",
-    "founderName": "Velo",
+    "founderName": "Tim Editorial",
     "founderRole": "Pendiri & Analis Politik Utama",
-    "founderBio": "Dengan lebih dari satu dekade pengalaman dalam jurnalisme politik dan analisis data, Velo membawa perspektif unik untuk memahami politik Indonesia kontemporer.",
+    "founderBio": "Platform ini didirikan dengan pengalaman lebih dari satu dekade dalam jurnalisme politik dan analisis data untuk memberikan perspektif unik dalam memahami politik Indonesia kontemporer.",
     "valuesTitle": "Nilai Kami",
     "value1Title": "Independensi",
     "value1Text": "Kami mempertahankan independensi editorial yang ketat",

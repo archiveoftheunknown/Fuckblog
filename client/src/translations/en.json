@@ -18,7 +18,7 @@
   "hero": {
     "title": "Decoding the Complexities of Indonesian Politics",
     "subtitle": "Deep insights into digital democracy, governance transformation, and contemporary media landscapes.",
-    "author": "By Velo",
+    "author": "Editorial Team",
     "cta": "Explore Articles"
   },
   "home": {
@@ -85,13 +85,13 @@
     "copyright": "Copyright",
     "contact": "Contact",
     "allRightsReserved": "All rights reserved.",
-    "createdBy": "Created by Velo."
+    "createdBy": "Independent Platform."
   },
   "about": {
     "title": "About This Archive",
     "subtitle": "Independent political analysis platform. All content based on public opinion.",
     "disclaimerTitle": "Important Disclaimer",
-    "disclaimer1": "This is a personal archive of political commentary and analysis. I am Velo, an independent observer of Indonesian politics. The views expressed here are entirely my own and do not represent any organization, political party, or government entity.",
+    "disclaimer1": "This is an independent archive of political commentary and analysis. The views expressed here are the result of independent analysis and do not represent any organization, political party, or government entity.",
     "disclaimer2": "All content published here is commentary and opinion based on publicly available information. This is not investigative journalism or official reporting - it's my personal analysis and interpretation of political events and trends in Indonesia.",
     "disclaimer3": "Readers should understand that political commentary is inherently subjective. I encourage you to verify information independently and form your own opinions based on multiple sources.",
     "sourcesTitle": "Information Sources",
@@ -125,8 +125,8 @@
     "correctionsSubtitle": "Corrections:",
     "correctionsText": "When factual errors are identified, corrections are made promptly at the top of the relevant article. However, changes in opinion or interpretation over time are addressed in new posts rather than retroactive edits.",
     "remember": "Remember:",
-    "finalNote": "This is one person's perspective on Indonesian politics. Use this archive as one of many sources to inform your understanding, not as definitive truth. Critical thinking and diverse sources are essential for understanding complex political realities.",
-    "signature": "Velo, Independent Political Commentator",
+    "finalNote": "This is an independent perspective on Indonesian politics. Use this archive as one of many sources to inform your understanding, not as definitive truth. Critical thinking and diverse sources are essential for understanding complex political realities.",
+    "signature": "Editorial Team",
     "needHelp": "Need help?",
     "contact": "Contact",
     "missionTitle": "Our Mission",
@@ -134,9 +134,9 @@
     "storyTitle": "Our Story",
     "storyText": "Founded in 2025, this platform emerged from a need for more nuanced political analysis in the digital age. What started as a personal blog has grown into a respected platform for political discourse.",
     "founderTitle": "About the Founder",
-    "founderName": "Velo",
+    "founderName": "Editorial Team",
     "founderRole": "Founder & Chief Political Analyst",
-    "founderBio": "With over a decade of experience in political journalism and data analysis, Velo brings a unique perspective to understanding contemporary Indonesian politics.",
+    "founderBio": "This platform was founded with over a decade of experience in political journalism and data analysis to provide a unique perspective on contemporary Indonesian politics.",
     "valuesTitle": "Our Values",
     "value1Title": "Independence",
     "value1Text": "We maintain strict editorial independence",

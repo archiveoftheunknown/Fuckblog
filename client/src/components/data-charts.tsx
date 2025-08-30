@@ -33,6 +33,16 @@ const COLORS = [
   '#c73e7f', // chart-5 pink
 ];
 
+const COLORS_BRIGHT = [
+  '#60a5fa', // bright blue
+  '#34d399', // bright green
+  '#fbbf24', // bright yellow
+  '#f87171', // bright red
+  '#a78bfa', // bright purple
+  '#f472b6', // bright pink
+  '#2dd4bf', // bright teal
+];
+
 interface ChartData {
   name: string;
   value: number;
@@ -66,9 +76,13 @@ interface RadarChartProps extends BaseChartProps {
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
+    const isDark = document.documentElement.classList.contains('dark');
     return (
-      <div className="p-3 rounded-lg border" style={{ background: 'rgba(255, 255, 255, 0.95)', borderColor: '#cccccc' }}>
-        <p className="font-semibold" style={{ color: '#000000' }}>{label}</p>
+      <div className="p-3 rounded-lg border" style={{ 
+        background: isDark ? 'rgba(30, 30, 30, 0.95)' : 'rgba(255, 255, 255, 0.95)', 
+        borderColor: isDark ? '#555555' : '#cccccc' 
+      }}>
+        <p className="font-semibold" style={{ color: isDark ? '#ffffff' : '#000000' }}>{label}</p>
         {payload.map((entry: any, index: number) => (
           <p key={index} className="text-sm" style={{ color: entry.color }}>
             {entry.name}: {entry.value}
@@ -87,6 +101,10 @@ export function InteractiveBarChart({
   dataKey = 'value',
   xKey = 'name' 
 }: BarChartProps) {
+  const isDark = document.documentElement.classList.contains('dark');
+  const textColor = isDark ? '#ffffff' : '#333333';
+  const gridColor = isDark ? '#bbbbbb' : '#999999';
+  
   return (
     <motion.div
       className={`glass-card rounded-xl p-2 md:p-4 w-full ${className}`}
@@ -100,21 +118,21 @@ export function InteractiveBarChart({
       <div className="w-full overflow-hidden" style={{ maxWidth: 'calc(100vw - 3rem)' }}>
         <ResponsiveContainer width="99%" height={200}>
         <BarChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#999999" opacity={0.3} />
+          <CartesianGrid strokeDasharray="3 3" stroke={gridColor} opacity={0.3} />
           <XAxis 
             dataKey={xKey} 
-            stroke="#333333"
-            tick={{ fill: '#333333' }}
+            stroke={textColor}
+            tick={{ fill: textColor }}
             style={{ fontSize: '12px' }}
           />
           <YAxis 
-            stroke="#333333"
-            tick={{ fill: '#333333' }}
+            stroke={textColor}
+            tick={{ fill: textColor }}
             style={{ fontSize: '12px' }}
           />
           <Tooltip content={<CustomTooltip />} />
           <Legend 
-            wrapperStyle={{ color: '#333333' }}
+            wrapperStyle={{ color: textColor }}
           />
           <Bar 
             dataKey={dataKey} 
@@ -123,7 +141,7 @@ export function InteractiveBarChart({
             radius={[8, 8, 0, 0]}
           >
             {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              <Cell key={`cell-${index}`} fill={isDark ? COLORS_BRIGHT[index % COLORS_BRIGHT.length] : COLORS[index % COLORS.length]} />
             ))}
           </Bar>
         </BarChart>
@@ -143,9 +161,17 @@ export function InteractivePieChart({
   const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
   const [animatedData, setAnimatedData] = useState(data);
   const [isClicked, setIsClicked] = useState(false);
+  const isDark = document.documentElement.classList.contains('dark');
   
   // Gradient colors with glass effect
-  const gradientColors = [
+  const gradientColors = isDark ? [
+    { start: '#93c5fd', end: '#60a5fa' }, // Bright blue gradient
+    { start: '#86efac', end: '#34d399' }, // Bright green gradient  
+    { start: '#fde047', end: '#fbbf24' }, // Bright yellow gradient
+    { start: '#fca5a5', end: '#f87171' }, // Bright red gradient
+    { start: '#c4b5fd', end: '#a78bfa' }, // Bright purple gradient
+    { start: '#f9a8d4', end: '#f472b6' }, // Bright pink gradient
+  ] : [
     { start: '#60a5fa', end: '#3b82f6' }, // Blue gradient
     { start: '#34d399', end: '#10b981' }, // Green gradient  
     { start: '#fbbf24', end: '#f59e0b' }, // Yellow gradient
@@ -380,6 +406,10 @@ export function InteractiveLineChart({
   dataKeys = ['value'],
   xKey = 'name' 
 }: LineChartProps) {
+  const isDark = document.documentElement.classList.contains('dark');
+  const textColor = isDark ? '#ffffff' : '#333333';
+  const gridColor = isDark ? '#bbbbbb' : '#999999';
+  
   return (
     <motion.div
       className={`glass-card rounded-xl p-2 md:p-4 w-full ${className}`}
@@ -393,34 +423,37 @@ export function InteractiveLineChart({
       <div className="w-full overflow-hidden" style={{ maxWidth: 'calc(100vw - 3rem)' }}>
         <ResponsiveContainer width="99%" height={200}>
         <LineChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#999999" opacity={0.3} />
+          <CartesianGrid strokeDasharray="3 3" stroke={gridColor} opacity={0.3} />
           <XAxis 
             dataKey={xKey} 
-            stroke="#333333"
-            tick={{ fill: '#333333' }}
+            stroke={textColor}
+            tick={{ fill: textColor }}
             style={{ fontSize: '12px' }}
           />
           <YAxis 
-            stroke="#333333"
-            tick={{ fill: '#333333' }}
+            stroke={textColor}
+            tick={{ fill: textColor }}
             style={{ fontSize: '12px' }}
           />
           <Tooltip content={<CustomTooltip />} />
           <Legend 
-            wrapperStyle={{ color: '#333333' }}
+            wrapperStyle={{ color: textColor }}
           />
-          {dataKeys.map((key, index) => (
-            <Line
-              key={key}
-              type="monotone"
-              dataKey={key}
-              stroke={COLORS[index % COLORS.length]}
-              strokeWidth={2}
-              dot={{ fill: COLORS[index % COLORS.length], r: 4 }}
-              activeDot={{ r: 6 }}
-              animationDuration={1500}
-            />
-          ))}
+          {dataKeys.map((key, index) => {
+            const color = isDark ? COLORS_BRIGHT[index % COLORS_BRIGHT.length] : COLORS[index % COLORS.length];
+            return (
+              <Line
+                key={key}
+                type="monotone"
+                dataKey={key}
+                stroke={color}
+                strokeWidth={2}
+                dot={{ fill: color, r: 4 }}
+                activeDot={{ r: 6 }}
+                animationDuration={1500}
+              />
+            );
+          })}
         </LineChart>
       </ResponsiveContainer>
       </div>
@@ -435,6 +468,10 @@ export function InteractiveAreaChart({
   dataKeys = ['value'],
   xKey = 'name' 
 }: LineChartProps) {
+  const isDark = document.documentElement.classList.contains('dark');
+  const textColor = isDark ? '#ffffff' : '#333333';
+  const gridColor = isDark ? '#bbbbbb' : '#999999';
+  
   return (
     <motion.div
       className={`glass-card rounded-xl p-2 md:p-4 w-full ${className}`}
@@ -448,34 +485,37 @@ export function InteractiveAreaChart({
       <div className="w-full overflow-hidden" style={{ maxWidth: 'calc(100vw - 3rem)' }}>
         <ResponsiveContainer width="99%" height={200}>
         <AreaChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#999999" opacity={0.3} />
+          <CartesianGrid strokeDasharray="3 3" stroke={gridColor} opacity={0.3} />
           <XAxis 
             dataKey={xKey} 
-            stroke="#333333"
-            tick={{ fill: '#333333' }}
+            stroke={textColor}
+            tick={{ fill: textColor }}
             style={{ fontSize: '12px' }}
           />
           <YAxis 
-            stroke="#333333"
-            tick={{ fill: '#333333' }}
+            stroke={textColor}
+            tick={{ fill: textColor }}
             style={{ fontSize: '12px' }}
           />
           <Tooltip content={<CustomTooltip />} />
           <Legend 
-            wrapperStyle={{ color: '#333333' }}
+            wrapperStyle={{ color: textColor }}
           />
-          {dataKeys.map((key, index) => (
-            <Area
-              key={key}
-              type="monotone"
-              dataKey={key}
-              stroke={COLORS[index % COLORS.length]}
-              fill={COLORS[index % COLORS.length]}
-              fillOpacity={0.3}
-              strokeWidth={2}
-              animationDuration={1500}
-            />
-          ))}
+          {dataKeys.map((key, index) => {
+            const color = isDark ? COLORS_BRIGHT[index % COLORS_BRIGHT.length] : COLORS[index % COLORS.length];
+            return (
+              <Area
+                key={key}
+                type="monotone"
+                dataKey={key}
+                stroke={color}
+                fill={color}
+                fillOpacity={0.3}
+                strokeWidth={2}
+                animationDuration={1500}
+              />
+            );
+          })}
         </AreaChart>
       </ResponsiveContainer>
       </div>
@@ -489,6 +529,11 @@ export function InteractiveRadarChart({
   className = '', 
   dataKey = 'value' 
 }: RadarChartProps) {
+  const isDark = document.documentElement.classList.contains('dark');
+  const textColor = isDark ? '#ffffff' : '#333333';
+  const gridColor = isDark ? '#bbbbbb' : '#666666';
+  const fillColor = isDark ? '#60a5fa' : '#d86d55';
+  
   return (
     <motion.div
       className={`glass-card rounded-xl p-2 md:p-4 w-full ${className}`}
@@ -502,21 +547,21 @@ export function InteractiveRadarChart({
       <div className="w-full overflow-hidden" style={{ maxWidth: 'calc(100vw - 3rem)' }}>
         <ResponsiveContainer width="99%" height={200}>
         <RadarChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-          <PolarGrid stroke="#666666" strokeOpacity={0.4} />
+          <PolarGrid stroke={gridColor} strokeOpacity={0.4} />
           <PolarAngleAxis 
             dataKey="name" 
-            stroke="#333333"
-            tick={{ fill: '#333333', fontSize: 12 }}
+            stroke={textColor}
+            tick={{ fill: textColor, fontSize: 12 }}
           />
           <PolarRadiusAxis 
-            stroke="#333333"
-            tick={{ fill: '#333333', fontSize: 10 }}
+            stroke={textColor}
+            tick={{ fill: textColor, fontSize: 10 }}
           />
           <Radar 
             name="Value" 
             dataKey={dataKey} 
-            stroke="#d86d55" 
-            fill="#d86d55" 
+            stroke={fillColor} 
+            fill={fillColor} 
             fillOpacity={0.7}
             strokeWidth={2}
             animationDuration={1500}

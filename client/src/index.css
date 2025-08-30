@@ -387,62 +387,18 @@
   /* Fix main content area */
   main {
     width: 100% !important;
-    padding: 0.5rem !important;
     overflow-x: hidden !important;
   }
   
-  /* Fix blog content on mobile */
+  /* Keep original prose styling */
   .prose {
     font-size: 0.875rem;
     line-height: 1.6;
   }
   
-  .prose h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-  
-  .prose h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-  }
-  
-  .prose h3 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .prose p {
-    margin-bottom: 0.75rem;
-  }
-  
-  /* Fix table scrolling on mobile */
-  .glass-card {
-    margin: 0;
-    border-radius: 0.5rem;
-  }
-  
   /* Table responsive styles */
   table {
-    font-size: 0.75rem;
     min-width: 500px;
-  }
-  
-  th {
-    padding: 0.5rem !important;
-    font-size: 0.75rem;
-    white-space: nowrap;
-  }
-  
-  td {
-    padding: 0.5rem !important;
-    font-size: 0.75rem;
-    white-space: nowrap;
   }
   
   /* Ensure charts are responsive */
@@ -515,18 +471,9 @@
     border: none !important;
   }
   
-  /* Fix glass card on mobile */
+  /* Glass card - preserve original spacing */
   .glass-card {
     max-width: calc(100vw - 1rem) !important;
-    margin: 0 auto !important;
-    backdrop-filter: blur(10px) !important;
-    background: rgba(20, 14, 8, 0.6) !important;
-    border: 1px solid rgba(255, 255, 255, 0.05) !important;
-  }
-  
-  .light .glass-card {
-    background: rgba(255, 255, 255, 0.85) !important;
-    border: 1px solid rgba(0, 0, 0, 0.05) !important;
   }
   
   /* Fix overflow issues */
@@ -535,13 +482,4 @@
     scrollbar-width: thin;
   }
   
-  /* Blog card adjustments */
-  .blog-card {
-    margin: 0.5rem;
-  }
-  
-  /* Blog post content */
-  article, .prose {
-    max-width: 100vw !important;
-  }
 }

@@ -377,6 +377,51 @@
   }
 }
 
+/* Blog content spacing */
+.prose {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.prose h1 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose h2 {
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.prose p {
+  margin-bottom: 1.5rem;
+}
+
+.prose ul,
+.prose ol {
+  margin-bottom: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose blockquote {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+}
+
+.prose pre {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 /* Mobile viewport fixes */
 @media (max-width: 768px) {
   /* Ensure sidebar extends full height */
@@ -390,11 +435,6 @@
     overflow-x: hidden !important;
   }
   
-  /* Keep original prose styling */
-  .prose {
-    font-size: 0.875rem;
-    line-height: 1.6;
-  }
   
   /* Table responsive styles */
   table {

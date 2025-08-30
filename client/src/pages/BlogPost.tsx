@@ -105,8 +105,8 @@ export default function BlogPost() {
   };
 
   return (
-    <div className="py-20 px-4 md:px-8 overflow-x-hidden" data-testid="page-blog-post">
-      <div className="container mx-auto max-w-full">
+    <div className="py-16 px-6 md:px-12 overflow-x-hidden" data-testid="page-blog-post">
+      <div className="container mx-auto max-w-7xl">
         {/* Navigation */}
         <motion.div
           className="mb-8"

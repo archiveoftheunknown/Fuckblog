@@ -70,7 +70,13 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 className="mb-6"
               >
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent">
-                  {t("brand.title")}
+                  {(() => {
+                    if (location === "/") return t("nav.home");
+                    if (location === "/blog" || location.startsWith("/blog/")) return t("nav.blog");
+                    if (location === "/about") return t("nav.about");
+                    if (location === "/archives") return t("nav.archives");
+                    return t("brand.title");
+                  })()}
                 </h1>
                 <p className="text-muted-foreground text-sm mt-1">{t("brand.tagline")}</p>
               </motion.div>

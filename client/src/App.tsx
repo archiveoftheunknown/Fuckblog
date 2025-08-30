@@ -70,6 +70,7 @@ function App() {
           
           <main className={`min-h-screen transition-all duration-300 relative z-10 ${sidebarOpen ? 'lg:ml-72' : 'ml-0'}`}>
             <Switch>
+              {/* Indonesian routes (default) */}
               <Route path="/" component={Home} />
               <Route path="/blog" component={Blog} />
               <Route path="/blog/:id" component={BlogPost} />
@@ -78,6 +79,17 @@ function App() {
               <Route path="/privacy" component={Privacy} />
               <Route path="/terms" component={Terms} />
               <Route path="/copyright" component={Copyright} />
+              
+              {/* English routes */}
+              <Route path="/en" component={Home} />
+              <Route path="/en/blog" component={Blog} />
+              <Route path="/en/blog/:id" component={BlogPost} />
+              <Route path="/en/about" component={About} />
+              <Route path="/en/archives" component={Archives} />
+              <Route path="/en/privacy" component={Privacy} />
+              <Route path="/en/terms" component={Terms} />
+              <Route path="/en/copyright" component={Copyright} />
+              
               <Route component={NotFound} />
             </Switch>
             <Footer />

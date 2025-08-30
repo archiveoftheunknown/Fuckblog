@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { useLocation } from "wouter";
 import idTranslations from "../translations/id.json";
 import enTranslations from "../translations/en.json";
 import zhTranslations from "../translations/zh.json";
@@ -36,17 +37,37 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const [language, setLanguageState] = useState<Language>(() => {
-    const saved = localStorage.getItem("language");
-    return (saved as Language) || "id";
-  });
+  const [location, setLocation] = useLocation();
+  
+  // Determine language based on URL path
+  const getLanguageFromPath = () => {
+    if (location.startsWith('/en')) {
+      return 'en';
+    }
+    return 'id'; // Indonesian is default
+  };
+  
+  const [language, setLanguageState] = useState<Language>(getLanguageFromPath());
 
   useEffect(() => {
-    localStorage.setItem("language", language);
-    document.documentElement.lang = language;
-  }, [language]);
+    const pathLang = getLanguageFromPath();
+    if (pathLang !== language) {
+      setLanguageState(pathLang);
+    }
+    document.documentElement.lang = pathLang;
+  }, [location]);
 
   const setLanguage = (lang: Language) => {
+    // Navigate to the appropriate language route
+    if (lang === 'en') {
+      // Add /en prefix to current path
+      const currentPath = location.startsWith('/en') ? location.slice(3) : location;
+      setLocation(`/en${currentPath}`);
+    } else if (lang === 'id') {
+      // Remove /en prefix if present
+      const currentPath = location.startsWith('/en') ? location.slice(3) : location;
+      setLocation(currentPath || '/');
+    }
     setLanguageState(lang);
   };
 

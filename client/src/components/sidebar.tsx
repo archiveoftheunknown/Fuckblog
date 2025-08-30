@@ -13,13 +13,18 @@ interface SidebarProps {
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const [location] = useLocation();
   const { theme, toggleTheme } = useTheme();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  
+  // Add language prefix for English routes
+  const getLocalizedPath = (path: string) => {
+    return language === 'en' ? `/en${path}` : path;
+  };
 
   const navigation = [
-    { name: t("nav.home"), href: "/", icon: Home },
-    { name: t("nav.blog"), href: "/blog", icon: FileText },
-    { name: t("nav.about"), href: "/about", icon: Info },
-    { name: t("nav.archives"), href: "/archives", icon: Archive },
+    { name: t("nav.home"), href: getLocalizedPath("/"), icon: Home },
+    { name: t("nav.blog"), href: getLocalizedPath("/blog"), icon: FileText },
+    { name: t("nav.about"), href: getLocalizedPath("/about"), icon: Info },
+    { name: t("nav.archives"), href: getLocalizedPath("/archives"), icon: Archive },
   ];
 
   return (
@@ -71,10 +76,11 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               >
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-chart-3 bg-clip-text text-transparent">
                   {(() => {
-                    if (location === "/") return t("nav.home");
-                    if (location === "/blog" || location.startsWith("/blog/")) return t("nav.blog");
-                    if (location === "/about") return t("nav.about");
-                    if (location === "/archives") return t("nav.archives");
+                    const path = location.startsWith('/en') ? location.slice(3) : location;
+                    if (path === "/" || path === "") return t("nav.home");
+                    if (path === "/blog" || path.startsWith("/blog/")) return t("nav.blog");
+                    if (path === "/about") return t("nav.about");
+                    if (path === "/archives") return t("nav.archives");
                     return t("brand.title");
                   })()}
                 </h1>
@@ -100,7 +106,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               >
                 {navigation.map((item, index) => {
                   const Icon = item.icon;
-                  const isActive = location === item.href || (item.href === "/blog" && location.startsWith("/blog"));
+                  const isActive = location === item.href || 
+                    (item.href.endsWith("/blog") && location.includes("/blog"));
                   
                   return (
                     <motion.div

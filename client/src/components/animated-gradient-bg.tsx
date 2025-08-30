@@ -13,9 +13,12 @@ export default function AnimatedGradientBg() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Use document dimensions to avoid mobile viewport issues
-    let w = canvas.width = document.documentElement.clientWidth || window.innerWidth;
-    let h = canvas.height = document.documentElement.clientHeight || window.innerHeight;
+    // Use fixed dimensions to prevent mobile scrolling glitches
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+    
+    // Store initial viewport height to detect scroll-based changes
+    const initialHeight = h;
 
     // Different color schemes for light and dark themes - more vibrant
     const darkColors = [
@@ -34,10 +37,10 @@ export default function AnimatedGradientBg() {
 
     const colors = theme === 'dark' ? darkColors : lightColors;
     
-    // Larger circles for better spread
+    // Original smaller sizes but better positioned
     const isMobile = w < 768;
-    const baseRadius = isMobile ? w * 0.6 : w * 0.5;
-    const smallRadius = isMobile ? w * 0.5 : w * 0.4;
+    const baseRadius = isMobile ? w * 0.4 : w * 0.3;
+    const smallRadius = isMobile ? w * 0.35 : w * 0.25;
 
     const circles = isMobile ? [
       { x: w * 0.1, y: h * 0.2, radius: baseRadius, color: colors[0], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
@@ -95,21 +98,21 @@ export default function AnimatedGradientBg() {
     // Handle resize with debounce - only on actual window resize
     let resizeTimeout: NodeJS.Timeout;
     let lastWidth = w;
-    let lastHeight = h;
     
     const handleResize = () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
-        const newWidth = document.documentElement.clientWidth || window.innerWidth;
-        const newHeight = document.documentElement.clientHeight || window.innerHeight;
+        const newWidth = window.innerWidth;
+        const newHeight = window.innerHeight;
         
-        // Only update if dimensions actually changed significantly
-        if (Math.abs(newWidth - lastWidth) < 100 && Math.abs(newHeight - lastHeight) < 100) {
+        // Only update if width changed (orientation change) or height changed significantly (>150px)
+        // This prevents mobile address bar hide/show from triggering resize
+        if (Math.abs(newWidth - lastWidth) < 10 && Math.abs(newHeight - initialHeight) < 150) {
           return;
         }
         
         lastWidth = w = canvas.width = newWidth;
-        lastHeight = h = canvas.height = newHeight;
+        h = canvas.height = newHeight;
         const isMobileAfterResize = w < 768;
         const newBaseRadius = isMobileAfterResize ? w * 0.4 : w * 0.3;
         const newSmallRadius = isMobileAfterResize ? w * 0.35 : w * 0.25;
@@ -123,12 +126,12 @@ export default function AnimatedGradientBg() {
           circles.push({ x: w * 0.6, y: h * 0.2, radius: newSmallRadius, color: colors[3], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 });
         }
         
-        // Update positions for existing circles
+        // Update positions for existing circles - keep them spread out
         circles.forEach((circle, i) => {
           if (isMobileAfterResize) {
             const positions = [
-              { x: w * 0.3, y: h * 0.3 },
-              { x: w * 0.7, y: h * 0.7 },
+              { x: w * 0.1, y: h * 0.2 },
+              { x: w * 0.9, y: h * 0.8 },
               { x: w * 0.5, y: h * 0.5 }
             ];
             if (i < positions.length) {
@@ -138,10 +141,10 @@ export default function AnimatedGradientBg() {
             }
           } else {
             const positions = [
-              { x: w * 0.2, y: h * 0.4 },
-              { x: w * 0.8, y: h * 0.6 },
-              { x: w * 0.5, y: h * 0.8 },
-              { x: w * 0.6, y: h * 0.2 }
+              { x: w * 0.1, y: h * 0.2 },
+              { x: w * 0.9, y: h * 0.7 },
+              { x: w * 0.3, y: h * 0.9 },
+              { x: w * 0.7, y: h * 0.1 }
             ];
             if (i < positions.length) {
               circle.x = positions[i].x;

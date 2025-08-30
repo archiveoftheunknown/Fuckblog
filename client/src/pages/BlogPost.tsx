@@ -214,17 +214,17 @@ export default function BlogPost() {
             <div className="sticky top-8 space-y-8">
               {/* Table of Contents */}
               {tableOfContents.length > 0 && (
-                <div className="glass-card p-6 rounded-xl">
-                  <h3 className="font-semibold mb-4 text-foreground flex items-center">
-                    <BookOpen className="w-5 h-5 mr-2" />
+                <div className="glass-card p-8 rounded-xl">
+                  <h3 className="font-semibold mb-6 text-lg text-foreground flex items-center">
+                    <BookOpen className="w-5 h-5 mr-3" />
                     {t("blog.tableOfContents")}
                   </h3>
-                  <div className="space-y-2 text-sm">
+                  <div className="space-y-4">
                     {tableOfContents.map((heading, index) => (
                       <motion.div
                         key={index}
-                        className={`text-muted-foreground hover:text-primary cursor-pointer transition-colors ${
-                          heading.level === 1 ? 'font-semibold' : heading.level === 2 ? 'ml-4' : 'ml-8'
+                        className={`text-muted-foreground hover:text-primary cursor-pointer transition-colors py-1 ${
+                          heading.level === 1 ? 'font-semibold text-base' : heading.level === 2 ? 'ml-4 text-sm' : 'ml-8 text-sm'
                         }`}
                         onClick={() => scrollToHeading(heading.id)}
                         whileHover={{ x: 4 }}
@@ -239,9 +239,9 @@ export default function BlogPost() {
 
               {/* Related Articles */}
               {relatedPosts.length > 0 && (
-                <div className="glass-card p-6 rounded-xl">
-                  <h3 className="font-semibold mb-4 text-foreground">{t("blog.relatedArticles")}</h3>
-                  <div className="space-y-4">
+                <div className="glass-card p-8 rounded-xl">
+                  <h3 className="font-semibold mb-6 text-lg text-foreground">{t("blog.relatedArticles")}</h3>
+                  <div className="space-y-5">
                     {relatedPosts.map(relatedPost => (
                       <Link key={relatedPost.id} href={`/blog/${relatedPost.slug}`}>
                         <a className="block" data-testid={`link-related-${relatedPost.id}`}>

@@ -13,8 +13,9 @@ export default function AnimatedGradientBg() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let w = canvas.width = window.innerWidth;
-    let h = canvas.height = window.innerHeight;
+    // Use document dimensions to avoid mobile viewport issues
+    let w = canvas.width = document.documentElement.clientWidth || window.innerWidth;
+    let h = canvas.height = document.documentElement.clientHeight || window.innerHeight;
 
     // Different color schemes for light and dark themes - more vibrant
     const darkColors = [
@@ -90,13 +91,24 @@ export default function AnimatedGradientBg() {
 
     animate();
 
-    // Handle resize with debounce
+    // Handle resize with debounce - only on actual window resize
     let resizeTimeout: NodeJS.Timeout;
+    let lastWidth = w;
+    let lastHeight = h;
+    
     const handleResize = () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
-        w = canvas.width = window.innerWidth;
-        h = canvas.height = window.innerHeight;
+        const newWidth = document.documentElement.clientWidth || window.innerWidth;
+        const newHeight = document.documentElement.clientHeight || window.innerHeight;
+        
+        // Only update if dimensions actually changed significantly
+        if (Math.abs(newWidth - lastWidth) < 100 && Math.abs(newHeight - lastHeight) < 100) {
+          return;
+        }
+        
+        lastWidth = w = canvas.width = newWidth;
+        lastHeight = h = canvas.height = newHeight;
         const isMobileAfterResize = w < 768;
         const newBaseRadius = isMobileAfterResize ? w * 0.4 : w * 0.3;
         const newSmallRadius = isMobileAfterResize ? w * 0.35 : w * 0.25;
@@ -137,7 +149,7 @@ export default function AnimatedGradientBg() {
             }
           }
         });
-      }, 250);
+      }, 1000); // Increased debounce to 1 second
     };
 
     window.addEventListener('resize', handleResize);

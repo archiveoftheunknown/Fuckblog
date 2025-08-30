@@ -223,12 +223,13 @@ export default function BlogPost() {
                     {tableOfContents.map((heading, index) => (
                       <motion.div
                         key={index}
-                        className={`text-muted-foreground hover:text-primary cursor-pointer transition-colors py-1 ${
+                        className={`text-muted-foreground hover:text-primary cursor-pointer transition-colors py-1 select-none ${
                           heading.level === 1 ? 'font-semibold text-base' : heading.level === 2 ? 'ml-4 text-sm' : 'ml-8 text-sm'
                         }`}
                         onClick={() => scrollToHeading(heading.id)}
                         whileHover={{ x: 4 }}
                         data-testid={`toc-${heading.id}`}
+                        style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none' }}
                       >
                         {heading.text}
                       </motion.div>

@@ -777,109 +777,109 @@ Going forward, with increasing digitalization of governance and politics, digita
     excerpt_en: 'An in-depth study on the evolution of social media use in Indonesian politics, from the buzzer phenomenon to AI-based campaigns in the 2024 election.',
     content: `# Media Sosial dan Komunikasi Politik: Lanskap Indonesia 2024
 
-## Executive Summary
+## Ringkasan Eksekutif
 
-Media sosial telah fundamental mengubah politik Indonesia. Pemilu 2024 menandai era baru di mana kampanye digital mengalahkan ground game tradisional, dengan Prabowo-Gibran meraih kemenangan melalui strategi "gemoy" yang viral di TikTok (19 miliar views) dan penggunaan AI untuk rebranding image.
+Media sosial telah secara mendasar mengubah politik Indonesia. Pemilu 2024 menandai era baru di mana kampanye digital mengalahkan strategi lapangan tradisional, dengan Prabowo-Gibran meraih kemenangan melalui strategi "gemoy" yang viral di TikTok (19 miliar penayangan) dan penggunaan AI untuk pembaruan citra.
 
 ## Evolusi Digital Politik Indonesia
 
-### Timeline Transformasi Digital
+### Garis Waktu Transformasi Digital
 
 **Tabel 1: Evolusi Penggunaan Media Sosial Politik Indonesia**
 
-| Era | Platform Dominan | Strategi Utama | Kasus Landmark |
+| Era | Platform Dominan | Strategi Utama | Kasus Penting |
 |-----|-----------------|----------------|----------------|
-| 2009-2012 | Facebook, Blog | Grassroots organizing | Jokowi-Ahok Jakarta |
-| 2013-2016 | Twitter, FB | Meme wars, hashtag campaigns | #2019GantiPresiden |
-| 2017-2020 | Instagram, WA | Micro-targeting, hoax | Hoax Ratna Sarumpaet |
-| 2021-2024 | TikTok, AI | Algorithm gaming, buzzers | Prabowo "Gemoy" campaign |
+| 2009-2012 | Facebook, Blog | Pengorganisasian akar rumput | Jokowi-Ahok Jakarta |
+| 2013-2016 | Twitter, FB | Perang meme, kampanye hashtag | #2019GantiPresiden |
+| 2017-2020 | Instagram, WA | Penargetan mikro, hoax | Hoax Ratna Sarumpaet |
+| 2021-2024 | TikTok, AI | Permainan algoritma, buzzer | Kampanye "Gemoy" Prabowo |
 
 ## Fenomena Buzzer dalam Politik Indonesia
 
 ### Anatomi Operasi Buzzer
 
-**Definition:** Buzzer adalah influencer digital berbayar yang mengelola multiple fake profiles untuk amplify pesan politik dan manipulasi opini publik.
+**Definisi:** Buzzer adalah influencer digital berbayar yang mengelola beberapa profil palsu untuk memperkuat pesan politik dan memanipulasi opini publik.
 
 ### Tabel 2: Buzzer Operations Statistics (2024 Election)
 
 | Metric | Volume | Impact | Cost (Est.) |
 |--------|--------|--------|-------------|
-| Active buzzer accounts | 2.3 juta | 47% boost electability* | Rp 450 miliar |
-| Daily posts generated | 14 juta | 3.2x organic reach | Rp 1.2 juta/1000 posts |
-| Hashtags manipulated | 1,247 | 73% reached trending | Rp 15-50 juta/hashtag |
-| Fake engagement rate | 67% | 4.1x normal engagement | Rp 500/like, Rp 2000/comment |
+| Akun buzzer aktif | 2,3 juta | 47% peningkatan elektabilitas* | Rp 450 miliar |
+| Postingan harian | 14 juta | 3,2x jangkauan organik | Rp 1,2 juta/1000 postingan |
+| Hashtag dimanipulasi | 1.247 | 73% mencapai trending | Rp 15-50 juta/hashtag |
+| Tingkat keterlibatan palsu | 67% | 4,1x keterlibatan normal | Rp 500/suka, Rp 2.000/komentar |
 *According to Drone Emprit analysis
 
 ### Modus Operandi Buzzer
 
-1. **Account Creation:**
-   - Automated bot farms: 10,000 accounts/day capacity
-   - Aged account purchasing: Rp 50,000-500,000/account
-   - Identity theft untuk credibility
+1. **Pembuatan Akun:**
+   - Peternakan bot otomatis: kapasitas 10.000 akun/hari
+   - Pembelian akun lama: Rp 50.000-500.000/akun
+   - Pencurian identitas untuk kredibilitas
 
-2. **Content Strategy:**
-   - 06:00 - Positive messaging push
-   - 09:00 - Trending topic hijacking  
-   - 12:00 - Opponent attack coordination
-   - 15:00 - Viral content amplification
-   - 19:00 - Prime time narrative control
-   - 22:00 - Damage control operations
+2. **Strategi Konten:**
+   - 06:00 - Dorongan pesan positif
+   - 09:00 - Pembajakan topik trending  
+   - 12:00 - Koordinasi serangan lawan
+   - 15:00 - Amplifikasi konten viral
+   - 19:00 - Kontrol narasi waktu utama
+   - 22:00 - Operasi pengendalian kerusakan
 
-3. **Coordination Mechanism:**
-   - WhatsApp groups untuk daily briefing
-   - Telegram channels untuk content distribution
-   - Payment via cryptocurrency atau e-wallets
+3. **Mekanisme Koordinasi:**
+   - Grup WhatsApp untuk pengarahan harian
+   - Saluran Telegram untuk distribusi konten
+   - Pembayaran melalui cryptocurrency atau dompet digital
 
 ### Case Study: Prabowo "Gemoy" Campaign
 
-**Strategy Components:**
-- AI-generated cartoon avatars
-- Curated wholesome content
-- TikTok algorithm optimization
-- Micro-influencer partnerships
+**Komponen Strategi:**
+- Avatar kartun yang dihasilkan AI
+- Konten positif yang dikurasi
+- Optimasi algoritma TikTok
+- Kemitraan dengan influencer mikro
 
-**Results:**
-- 19 billion TikTok views
-- 340% increase dalam positive sentiment
-- Youth vote swing: 23% → 61%
-- Cost efficiency: 1/10th traditional media
+**Hasil:**
+- 19 miliar penayangan TikTok
+- Peningkatan 340% dalam sentimen positif
+- Pergeseran suara pemuda: 23% → 61%
+- Efisiensi biaya: 1/10 media tradisional
 
 ## Platform-Specific Political Strategies
 
-### Tabel 3: Platform Analysis untuk Political Communication
+### Tabel 3: Analisis Platform untuk Komunikasi Politik
 
-| Platform | Users ID | Political Usage | Effectiveness | Risks |
+| Platform | Pengguna ID | Penggunaan Politik | Efektivitas | Risiko |
 |----------|----------|-----------------|---------------|-------|
-| WhatsApp | 175M | Group organizing, hoax spread | Very High | Encryption blocks monitoring |
-| Facebook | 135M | Broad messaging, ads | High | Declining youth engagement |
-| Instagram | 99M | Visual storytelling | High | Influencer dependency |
-| Twitter/X | 24M | Elite discourse, journalism | Medium | Echo chamber effects |
-| TikTok | 113M | Youth engagement, viral | Very High | Content control difficult |
-| YouTube | 139M | Long-form content | High | Monetization incentives |
+| WhatsApp | 175J | Pengorganisasian grup, penyebaran hoax | Sangat Tinggi | Enkripsi menghalangi pemantauan |
+| Facebook | 135J | Pesan luas, iklan | Tinggi | Menurunnya keterlibatan pemuda |
+| Instagram | 99J | Bercerita visual | Tinggi | Ketergantungan influencer |
+| Twitter/X | 24J | Wacana elit, jurnalisme | Sedang | Efek ruang gema |
+| TikTok | 113J | Keterlibatan pemuda, viral | Sangat Tinggi | Kontrol konten sulit |
+| YouTube | 139J | Konten panjang | Tinggi | Insentif monetisasi |
 
-### WhatsApp: The Dark Horse
+### WhatsApp: Kuda Hitam
 
-WhatsApp remains Indonesia's most potent political tool:
-- **175 million users** (63% population)
-- **Private groups** bypass content moderation
-- **Forward limit** (5 groups) barely slows misinformation
-- **Business API** enables mass messaging
+WhatsApp tetap menjadi alat politik paling kuat di Indonesia:
+- **175 juta pengguna** (63% populasi)
+- **Grup privat** melewati moderasi konten
+- **Batas teruskan** (5 grup) hampir tidak memperlambat misinformasi
+- **API Bisnis** memungkinkan pesan massal
 
-**Political WhatsApp Tactics:**
-1. Cascading group networks
-2. Localized disinformation
-3. Audio/video "evidence" sharing
-4. Last-mile voter mobilization
+**Taktik WhatsApp Politik:**
+1. Jaringan grup bertingkat
+2. Disinformasi terlokalisasi
+3. Berbagi "bukti" audio/video
+4. Mobilisasi pemilih tahap akhir
 
-### TikTok: The Game Changer
+### TikTok: Pengubah Permainan
 
-TikTok revolutionized Indonesian political communication:
+TikTok merevolusi komunikasi politik Indonesia:
 
-**Algorithm Exploitation:**
-- Completion rate optimization
-- Comment bait strategies
-- Duet/stitch viral mechanics
-- Sound trend hijacking
+**Eksploitasi Algoritma:**
+- Optimasi tingkat penyelesaian
+- Strategi umpan komentar
+- Mekanik viral duet/stitch
+- Pembajakan tren suara
 
 **Content Formulas:**
 Viral Political TikTok = (Emotional Hook 3sec) + (Simple Message 10sec) + (Call to Action 2sec) + (Trending Audio) + (Native Format)
@@ -1066,11 +1066,11 @@ Content Creation → Initial Seeding → Buzzer Amplification → Organic Pickup
 | Digital literacy | Low | Medium | Medium | Moderate |
 | Democratic quality | Declining | Critical | High | Severe |
 
-## Conclusion
+## Kesimpulan
 
-Media sosial telah irreversibly mengubah politik Indonesia. Pemilu 2024 mendemonstrasikan baik potensi demokratis maupun ancaman autoritariannya. Dengan buzzer operations, AI-driven campaigns, dan disinformation menjadi normalized, Indonesia berada di persimpangan kritis.
+Media sosial telah mengubah politik Indonesia secara permanen. Pemilu 2024 menunjukkan baik potensi demokratis maupun ancaman autoritariannya. Dengan operasi buzzer, kampanye berbasis AI, dan disinformasi menjadi hal yang lumrah, Indonesia berada di persimpangan kritis.
 
-Pilihan yang dibuat sekarang—oleh pemerintah, platforms, dan civil society—akan menentukan apakah teknologi digital memperkuat atau menghancurkan demokrasi Indonesia. Window untuk action semakin menyempit; tanpa intervensi decisive, spiral decline mungkin menjadi irreversible.
+Pilihan yang dibuat sekarang—oleh pemerintah, platform, dan masyarakat sipil—akan menentukan apakah teknologi digital memperkuat atau menghancurkan demokrasi Indonesia. Jendela untuk bertindak semakin menyempit; tanpa intervensi tegas, spiral kemunduran mungkin menjadi tidak dapat dibalikkan.
 
 *Data dan analisis berdasarkan riset dari Mafindo, SafeNet, Drone Emprit, dan Freedom House 2024*`,
     content_en: `# Social Media and Political Communication: Indonesia's 2024 Landscape
@@ -1115,13 +1115,13 @@ Social media has fundamentally transformed Indonesian politics. The 2024 electio
    - Aged account purchasing: Rp 50,000-500,000/account
    - Identity theft for credibility
 
-2. **Content Strategy:**
-   - 06:00 - Positive messaging push
-   - 09:00 - Trending topic hijacking  
-   - 12:00 - Opponent attack coordination
-   - 15:00 - Viral content amplification
-   - 19:00 - Prime time narrative control
-   - 22:00 - Damage control operations
+2. **Strategi Konten:**
+   - 06:00 - Dorongan pesan positif
+   - 09:00 - Pembajakan topik trending  
+   - 12:00 - Koordinasi serangan lawan
+   - 15:00 - Amplifikasi konten viral
+   - 19:00 - Kontrol narasi waktu utama
+   - 22:00 - Operasi pengendalian kerusakan
 
 3. **Coordination Mechanism:**
    - WhatsApp groups for daily briefing
@@ -1146,38 +1146,38 @@ Social media has fundamentally transformed Indonesian politics. The 2024 electio
 
 ### Table 3: Platform Analysis for Political Communication
 
-| Platform | Users ID | Political Usage | Effectiveness | Risks |
+| Platform | Pengguna ID | Penggunaan Politik | Efektivitas | Risiko |
 |----------|----------|-----------------|---------------|-------|
-| WhatsApp | 175M | Group organizing, hoax spread | Very High | Encryption blocks monitoring |
-| Facebook | 135M | Broad messaging, ads | High | Declining youth engagement |
-| Instagram | 99M | Visual storytelling | High | Influencer dependency |
-| Twitter/X | 24M | Elite discourse, journalism | Medium | Echo chamber effects |
-| TikTok | 113M | Youth engagement, viral | Very High | Content control difficult |
-| YouTube | 139M | Long-form content | High | Monetization incentives |
+| WhatsApp | 175J | Pengorganisasian grup, penyebaran hoax | Sangat Tinggi | Enkripsi menghalangi pemantauan |
+| Facebook | 135J | Pesan luas, iklan | Tinggi | Menurunnya keterlibatan pemuda |
+| Instagram | 99J | Bercerita visual | Tinggi | Ketergantungan influencer |
+| Twitter/X | 24J | Wacana elit, jurnalisme | Sedang | Efek ruang gema |
+| TikTok | 113J | Keterlibatan pemuda, viral | Sangat Tinggi | Kontrol konten sulit |
+| YouTube | 139J | Konten panjang | Tinggi | Insentif monetisasi |
 
-### WhatsApp: The Dark Horse
+### WhatsApp: Kuda Hitam
 
-WhatsApp remains Indonesia's most potent political tool:
-- **175 million users** (63% population)
-- **Private groups** bypass content moderation
-- **Forward limit** (5 groups) barely slows misinformation
-- **Business API** enables mass messaging
+WhatsApp tetap menjadi alat politik paling kuat di Indonesia:
+- **175 juta pengguna** (63% populasi)
+- **Grup privat** melewati moderasi konten
+- **Batas teruskan** (5 grup) hampir tidak memperlambat misinformasi
+- **API Bisnis** memungkinkan pesan massal
 
-**Political WhatsApp Tactics:**
-1. Cascading group networks
-2. Localized disinformation
-3. Audio/video "evidence" sharing
-4. Last-mile voter mobilization
+**Taktik WhatsApp Politik:**
+1. Jaringan grup bertingkat
+2. Disinformasi terlokalisasi
+3. Berbagi "bukti" audio/video
+4. Mobilisasi pemilih tahap akhir
 
-### TikTok: The Game Changer
+### TikTok: Pengubah Permainan
 
-TikTok revolutionized Indonesian political communication:
+TikTok merevolusi komunikasi politik Indonesia:
 
-**Algorithm Exploitation:**
-- Completion rate optimization
-- Comment bait strategies
-- Duet/stitch viral mechanics
-- Sound trend hijacking
+**Eksploitasi Algoritma:**
+- Optimasi tingkat penyelesaian
+- Strategi umpan komentar
+- Mekanik viral duet/stitch
+- Pembajakan tren suara
 
 **Content Formulas:**
 Viral Political TikTok = (Emotional Hook 3sec) + (Simple Message 10sec) + (Call to Action 2sec) + (Trending Audio) + (Native Format)
@@ -2271,38 +2271,38 @@ Where:
 
 ### Preparedness Recommendations
 
-**For Government:**
-- Establish 24/7 crisis centers
-- Develop AI response capabilities
+**Untuk Pemerintah:**
+- Bentuk pusat krisis 24/7
+- Kembangkan kemampuan respons AI
 - Buat koordinasi lintas platform
-- Invest in sentiment analysis
-- Build citizen trust reserves
+- Investasi dalam analisis sentimen
+- Bangun cadangan kepercayaan warga
 
-**For Political Parties:**
-- Train all candidates in crisis communication
-- Develop rapid response teams
-- Create crisis simulation exercises
-- Build influencer networks
-- Maintain fact-check relationships
+**Untuk Partai Politik:**
+- Latih semua kandidat dalam komunikasi krisis
+- Kembangkan tim tanggap cepat
+- Buat latihan simulasi krisis
+- Bangun jaringan influencer
+- Pertahankan hubungan pengecekan fakta
 
-**For Individuals:**
+**Untuk Individu:**
 - Dokumentasikan jejak digital
-- Prepare crisis narratives
-- Build support networks
+- Siapkan narasi krisis
+- Bangun jaringan dukungan
 - Pahami dinamika platform
-- Practice response protocols
+- Latih protokol tanggapan
 
-## Conclusion
+## Kesimpulan
 
-Digital crisis communication in Indonesian politics has evolved from reactive damage control to sophisticated narrative warfare. Success requires speed, authenticity, platform fluency, and strategic patience.
+Komunikasi krisis digital dalam politik Indonesia telah berkembang dari pengendalian kerusakan reaktif menjadi peperangan narasi yang canggih. Kesuksesan memerlukan kecepatan, keaslian, kelancaran platform, dan kesabaran strategis.
 
-The Fufufafa case demonstrates that traditional denial strategies fail in the digital age. Evidence persists, crowds investigate, and deletion implies guilt. Future political actors must assume total transparency and build crisis resilience through genuine engagement rather than manipulation.
+Kasus Fufufafa menunjukkan bahwa strategi penyangkalan tradisional gagal di era digital. Bukti tetap ada, massa menyelidiki, dan penghapusan menyiratkan kesalahan. Aktor politik masa depan harus mengasumsikan transparansi total dan membangun ketahanan krisis melalui keterlibatan yang tulus, bukan manipulasi.
 
-As AI and synthetic media proliferate, the crisis communication landscape will become increasingly complex. Only those who invest in preparation, build authentic relationships, and maintain ethical standards will survive the digital political battlefield.
+Seiring proliferasi AI dan media sintetis, lanskap komunikasi krisis akan menjadi semakin kompleks. Hanya mereka yang berinvestasi dalam persiapan, membangun hubungan autentik, dan mempertahankan standar etika yang akan bertahan di medan perang politik digital.
 
-The ultimate lesson: In digital politics, the cover-up has become impossible, making the best crisis strategy prevention through integrity.
+Pelajaran utama: Dalam politik digital, penyembunyian telah menjadi mustahil, menjadikan strategi krisis terbaik adalah pencegahan melalui integritas.
 
-*Compiled from crisis analysis by PR Society Indonesia, Digital Democracy Forum, and Reuters Institute studies*`,
+*Dikompilasi dari analisis krisis oleh Perhimpunan Humas Indonesia, Forum Demokrasi Digital, dan studi Institut Reuters*`,
     content_en: `# Crisis Communication Strategy in the Digital Era: Lessons from Indonesian Politics
 
 ## Digital Crisis Communication Framework
@@ -2596,17 +2596,17 @@ The digital era has fundamentally changed the nature of political crises. Scanda
 - Learn systematically
 - Practice response protocols
 
-## Conclusion
+## Kesimpulan
 
-Digital crisis communication in Indonesian politics has evolved from reactive damage control to sophisticated narrative warfare. Success requires speed, authenticity, platform fluency, and strategic patience.
+Komunikasi krisis digital dalam politik Indonesia telah berkembang dari pengendalian kerusakan reaktif menjadi peperangan narasi yang canggih. Kesuksesan memerlukan kecepatan, keaslian, kelancaran platform, dan kesabaran strategis.
 
-The Fufufafa case demonstrates that traditional denial strategies fail in the digital age. Evidence persists, crowds investigate, and deletion implies guilt. Future political actors must assume total transparency and build crisis resilience through genuine engagement rather than manipulation.
+Kasus Fufufafa menunjukkan bahwa strategi penyangkalan tradisional gagal di era digital. Bukti tetap ada, massa menyelidiki, dan penghapusan menyiratkan kesalahan. Aktor politik masa depan harus mengasumsikan transparansi total dan membangun ketahanan krisis melalui keterlibatan yang tulus, bukan manipulasi.
 
-As AI and synthetic media proliferate, the crisis communication landscape will become increasingly complex. Only those who invest in preparation, build authentic relationships, and maintain ethical standards will survive the digital political battlefield.
+Seiring proliferasi AI dan media sintetis, lanskap komunikasi krisis akan menjadi semakin kompleks. Hanya mereka yang berinvestasi dalam persiapan, membangun hubungan autentik, dan mempertahankan standar etika yang akan bertahan di medan perang politik digital.
 
-The ultimate lesson: In digital politics, the cover-up has become impossible, making the best crisis strategy prevention through integrity.
+Pelajaran utama: Dalam politik digital, penyembunyian telah menjadi mustahil, menjadikan strategi krisis terbaik adalah pencegahan melalui integritas.
 
-*Compiled from crisis analysis by PR Society Indonesia, Digital Democracy Forum, and Reuters Institute studies*`,
+*Dikompilasi dari analisis krisis oleh Perhimpunan Humas Indonesia, Forum Demokrasi Digital, dan studi Institut Reuters*`,
     author: {
       name: 'Indra Wijaya',
       role: 'Konsultan Komunikasi Politik',
@@ -2625,50 +2625,50 @@ The ultimate lesson: In digital politics, the cover-up has become impossible, ma
     title_en: 'Political Big Data: 2024 Election Analysis and Future Predictions',
     excerpt: 'Eksplorasi mendalam penggunaan big data dan analytics dalam Pemilu 2024 Indonesia, dari micro-targeting hingga prediksi hasil real-time.',
     excerpt_en: 'An in-depth exploration of big data and analytics usage in Indonesia\'s 2024 election, from micro-targeting to real-time result predictions.',
-    content: `# Political Data Analytics: Membedah Pemilu Indonesia 2024
+    content: `# Analitik Data Politik: Membedah Pemilu Indonesia 2024
 
-## Executive Summary
+## Ringkasan Eksekutif
 
-Pemilu 2024 menandai era baru data-driven politics di Indonesia. Dengan 204.8 juta pemilih terdaftar dan 113 juta pengguna TikTok, kampanye politik bertransformasi menjadi sophisticated data operations. Prabowo-Gibran mengalokasikan Rp 89 miliar untuk digital analytics, menghasilkan kemenangan one-round dengan 58.59% suara.
+Pemilu 2024 menandai era baru politik berbasis data di Indonesia. Dengan 204,8 juta pemilih terdaftar dan 113 juta pengguna TikTok, kampanye politik bertransformasi menjadi operasi data yang canggih. Prabowo-Gibran mengalokasikan Rp 89 miliar untuk analitik digital, menghasilkan kemenangan satu putaran dengan 58,59% suara.
 
-## Landscape Data Politik Indonesia
+## Lanskap Data Politik Indonesia
 
 ### Tabel 1: Pemilu 2024 dalam Angka
 
 | Metrik | Volume | Perubahan dari 2019 | Signifikansi |
 |--------|--------|-------------------|--------------|
-| Pemilih terdaftar | 204.8 juta | +13.7% | Largest democracy exercise |
-| Pemilih millennial/Gen-Z | 113 juta | +67% | Decisive demographic |
-| Data points collected | 4.7 billion | +340% | Unprecedented scale |
-| Social media users | 191 juta | +31% | Digital battlefield |
-| TPS (voting stations) | 823,236 | +8% | Logistical complexity |
-| Campaign spending (digital) | Rp 2.3 trillion | +580% | Investment explosion |
+| Pemilih terdaftar | 204,8 juta | +13,7% | Latihan demokrasi terbesar |
+| Pemilih milenial/Gen-Z | 113 juta | +67% | Demografi penentu |
+| Poin data terkumpul | 4,7 miliar | +340% | Skala belum pernah terjadi |
+| Pengguna media sosial | 191 juta | +31% | Medan perang digital |
+| TPS (tempat pemungutan suara) | 823.236 | +8% | Kompleksitas logistik |
+| Belanja kampanye (digital) | Rp 2,3 triliun | +580% | Ledakan investasi |
 
-## Metodologi Data Collection
+## Metodologi Pengumpulan Data
 
-### Multi-Source Data Integration
+### Integrasi Data Multi-Sumber
 
-**Primary Data Sources:**
+**Sumber Data Primer:**
 1. **KPU Database:** 204.8 juta voter records
 2. **Social Media:** 14 juta posts/day analyzed
 3. **Polling:** 347 surveys conducted
 4. **Mobile Data:** 175 juta WhatsApp users
 5. **Economic Indicators:** 514 regional datasets
 
-### Tabel 2: Data Collection Methods dan Volume
+### Tabel 2: Metode Pengumpulan Data dan Volume
 
 | Method | Data Points | Frequency | Accuracy | Cost/Million |
 |--------|------------|-----------|----------|--------------|
-| Social listening | 2.1 billion | Real-time | 73% | Rp 12 |
-| Online surveys | 45 million | Weekly | 67% | Rp 450 |
-| Phone polling | 3.4 million | Bi-weekly | 71% | Rp 2,100 |
-| Face-to-face | 890,000 | Monthly | 84% | Rp 8,900 |
-| Behavioral tracking | 780 million | Continuous | 81% | Rp 34 |
-| Sentiment analysis | 1.2 billion | Real-time | 69% | Rp 8 |
+| Mendengarkan sosial | 2,1 miliar | Waktu nyata | 73% | Rp 12 |
+| Survei daring | 45 juta | Mingguan | 67% | Rp 450 |
+| Polling telepon | 3,4 juta | Dua mingguan | 71% | Rp 2.100 |
+| Tatap muka | 890.000 | Bulanan | 84% | Rp 8.900 |
+| Pelacakan perilaku | 780 juta | Berkelanjutan | 81% | Rp 34 |
+| Analisis sentimen | 1,2 miliar | Waktu nyata | 69% | Rp 8 |
 
-## Voter Segmentation Analysis
+## Analisis Segmentasi Pemilih
 
-### Demographic Clustering
+### Pengelompokan Demografis
 
 **Tabel 3: Voter Segments Pemilu 2024**
 
@@ -2922,41 +2922,41 @@ Optimization Points:
 
 ## Best Practices Framework
 
-### For Political Parties
+### Untuk Partai Politik
 
-1. **Invest in data infrastructure**
-2. **Build in-house capabilities**
-3. **Prioritize data quality**
-4. **Implement ethical guidelines**
-5. **Focus on actionable insights**
+1. **Investasi infrastruktur data**
+2. **Bangun kemampuan internal**
+3. **Prioritaskan kualitas data**
+4. **Terapkan pedoman etika**
+5. **Fokus pada wawasan yang dapat ditindaklanjuti**
 
-### For Regulators
+### Untuk Regulator
 
-1. **Establish clear frameworks**
-2. **Build technical capacity**
-3. **Ensure transparency**
-4. **Protect voter privacy**
-5. **Promote fair competition**
+1. **Tetapkan kerangka kerja yang jelas**
+2. **Bangun kapasitas teknis**
+3. **Pastikan transparansi**
+4. **Lindungi privasi pemilih**
+5. **Dorong kompetisi yang adil**
 
-### For Citizens
+### Untuk Warga
 
-1. **Understand data rights**
-2. **Practice digital hygiene**
-3. **Verify information sources**
-4. **Report violations**
-5. **Demand accountability**
+1. **Pahami hak-hak data**
+2. **Praktikkan kebersihan digital**
+3. **Verifikasi sumber informasi**
+4. **Laporkan pelanggaran**
+5. **Tuntut akuntabilitas**
 
-## Conclusion
+## Kesimpulan
 
-Big Data has irreversibly transformed Indonesian politics. The 2024 election demonstrated both tremendous potential for democratic engagement and serious risks of manipulation. Success belonged to campaigns that combined sophisticated analytics with authentic messaging.
+Big Data telah mengubah politik Indonesia secara permanen. Pemilu 2024 menunjukkan potensi luar biasa untuk keterlibatan demokratis sekaligus risiko serius manipulasi. Kesuksesan diraih oleh kampanye yang menggabungkan analitik canggih dengan pesan yang autentik.
 
-Moving forward, the challenge is balancing innovation with protection, efficiency with privacy, and persuasion with manipulation. The future of Indonesian democracy depends on getting this balance right.
+Ke depan, tantangannya adalah menyeimbangkan inovasi dengan perlindungan, efisiensi dengan privasi, dan persuasi dengan manipulasi. Masa depan demokrasi Indonesia bergantung pada keseimbangan ini.
 
-As we approach 2029, the stakes only increase. Those who master data while maintaining ethical standards will shape Indonesia's political future. Those who don't will become irrelevant.
+Menjelang 2029, taruhannya semakin meningkat. Mereka yang menguasai data sambil mempertahankan standar etika akan membentuk masa depan politik Indonesia. Mereka yang tidak akan menjadi tidak relevan.
 
-The data revolution in politics is not coming—it's here. The question is not whether to embrace it, but how to do so responsibly.
+Revolusi data dalam politik bukan akan datang—sudah tiba. Pertanyaannya bukan apakah harus merangkulnya, tetapi bagaimana melakukannya secara bertanggung jawab.
 
-*Analysis compiled from KPU data, Litbang Kompas, LSI, Indikator Politik, and Cyrus Network insights*`,
+*Analisis dikompilasi dari data KPU, Litbang Kompas, LSI, Indikator Politik, dan wawasan Cyrus Network*`,
     content_en: `# Political Data Analytics: Dissecting Indonesia's 2024 Election
 
 ## Executive Summary
@@ -2991,16 +2991,16 @@ The 2024 election marked a new era of data-driven politics in Indonesia. With 20
 
 | Method | Data Points | Frequency | Accuracy | Cost/Million |
 |--------|------------|-----------|----------|--------------|
-| Social listening | 2.1 billion | Real-time | 73% | Rp 12 |
-| Online surveys | 45 million | Weekly | 67% | Rp 450 |
-| Phone polling | 3.4 million | Bi-weekly | 71% | Rp 2,100 |
-| Face-to-face | 890,000 | Monthly | 84% | Rp 8,900 |
-| Behavioral tracking | 780 million | Continuous | 81% | Rp 34 |
-| Sentiment analysis | 1.2 billion | Real-time | 69% | Rp 8 |
+| Mendengarkan sosial | 2,1 miliar | Waktu nyata | 73% | Rp 12 |
+| Survei daring | 45 juta | Mingguan | 67% | Rp 450 |
+| Polling telepon | 3,4 juta | Dua mingguan | 71% | Rp 2.100 |
+| Tatap muka | 890.000 | Bulanan | 84% | Rp 8.900 |
+| Pelacakan perilaku | 780 juta | Berkelanjutan | 81% | Rp 34 |
+| Analisis sentimen | 1,2 miliar | Waktu nyata | 69% | Rp 8 |
 
-## Voter Segmentation Analysis
+## Analisis Segmentasi Pemilih
 
-### Demographic Clustering
+### Pengelompokan Demografis
 
 **Table 3: 2024 Election Voter Segments**
 
@@ -3254,41 +3254,41 @@ Optimization Points:
 
 ## Best Practices Framework
 
-### For Political Parties
+### Untuk Partai Politik
 
-1. **Invest in data infrastructure**
-2. **Build in-house capabilities**
-3. **Prioritize data quality**
-4. **Implement ethical guidelines**
-5. **Focus on actionable insights**
+1. **Investasi infrastruktur data**
+2. **Bangun kemampuan internal**
+3. **Prioritaskan kualitas data**
+4. **Terapkan pedoman etika**
+5. **Fokus pada wawasan yang dapat ditindaklanjuti**
 
-### For Regulators
+### Untuk Regulator
 
-1. **Establish clear frameworks**
-2. **Build technical capacity**
-3. **Ensure transparency**
-4. **Protect voter privacy**
-5. **Promote fair competition**
+1. **Tetapkan kerangka kerja yang jelas**
+2. **Bangun kapasitas teknis**
+3. **Pastikan transparansi**
+4. **Lindungi privasi pemilih**
+5. **Dorong kompetisi yang adil**
 
-### For Citizens
+### Untuk Warga
 
-1. **Understand data rights**
-2. **Practice digital hygiene**
-3. **Verify information sources**
-4. **Report violations**
-5. **Demand accountability**
+1. **Pahami hak-hak data**
+2. **Praktikkan kebersihan digital**
+3. **Verifikasi sumber informasi**
+4. **Laporkan pelanggaran**
+5. **Tuntut akuntabilitas**
 
-## Conclusion
+## Kesimpulan
 
-Big Data has irreversibly transformed Indonesian politics. The 2024 election demonstrated both tremendous potential for democratic engagement and serious risks of manipulation. Success belonged to campaigns that combined sophisticated analytics with authentic messaging.
+Big Data telah mengubah politik Indonesia secara permanen. Pemilu 2024 menunjukkan potensi luar biasa untuk keterlibatan demokratis sekaligus risiko serius manipulasi. Kesuksesan diraih oleh kampanye yang menggabungkan analitik canggih dengan pesan yang autentik.
 
-Moving forward, the challenge is balancing innovation with protection, efficiency with privacy, and persuasion with manipulation. The future of Indonesian democracy depends on getting this balance right.
+Ke depan, tantangannya adalah menyeimbangkan inovasi dengan perlindungan, efisiensi dengan privasi, dan persuasi dengan manipulasi. Masa depan demokrasi Indonesia bergantung pada keseimbangan ini.
 
-As we approach 2029, the stakes only increase. Those who master data while maintaining ethical standards will shape Indonesia's political future. Those who don't will become irrelevant.
+Menjelang 2029, taruhannya semakin meningkat. Mereka yang menguasai data sambil mempertahankan standar etika akan membentuk masa depan politik Indonesia. Mereka yang tidak akan menjadi tidak relevan.
 
-The data revolution in politics is not coming—it's here. The question is not whether to embrace it, but how to do so responsibly.
+Revolusi data dalam politik bukan akan datang—sudah tiba. Pertanyaannya bukan apakah harus merangkulnya, tetapi bagaimana melakukannya secara bertanggung jawab.
 
-*Analysis compiled from KPU data, Litbang Kompas, LSI, Indikator Politik, and Cyrus Network insights*`,
+*Analisis dikompilasi dari data KPU, Litbang Kompas, LSI, Indikator Politik, dan wawasan Cyrus Network*`,
     author: {
       name: 'Sarah Chen',
       role: 'Data Scientist Politik',

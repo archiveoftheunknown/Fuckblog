@@ -63,12 +63,12 @@ export default function Copyright() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Pelanggaran Hak Cipta</h2>
               <p className="leading-relaxed">
-                Situs ini menghormati hak kekayaan intelektual orang lain berdasarkan hukum Indonesia dan internasional. Jika Anda yakin konten di sini melanggar hak cipta Anda, silakan berikan rincian spesifik tentang dugaan pelanggaran seperti yang dipersyaratkan oleh Undang-Undang Hak Cipta Indonesia dan prinsip DMCA. Klaim akan ditinjau dengan itikad baik. Perhatikan bahwa kritik dan komentar terhadap tokoh publik dan kebijakan pemerintah dilindungi berdasarkan hukum Indonesia.
+                Situs ini menghormati hak kekayaan intelektual orang lain berdasarkan hukum Indonesia dan internasional. Jika Anda yakin konten di sini melanggar hak cipta Anda, silakan berikan rincian spesifik tentang dugaan pelanggaran seperti yang dipersyaratkan oleh Undang-Undang Hak Cipta Indonesia dan prinsip Undang-Undang Hak Cipta Milenium Digital (DMCA). Klaim akan ditinjau dengan itikad baik. Perhatikan bahwa kritik dan komentar terhadap tokoh publik dan kebijakan pemerintah dilindungi berdasarkan hukum Indonesia.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-foreground mb-3">Pertimbangan Creative Commons</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-3">Pertimbangan Lisensi Publik</h2>
               <p className="leading-relaxed">
                 Artikel lama tertentu mungkin dirilis di bawah lisensi Creative Commons di masa depan. Setiap rilis semacam itu akan ditandai dengan jelas pada posting individual. Kecuali dinyatakan secara eksplisit sebaliknya, semua konten tetap berada di bawah perlindungan hak cipta tradisional.
               </p>

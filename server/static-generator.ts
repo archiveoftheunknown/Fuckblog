@@ -7,8 +7,8 @@ const __dirname = path.dirname(__filename);
 
 // Routes to generate
 const routes = {
-  id: ['/', '/blog', '/about'],
-  en: ['/en/', '/en/blog', '/en/about']
+  id: ['/', '/blog', '/about', '/archives', '/privacy', '/terms', '/copyright'],
+  en: ['/en/', '/en/blog', '/en/about', '/en/archives', '/en/privacy', '/en/terms', '/en/copyright']
 };
 
 // Blog post routes (we'll add these dynamically)
@@ -173,12 +173,20 @@ function getTitle(route: string, lang: 'id' | 'en'): string {
     id: {
       '/': 'Political Insights - Analisis Politik Indonesia',
       '/blog': 'Blog - Political Insights',
-      '/about': 'Tentang - Political Insights'
+      '/about': 'Tentang - Political Insights',
+      '/archives': 'Arsip - Political Insights',
+      '/privacy': 'Kebijakan Privasi - Political Insights',
+      '/terms': 'Syarat & Ketentuan - Political Insights',
+      '/copyright': 'Hak Cipta - Political Insights'
     },
     en: {
       '/en/': 'Political Insights - Indonesian Political Analysis',
       '/en/blog': 'Blog - Political Insights',
-      '/en/about': 'About - Political Insights'
+      '/en/about': 'About - Political Insights',
+      '/en/archives': 'Archives - Political Insights',
+      '/en/privacy': 'Privacy Policy - Political Insights',
+      '/en/terms': 'Terms & Conditions - Political Insights',
+      '/en/copyright': 'Copyright - Political Insights'
     }
   };
   
@@ -190,12 +198,20 @@ function getMetaTags(route: string, lang: 'id' | 'en'): string {
     id: {
       '/': 'Platform analisis politik Indonesia dengan fokus pada demokrasi digital dan transparansi pemerintahan.',
       '/blog': 'Baca analisis mendalam tentang politik Indonesia, kebijakan publik, dan perkembangan demokrasi.',
-      '/about': 'Tentang Political Insights - platform independen untuk analisis politik Indonesia.'
+      '/about': 'Tentang Political Insights - platform independen untuk analisis politik Indonesia.',
+      '/archives': 'Arsip artikel dan analisis politik Indonesia dari Political Insights.',
+      '/privacy': 'Kebijakan privasi dan perlindungan data pengguna Political Insights.',
+      '/terms': 'Syarat dan ketentuan penggunaan layanan Political Insights.',
+      '/copyright': 'Informasi hak cipta dan penggunaan konten Political Insights.'
     },
     en: {
       '/en/': 'Indonesian political analysis platform focusing on digital democracy and government transparency.',
       '/en/blog': 'Read in-depth analysis on Indonesian politics, public policy, and democratic development.',
-      '/en/about': 'About Political Insights - independent platform for Indonesian political analysis.'
+      '/en/about': 'About Political Insights - independent platform for Indonesian political analysis.',
+      '/en/archives': 'Archive of Indonesian political articles and analysis from Political Insights.',
+      '/en/privacy': 'Privacy policy and user data protection for Political Insights.',
+      '/en/terms': 'Terms and conditions of using Political Insights services.',
+      '/en/copyright': 'Copyright information and content usage for Political Insights.'
     }
   };
   

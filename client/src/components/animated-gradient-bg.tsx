@@ -16,7 +16,7 @@ export default function AnimatedGradientBg() {
     let w = canvas.width = window.innerWidth;
     let h = canvas.height = window.innerHeight;
 
-    // Different color schemes for light and dark themes
+    // Different color schemes for light and dark themes - more vibrant
     const darkColors = [
       '#ff6b35', // Warm orange
       '#f7931e', // Amber
@@ -50,34 +50,40 @@ export default function AnimatedGradientBg() {
     ];
 
     const animate = () => {
+      // Clear the canvas
       ctx.clearRect(0, 0, w, h);
-
+      
+      // Draw without blur first to test
       circles.forEach(circle => {
         // Move circle with slower speed
-        circle.x += circle.vx * 0.3;
-        circle.y += circle.vy * 0.3;
+        circle.x += circle.vx * 0.5;
+        circle.y += circle.vy * 0.5;
 
         // Bounce off edges
         if (circle.x - circle.radius < 0 || circle.x + circle.radius > w) {
           circle.vx *= -1;
+          circle.x = Math.max(circle.radius, Math.min(w - circle.radius, circle.x));
         }
         if (circle.y - circle.radius < 0 || circle.y + circle.radius > h) {
           circle.vy *= -1;
+          circle.y = Math.max(circle.radius, Math.min(h - circle.radius, circle.y));
         }
-
+      });
+      
+      // Now draw all circles with blur
+      ctx.filter = 'blur(100px)';
+      
+      circles.forEach(circle => {
         // Draw circle with radial gradient
-        ctx.beginPath();
         const gradient = ctx.createRadialGradient(circle.x, circle.y, 0, circle.x, circle.y, circle.radius);
         gradient.addColorStop(0, circle.color);
-        gradient.addColorStop(1, `${circle.color}00`); // Transparent edge
+        gradient.addColorStop(1, 'transparent');
         
         ctx.fillStyle = gradient;
+        ctx.beginPath();
         ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
         ctx.fill();
       });
-      
-      // Apply blur for liquid effect
-      ctx.filter = 'blur(80px)';
 
       animationFrameId.current = requestAnimationFrame(animate);
     };
@@ -148,8 +154,12 @@ export default function AnimatedGradientBg() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full -z-10 opacity-40 dark:opacity-25 transition-opacity duration-1000"
-      style={{ pointerEvents: 'none' }}
+      className="fixed inset-0 w-full h-full"
+      style={{ 
+        pointerEvents: 'none',
+        zIndex: 0,
+        opacity: theme === 'dark' ? 0.5 : 0.3
+      }}
       aria-hidden="true"
     />
   );

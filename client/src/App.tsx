@@ -29,7 +29,7 @@ function App() {
       <ThemeProvider>
         <LanguageProvider>
           <TooltipProvider>
-            <div className="min-h-screen bg-background text-foreground overflow-x-hidden transition-colors duration-500">
+            <div className="min-h-screen bg-background text-foreground overflow-x-hidden transition-colors duration-500 relative">
             <AnimatedGradientBg />
           {/* Mobile menu button - only show when sidebar is closed */}
           {!sidebarOpen && (
@@ -67,7 +67,7 @@ function App() {
 
           <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
           
-          <main className={`min-h-screen transition-all duration-300 ${sidebarOpen ? 'lg:ml-72' : 'ml-0'}`}>
+          <main className={`min-h-screen transition-all duration-300 relative z-10 ${sidebarOpen ? 'lg:ml-72' : 'ml-0'}`}>
             <Switch>
               <Route path="/" component={Home} />
               <Route path="/blog" component={Blog} />

@@ -3,7 +3,6 @@ import { useTheme } from '@/contexts/ThemeContext';
 
 export default function AnimatedGradientBg() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationFrameId = useRef<number>();
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -13,124 +12,95 @@ export default function AnimatedGradientBg() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size
     let w = canvas.width = window.innerWidth;
     let h = canvas.height = window.innerHeight;
+    let animationId: number;
 
-    // Different color schemes for light and dark themes
-    const darkColors = [
-      '#ff6b35', // Warm orange
-      '#f7931e', // Amber  
-      '#ffc947', // Yellow
-      '#ff4757', // Red-pink
-    ];
+    // Use vibrant colors
+    const colors = theme === 'dark' 
+      ? ['#ff6b35', '#f7931e', '#ffc947', '#ff4757']
+      : ['#ff8c42', '#ffd166', '#06ffa5', '#ff6b9d'];
 
-    const lightColors = [
-      '#ff8c42', // Light orange
-      '#ffd166', // Light yellow
-      '#06ffa5', // Mint green
-      '#ff6b9d', // Pink
-    ];
-
-    const colors = theme === 'dark' ? darkColors : lightColors;
-    
-    // Initialize circles with positions spread across the canvas
     const circles = [
-      { x: w * 0.2, y: h * 0.4, radius: w * 0.3, color: colors[0], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
-      { x: w * 0.8, y: h * 0.6, radius: w * 0.3, color: colors[1], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
-      { x: w * 0.5, y: h * 0.8, radius: w * 0.25, color: colors[2], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
-      { x: w * 0.6, y: h * 0.2, radius: w * 0.25, color: colors[3], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 }
+      { x: w * 0.2, y: h * 0.4, radius: w * 0.3, color: colors[0], vx: 1, vy: 0.5 },
+      { x: w * 0.8, y: h * 0.6, radius: w * 0.3, color: colors[1], vx: -1, vy: -0.5 },
+      { x: w * 0.5, y: h * 0.8, radius: w * 0.25, color: colors[2], vx: 0.5, vy: -1 },
+      { x: w * 0.6, y: h * 0.2, radius: w * 0.25, color: colors[3], vx: -0.5, vy: 1 }
     ];
 
-    const animate = () => {
-      // Clear the canvas
+    function animate() {
+      if (!ctx) return;
+      
+      // Clear canvas
       ctx.clearRect(0, 0, w, h);
       
-      // Save the context state
-      ctx.save();
+      // Set blur for liquid effect
+      ctx.filter = 'blur(80px)';
       
-      // Apply blur filter for liquid effect
-      ctx.filter = 'blur(100px)';
-
+      // Draw all circles with blur applied
       circles.forEach(circle => {
-        // Move circle with slow speed
+        // Update position
         circle.x += circle.vx * 0.5;
         circle.y += circle.vy * 0.5;
 
-        // Bounce off edges
+        // Bounce off walls
         if (circle.x - circle.radius < 0 || circle.x + circle.radius > w) {
-          circle.vx *= -1;
+          circle.vx = -circle.vx;
         }
         if (circle.y - circle.radius < 0 || circle.y + circle.radius > h) {
-          circle.vy *= -1;
+          circle.vy = -circle.vy;
         }
 
-        // Draw circle with gradient
-        ctx.beginPath();
-        const gradient = ctx.createRadialGradient(circle.x, circle.y, 0, circle.x, circle.y, circle.radius);
+        // Create radial gradient
+        const gradient = ctx.createRadialGradient(
+          circle.x, circle.y, 0,
+          circle.x, circle.y, circle.radius
+        );
+        
+        // Add color stops for gradient
         gradient.addColorStop(0, circle.color);
         gradient.addColorStop(1, 'transparent');
-        
+
+        // Draw the circle
         ctx.fillStyle = gradient;
+        ctx.beginPath();
         ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
         ctx.fill();
       });
-      
-      // Restore the context state
-      ctx.restore();
 
-      animationFrameId.current = requestAnimationFrame(animate);
-    };
+      animationId = requestAnimationFrame(animate);
+    }
 
     animate();
 
-    // Handle resize with debounce
-    let resizeTimeout: NodeJS.Timeout;
     const handleResize = () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        w = canvas.width = window.innerWidth;
-        h = canvas.height = window.innerHeight;
-        
-        // Update circle radii on resize
-        circles[0].radius = w * 0.3;
-        circles[1].radius = w * 0.3;
-        circles[2].radius = w * 0.25;
-        circles[3].radius = w * 0.25;
-        
-        // Reposition circles
-        circles[0].x = w * 0.2;
-        circles[0].y = h * 0.4;
-        circles[1].x = w * 0.8;
-        circles[1].y = h * 0.6;
-        circles[2].x = w * 0.5;
-        circles[2].y = h * 0.8;
-        circles[3].x = w * 0.6;
-        circles[3].y = h * 0.2;
-      }, 250);
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+      circles[0].radius = circles[1].radius = w * 0.3;
+      circles[2].radius = circles[3].radius = w * 0.25;
     };
 
     window.addEventListener('resize', handleResize);
 
     return () => {
-      if (animationFrameId.current) {
-        cancelAnimationFrame(animationFrameId.current);
-      }
+      cancelAnimationFrame(animationId);
       window.removeEventListener('resize', handleResize);
-      clearTimeout(resizeTimeout);
     };
   }, [theme]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 w-full h-full"
-      style={{ 
-        pointerEvents: 'none',
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
         zIndex: -1,
-        opacity: 1 // Full opacity to see the effect
+        opacity: 0.7,
+        pointerEvents: 'none'
       }}
-      aria-hidden="true"
     />
   );
 }

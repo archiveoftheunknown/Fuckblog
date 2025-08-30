@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { AlertCircle, Info, Search, Shield } from "lucide-react";
+import { AlertCircle, Info, Search, Shield, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function About() {
@@ -168,6 +168,25 @@ export default function About() {
             </p>
             <p className="text-center text-sm text-muted-foreground mt-4">
               — {t("about.signature")}
+            </p>
+          </div>
+        </motion.section>
+
+        {/* Need Help Section */}
+        <motion.section
+          className="mt-12"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          data-testid="need-help-section"
+        >
+          <div className="glass-card p-8 rounded-2xl">
+            <div className="flex items-center justify-center mb-4">
+              <Mail className="w-6 h-6 text-primary mr-2" />
+              <h3 className="text-xl font-semibold text-foreground">Need help?</h3>
+            </div>
+            <p className="text-center text-muted-foreground">
+              Contact <a href="mailto:support@velocitysbeta.com" className="text-primary hover:underline transition-all">support@velocitysbeta.com</a>
             </p>
           </div>
         </motion.section>

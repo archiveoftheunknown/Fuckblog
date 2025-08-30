@@ -1,6 +1,6 @@
 {
   "brand": {
-    "title": "Disclaimer",
+    "title": "Penyangkalan",
     "tagline": "Arsip & Data Publik"
   },
   "nav": {
@@ -23,7 +23,7 @@
   },
   "home": {
     "featuredAnalysis": "Analisis Unggulan",
-    "featuredDescription": "Komentar dan analisis politik mendalam dari kontributor ahli kami",
+    "featuredDescription": "Komentar dan analisis politik mendalam dari kontributor ahli",
     "noArticles": "Belum ada artikel."
   },
   "blog": {
@@ -47,10 +47,10 @@
     "backToArchives": "Kembali ke Arsip",
     "share": "Bagikan",
     "linkCopied": "Tautan disalin!",
-    "linkCopiedDesc": "Tautan artikel telah disalin ke clipboard.",
+    "linkCopiedDesc": "Tautan artikel telah disalin ke papan klip.",
     "tableOfContents": "Daftar Isi",
     "relatedArticles": "Artikel Terkait",
-    "tags": "Tag",
+    "tags": "Label",
     "articleNotFound": "Artikel Tidak Ditemukan",
     "articleNotFoundDesc": "Artikel yang Anda cari tidak ada."
   },
@@ -75,7 +75,7 @@
     "description": "Informasi di situs ini bersumber dari data publik dan ditujukan untuk kepentingan masyarakat. Semua konten berdasarkan fakta yang dapat diverifikasi.",
     "quickLinks": "Tautan Cepat",
     "categories": "Kategori",
-    "legal": "Legal",
+    "legal": "Hukum",
     "home": "Beranda",
     "latestArticles": "Artikel Terbaru",
     "about": "Tentang",
@@ -92,8 +92,8 @@
     "subtitle": "Platform analisis politik independen. Semua konten berdasarkan opini publik.",
     "disclaimerTitle": "Pemberitahuan Penting",
     "disclaimer1": "Ini adalah arsip komentar dan analisis politik independen. Pandangan yang diungkapkan di sini adalah hasil analisis independen dan tidak mewakili organisasi, partai politik, atau entitas pemerintah mana pun.",
-    "disclaimer2": "Semua konten yang diterbitkan di sini adalah komentar dan opini berdasarkan informasi yang tersedia untuk umum. Ini bukan jurnalisme investigasi atau pelaporan resmi - ini adalah analisis dan interpretasi pribadi saya tentang peristiwa dan tren politik di Indonesia.",
-    "disclaimer3": "Pembaca harus memahami bahwa komentar politik pada dasarnya subjektif. Saya mendorong Anda untuk memverifikasi informasi secara independen dan membentuk opini Anda sendiri berdasarkan berbagai sumber.",
+    "disclaimer2": "Semua konten yang diterbitkan di sini adalah komentar dan opini berdasarkan informasi yang tersedia untuk umum. Ini bukan jurnalisme investigasi atau pelaporan resmi - ini adalah analisis dan interpretasi independen tentang peristiwa dan tren politik di Indonesia.",
+    "disclaimer3": "Pembaca harus memahami bahwa komentar politik pada dasarnya subjektif. Pembaca didorong untuk memverifikasi informasi secara independen dan membentuk opini sendiri berdasarkan berbagai sumber.",
     "sourcesTitle": "Sumber Informasi",
     "sourcesIntro": "Komentar dan analisis dalam arsip ini didasarkan pada informasi yang dikumpulkan dari:",
     "source1Title": "Wacana publik dan masyarakat:",
@@ -106,20 +106,20 @@
     "source4": "Liputan dari outlet media Indonesia dan internasional yang mapan, direferensi silang jika memungkinkan",
     "source5Title": "Sumber akademis:",
     "source5": "Penelitian yang diterbitkan, makalah kebijakan, dan studi akademis tentang politik dan tata kelola Indonesia",
-    "sourcesNote": "Catatan: Saya tidak memiliki akses ke informasi rahasia atau sumber orang dalam. Semua analisis didasarkan pada informasi yang tersedia di domain publik.",
+    "sourcesNote": "Catatan: Platform ini tidak memiliki akses ke informasi rahasia atau sumber orang dalam. Semua analisis didasarkan pada informasi yang tersedia di domain publik.",
     "purposeTitle": "Tujuan & Pendekatan",
-    "purposeIntro": "Arsip ini ada sebagai proyek pribadi untuk mendokumentasikan dan menganalisis perkembangan politik Indonesia. Pendekatan saya adalah:",
+    "purposeIntro": "Arsip ini ada sebagai proyek independen untuk mendokumentasikan dan menganalisis perkembangan politik Indonesia. Pendekatan yang digunakan adalah:",
     "purpose1": "Memberikan konteks untuk peristiwa politik yang kompleks",
     "purpose2": "Menganalisis pola dalam tata kelola dan pembuatan kebijakan",
     "purpose3": "Mengomentari implikasi keputusan politik",
     "purpose4": "Melacak evolusi demokrasi Indonesia",
     "purpose5": "Menawarkan perspektif tentang transformasi digital dalam politik",
-    "purposeNote": "Saya bertujuan untuk analisis yang bijaksana daripada sensasionalisme, meskipun perspektif pribadi saya pasti mempengaruhi komentar. Ini bukan pelaporan netral - ini adalah opini yang terinformasi.",
+    "purposeNote": "Platform ini bertujuan untuk analisis yang bijaksana daripada sensasionalisme, meskipun perspektif editorial pasti mempengaruhi komentar. Ini bukan pelaporan netral - ini adalah opini yang terinformasi.",
     "limitationsTitle": "Keterbatasan & Koreksi",
     "limitationsSubtitle": "Keterbatasan:",
     "limitation1": "Analisis mungkin menjadi usang seiring berkembangnya situasi",
     "limitation2": "Terbatas pada informasi yang tersedia untuk umum",
-    "limitation3": "Tunduk pada interpretasi dan bias pribadi saya",
+    "limitation3": "Tunduk pada interpretasi dan bias editorial",
     "limitation4": "Tidak dapat memverifikasi semua informasi secara independen",
     "limitation5": "Mungkin tidak menangkap semua perspektif tentang masalah kompleks",
     "correctionsSubtitle": "Koreksi:",
@@ -156,7 +156,7 @@
   },
   "archives": {
     "title": "Arsip",
-    "subtitle": "Jelajahi koleksi lengkap analisis politik dan komentar kami",
+    "subtitle": "Jelajahi koleksi lengkap analisis politik dan komentar",
     "searchPlaceholder": "Cari arsip...",
     "filterByYear": "Filter berdasarkan tahun",
     "allYears": "Semua Tahun",

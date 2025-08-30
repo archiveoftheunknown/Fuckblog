@@ -7,8 +7,8 @@ const __dirname = path.dirname(__filename);
 
 // Routes to generate
 const routes = {
-  id: ['/', '/blog', '/about', '/contact'],
-  en: ['/en/', '/en/blog', '/en/about', '/en/contact']
+  id: ['/', '/blog', '/about'],
+  en: ['/en/', '/en/blog', '/en/about']
 };
 
 // Blog post routes (we'll add these dynamically)
@@ -173,14 +173,12 @@ function getTitle(route: string, lang: 'id' | 'en'): string {
     id: {
       '/': 'Political Insights - Analisis Politik Indonesia',
       '/blog': 'Blog - Political Insights',
-      '/about': 'Tentang - Political Insights',
-      '/contact': 'Kontak - Political Insights'
+      '/about': 'Tentang - Political Insights'
     },
     en: {
       '/en/': 'Political Insights - Indonesian Political Analysis',
       '/en/blog': 'Blog - Political Insights',
-      '/en/about': 'About - Political Insights',
-      '/en/contact': 'Contact - Political Insights'
+      '/en/about': 'About - Political Insights'
     }
   };
   
@@ -192,14 +190,12 @@ function getMetaTags(route: string, lang: 'id' | 'en'): string {
     id: {
       '/': 'Platform analisis politik Indonesia dengan fokus pada demokrasi digital dan transparansi pemerintahan.',
       '/blog': 'Baca analisis mendalam tentang politik Indonesia, kebijakan publik, dan perkembangan demokrasi.',
-      '/about': 'Tentang Political Insights - platform independen untuk analisis politik Indonesia.',
-      '/contact': 'Hubungi kami untuk diskusi dan kolaborasi tentang isu politik Indonesia.'
+      '/about': 'Tentang Political Insights - platform independen untuk analisis politik Indonesia.'
     },
     en: {
       '/en/': 'Indonesian political analysis platform focusing on digital democracy and government transparency.',
       '/en/blog': 'Read in-depth analysis on Indonesian politics, public policy, and democratic development.',
-      '/en/about': 'About Political Insights - independent platform for Indonesian political analysis.',
-      '/en/contact': 'Contact us for discussions and collaboration on Indonesian political issues.'
+      '/en/about': 'About Political Insights - independent platform for Indonesian political analysis.'
     }
   };
   

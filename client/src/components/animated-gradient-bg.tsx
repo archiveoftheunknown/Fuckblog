@@ -19,22 +19,22 @@ export default function AnimatedGradientBg() {
 
     // Different color schemes for light and dark themes
     const darkColors = [
-      '#1e00ff', // Blue
-      '#8f00ff', // Purple
-      '#ff00c8', // Pink
-      '#00ffc8', // Cyan
+      '#ff6b35', // Warm orange
+      '#f7931e', // Amber  
+      '#ffc947', // Yellow
+      '#ff4757', // Red-pink
     ];
 
     const lightColors = [
-      '#ff6b35', // Orange
-      '#f7931e', // Amber
-      '#06ffa5', // Mint
+      '#ff8c42', // Light orange
+      '#ffd166', // Light yellow
+      '#06ffa5', // Mint green
       '#ff6b9d', // Pink
     ];
 
     const colors = theme === 'dark' ? darkColors : lightColors;
     
-    // Initialize circles exactly like the sample
+    // Initialize circles with positions spread across the canvas
     const circles = [
       { x: w * 0.2, y: h * 0.4, radius: w * 0.3, color: colors[0], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
       { x: w * 0.8, y: h * 0.6, radius: w * 0.3, color: colors[1], vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1 },
@@ -43,7 +43,14 @@ export default function AnimatedGradientBg() {
     ];
 
     const animate = () => {
+      // Clear the canvas
       ctx.clearRect(0, 0, w, h);
+      
+      // Save the context state
+      ctx.save();
+      
+      // Apply blur filter for liquid effect
+      ctx.filter = 'blur(100px)';
 
       circles.forEach(circle => {
         // Move circle with slow speed
@@ -58,19 +65,19 @@ export default function AnimatedGradientBg() {
           circle.vy *= -1;
         }
 
-        // Draw circle
+        // Draw circle with gradient
         ctx.beginPath();
         const gradient = ctx.createRadialGradient(circle.x, circle.y, 0, circle.x, circle.y, circle.radius);
         gradient.addColorStop(0, circle.color);
-        gradient.addColorStop(1, circle.color + '00'); // Transparent edge
+        gradient.addColorStop(1, 'transparent');
         
         ctx.fillStyle = gradient;
         ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
         ctx.fill();
       });
       
-      // Apply blur filter for liquid effect AFTER drawing all circles
-      ctx.filter = 'blur(100px)';
+      // Restore the context state
+      ctx.restore();
 
       animationFrameId.current = requestAnimationFrame(animate);
     };
@@ -91,7 +98,7 @@ export default function AnimatedGradientBg() {
         circles[2].radius = w * 0.25;
         circles[3].radius = w * 0.25;
         
-        // Optionally reposition circles
+        // Reposition circles
         circles[0].x = w * 0.2;
         circles[0].y = h * 0.4;
         circles[1].x = w * 0.8;
@@ -121,7 +128,7 @@ export default function AnimatedGradientBg() {
       style={{ 
         pointerEvents: 'none',
         zIndex: -1,
-        opacity: theme === 'dark' ? 0.7 : 0.5
+        opacity: 1 // Full opacity to see the effect
       }}
       aria-hidden="true"
     />

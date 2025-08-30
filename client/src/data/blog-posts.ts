@@ -338,14 +338,14 @@ Forensik digital telah menjadi instrumen krusial dalam mengungkap skandal politi
 
 ## Kasus-Kasus Landmark Forensik Digital Indonesia
 
-### Tabel 1: Major Digital Forensics Cases (2015-2024)
+### Tabel 1: Kasus-Kasus Forensik Digital Utama (2015-2024)
 
 | Tahun | Kasus | Metode Forensik | Bukti Digital Kunci | Hasil |
 |-------|-------|-----------------|---------------------|-------|
 | 2015-2017 | e-KTP | Analisis surel, forensik server | 3 juta+ surel, log obrolan | 37 terdakwa, Rp 2.3T kerugian |
-| 2018 | Hoax Ratna Sarumpaet | Social media forensics | Photo metadata, timeline | Terbukti fabrikasi |
-| 2020 | Djoko Tjandra | Mobile forensics | WhatsApp chats, call logs | Jaksa & polisi dipenjara |
-| 2022 | Sambo-Brigadir J | CCTV analysis, mobile data | Deleted messages recovered | Sambo divonis mati |
+| 2018 | Hoax Ratna Sarumpaet | Forensik media sosial | Metadata foto, garis waktu | Terbukti fabrikasi |
+| 2020 | Djoko Tjandra | Forensik mobile | Obrolan WhatsApp, log panggilan | Jaksa & polisi dipenjara |
+| 2022 | Sambo-Brigadir J | Analisis CCTV, data mobile | Pesan terhapus dipulihkan | Sambo divonis mati |
 | 2024 | Fufufafa-Gibran | OSINT, penautan akun | 5000+ postingan, verifikasi telepon | Dalam investigasi |
 
 ## Metodologi Forensik Digital Modern
@@ -393,9 +393,9 @@ Mempertahankan integritas bukti sangat krusial:
 ### Kasus e-KTP: Forensik Email Massive Scale
 
 **Volume Data:**
-- 3.2 juta surel dianalisis
+- 3,2 juta surel dianalisis
 - 457 GB data server
-- 89 hard drives seized
+- 89 hard drive disita
 
 **Teknik Analisis:**
 1. Pencarian kata kunci: "fee", "sukses", "proyek"
@@ -405,8 +405,8 @@ Mempertahankan integritas bukti sangat krusial:
 
 **Hasil Forensik:**
 - Terbukti markup harga 40% dari nilai kontrak
-- Jejak digital fee distribution ke 37 pejabat
-- WhatsApp groups koordinasi tindak pidana
+- Jejak digital distribusi fee ke 37 pejabat
+- Grup WhatsApp koordinasi tindak pidana
 
 ### Kasus Sambo: Forensik Multimedia & Mobile
 
@@ -424,14 +424,14 @@ Mempertahankan integritas bukti sangat krusial:
 
 ## Framework Hukum Forensik Digital Indonesia
 
-### Tabel 3: Legal Framework for Digital Evidence
+### Tabel 3: Kerangka Hukum untuk Bukti Digital
 
 | Peraturan | Tahun | Aspek Kunci | Limitasi |
 |-----------|-------|-------------|----------|
-| UU ITE | 2008/2024 | Electronic evidence admissibility | Definisi tidak jelas |
-| KUHAP | 1981 | Procedural law | Belum mengatur digital evidence |
-| Perma 3/2023 | 2023 | E-litigation guidelines | Terbatas perdata |
-| PERJA 1/2024 | 2024 | Digital evidence SOP | Baru implementasi |
+| UU ITE | 2008/2024 | Kelayakan bukti elektronik | Definisi tidak jelas |
+| KUHAP | 1981 | Hukum acara | Belum mengatur bukti digital |
+| Perma 3/2023 | 2023 | Panduan e-litigasi | Terbatas perdata |
+| PERJA 1/2024 | 2024 | SOP bukti digital | Baru implementasi |
 
 ### Tantangan dalam Kelayakan Bukti
 
@@ -442,9 +442,9 @@ Mempertahankan integritas bukti sangat krusial:
 
 ## Statistik Penggunaan Forensik Digital
 
-### Tabel 4: Digital Forensics Usage Statistics (2020-2024)
+### Tabel 4: Statistik Penggunaan Forensik Digital (2020-2024)
 
-| Tahun | Kasus Menggunakan Digital Evidence | Success Rate | Budget (Rp Miliar) |
+| Tahun | Kasus Menggunakan Bukti Digital | Tingkat Keberhasilan | Anggaran (Rp Miliar) |
 |-------|-------------------------------------|--------------|-------------------|
 | 2020 | 1,247 | 67% | 89 |
 | 2021 | 2,103 | 71% | 124 |
@@ -469,15 +469,15 @@ Mempertahankan integritas bukti sangat krusial:
 
 ### Digital Violations Detected
 
-**Tabel 5: Electoral Digital Crimes 2024**
+**Tabel 5: Kejahatan Digital Pemilu 2024**
 
-| Violation Type | Cases Reported | Forensically Proven | Prosecution Rate |
+| Jenis Pelanggaran | Kasus Dilaporkan | Terbukti Forensik | Tingkat Penuntutan |
 |----------------|---------------|---------------------|------------------|
-| Disinformation campaigns | 3,421 | 2,103 | 43% |
-| Illegal digital advertising | 892 | 645 | 72% |
-| Voter data breaches | 127 | 89 | 89% |
-| Buzzer operations | 2,344 | 1,567 | 31% |
-| Deepfake content | 43 | 37 | 67% |
+| Kampanye disinformasi | 3.421 | 2.103 | 43% |
+| Iklan digital ilegal | 892 | 645 | 72% |
+| Pelanggaran data pemilih | 127 | 89 | 89% |
+| Operasi buzzer | 2.344 | 1.567 | 31% |
+| Konten deepfake | 43 | 37 | 67% |
 
 ### Metodologi Investigasi Buzzer
 
@@ -2659,12 +2659,12 @@ Pemilu 2024 menandai era baru politik berbasis data di Indonesia. Dengan 204,8 j
 
 | Method | Data Points | Frequency | Accuracy | Cost/Million |
 |--------|------------|-----------|----------|--------------|
-| Mendengarkan sosial | 2,1 miliar | Waktu nyata | 73% | Rp 12 |
-| Survei daring | 45 juta | Mingguan | 67% | Rp 450 |
-| Polling telepon | 3,4 juta | Dua mingguan | 71% | Rp 2.100 |
-| Tatap muka | 890.000 | Bulanan | 84% | Rp 8.900 |
-| Pelacakan perilaku | 780 juta | Berkelanjutan | 81% | Rp 34 |
-| Analisis sentimen | 1,2 miliar | Waktu nyata | 69% | Rp 8 |
+| Social listening | 2.1 billion | Real-time | 73% | Rp 12 |
+| Online surveys | 45 million | Weekly | 67% | Rp 450 |
+| Phone polling | 3.4 million | Bi-weekly | 71% | Rp 2,100 |
+| Face-to-face | 890,000 | Monthly | 84% | Rp 8,900 |
+| Behavioral tracking | 780 million | Continuous | 81% | Rp 34 |
+| Sentiment analysis | 1.2 billion | Real-time | 69% | Rp 8 |
 
 ## Analisis Segmentasi Pemilih
 
@@ -2930,21 +2930,21 @@ Optimization Points:
 4. **Terapkan pedoman etika**
 5. **Fokus pada wawasan yang dapat ditindaklanjuti**
 
-### Untuk Regulator
+### For Regulators
 
-1. **Tetapkan kerangka kerja yang jelas**
-2. **Bangun kapasitas teknis**
-3. **Pastikan transparansi**
-4. **Lindungi privasi pemilih**
-5. **Dorong kompetisi yang adil**
+1. **Establish clear frameworks**
+2. **Build technical capacity**
+3. **Ensure transparency**
+4. **Protect voter privacy**
+5. **Promote fair competition**
 
-### Untuk Warga
+### For Citizens
 
-1. **Pahami hak-hak data**
-2. **Praktikkan kebersihan digital**
-3. **Verifikasi sumber informasi**
-4. **Laporkan pelanggaran**
-5. **Tuntut akuntabilitas**
+1. **Understand data rights**
+2. **Practice digital hygiene**
+3. **Verify information sources**
+4. **Report violations**
+5. **Demand accountability**
 
 ## Kesimpulan
 
@@ -2991,12 +2991,12 @@ The 2024 election marked a new era of data-driven politics in Indonesia. With 20
 
 | Method | Data Points | Frequency | Accuracy | Cost/Million |
 |--------|------------|-----------|----------|--------------|
-| Mendengarkan sosial | 2,1 miliar | Waktu nyata | 73% | Rp 12 |
-| Survei daring | 45 juta | Mingguan | 67% | Rp 450 |
-| Polling telepon | 3,4 juta | Dua mingguan | 71% | Rp 2.100 |
-| Tatap muka | 890.000 | Bulanan | 84% | Rp 8.900 |
-| Pelacakan perilaku | 780 juta | Berkelanjutan | 81% | Rp 34 |
-| Analisis sentimen | 1,2 miliar | Waktu nyata | 69% | Rp 8 |
+| Social listening | 2.1 billion | Real-time | 73% | Rp 12 |
+| Online surveys | 45 million | Weekly | 67% | Rp 450 |
+| Phone polling | 3.4 million | Bi-weekly | 71% | Rp 2,100 |
+| Face-to-face | 890,000 | Monthly | 84% | Rp 8,900 |
+| Behavioral tracking | 780 million | Continuous | 81% | Rp 34 |
+| Sentiment analysis | 1.2 billion | Real-time | 69% | Rp 8 |
 
 ## Analisis Segmentasi Pemilih
 
@@ -3262,21 +3262,21 @@ Optimization Points:
 4. **Terapkan pedoman etika**
 5. **Fokus pada wawasan yang dapat ditindaklanjuti**
 
-### Untuk Regulator
+### For Regulators
 
-1. **Tetapkan kerangka kerja yang jelas**
-2. **Bangun kapasitas teknis**
-3. **Pastikan transparansi**
-4. **Lindungi privasi pemilih**
-5. **Dorong kompetisi yang adil**
+1. **Establish clear frameworks**
+2. **Build technical capacity**
+3. **Ensure transparency**
+4. **Protect voter privacy**
+5. **Promote fair competition**
 
-### Untuk Warga
+### For Citizens
 
-1. **Pahami hak-hak data**
-2. **Praktikkan kebersihan digital**
-3. **Verifikasi sumber informasi**
-4. **Laporkan pelanggaran**
-5. **Tuntut akuntabilitas**
+1. **Understand data rights**
+2. **Practice digital hygiene**
+3. **Verify information sources**
+4. **Report violations**
+5. **Demand accountability**
 
 ## Kesimpulan
 

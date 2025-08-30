@@ -183,10 +183,10 @@ export default function About() {
           <div className="glass-card p-8 rounded-2xl">
             <div className="flex items-center justify-center mb-4">
               <Mail className="w-6 h-6 text-primary mr-2" />
-              <h3 className="text-xl font-semibold text-foreground">Need help?</h3>
+              <h3 className="text-xl font-semibold text-foreground">{t("about.needHelp")}</h3>
             </div>
             <p className="text-center text-muted-foreground">
-              Contact <a href="mailto:support@velocitysbeta.com" className="text-primary hover:underline transition-all">support@velocitysbeta.com</a>
+              {t("about.contact")} <a href="mailto:support@velocitysbeta.com" className="text-primary hover:underline transition-all">support@velocitysbeta.com</a>
             </p>
           </div>
         </motion.section>

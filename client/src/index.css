@@ -499,6 +499,22 @@
     outline: none !important;
   }
   
+  /* Remove tooltip outline */
+  .recharts-tooltip-wrapper {
+    outline: none !important;
+    border: none !important;
+  }
+  
+  .recharts-tooltip-wrapper:focus {
+    outline: none !important;
+    border: none !important;
+  }
+  
+  .recharts-default-tooltip {
+    outline: none !important;
+    border: none !important;
+  }
+  
   /* Fix glass card on mobile */
   .glass-card {
     max-width: calc(100vw - 1rem) !important;

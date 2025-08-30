@@ -142,6 +142,7 @@ export function InteractivePieChart({
 }: PieChartProps) {
   const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
   const [animatedData, setAnimatedData] = useState(data);
+  const [isClicked, setIsClicked] = useState(false);
   
   // Gradient colors with glass effect
   const gradientColors = [
@@ -274,6 +275,26 @@ export function InteractivePieChart({
                   />
                 ))}
               </Pie>
+              <Tooltip 
+                contentStyle={{
+                  background: 'rgba(0, 0, 0, 0.85)',
+                  backdropFilter: 'blur(10px)',
+                  border: 'none',
+                  borderRadius: '12px',
+                  boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5)',
+                  padding: '12px 16px',
+                  outline: 'none'
+                }}
+                itemStyle={{
+                  color: '#ffffff',
+                  fontSize: '14px',
+                  fontWeight: '600'
+                }}
+                wrapperStyle={{
+                  outline: 'none',
+                  border: 'none'
+                }}
+              />
             </PieChart>
           </ResponsiveContainer>
         </div>
@@ -286,14 +307,33 @@ export function InteractivePieChart({
               <motion.div 
                 key={entry.name}
                 className="flex items-center justify-between p-3 rounded-xl backdrop-blur-sm transition-all duration-300 cursor-pointer"
-                onMouseEnter={() => setActiveIndex(index)}
-                onMouseLeave={() => setActiveIndex(undefined)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsClicked(true);
+                  if (activeIndex === index) {
+                    setActiveIndex(undefined);
+                  } else {
+                    setActiveIndex(index);
+                  }
+                  setTimeout(() => setIsClicked(false), 100);
+                }}
+                onMouseEnter={() => {
+                  if (!isClicked) {
+                    setActiveIndex(index);
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (!isClicked) {
+                    setActiveIndex(undefined);
+                  }
+                }}
                 style={{
                   background: activeIndex === index 
                     ? `linear-gradient(135deg, ${color.start}20 0%, ${color.end}15 100%)`
                     : 'rgba(255, 255, 255, 0.03)',
                   border: activeIndex === index ? `1px solid ${color.end}40` : '1px solid transparent',
                   opacity: activeIndex !== undefined && activeIndex !== index ? 0.5 : 1,
+                  pointerEvents: 'auto'
                 }}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

@@ -86,8 +86,7 @@ export default function Terms() {
 
             <div className="pt-6 border-t border-border">
               <p className="text-sm text-muted-foreground">
-                Terakhir diperbarui: Desember 2024<br />
-                © 2025
+                Terakhir diperbarui: Desember 2024
               </p>
             </div>
           </div>

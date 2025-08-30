@@ -24,7 +24,7 @@ export default function Copyright() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-3">Perlindungan Hak Cipta</h2>
               <p className="leading-relaxed">
-                © 2025. Hak Cipta Dilindungi. Semua hak dilindungi berdasarkan Undang-Undang Hak Cipta Indonesia (UU No. 28 Tahun 2014 tentang Hak Cipta). Ini mencakup semua teks, analisis, komentar, dan pemilihan serta pengaturan konten yang unik. Ekspresi kreatif ide-ide politik dan cara spesifik penyajiannya di sini adalah kekayaan intelektual yang dilindungi. Sesuai hukum Indonesia, perlindungan hak cipta otomatis sejak penciptaan.
+                Hak Cipta Dilindungi. Semua hak dilindungi berdasarkan Undang-Undang Hak Cipta Indonesia (UU No. 28 Tahun 2014 tentang Hak Cipta). Ini mencakup semua teks, analisis, komentar, dan pemilihan serta pengaturan konten yang unik. Ekspresi kreatif ide-ide politik dan cara spesifik penyajiannya di sini adalah kekayaan intelektual yang dilindungi. Sesuai hukum Indonesia, perlindungan hak cipta otomatis sejak penciptaan.
               </p>
             </section>
 

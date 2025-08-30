@@ -148,9 +148,9 @@ Namun, kompleksitas hukum muncul karena:
 ### Transformasi Politik Digital Indonesia
 
 Kasus Fufufafa menandai titik balik dalam politik Indonesia di mana:
-1. **Digital archaeology** menjadi alat politik mainstream
-2. **Online reputation management** menjadi krusial untuk politisi
-3. **Digital literacy** menjadi kebutuhan politik survival
+1. **Arkeologi digital** menjadi alat politik arus utama
+2. **Pengelolaan reputasi daring** menjadi krusial untuk politisi
+3. **Literasi digital** menjadi kebutuhan bertahan hidup politik
 
 ### Implikasi Jangka Panjang
 
@@ -162,7 +162,7 @@ Kasus Fufufafa menandai titik balik dalam politik Indonesia di mana:
 **Untuk Demokrasi Indonesia:**
 - Normalisasi politik digital kotor
 - Peningkatan sensor diri secara daring
-- Evolusi tactics kampanye hitam
+- Evolusi taktik kampanye hitam
 
 ## Kesimpulan
 
@@ -350,43 +350,43 @@ Forensik digital telah menjadi instrumen krusial dalam mengungkap skandal politi
 
 ## Metodologi Forensik Digital Modern
 
-### 1. Data Acquisition Techniques
+### 1. Teknik Akuisisi Data
 
-**Physical Acquisition:**
-- Bit-by-bit copying dari storage devices
-- Recovery deleted partitions
-- RAM dumps untuk volatile data
+**Akuisisi Fisik:**
+- Penyalinan bit-by-bit dari perangkat penyimpanan
+- Pemulihan partisi yang dihapus
+- RAM dumps untuk data volatil
 
-**Logical Acquisition:**
-- File system extraction
-- Application data parsing
-- Cloud data synchronization
+**Akuisisi Logis:**
+- Ekstraksi sistem berkas
+- Penguraian data aplikasi
+- Sinkronisasi data cloud
 
-**Network Forensics:**
-- Packet capture analysis
-- Traffic pattern identification
-- VPN/Proxy detection
+**Forensik Jaringan:**
+- Analisis tangkapan paket
+- Identifikasi pola lalu lintas
+- Deteksi VPN/Proxy
 
-### 2. Tools dan Teknologi
+### 2. Alat dan Teknologi
 
-#### Tabel 2: Digital Forensics Tools Used in Indonesia
+#### Tabel 2: Alat Forensik Digital yang Digunakan di Indonesia
 
-| Tool Category | Software | Fungsi Utama | Adoption Rate |
+| Kategori Alat | Software | Fungsi Utama | Tingkat Adopsi |
 |---------------|----------|--------------|---------------|
-| Mobile Forensics | Cellebrite UFED | Extract smartphone data | 78% law enforcement |
-| Computer Forensics | EnCase, FTK | Disk imaging & analysis | 65% agencies |
-| Network Analysis | Wireshark | Packet analysis | 89% cybercrime units |
-| OSINT Tools | Maltego, Shodan | Online investigation | 45% investigators |
-| Memory Analysis | Volatility | RAM forensics | 34% advanced units |
+| Forensik Mobile | Cellebrite UFED | Ekstrak data smartphone | 78% penegak hukum |
+| Forensik Komputer | EnCase, FTK | Pencitraan disk & analisis | 65% lembaga |
+| Analisis Jaringan | Wireshark | Analisis paket | 89% unit kejahatan siber |
+| Alat OSINT | Maltego, Shodan | Investigasi daring | 45% penyidik |
+| Analisis Memori | Volatility | Forensik RAM | 34% unit lanjutan |
 
-### 3. Chain of Custody Digital
+### 3. Rantai Kustodi Digital
 
-Maintaining evidence integrity sangat krusial:
+Mempertahankan integritas bukti sangat krusial:
 
-1. **Documentation:** Setiap langkah harus terdokumentasi
+1. **Dokumentasi:** Setiap langkah harus terdokumentasi
 2. **Hashing:** MD5/SHA256 untuk verifikasi integritas
-3. **Access Control:** Log semua akses ke evidence
-4. **Court Admissibility:** Compliance dengan KUHAP
+3. **Kontrol Akses:** Catat semua akses ke bukti
+4. **Kelayakan Pengadilan:** Kepatuhan dengan KUHAP
 
 ## Implementasi dalam Kasus Politik Aktual
 
@@ -398,10 +398,10 @@ Maintaining evidence integrity sangat krusial:
 - 89 hard drives seized
 
 **Teknik Analisis:**
-1. Keyword searching: "fee", "sukses", "proyek"
-2. Timeline analysis: Correlation dengan procurement dates
-3. Network analysis: Communication patterns between conspirators
-4. Deleted data recovery: 43% crucial evidence dari deleted files
+1. Pencarian kata kunci: "fee", "sukses", "proyek"
+2. Analisis garis waktu: Korelasi dengan tanggal pengadaan
+3. Analisis jaringan: Pola komunikasi antar konspirator
+4. Pemulihan data terhapus: 43% bukti krusial dari berkas terhapus
 
 **Hasil Forensik:**
 - Terbukti markup harga 40% dari nilai kontrak
@@ -410,17 +410,17 @@ Maintaining evidence integrity sangat krusial:
 
 ### Kasus Sambo: Forensik Multimedia & Mobile
 
-**Digital Evidence Processed:**
-- 52 CCTV cameras footage (2.3 TB)
-- 7 smartphones dengan deleted data
-- GPS tracking dari 4 vehicles
-- Audio forensics dari 911 calls
+**Bukti Digital yang Diproses:**
+- Rekaman 52 kamera CCTV (2,3 TB)
+- 7 smartphone dengan data terhapus
+- Pelacakan GPS dari 4 kendaraan
+- Forensik audio dari panggilan darurat
 
-**Breakthrough Findings:**
-- Timeline manipulation terbukti dari CCTV
-- Deleted WhatsApp messages recovered showing planning
-- Location data contradicting testimonies
-- Audio analysis proving coached witnesses
+**Temuan Terobosan:**
+- Manipulasi garis waktu terbukti dari CCTV
+- Pesan WhatsApp terhapus dipulihkan menunjukkan perencanaan
+- Data lokasi bertentangan dengan kesaksian
+- Analisis audio membuktikan saksi yang dilatih
 
 ## Framework Hukum Forensik Digital Indonesia
 
@@ -433,12 +433,12 @@ Maintaining evidence integrity sangat krusial:
 | Perma 3/2023 | 2023 | E-litigation guidelines | Terbatas perdata |
 | PERJA 1/2024 | 2024 | Digital evidence SOP | Baru implementasi |
 
-### Challenges dalam Admissibility
+### Tantangan dalam Kelayakan Bukti
 
-1. **Legal Vacuum:** KUHAP belum eksplisit mengatur digital evidence
-2. **Technical Competence:** Hakim/jaksa kurang pemahaman teknis
-3. **Privacy Concerns:** Balance antara investigasi dan privasi
-4. **Cross-Border Data:** Jurisdiction issues untuk cloud evidence
+1. **Kekosongan Hukum:** KUHAP belum eksplisit mengatur bukti digital
+2. **Kompetensi Teknis:** Hakim/jaksa kurang pemahaman teknis
+3. **Kekhawatiran Privasi:** Keseimbangan antara investigasi dan privasi
+4. **Data Lintas Batas:** Masalah yurisdiksi untuk bukti cloud
 
 ## Statistik Penggunaan Forensik Digital
 
@@ -455,15 +455,15 @@ Maintaining evidence integrity sangat krusial:
 
 ### Tren Peningkatan Kapabilitas
 
-**Investment dalam Infrastruktur:**
-- BSSN budget meningkat 340% (2020-2024)
-- 23 regional digital forensics labs established
-- 1,200+ investigators trained dalam digital forensics
+**Investasi dalam Infrastruktur:**
+- Anggaran BSSN meningkat 340% (2020-2024)
+- 23 laboratorium forensik digital regional didirikan
+- 1.200+ penyidik dilatih dalam forensik digital
 
-**Success Stories:**
+**Kisah Sukses:**
 - Pelacakan mata uang kripto dalam kasus pencucian uang
-- Deepfake detection dalam kasus defamasi politik
-- IoT forensics dalam kasus industrial espionage
+- Deteksi deepfake dalam kasus defamasi politik
+- Forensik IoT dalam kasus spionase industri
 
 ## Case Study: Forensik dalam Pemilu 2024
 
@@ -498,73 +498,73 @@ Maintaining evidence integrity sangat krusial:
 
 ## Tantangan dan Limitasi
 
-### Technical Challenges
+### Tantangan Teknis
 
-1. **Encryption:** End-to-end encryption messaging apps
-2. **Anti-Forensics:** Tools untuk hide/destroy evidence
-3. **Volume:** Big data overwhelming traditional tools
-4. **Sophistication:** Advanced persistent threats
+1. **Enkripsi:** Aplikasi pesan dengan enkripsi ujung-ke-ujung
+2. **Anti-Forensik:** Alat untuk menyembunyikan/menghancurkan bukti
+3. **Volume:** Data besar membebani alat tradisional
+4. **Kecanggihan:** Ancaman persisten lanjutan
 
-### Institutional Challenges
+### Tantangan Institusional
 
-**Tabel 6: Institutional Gaps in Digital Forensics**
+**Tabel 6: Kesenjangan Institusional dalam Forensik Digital**
 
-| Challenge | Current State | Required Improvement | Timeline |
-|-----------|--------------|---------------------|----------|
-| Personnel | 1,200 trained | 5,000 needed | 2027 |
-| Equipment | 40% modern | 100% upgrade needed | 2026 |
-| Legal framework | Partial | Comprehensive reform | 2025 |
-| International cooperation | Limited | MLAT expansion | 2025 |
+| Tantangan | Kondisi Saat Ini | Perbaikan Diperlukan | Jangka Waktu |
+|-----------|------------------|---------------------|----------|
+| Personel | 1.200 terlatih | 5.000 dibutuhkan | 2027 |
+| Peralatan | 40% modern | 100% perlu ditingkatkan | 2026 |
+| Kerangka hukum | Parsial | Reformasi komprehensif | 2025 |
+| Kerja sama internasional | Terbatas | Ekspansi MLAT | 2025 |
 
 ## Rekomendasi Strategis
 
-### Untuk Law Enforcement
+### Untuk Penegak Hukum
 
-1. **Capacity Building:**
+1. **Peningkatan Kapasitas:**
    - Pelatihan forensik digital wajib
-   - International certification programs
+   - Program sertifikasi internasional
    - Pembaruan keterampilan rutin
 
-2. **Tool Acquisition:**
-   - License commercial forensic suites
-   - Develop indigenous capabilities
-   - Cloud forensics readiness
+2. **Akuisisi Alat:**
+   - Lisensi paket forensik komersial
+   - Kembangkan kemampuan dalam negeri
+   - Kesiapan forensik cloud
 
-### Untuk Legislative
+### Untuk Legislatif
 
-1. **Legal Reform:**
-   - Amend KUHAP untuk digital evidence
-   - Clear admissibility standards
-   - Privacy protection framework
+1. **Reformasi Hukum:**
+   - Amandemen KUHAP untuk bukti digital
+   - Standar kelayakan yang jelas
+   - Kerangka perlindungan privasi
 
-2. **Budget Allocation:**
-   - Increase forensics budget 50% annually
-   - Regional lab development
-   - R&D investments
+2. **Alokasi Anggaran:**
+   - Tingkatkan anggaran forensik 50% per tahun
+   - Pengembangan laboratorium regional
+   - Investasi litbang
 
 ### Untuk Masyarakat Sipil
 
-1. **Digital Hygiene:**
+1. **Kebersihan Digital:**
    - Kesadaran akan kekekalan digital
    - Enkripsi untuk melindungi privasi
-   - Critical thinking untuk verify information
+   - Berpikir kritis untuk verifikasi informasi
 
-2. **Accountability Demands:**
-   - Push untuk transparency
-   - Support investigative journalism
-   - Participate dalam crowdsourced investigations
+2. **Tuntutan Akuntabilitas:**
+   - Dorong transparansi
+   - Dukung jurnalisme investigasi
+   - Berpartisipasi dalam investigasi berbasis massa
 
 ## Kesimpulan
 
-Forensik digital telah membuktikan diri sebagai game-changer dalam akuntabilitas politik Indonesia. Dari membongkar korupsi sistemik hingga mengungkap manipulasi informasi, teknologi ini menjadi equalizer dalam pertarungan melawan abuse of power.
+Forensik digital telah membuktikan diri sebagai pengubah permainan dalam akuntabilitas politik Indonesia. Dari membongkar korupsi sistemik hingga mengungkap manipulasi informasi, teknologi ini menjadi penyeimbang dalam pertarungan melawan penyalahgunaan kekuasaan.
 
 Namun, efektivitasnya bergantung pada:
 - Investasi berkelanjutan dalam kapabilitas
-- Reform hukum yang comprehensive
+- Reformasi hukum yang komprehensif
 - Keseimbangan antara keamanan dan privasi
-- Public awareness dan participation
+- Kesadaran dan partisipasi publik
 
-Ke depan, dengan meningkatnya digitalisasi governance dan politik, forensik digital akan menjadi semakin central dalam menjaga integritas demokrasi Indonesia.`,
+Ke depan, dengan meningkatnya digitalisasi tata kelola dan politik, forensik digital akan menjadi semakin sentral dalam menjaga integritas demokrasi Indonesia.`,
     content_en: `# Digital Forensics in Indonesian Political Accountability
 
 ## Evolution of Digital Forensics in Indonesian Politics

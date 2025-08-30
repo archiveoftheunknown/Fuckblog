@@ -16,8 +16,8 @@
     "description": "Koleksi lengkap artikel dan analisis politik"
   },
   "hero": {
-    "title": "Menguraikan Kompleksitas Politik Indonesia",
-    "subtitle": "Wawasan mendalam tentang demokrasi digital, transformasi tata kelola, dan lanskap media kontemporer.",
+    "title": "Arsip Politik Indonesia",
+    "subtitle": "Analisis mendalam tentang demokrasi digital, transformasi tata kelola, dan lanskap media kontemporer.",
     "author": "Tim Editorial",
     "cta": "Jelajahi Artikel"
   },
@@ -28,7 +28,7 @@
   },
   "blog": {
     "title": "Blog Analisis Politik",
-    "description": "Jelajahi koleksi lengkap wawasan politik, analisis demokrasi digital, dan komentar tata kelola kontemporer kami.",
+    "description": "Jelajahi koleksi lengkap analisis politik, demokrasi digital, dan komentar tata kelola kontemporer.",
     "searchPlaceholder": "Cari artikel...",
     "readArticle": "Baca Artikel",
     "showing": "Menampilkan",

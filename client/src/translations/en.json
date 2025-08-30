@@ -16,8 +16,8 @@
     "description": "Complete collection of political articles and analysis"
   },
   "hero": {
-    "title": "Decoding the Complexities of Indonesian Politics",
-    "subtitle": "Deep insights into digital democracy, governance transformation, and contemporary media landscapes.",
+    "title": "Indonesian Political Archive",
+    "subtitle": "In-depth analysis of digital democracy, governance transformation, and contemporary media landscapes.",
     "author": "Editorial Team",
     "cta": "Explore Articles"
   },
@@ -28,7 +28,7 @@
   },
   "blog": {
     "title": "Political Analysis Blog",
-    "description": "Explore our comprehensive collection of political insights, digital democracy analysis, and contemporary governance commentary.",
+    "description": "Explore a comprehensive collection of political analysis, digital democracy, and contemporary governance commentary.",
     "searchPlaceholder": "Search articles...",
     "readArticle": "Read Article",
     "showing": "Showing",

@@ -271,10 +271,10 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                           const newState = pressedButtons[comment.id] === 'up' ? null : 'up';
                           setPressedButtons({ ...pressedButtons, [comment.id]: newState });
                           try {
-                            const response = await fetch(`/api/comments/${comment.id}/vote`, {
+                            const response = await fetch('/api/comments/vote', {
                               method: 'POST',
                               headers: { 'Content-Type': 'application/json' },
-                              body: JSON.stringify({ voteType: 'up' })
+                              body: JSON.stringify({ commentId: comment.id, voteType: 'up' })
                             });
                             if (response.ok) {
                               await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
@@ -301,10 +301,10 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                           const newState = pressedButtons[comment.id] === 'down' ? null : 'down';
                           setPressedButtons({ ...pressedButtons, [comment.id]: newState });
                           try {
-                            const response = await fetch(`/api/comments/${comment.id}/vote`, {
+                            const response = await fetch('/api/comments/vote', {
                               method: 'POST',
                               headers: { 'Content-Type': 'application/json' },
-                              body: JSON.stringify({ voteType: 'down' })
+                              body: JSON.stringify({ commentId: comment.id, voteType: 'down' })
                             });
                             if (response.ok) {
                               await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });

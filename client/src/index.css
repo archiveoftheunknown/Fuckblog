@@ -600,13 +600,15 @@ aside *::-webkit-scrollbar,
   }
   
   /* Force comment input text colors */
+  .glass-card input,
   .glass-card input[type="text"],
   .glass-card textarea {
     color: rgb(31 41 55) !important;
   }
   
-  .dark .glass-card input[type="text"],
-  .dark .glass-card textarea {
+  html.dark .glass-card input,
+  html.dark .glass-card input[type="text"],
+  html.dark .glass-card textarea {
     color: rgb(255 255 255) !important;
   }
   

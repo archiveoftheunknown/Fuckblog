@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 import { Button } from "@/components/ui/button";
@@ -36,7 +36,17 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
   const [displayName, setDisplayName] = useState("");
   const [content, setContent] = useState("");
   const [visibleComments, setVisibleComments] = useState(5); // Initially show 5 comments
+  const [isDark, setIsDark] = useState(document.documentElement.classList.contains('dark'));
   const { toast } = useToast();
+  
+  // Listen for theme changes
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
 
   const { data: comments = [], isLoading } = useQuery<Comment[]>({
     queryKey: ["/api/comments", postSlug],
@@ -119,7 +129,8 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 placeholder={translations.displayNamePlaceholder}
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                className="bg-white/10 dark:bg-white/5 border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 !text-gray-900 dark:!text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
+                className="bg-white/10 dark:bg-white/5 border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 placeholder:text-gray-500 dark:placeholder:text-gray-400"
+                style={{ color: isDark ? 'white' : 'black' }}
                 data-testid="input-display-name"
               />
             </div>
@@ -134,7 +145,8 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 required
-                className="min-h-[100px] bg-transparent border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-900 dark:text-gray-100"
+                className="min-h-[100px] bg-white/10 dark:bg-white/5 border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 placeholder:text-gray-500 dark:placeholder:text-gray-400"
+                style={{ color: isDark ? 'white' : 'black' }}
                 data-testid="input-comment"
               />
             </div>

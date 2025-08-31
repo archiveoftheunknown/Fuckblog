@@ -128,44 +128,43 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <motion.div
-          className="border-t border-[hsl(25,20%,12%)] mt-8 pt-8"
+          className="border-t border-[hsl(25,20%,12%)] mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
           data-testid="footer-bottom"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
             <p className="text-[hsl(25,5%,60%)] text-sm">
               © 2025 velocitysbeta.com {t("footer.allRightsReserved")}
             </p>
-            <div className="flex items-center space-x-6 mt-4 md:mt-0 text-sm">
-              <Link href={getLocalizedPath("/about")}>
-                <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
-                   onClick={scrollToTop}
-                   data-testid="link-about">
-                  {t("footer.about")}
-                </a>
-              </Link>
-              <Link href={getLocalizedPath("/archives")}>
-                <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
-                   onClick={scrollToTop}
-                   data-testid="link-archives">
-                  {t("footer.archives")}
-                </a>
-              </Link>
+            {/* Security Badges */}
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-1 text-[hsl(25,5%,60%)]">
+                <Shield className="w-4 h-4 text-[hsl(120,40%,50%)]" />
+                <span className="text-xs">{t("footer.gdprCompliant")}</span>
+              </div>
+              <div className="flex items-center space-x-1 text-[hsl(25,5%,60%)]">
+                <Lock className="w-4 h-4 text-[hsl(120,40%,50%)]" />
+                <span className="text-xs">{t("footer.sslSecured")}</span>
+              </div>
             </div>
           </div>
-          
-          {/* Security Badges */}
-          <div className="flex items-center justify-center space-x-6 mt-6 pt-6 border-t border-[hsl(25,20%,12%)]">
-            <div className="flex items-center space-x-2 text-[hsl(25,5%,60%)]">
-              <Shield className="w-4 h-4 text-[hsl(120,40%,50%)]" />
-              <span className="text-xs">{t("footer.gdprCompliant")}</span>
-            </div>
-            <div className="flex items-center space-x-2 text-[hsl(25,5%,60%)]">
-              <Lock className="w-4 h-4 text-[hsl(120,40%,50%)]" />
-              <span className="text-xs">{t("footer.sslSecured")}</span>
-            </div>
+          <div className="flex items-center space-x-6 mt-4 md:mt-0 text-sm">
+            <Link href={getLocalizedPath("/about")}>
+              <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
+                 onClick={scrollToTop}
+                 data-testid="link-about">
+                {t("footer.about")}
+              </a>
+            </Link>
+            <Link href={getLocalizedPath("/archives")}>
+              <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
+                 onClick={scrollToTop}
+                 data-testid="link-archives">
+                {t("footer.archives")}
+              </a>
+            </Link>
           </div>
         </motion.div>
       </div>

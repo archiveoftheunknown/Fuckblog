@@ -134,7 +134,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
           <User className="h-5 w-5 text-white" />
         </div>
         <div className="flex-1 min-w-0">
-          <div className={`glass-card rounded-xl transition-all duration-300 overflow-hidden ${isExpanded ? 'ring-2 ring-orange-500/50' : ''}`}>
+          <div className={`glass-card rounded-xl transition-all duration-300 ${isExpanded ? 'ring-2 ring-orange-500/50' : ''}`}>
             <Textarea
               ref={textareaRef}
               value={content}
@@ -155,9 +155,9 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="border-t border-gray-200/20 dark:border-gray-700/20"
+                  className="border-t border-gray-200/20 dark:border-gray-700/20 overflow-visible"
                 >
-                  <div className="p-3 flex justify-between items-center">
+                  <div className="p-3 pr-4 flex justify-between items-center">
                     <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
                       <button 
                         type="button"

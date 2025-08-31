@@ -26,6 +26,8 @@ interface CommentsProps {
     anonymous: string;
     commentSuccess: string;
     commentError: string;
+    loadMore: string;
+    remaining: string;
   };
   language: string;
 }
@@ -33,6 +35,7 @@ interface CommentsProps {
 export function Comments({ postSlug, translations, language }: CommentsProps) {
   const [displayName, setDisplayName] = useState("");
   const [content, setContent] = useState("");
+  const [visibleComments, setVisibleComments] = useState(5); // Initially show 5 comments
   const { toast } = useToast();
 
   const { data: comments = [], isLoading } = useQuery<Comment[]>({
@@ -164,30 +167,49 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
             </CardContent>
           </Card>
         ) : (
-          comments.map((comment) => (
-            <Card
-              key={comment.id}
-              className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-orange-200 dark:border-gray-700"
-              data-testid={`comment-${comment.id}`}
-            >
-              <CardHeader className="pb-3">
-                <div className="flex items-center gap-2">
-                  <User className="h-4 w-4 text-gray-500" />
-                  <span className="font-semibold text-gray-900 dark:text-gray-100">
-                    {comment.displayName || translations.anonymous}
+          <>
+            {comments.slice(0, visibleComments).map((comment) => (
+              <Card
+                key={comment.id}
+                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-orange-200 dark:border-gray-700"
+                data-testid={`comment-${comment.id}`}
+              >
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-2">
+                    <User className="h-4 w-4 text-gray-500" />
+                    <span className="font-semibold text-gray-900 dark:text-gray-100">
+                      {comment.displayName || translations.anonymous}
+                    </span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      • {formatDate(comment.createdAt)}
+                    </span>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
+                    {comment.content}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+            
+            {/* Load More Button */}
+            {comments.length > visibleComments && (
+              <div className="flex justify-center pt-4">
+                <Button
+                  onClick={() => setVisibleComments(visibleComments + 5)}
+                  variant="outline"
+                  className="bg-white/90 hover:bg-orange-50 dark:bg-gray-800/90 dark:hover:bg-gray-700 border-orange-200 dark:border-gray-600 text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300"
+                  data-testid="button-load-more"
+                >
+                  {translations.loadMore}
+                  <span className="ml-2 text-sm text-gray-500 dark:text-gray-400">
+                    ({comments.length - visibleComments} {translations.remaining})
                   </span>
-                  <span className="text-sm text-gray-500 dark:text-gray-400">
-                    • {formatDate(comment.createdAt)}
-                  </span>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
-                  {comment.content}
-                </p>
-              </CardContent>
-            </Card>
-          ))
+                </Button>
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>

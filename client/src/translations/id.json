@@ -249,6 +249,8 @@
     "submitting": "Mengirim...",
     "anonymous": "Anonim",
     "commentSuccess": "Komentar berhasil dikirim!",
-    "commentError": "Gagal mengirim komentar. Silakan coba lagi."
+    "commentError": "Gagal mengirim komentar. Silakan coba lagi.",
+    "loadMore": "Muat Lebih Banyak",
+    "remaining": "tersisa"
   }
 }

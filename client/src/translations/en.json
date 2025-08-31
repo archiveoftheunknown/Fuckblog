@@ -249,6 +249,8 @@
     "submitting": "Posting...",
     "anonymous": "Anonymous",
     "commentSuccess": "Comment posted successfully!",
-    "commentError": "Failed to post comment. Please try again."
+    "commentError": "Failed to post comment. Please try again.",
+    "loadMore": "Load More",
+    "remaining": "remaining"
   }
 }

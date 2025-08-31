@@ -599,53 +599,34 @@ aside *::-webkit-scrollbar,
     scrollbar-width: thin;
   }
   
-  /* Comment form input styles */
+  /* Comment form input styles - use site's theme variables */
   .glass-card input,
   .glass-card textarea {
-    color: rgb(31 41 55) !important; /* gray-800 */
-  }
-  
-  .dark .glass-card input,
-  .dark .glass-card textarea {
-    color: rgb(229 231 235) !important; /* gray-200 */
+    color: var(--foreground) !important;
   }
   
   .glass-card input::placeholder,
   .glass-card textarea::placeholder {
-    color: rgb(107 114 128) !important; /* gray-500 */
+    color: var(--muted-foreground) !important;
   }
   
-  .dark .glass-card input::placeholder,
-  .dark .glass-card textarea::placeholder {
-    color: rgb(156 163 175) !important; /* gray-400 */
-  }
-  
-  /* Comment text styles */
+  /* Comment text styles - use site's theme variables */
   .glass-card p {
-    color: rgb(31 41 55) !important; /* gray-800 in light mode */
-  }
-  
-  .dark .glass-card p {
-    color: rgb(229 231 235) !important; /* gray-200 in dark mode */
+    color: var(--foreground) !important;
   }
   
   .glass-card .font-semibold {
-    color: rgb(17 24 39) !important; /* gray-900 in light mode */
-  }
-  
-  .dark .glass-card .font-semibold {
-    color: rgb(243 244 246) !important; /* gray-100 in dark mode */
+    color: var(--foreground) !important;
   }
   
   /* Button and action text */
   .glass-card button,
   .glass-card span {
-    color: rgb(75 85 99); /* gray-600 in light mode */
+    color: var(--muted-foreground);
   }
   
-  .dark .glass-card button,
-  .dark .glass-card span {
-    color: rgb(156 163 175); /* gray-400 in dark mode */
+  .glass-card button:hover {
+    color: var(--primary);
   }
   
 }

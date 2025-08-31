@@ -65,8 +65,15 @@ export default function Sidebar() {
         >
           {navigationItems.map((item, index) => {
             const Icon = item.icon;
-            const isActive = location === item.href || 
-              (item.href === '/blog' && location.startsWith('/blog'));
+            // Only highlight Blog for blog posts, not for other pages
+            let isActive = false;
+            if (location === item.href) {
+              // Exact match
+              isActive = true;
+            } else if (item.href === '/blog' && location.startsWith('/blog/')) {
+              // Blog item should be active for blog posts (note the trailing slash)
+              isActive = true;
+            }
             
             return (
               <motion.div

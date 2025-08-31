@@ -19,8 +19,8 @@ export default function BlogPost() {
     return language === 'en' ? `/en${path}` : path;
   };
   
-  // Check if coming from archives
-  const urlParams = new URLSearchParams(window.location.search);
+  // Check if coming from archives - safe for SSR
+  const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : new URLSearchParams();
   const fromArchives = urlParams.get('from') === 'archives';
   const backUrl = fromArchives ? getLocalizedPath('/archives') : getLocalizedPath('/blog');
   const backText = fromArchives ? t('blog.backToArchives') : t('blog.backToBlog');

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
@@ -10,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2, MessageSquare, User } from "lucide-react";
 import { format } from "date-fns";
 import { id as idLocale, enUS } from "date-fns/locale";
+import { motion } from "framer-motion";
 import type { Comment } from "@shared/schema";
 
 interface CommentsProps {
@@ -101,8 +101,13 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
         </h2>
       </div>
       {/* Comment Form */}
-      <Card className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-orange-200 dark:border-gray-700">
-        <CardContent className="pt-6">
+      <motion.div 
+        className="glass-card rounded-2xl overflow-hidden"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="p-6">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="displayName" className="text-gray-700 dark:text-gray-300">
@@ -114,7 +119,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 placeholder={translations.displayNamePlaceholder}
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                className="bg-white dark:bg-gray-900"
+                className="bg-transparent border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-900 dark:text-gray-100"
                 data-testid="input-display-name"
               />
             </div>
@@ -129,7 +134,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 required
-                className="min-h-[100px] bg-white dark:bg-gray-900"
+                className="min-h-[100px] bg-transparent border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-900 dark:text-gray-100"
                 data-testid="input-comment"
               />
             </div>
@@ -137,7 +142,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
             <Button
               type="submit"
               disabled={createCommentMutation.isPending || !content.trim()}
-              className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white"
+              className="w-full sm:w-auto glass-button px-6 py-2 rounded-lg text-white font-medium"
               data-testid="button-submit-comment"
             >
               {createCommentMutation.isPending ? (
@@ -150,8 +155,8 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
               )}
             </Button>
           </form>
-        </CardContent>
-      </Card>
+        </div>
+      </motion.div>
       {/* Comments List */}
       <div className="space-y-4">
         {isLoading ? (
@@ -159,20 +164,23 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
             <Loader2 className="h-8 w-8 animate-spin text-orange-500" />
           </div>
         ) : comments.length === 0 ? (
-          <Card className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-orange-200 dark:border-gray-700">
-            <CardContent className="py-8 text-center text-gray-500 dark:text-gray-400">
+          <div className="glass-card rounded-2xl overflow-hidden">
+            <div className="py-8 text-center text-gray-500 dark:text-gray-400 px-6">
               {translations.noComments}
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         ) : (
           <>
-            {comments.slice(0, visibleComments).map((comment) => (
-              <Card
+            {comments.slice(0, visibleComments).map((comment, index) => (
+              <motion.div
                 key={comment.id}
-                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-orange-200 dark:border-gray-700"
+                className="glass-card rounded-2xl overflow-hidden"
                 data-testid={`comment-${comment.id}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <CardHeader className="pb-3">
+                <div className="p-6 pb-3">
                   <div className="flex items-center gap-2">
                     <User className="h-4 w-4 text-gray-500" />
                     <span className="font-semibold text-gray-900 dark:text-gray-100">
@@ -182,13 +190,13 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                       • {formatDate(comment.createdAt)}
                     </span>
                   </div>
-                </CardHeader>
-                <CardContent>
+                </div>
+                <div className="px-6 pb-6">
                   <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
                     {comment.content}
                   </p>
-                </CardContent>
-              </Card>
+                </div>
+              </motion.div>
             ))}
             
             {/* Load More Button */}
@@ -197,7 +205,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 <Button
                   onClick={() => setVisibleComments(visibleComments + 5)}
                   variant="outline"
-                  className="bg-white/90 hover:bg-orange-50 dark:bg-gray-800/90 dark:hover:bg-gray-700 border-orange-200 dark:border-gray-600 text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300"
+                  className="glass-button px-6 py-2 rounded-lg text-orange-600 dark:text-orange-400 font-medium"
                   data-testid="button-load-more"
                 >
                   {translations.loadMore}

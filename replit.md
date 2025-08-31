@@ -46,8 +46,9 @@ The application uses Drizzle ORM as the database abstraction layer, configured f
 
 **Database Design:**
 - Users table with UUID primary keys and unique username constraints
+- Comments table for anonymous blog post discussions
 - Drizzle Kit for migrations and schema management
-- Environment-based database configuration
+- Environment-based database configuration with Supabase integration
 - Type-safe database operations with full TypeScript integration
 
 **Content Management:**
@@ -55,6 +56,8 @@ The application uses Drizzle ORM as the database abstraction layer, configured f
 - Full-text search capabilities using Fuse.js
 - Category and tag-based content filtering
 - Markdown content rendering with syntax highlighting
+- Anonymous commenting system with optional display names
+- Real-time comment fetching and posting without authentication
 
 ### Authentication & Authorization
 The current implementation includes a basic user schema but authentication is not yet fully implemented. The architecture supports session-based authentication with the connect-pg-simple session store configured for PostgreSQL.

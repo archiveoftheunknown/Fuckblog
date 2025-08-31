@@ -6,6 +6,7 @@ import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { blogPosts, getBlogPostBySlug } from "@/data/blog-posts";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Comments } from "@/components/Comments";
 
 export default function BlogPost() {
   const { id } = useParams<{ id: string }>();
@@ -220,6 +221,13 @@ export default function BlogPost() {
                 ))}
               </div>
             </div>
+
+            {/* Comments Section */}
+            <Comments 
+              postSlug={post.slug} 
+              translations={t('comments') as any}
+              language={language}
+            />
           </div>
 
           {/* Sidebar */}

@@ -237,5 +237,18 @@
     "placeholder": "Search articles...",
     "noResults": "No results found",
     "tryAdjusting": "Try adjusting your search"
+  },
+  "comments": {
+    "title": "Comments",
+    "noComments": "No comments yet. Be the first to share your thoughts!",
+    "displayName": "Display Name (Optional)",
+    "displayNamePlaceholder": "Enter your name or leave blank for Anonymous",
+    "comment": "Comment",
+    "commentPlaceholder": "Share your thoughts...",
+    "submit": "Post Comment",
+    "submitting": "Posting...",
+    "anonymous": "Anonymous",
+    "commentSuccess": "Comment posted successfully!",
+    "commentError": "Failed to post comment. Please try again."
   }
 }

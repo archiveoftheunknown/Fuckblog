@@ -237,5 +237,18 @@
     "placeholder": "Cari artikel...",
     "noResults": "Tidak ada hasil ditemukan",
     "tryAdjusting": "Coba sesuaikan pencarian Anda"
+  },
+  "comments": {
+    "title": "Komentar",
+    "noComments": "Belum ada komentar. Jadilah yang pertama berbagi pemikiran Anda!",
+    "displayName": "Nama Tampilan (Opsional)",
+    "displayNamePlaceholder": "Masukkan nama Anda atau kosongkan untuk Anonim",
+    "comment": "Komentar",
+    "commentPlaceholder": "Bagikan pemikiran Anda...",
+    "submit": "Kirim Komentar",
+    "submitting": "Mengirim...",
+    "anonymous": "Anonim",
+    "commentSuccess": "Komentar berhasil dikirim!",
+    "commentError": "Gagal mengirim komentar. Silakan coba lagi."
   }
 }

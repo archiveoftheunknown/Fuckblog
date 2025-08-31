@@ -611,13 +611,15 @@ aside *::-webkit-scrollbar,
   }
   
   /* Comment text styles - use site's theme variables */
-  .glass-card p {
-    color: var(--card-foreground) !important;
-    opacity: 0.85 !important;
+  /* Username - bright */
+  .glass-card p.font-semibold {
+    color: var(--foreground) !important;
   }
   
-  .glass-card .font-semibold {
-    color: var(--foreground) !important;
+  /* Comment content - slightly muted */
+  .glass-card p:not(.font-semibold) {
+    color: var(--card-foreground) !important;
+    opacity: 0.85 !important;
   }
   
   /* Button and action text */

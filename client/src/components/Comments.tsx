@@ -142,9 +142,10 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
               onFocus={() => setIsExpanded(true)}
               onBlur={() => !content.trim() && setIsExpanded(false)}
               placeholder={translations.commentPlaceholder}
-              className={`w-full p-4 bg-transparent border-0 focus:ring-0 resize-none text-gray-800 dark:text-gray-200 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-300 ${
+              className={`w-full p-4 bg-transparent border-0 focus:ring-0 resize-none placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-300 ${
                 isExpanded ? 'min-h-[100px]' : 'min-h-[60px]'
               }`}
+              style={{ color: isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)' }}
               data-testid="input-comment"
             />
             

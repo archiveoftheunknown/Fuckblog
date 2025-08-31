@@ -101,7 +101,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
 
   return (
     <div className="mt-12 space-y-6" data-testid="comments-section">
-      <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+      <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
         {translations.title}
       </h2>
 
@@ -124,7 +124,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
               onFocus={() => setIsExpanded(true)}
               onBlur={() => !content.trim() && setIsExpanded(false)}
               placeholder={translations.commentPlaceholder}
-              className={`w-full p-4 bg-transparent border-0 focus:ring-0 resize-none text-gray-700 dark:text-gray-200 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-300 ${
+              className={`w-full p-4 bg-transparent border-0 focus:ring-0 resize-none text-gray-800 dark:text-gray-200 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-300 ${
                 isExpanded ? 'min-h-[100px]' : 'min-h-[60px]'
               }`}
               data-testid="input-comment"
@@ -140,7 +140,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                   className="border-t border-gray-200/20 dark:border-gray-700/20"
                 >
                   <div className="p-3 flex justify-between items-center">
-                    <div className="flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+                    <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
                       <button 
                         type="button"
                         className="hover:text-orange-500 transition-colors"
@@ -191,7 +191,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            <p className="text-gray-600 dark:text-gray-300">
+            <p className="text-gray-700 dark:text-gray-300">
               {translations.noComments}
             </p>
           </motion.div>
@@ -213,19 +213,19 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                   </div>
                   <div className="flex-1">
                     <div className="glass-card rounded-xl p-4">
-                      <p className="font-semibold text-gray-800 dark:text-gray-100">
+                      <p className="font-semibold text-gray-900 dark:text-gray-100">
                         {comment.displayName || translations.anonymous}
                       </p>
-                      <p className="text-gray-600 dark:text-gray-300 mt-1">
+                      <p className="text-gray-700 dark:text-gray-300 mt-1">
                         {comment.content}
                       </p>
                     </div>
-                    <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400 mt-2 px-2">
-                      <button className="flex items-center space-x-1 hover:text-orange-500 transition-colors">
+                    <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-400 mt-2 px-2">
+                      <button className="flex items-center space-x-1 hover:text-orange-500 dark:hover:text-orange-400 transition-colors">
                         <ChevronUp className="w-4 h-4" />
                         <span>0</span>
                       </button>
-                      <button className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
+                      <button className="hover:text-gray-800 dark:hover:text-gray-300 transition-colors">
                         <ChevronDown className="w-4 h-4" />
                       </button>
                       <span className="text-xs">• {formatDate(comment.createdAt)}</span>
@@ -245,7 +245,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
               >
                 <Button
                   onClick={() => setVisibleComments(visibleComments + 5)}
-                  className="bg-gray-200/50 dark:bg-gray-700/50 hover:bg-gray-300/50 dark:hover:bg-gray-600/50 text-gray-700 dark:text-gray-300 font-semibold px-6 py-2 rounded-lg transition-all duration-300"
+                  className="bg-gray-200/70 dark:bg-gray-700/50 hover:bg-gray-300/70 dark:hover:bg-gray-600/50 text-gray-800 dark:text-gray-300 font-semibold px-6 py-2 rounded-lg transition-all duration-300"
                   data-testid="button-load-more"
                 >
                   {translations.loadMore}

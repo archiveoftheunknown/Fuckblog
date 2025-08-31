@@ -130,7 +130,6 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
                 className="bg-white/10 dark:bg-white/5 border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 placeholder:text-gray-500 dark:placeholder:text-gray-400"
-                style={{ color: isDark ? 'white' : 'black' }}
                 data-testid="input-display-name"
               />
             </div>
@@ -146,7 +145,6 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 onChange={(e) => setContent(e.target.value)}
                 required
                 className="min-h-[100px] bg-white/10 dark:bg-white/5 border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 placeholder:text-gray-500 dark:placeholder:text-gray-400"
-                style={{ color: isDark ? 'white' : 'black' }}
                 data-testid="input-comment"
               />
             </div>

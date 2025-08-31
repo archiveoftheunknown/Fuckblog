@@ -606,9 +606,15 @@ aside *::-webkit-scrollbar,
     color: rgb(31 41 55) !important;
   }
   
-  html.dark .glass-card input,
-  html.dark .glass-card input[type="text"],
-  html.dark .glass-card textarea {
+  .dark .glass-card input,
+  .dark .glass-card input[type="text"],  
+  .dark .glass-card textarea {
+    color: rgb(255 255 255) !important;
+  }
+  
+  /* Extra specificity to ensure it works */
+  body .dark .glass-card input,
+  body .dark .glass-card textarea {
     color: rgb(255 255 255) !important;
   }
   

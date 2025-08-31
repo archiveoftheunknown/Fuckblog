@@ -33,20 +33,26 @@ export default function BlogPost() {
 
   if (!post) {
     return (
-      <div className="py-20 px-8" data-testid="blog-post-not-found">
+      <div className="min-h-screen flex items-center justify-center px-8" data-testid="blog-post-not-found">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4 text-foreground">{t("blog.articleNotFound")}</h1>
-          <p className="text-muted-foreground mb-8">{t("blog.articleNotFoundDesc")}</p>
-          <Link href={backUrl}>
-            <motion.button
-              className="glass-button px-6 py-3 rounded-xl font-semibold text-primary-foreground"
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              data-testid="button-back-to-blog"
-            >
-              {backText}
-            </motion.button>
-          </Link>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-4xl font-bold mb-4 text-foreground">{t("blog.articleNotFound")}</h1>
+            <p className="text-muted-foreground mb-8">{t("blog.articleNotFoundDesc")}</p>
+            <Link href={backUrl}>
+              <motion.button
+                className="glass-button px-6 py-3 rounded-xl font-semibold text-primary-foreground"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                data-testid="button-back-to-blog"
+              >
+                {backText}
+              </motion.button>
+            </Link>
+          </motion.div>
         </div>
       </div>
     );

@@ -34,6 +34,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
   const [content, setContent] = useState("");
   const [visibleComments, setVisibleComments] = useState(5);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [pressedButtons, setPressedButtons] = useState<{ [key: string]: 'up' | 'down' | null }>({});
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const { toast } = useToast();
 
@@ -220,15 +221,53 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         {comment.content}
                       </p>
                     </div>
-                    <div className="flex items-center space-x-4 text-sm mt-2 px-2" style={{ color: '#eeebe2', opacity: 0.5 }}>
-                      <button className="flex items-center space-x-1 hover:text-orange-500 transition-colors hover:opacity-100" style={{ color: 'inherit' }}>
+                    <div className="flex items-center space-x-4 text-sm mt-2 px-2">
+                      <button 
+                        className="flex items-center space-x-1 transition-all duration-300 hover:-translate-y-1 active:scale-95"
+                        onClick={() => setPressedButtons({ ...pressedButtons, [comment.id]: pressedButtons[comment.id] === 'up' ? null : 'up' })}
+                        style={{ 
+                          color: pressedButtons[comment.id] === 'up' ? 'hsl(9, 75%, 61%)' : '#eeebe2',
+                          opacity: pressedButtons[comment.id] === 'up' ? 1 : 0.5
+                        }}
+                        onMouseEnter={(e) => {
+                          if (pressedButtons[comment.id] !== 'up') {
+                            e.currentTarget.style.color = 'hsl(9, 75%, 61%)';
+                            e.currentTarget.style.opacity = '1';
+                          }
+                        }}
+                        onMouseLeave={(e) => {
+                          if (pressedButtons[comment.id] !== 'up') {
+                            e.currentTarget.style.color = '#eeebe2';
+                            e.currentTarget.style.opacity = '0.5';
+                          }
+                        }}
+                      >
                         <ChevronUp className="w-4 h-4" />
                         <span>0</span>
                       </button>
-                      <button className="hover:text-orange-500 transition-colors hover:opacity-100" style={{ color: 'inherit' }}>
+                      <button 
+                        className="transition-all duration-300 hover:-translate-y-1 active:scale-95"
+                        onClick={() => setPressedButtons({ ...pressedButtons, [comment.id]: pressedButtons[comment.id] === 'down' ? null : 'down' })}
+                        style={{ 
+                          color: pressedButtons[comment.id] === 'down' ? 'hsl(9, 75%, 61%)' : '#eeebe2',
+                          opacity: pressedButtons[comment.id] === 'down' ? 1 : 0.5
+                        }}
+                        onMouseEnter={(e) => {
+                          if (pressedButtons[comment.id] !== 'down') {
+                            e.currentTarget.style.color = 'hsl(9, 75%, 61%)';
+                            e.currentTarget.style.opacity = '1';
+                          }
+                        }}
+                        onMouseLeave={(e) => {
+                          if (pressedButtons[comment.id] !== 'down') {
+                            e.currentTarget.style.color = '#eeebe2';
+                            e.currentTarget.style.opacity = '0.5';
+                          }
+                        }}
+                      >
                         <ChevronDown className="w-4 h-4" />
                       </button>
-                      <span className="text-xs">• {formatDate(comment.createdAt)}</span>
+                      <span className="text-xs" style={{ color: '#eeebe2', opacity: 0.5 }}>• {formatDate(comment.createdAt)}</span>
                     </div>
                   </div>
                 </motion.div>

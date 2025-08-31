@@ -622,16 +622,16 @@ aside *::-webkit-scrollbar,
     opacity: 0.85 !important;
   }
   
-  /* Button and action text - same as foreground but 50% opacity */
-  .glass-card button,
-  .glass-card span {
-    color: var(--foreground);
-    opacity: 0.5;
+  /* Upvote/downvote buttons and timestamp - specific targeting */
+  .glass-card .flex.items-center.space-x-4.text-sm button,
+  .glass-card .flex.items-center.space-x-4.text-sm span {
+    color: var(--foreground) !important;
+    opacity: 0.5 !important;
   }
   
-  .glass-card button:hover {
-    color: var(--primary);
-    opacity: 1;
+  .glass-card .flex.items-center.space-x-4.text-sm button:hover {
+    color: var(--primary) !important;
+    opacity: 1 !important;
   }
   
 }

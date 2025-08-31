@@ -600,15 +600,71 @@ aside *::-webkit-scrollbar,
     scrollbar-width: thin;
   }
   
-  /* Comment form input styles - use site's theme variables */
+  /* Comment form input styles - explicit colors for consistency */
   .glass-card input,
   .glass-card textarea {
-    color: var(--foreground) !important;
+    color: #eeebe2 !important;
   }
   
   .glass-card input::placeholder,
   .glass-card textarea::placeholder {
-    color: var(--muted-foreground) !important;
+    color: #eeebe2 !important;
+    opacity: 0.5 !important;
+  }
+  
+  /* Light mode - input text */
+  .light .glass-card input,
+  .light .glass-card textarea,
+  body.light .glass-card input,
+  body.light .glass-card textarea,
+  html.light .glass-card input,
+  html.light .glass-card textarea {
+    color: hsl(20, 14%, 45%) !important;
+  }
+  
+  .light .glass-card input::placeholder,
+  .light .glass-card textarea::placeholder,
+  body.light .glass-card input::placeholder,
+  body.light .glass-card textarea::placeholder {
+    color: hsl(20, 14%, 45%) !important;
+    opacity: 0.5 !important;
+  }
+  
+  /* Media query protection for inputs on wider viewports */
+  @media screen and (min-width: 768px) {
+    .glass-card input,
+    .glass-card textarea {
+      color: #eeebe2 !important;
+    }
+    
+    .light .glass-card input,
+    .light .glass-card textarea {
+      color: hsl(20, 14%, 45%) !important;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .glass-card input,
+    .glass-card textarea {
+      color: #eeebe2 !important;
+    }
+    
+    .light .glass-card input,
+    .light .glass-card textarea {
+      color: hsl(20, 14%, 45%) !important;
+    }
+  }
+  
+  @media screen and (min-width: 1280px) {
+    .glass-card input,
+    .glass-card textarea {
+      color: #eeebe2 !important;
+    }
+    
+    .light .glass-card input,
+    .light .glass-card textarea {
+      color: hsl(20, 14%, 45%) !important;
+    }
   }
   
   /* Comment text styles - ULTRA MAXIMUM SPECIFICITY */

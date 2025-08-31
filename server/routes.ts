@@ -36,6 +36,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Vote on a comment
+  app.post("/api/comments/:commentId/vote", async (req, res) => {
+    try {
+      const { commentId } = req.params;
+      const { voteType } = req.body; // 'up' or 'down'
+      
+      if (voteType !== 'up' && voteType !== 'down') {
+        return res.status(400).json({ error: "Invalid vote type" });
+      }
+      
+      const updatedComment = await storage.voteComment(commentId, voteType);
+      res.json(updatedComment);
+    } catch (error) {
+      console.error("Error voting on comment:", error);
+      res.status(500).json({ error: "Failed to vote on comment" });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;

@@ -1,6 +1,6 @@
 import { type User, type InsertUser, type Comment, type InsertComment, users, comments } from "@shared/schema";
 import { db } from "./db";
-import { eq, desc } from "drizzle-orm";
+import { eq, desc, sql } from "drizzle-orm";
 
 // modify the interface with any CRUD methods
 // you might need
@@ -11,6 +11,7 @@ export interface IStorage {
   createUser(user: InsertUser): Promise<User>;
   getCommentsByPost(postSlug: string): Promise<Comment[]>;
   createComment(comment: InsertComment): Promise<Comment>;
+  voteComment(commentId: string, voteType: 'up' | 'down'): Promise<Comment>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -46,6 +47,18 @@ export class DatabaseStorage implements IStorage {
       .values(insertComment)
       .returning();
     return comment;
+  }
+
+  async voteComment(commentId: string, voteType: 'up' | 'down'): Promise<Comment> {
+    const field = voteType === 'up' ? comments.upvotes : comments.downvotes;
+    const [updatedComment] = await db
+      .update(comments)
+      .set({ 
+        [voteType === 'up' ? 'upvotes' : 'downvotes']: sql`${field} + 1`
+      })
+      .where(eq(comments.id, commentId))
+      .returning();
+    return updatedComment;
   }
 }
 

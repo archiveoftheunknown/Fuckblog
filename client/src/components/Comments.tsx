@@ -242,7 +242,26 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                     <div className="flex items-center space-x-4 text-sm mt-2 px-2">
                       <button 
                         className="flex items-center space-x-1 transition-all duration-300 transform hover:scale-110 active:scale-90"
-                        onClick={() => setPressedButtons({ ...pressedButtons, [comment.id]: pressedButtons[comment.id] === 'up' ? null : 'up' })}
+                        onClick={async () => {
+                          setPressedButtons({ ...pressedButtons, [comment.id]: pressedButtons[comment.id] === 'up' ? null : 'up' });
+                          try {
+                            const response = await fetch(`/api/comments/${comment.id}/vote`, {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({ voteType: 'up' })
+                            });
+                            if (response.ok) {
+                              // Refetch comments to get updated vote counts
+                              const refreshResponse = await fetch(`/api/comments/${postSlug}`);
+                              if (refreshResponse.ok) {
+                                const updatedComments = await refreshResponse.json();
+                                setComments(updatedComments);
+                              }
+                            }
+                          } catch (error) {
+                            console.error('Vote failed:', error);
+                          }
+                        }}
                         style={{ 
                           color: pressedButtons[comment.id] === 'up' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
                           opacity: pressedButtons[comment.id] === 'up' ? 1 : 0.7
@@ -261,11 +280,30 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         }}
                       >
                         <ChevronUp className="w-4 h-4" />
-                        <span>0</span>
+                        <span>{comment.upvotes || 0}</span>
                       </button>
                       <button 
                         className="transition-all duration-300 transform hover:scale-110 active:scale-90"
-                        onClick={() => setPressedButtons({ ...pressedButtons, [comment.id]: pressedButtons[comment.id] === 'down' ? null : 'down' })}
+                        onClick={async () => {
+                          setPressedButtons({ ...pressedButtons, [comment.id]: pressedButtons[comment.id] === 'down' ? null : 'down' });
+                          try {
+                            const response = await fetch(`/api/comments/${comment.id}/vote`, {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({ voteType: 'down' })
+                            });
+                            if (response.ok) {
+                              // Refetch comments to get updated vote counts
+                              const refreshResponse = await fetch(`/api/comments/${postSlug}`);
+                              if (refreshResponse.ok) {
+                                const updatedComments = await refreshResponse.json();
+                                setComments(updatedComments);
+                              }
+                            }
+                          } catch (error) {
+                            console.error('Vote failed:', error);
+                          }
+                        }}
                         style={{ 
                           color: pressedButtons[comment.id] === 'down' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
                           opacity: pressedButtons[comment.id] === 'down' ? 1 : 0.7
@@ -284,6 +322,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         }}
                       >
                         <ChevronDown className="w-4 h-4" />
+                        <span>{comment.downvotes || 0}</span>
                       </button>
                       <span className="text-xs" style={{ color: isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)', opacity: 0.7 }}>• {formatDate(comment.createdAt)}</span>
                     </div>

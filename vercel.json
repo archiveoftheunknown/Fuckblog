@@ -1,7 +1,24 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist/public",
+  "functions": {
+    "api/comments/*.js": {
+      "maxDuration": 10
+    }
+  },
   "rewrites": [
+    {
+      "source": "/api/comments/:postSlug",
+      "destination": "/api/comments/[postSlug]"
+    },
+    {
+      "source": "/api/comments/vote",
+      "destination": "/api/comments/vote"
+    },
+    {
+      "source": "/api/comments",
+      "destination": "/api/comments/index"
+    },
     {
       "source": "/(.*)",
       "destination": "/$1"

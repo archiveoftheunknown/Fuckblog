@@ -210,7 +210,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            <p className="text-gray-700 dark:text-gray-300">
+            <p>
               {translations.noComments}
             </p>
           </motion.div>
@@ -232,10 +232,10 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                   </div>
                   <div className="flex-1">
                     <div className="glass-card rounded-xl p-4">
-                      <p className="font-semibold text-gray-900 dark:text-gray-100">
+                      <p className="font-semibold">
                         {comment.displayName || translations.anonymous}
                       </p>
-                      <p className="text-gray-700 dark:text-gray-300 mt-1">
+                      <p className="mt-1">
                         {comment.content}
                       </p>
                     </div>

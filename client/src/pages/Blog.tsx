@@ -7,7 +7,7 @@ import { Search, Filter } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Blog() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   
@@ -22,11 +22,9 @@ export default function Blog() {
   ];
 
   useEffect(() => {
-    // Set default category to "All" on first load
-    if (!selectedCategory) {
-      setSelectedCategory(t("categories.all"));
-    }
-  }, [selectedCategory, t]);
+    // Reset category to "All" when language changes or on first load
+    setSelectedCategory(t("categories.all"));
+  }, [language, t]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });

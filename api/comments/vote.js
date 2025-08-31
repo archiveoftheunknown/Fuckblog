@@ -1,6 +1,6 @@
-const { Pool } = require('@neondatabase/serverless');
+import { Pool } from '@neondatabase/serverless';
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -44,4 +44,4 @@ module.exports = async (req, res) => {
     console.error('Error voting on comment:', error);
     res.status(500).json({ error: 'Failed to vote on comment', details: error.message });
   }
-};
+}

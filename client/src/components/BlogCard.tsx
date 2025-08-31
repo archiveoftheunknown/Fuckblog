@@ -79,14 +79,10 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
                 </div>
               </div>
               
-              <Link href={`/blog/${post.slug}`} data-testid={`link-read-article-${post.id}`}>
-                <motion.button
-                  className="glass-button px-6 py-2 rounded-lg text-sm font-medium"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Baca Artikel
-                </motion.button>
+              <Link href={`/blog/${post.slug}`} 
+                className="glass-button px-6 py-2 rounded-lg text-sm font-medium inline-block"
+                data-testid={`link-read-article-${post.id}`}>
+                Baca Artikel
               </Link>
             </motion.div>
           </div>
@@ -170,14 +166,11 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
             <span className="text-sm font-medium text-foreground">{post.author.name}</span>
           </div>
           
-          <Link href={`/blog/${post.slug}`} data-testid={`link-read-more-${post.id}`}>
-            <motion.button
-              className="text-primary text-sm font-medium hover:text-primary/80 transition-colors flex items-center space-x-1"
-              whileHover={{ x: 4 }}
-            >
-              <span>Baca Selengkapnya</span>
-              <ArrowRight className="w-4 h-4" />
-            </motion.button>
+          <Link href={`/blog/${post.slug}`} 
+            className="text-primary text-sm font-medium hover:text-primary/80 transition-colors flex items-center space-x-1"
+            data-testid={`link-read-more-${post.id}`}>
+            <span>Baca Selengkapnya</span>
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>
       </div>

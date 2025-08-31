@@ -91,31 +91,28 @@ export default function SearchBar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
                 >
-                  <Link href={getLocalizedPath(`/blog/${post.slug}`)}>
-                    <a
-                      onClick={handleResultClick}
-                      className="block p-3 rounded-lg hover:bg-accent transition-colors duration-200"
-                      data-testid={`search-result-${post.id}`}
-                    >
-                      <div className="flex items-start space-x-3">
-                        <div className="flex-1">
-                          <h4 className="font-medium text-foreground text-sm mb-1 line-clamp-1">
-                            {post.title}
-                          </h4>
-                          <p className="text-xs text-muted-foreground line-clamp-2">
-                            {post.excerpt}
-                          </p>
-                          <div className="flex items-center space-x-2 mt-2">
-                            <span className="inline-block px-2 py-1 bg-primary/20 text-primary rounded text-xs">
-                              {post.category}
-                            </span>
-                            <span className="text-xs text-muted-foreground">
-                              {post.readTime} {t("blog.minRead")}
-                            </span>
-                          </div>
+                  <Link href={getLocalizedPath(`/blog/${post.slug}`)}
+                    onClick={handleResultClick}
+                    className="block p-3 rounded-lg hover:bg-accent transition-colors duration-200"
+                    data-testid={`search-result-${post.id}`}>
+                    <div className="flex items-start space-x-3">
+                      <div className="flex-1">
+                        <h4 className="font-medium text-foreground text-sm mb-1 line-clamp-1">
+                          {post.title}
+                        </h4>
+                        <p className="text-xs text-muted-foreground line-clamp-2">
+                          {post.excerpt}
+                        </p>
+                        <div className="flex items-center space-x-2 mt-2">
+                          <span className="inline-block px-2 py-1 bg-primary/20 text-primary rounded text-xs">
+                            {post.category}
+                          </span>
+                          <span className="text-xs text-muted-foreground">
+                            {post.readTime} {t("blog.minRead")}
+                          </span>
                         </div>
                       </div>
-                    </a>
+                    </div>
                   </Link>
                 </motion.div>
               ))}

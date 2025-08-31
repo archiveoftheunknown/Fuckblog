@@ -622,14 +622,16 @@ aside *::-webkit-scrollbar,
     opacity: 0.85 !important;
   }
   
-  /* Button and action text */
+  /* Button and action text - same as foreground but 50% opacity */
   .glass-card button,
   .glass-card span {
-    color: var(--muted-foreground);
+    color: var(--foreground);
+    opacity: 0.5;
   }
   
   .glass-card button:hover {
     color: var(--primary);
+    opacity: 1;
   }
   
 }

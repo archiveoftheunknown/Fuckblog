@@ -1,4 +1,4 @@
-import { Pool } from '@neondatabase/serverless';
+import { neon } from '@neondatabase/serverless';
 
 export default async function handler(req, res) {
   // Enable CORS
@@ -25,21 +25,21 @@ export default async function handler(req, res) {
   }
   
   try {
-    const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-    const client = await pool.connect();
+    const sql = neon(process.env.DATABASE_URL);
     const field = voteType === 'up' ? 'upvotes' : 'downvotes';
-    const result = await client.query(
-      `UPDATE comments SET ${field} = ${field} + 1 WHERE id = $1 RETURNING *`,
-      [commentId]
-    );
-    client.release();
-    await pool.end();
     
-    if (result.rows.length === 0) {
+    // Using parameterized query to safely update the field
+    const query = voteType === 'up' 
+      ? sql`UPDATE comments SET upvotes = upvotes + 1 WHERE id = ${commentId} RETURNING *`
+      : sql`UPDATE comments SET downvotes = downvotes + 1 WHERE id = ${commentId} RETURNING *`;
+    
+    const result = await query;
+    
+    if (result.length === 0) {
       return res.status(404).json({ error: 'Comment not found' });
     }
     
-    res.status(200).json(result.rows[0]);
+    res.status(200).json(result[0]);
   } catch (error) {
     console.error('Error voting on comment:', error);
     res.status(500).json({ error: 'Failed to vote on comment', details: error.message });

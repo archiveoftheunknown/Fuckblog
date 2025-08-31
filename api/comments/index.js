@@ -1,4 +1,4 @@
-import { Pool } from '@neondatabase/serverless';
+import { neon } from '@neondatabase/serverless';
 
 export default async function handler(req, res) {
   // Enable CORS
@@ -25,16 +25,14 @@ export default async function handler(req, res) {
   }
   
   try {
-    const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-    const client = await pool.connect();
-    const result = await client.query(
-      'INSERT INTO comments (post_slug, display_name, content, upvotes, downvotes) VALUES ($1, $2, $3, 0, 0) RETURNING *',
-      [postSlug, displayName || 'Anonymous', content]
-    );
-    client.release();
-    await pool.end();
+    const sql = neon(process.env.DATABASE_URL);
+    const result = await sql`
+      INSERT INTO comments (post_slug, display_name, content, upvotes, downvotes)
+      VALUES (${postSlug}, ${displayName || 'Anonymous'}, ${content}, 0, 0)
+      RETURNING *
+    `;
     
-    res.status(200).json(result.rows[0]);
+    res.status(200).json(result[0]);
   } catch (error) {
     console.error('Error creating comment:', error);
     res.status(500).json({ error: 'Failed to create comment', details: error.message });

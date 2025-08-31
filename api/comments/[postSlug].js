@@ -1,4 +1,4 @@
-import { Pool } from '@neondatabase/serverless';
+import { neon } from '@neondatabase/serverless';
 
 export default async function handler(req, res) {
   // Enable CORS
@@ -21,16 +21,14 @@ export default async function handler(req, res) {
   }
   
   try {
-    const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-    const client = await pool.connect();
-    const result = await client.query(
-      'SELECT * FROM comments WHERE post_slug = $1 ORDER BY created_at DESC',
-      [postSlug]
-    );
-    client.release();
-    await pool.end();
+    const sql = neon(process.env.DATABASE_URL);
+    const result = await sql`
+      SELECT * FROM comments 
+      WHERE post_slug = ${postSlug} 
+      ORDER BY created_at DESC
+    `;
     
-    res.status(200).json(result.rows);
+    res.status(200).json(result);
   } catch (error) {
     console.error('Error fetching comments:', error);
     res.status(500).json({ error: 'Failed to fetch comments', details: error.message });

@@ -118,7 +118,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
   };
 
   return (
-    <div className="mt-12 space-y-6" data-testid="comments-section">
+    <div className="mt-12 space-y-6 px-1" data-testid="comments-section">
       <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
         {translations.title}
       </h2>

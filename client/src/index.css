@@ -590,7 +590,8 @@ aside *::-webkit-scrollbar,
   
   /* Glass card - preserve original spacing */
   .glass-card {
-    max-width: calc(100vw - 1rem) !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   
   /* Fix overflow issues */

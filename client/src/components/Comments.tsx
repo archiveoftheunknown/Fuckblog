@@ -144,7 +144,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
 
   return (
     <div className="mt-12 space-y-6 px-1" data-testid="comments-section">
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+      <h2 className="text-2xl font-bold mb-6" style={{ color: isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 20%)' }}>
         {translations.title}
       </h2>
 
@@ -156,7 +156,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
         transition={{ duration: 0.5 }}
       >
         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center flex-shrink-0">
-          <User className="h-5 w-5 text-white" />
+          <MessageSquare className="h-5 w-5 text-white" />
         </div>
         <div className="flex-1 min-w-0">
           <div className={`glass-card rounded-xl transition-all duration-300 ${isExpanded ? 'ring-2 ring-orange-500/50' : ''}`}>

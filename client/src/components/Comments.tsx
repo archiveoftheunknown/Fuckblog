@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, MessageSquare, User } from "lucide-react";
@@ -130,7 +128,10 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
                 className="flex h-10 w-full rounded-md px-3 py-2 text-base bg-white/10 dark:bg-white/5 border border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
-                style={{ color: isDark ? '#ffffff' : '#000000' }}
+                style={{ 
+                  color: isDark ? 'white' : 'black',
+                  WebkitTextFillColor: isDark ? 'white' : 'black'
+                }}
                 data-testid="input-display-name"
               />
             </div>
@@ -139,13 +140,17 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
               <Label htmlFor="comment" className="text-gray-600 dark:text-gray-300">
                 {translations.comment} *
               </Label>
-              <Textarea
+              <textarea
                 id="comment"
                 placeholder={translations.commentPlaceholder}
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 required
-                className="min-h-[100px] bg-white/10 dark:bg-white/5 border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 placeholder:text-gray-500 dark:placeholder:text-gray-400"
+                className="min-h-[100px] w-full rounded-md px-3 py-2 text-base bg-white/10 dark:bg-white/5 border border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 resize-y"
+                style={{ 
+                  color: isDark ? 'white' : 'black',
+                  WebkitTextFillColor: isDark ? 'white' : 'black'
+                }}
                 data-testid="input-comment"
               />
             </div>

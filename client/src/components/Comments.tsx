@@ -119,7 +119,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 placeholder={translations.displayNamePlaceholder}
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                className="bg-white/50 dark:bg-transparent border-orange-200/50 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-800 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400"
+                className="bg-white/50 dark:bg-gray-800/30 border-orange-200/50 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-800 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400"
                 data-testid="input-display-name"
               />
             </div>
@@ -134,7 +134,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 required
-                className="min-h-[100px] bg-white/50 dark:bg-transparent border-orange-200/50 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-800 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400"
+                className="min-h-[100px] bg-white/50 dark:bg-gray-800/30 border-orange-200/50 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-800 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400"
                 data-testid="input-comment"
               />
             </div>

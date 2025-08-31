@@ -1,6 +1,6 @@
 const express = require("express");
 const session = require("express-session");
-const { registerRoutes } = require("../server/routes.js");
+const { registerRoutes } = require("../dist/server/routes.js");
 
 const app = express();
 

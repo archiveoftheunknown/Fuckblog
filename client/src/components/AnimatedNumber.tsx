@@ -21,14 +21,14 @@ export function AnimatedNumber({ value, direction = 'up' }: AnimatedNumberProps)
   const slideDirection = direction === 'up' ? -1 : 1;
 
   return (
-    <div className="relative inline-block overflow-hidden h-[1.2em] align-middle">
+    <span className="relative inline-flex items-center justify-center w-[2ch] h-[1.2em] overflow-hidden">
       <AnimatePresence mode="popLayout">
         <motion.span
           key={displayValue}
-          className="absolute inset-0 flex items-center"
-          initial={{ y: slideDirection * 20, opacity: 0 }}
+          className="absolute"
+          initial={{ y: slideDirection * 15, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: slideDirection * -20, opacity: 0 }}
+          exit={{ y: slideDirection * -15, opacity: 0 }}
           transition={{ 
             duration: 0.2,
             ease: [0.32, 0.72, 0, 1]
@@ -37,6 +37,6 @@ export function AnimatedNumber({ value, direction = 'up' }: AnimatedNumberProps)
           {displayValue}
         </motion.span>
       </AnimatePresence>
-    </div>
+    </span>
   );
 }

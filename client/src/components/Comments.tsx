@@ -241,7 +241,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                     </div>
                     <div className="flex items-center space-x-4 text-sm mt-2 px-2">
                       <button 
-                        className="flex items-center space-x-1 transition-all duration-300 hover:-translate-y-1"
+                        className="flex items-center space-x-1 transition-colors duration-300"
                         onClick={() => setPressedButtons({ ...pressedButtons, [comment.id]: pressedButtons[comment.id] === 'up' ? null : 'up' })}
                         style={{ 
                           color: pressedButtons[comment.id] === 'up' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
@@ -264,7 +264,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         <span>0</span>
                       </button>
                       <button 
-                        className="transition-all duration-300 hover:-translate-y-1"
+                        className="transition-colors duration-300"
                         onClick={() => setPressedButtons({ ...pressedButtons, [comment.id]: pressedButtons[comment.id] === 'down' ? null : 'down' })}
                         style={{ 
                           color: pressedButtons[comment.id] === 'down' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),

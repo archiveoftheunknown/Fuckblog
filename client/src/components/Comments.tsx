@@ -186,7 +186,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                     <span className="font-semibold dark:text-gray-100 text-[#eeebe2]">
                       {comment.displayName || translations.anonymous}
                     </span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                    <span className="text-sm dark:text-gray-400 text-[#c4c4c4]">
                       • {formatDate(comment.createdAt)}
                     </span>
                   </div>

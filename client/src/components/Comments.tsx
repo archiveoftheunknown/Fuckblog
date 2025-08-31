@@ -35,6 +35,31 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
   const [visibleComments, setVisibleComments] = useState(5);
   const [isExpanded, setIsExpanded] = useState(false);
   const [pressedButtons, setPressedButtons] = useState<{ [key: string]: 'up' | 'down' | null }>({});
+  
+  // Generate avatar colors based on comment ID
+  const getAvatarColors = (id: string) => {
+    const colors = [
+      ['from-blue-400', 'to-blue-600'],
+      ['from-green-400', 'to-green-600'],
+      ['from-purple-400', 'to-purple-600'],
+      ['from-pink-400', 'to-pink-600'],
+      ['from-yellow-400', 'to-yellow-600'],
+      ['from-red-400', 'to-red-600'],
+      ['from-indigo-400', 'to-indigo-600'],
+      ['from-teal-400', 'to-teal-600'],
+      ['from-cyan-400', 'to-cyan-600'],
+      ['from-emerald-400', 'to-emerald-600']
+    ];
+    
+    // Use comment ID to consistently pick a color
+    let hash = 0;
+    for (let i = 0; i < id.length; i++) {
+      hash = ((hash << 5) - hash) + id.charCodeAt(i);
+      hash = hash & hash;
+    }
+    const index = Math.abs(hash) % colors.length;
+    return colors[index];
+  };
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const { toast } = useToast();
   
@@ -227,7 +252,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.5, delay: index * 0.15 }}
                 >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center flex-shrink-0">
+                  <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${getAvatarColors(comment.id).join(' ')} flex items-center justify-center flex-shrink-0`}>
                     <User className="h-5 w-5 text-white" />
                   </div>
                   <div className="flex-1">

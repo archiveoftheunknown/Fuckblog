@@ -55,7 +55,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
     return () => observer.disconnect();
   }, []);
 
-  const { data: comments = [], isLoading } = useQuery<Comment[]>({
+  const { data: comments = [], isLoading, refetch } = useQuery<Comment[]>({
     queryKey: ["/api/comments", postSlug],
     queryFn: async () => {
       const response = await fetch(`/api/comments/${postSlug}`);
@@ -251,12 +251,8 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                               body: JSON.stringify({ voteType: 'up' })
                             });
                             if (response.ok) {
-                              // Refetch comments to get updated vote counts
-                              const refreshResponse = await fetch(`/api/comments/${postSlug}`);
-                              if (refreshResponse.ok) {
-                                const updatedComments = await refreshResponse.json();
-                                setComments(updatedComments);
-                              }
+                              // Invalidate and refetch comments to get updated vote counts
+                              await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
                             }
                           } catch (error) {
                             console.error('Vote failed:', error);
@@ -293,12 +289,8 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                               body: JSON.stringify({ voteType: 'down' })
                             });
                             if (response.ok) {
-                              // Refetch comments to get updated vote counts
-                              const refreshResponse = await fetch(`/api/comments/${postSlug}`);
-                              if (refreshResponse.ok) {
-                                const updatedComments = await refreshResponse.json();
-                                setComments(updatedComments);
-                              }
+                              // Invalidate and refetch comments to get updated vote counts
+                              await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
                             }
                           } catch (error) {
                             console.error('Vote failed:', error);

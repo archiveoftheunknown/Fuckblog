@@ -612,7 +612,8 @@ aside *::-webkit-scrollbar,
   
   /* Comment text styles - use site's theme variables */
   .glass-card p {
-    color: var(--foreground) !important;
+    color: var(--card-foreground) !important;
+    opacity: 0.85 !important;
   }
   
   .glass-card .font-semibold {

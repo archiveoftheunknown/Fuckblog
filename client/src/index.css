@@ -751,9 +751,17 @@ aside *::-webkit-scrollbar,
     opacity: 0.5 !important;
   }
   
-  .glass-card .flex.items-center.space-x-4.text-sm button:hover {
-    color: var(--primary) !important;
-    opacity: 1 !important;
+  /* Only apply hover on devices that support it properly */
+  @media (hover: hover) and (pointer: fine) {
+    .glass-card .flex.items-center.space-x-4.text-sm button:hover {
+      color: var(--primary) !important;
+      opacity: 1 !important;
+    }
+    
+    .light .glass-card .flex.items-center.space-x-4.text-sm button:hover {
+      color: var(--primary) !important;
+      opacity: 1 !important;
+    }
   }
   
   /* Also for light mode - ensure same color with opacity */
@@ -763,9 +771,9 @@ aside *::-webkit-scrollbar,
     opacity: 0.5 !important;
   }
   
-  .light .glass-card .flex.items-center.space-x-4.text-sm button:hover {
-    color: var(--primary) !important;
-    opacity: 1 !important;
+  /* Remove tap highlight on mobile devices */
+  button {
+    -webkit-tap-highlight-color: transparent;
   }
   
 }

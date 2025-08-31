@@ -241,9 +241,10 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                     </div>
                     <div className="flex items-center space-x-4 text-sm mt-2 px-2">
                       <button 
-                        className="flex items-center space-x-1 transition-all duration-300 transform hover:scale-110 active:scale-90"
+                        className="flex items-center space-x-1 touch-none select-none"
                         onClick={async () => {
-                          setPressedButtons({ ...pressedButtons, [comment.id]: pressedButtons[comment.id] === 'up' ? null : 'up' });
+                          const newState = pressedButtons[comment.id] === 'up' ? null : 'up';
+                          setPressedButtons({ ...pressedButtons, [comment.id]: newState });
                           try {
                             const response = await fetch(`/api/comments/${comment.id}/vote`, {
                               method: 'POST',
@@ -251,8 +252,10 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                               body: JSON.stringify({ voteType: 'up' })
                             });
                             if (response.ok) {
-                              // Invalidate and refetch comments to get updated vote counts
                               await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
+                            } else {
+                              // If vote failed (already voted), keep the button pressed
+                              setPressedButtons({ ...pressedButtons, [comment.id]: 'up' });
                             }
                           } catch (error) {
                             console.error('Vote failed:', error);
@@ -262,26 +265,15 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                           color: pressedButtons[comment.id] === 'up' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
                           opacity: pressedButtons[comment.id] === 'up' ? 1 : 0.7
                         }}
-                        onMouseEnter={(e) => {
-                          if (pressedButtons[comment.id] !== 'up') {
-                            e.currentTarget.style.color = 'hsl(9, 75%, 61%)';
-                            e.currentTarget.style.opacity = '1';
-                          }
-                        }}
-                        onMouseLeave={(e) => {
-                          if (pressedButtons[comment.id] !== 'up') {
-                            e.currentTarget.style.color = isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)';
-                            e.currentTarget.style.opacity = '0.7';
-                          }
-                        }}
                       >
                         <ChevronUp className="w-4 h-4" />
                         <span>{comment.upvotes || 0}</span>
                       </button>
                       <button 
-                        className="transition-all duration-300 transform hover:scale-110 active:scale-90"
+                        className="flex items-center space-x-1 touch-none select-none"
                         onClick={async () => {
-                          setPressedButtons({ ...pressedButtons, [comment.id]: pressedButtons[comment.id] === 'down' ? null : 'down' });
+                          const newState = pressedButtons[comment.id] === 'down' ? null : 'down';
+                          setPressedButtons({ ...pressedButtons, [comment.id]: newState });
                           try {
                             const response = await fetch(`/api/comments/${comment.id}/vote`, {
                               method: 'POST',
@@ -289,8 +281,10 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                               body: JSON.stringify({ voteType: 'down' })
                             });
                             if (response.ok) {
-                              // Invalidate and refetch comments to get updated vote counts
                               await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
+                            } else {
+                              // If vote failed (already voted), keep the button pressed
+                              setPressedButtons({ ...pressedButtons, [comment.id]: 'down' });
                             }
                           } catch (error) {
                             console.error('Vote failed:', error);
@@ -299,18 +293,6 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         style={{ 
                           color: pressedButtons[comment.id] === 'down' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
                           opacity: pressedButtons[comment.id] === 'down' ? 1 : 0.7
-                        }}
-                        onMouseEnter={(e) => {
-                          if (pressedButtons[comment.id] !== 'down') {
-                            e.currentTarget.style.color = 'hsl(9, 75%, 61%)';
-                            e.currentTarget.style.opacity = '1';
-                          }
-                        }}
-                        onMouseLeave={(e) => {
-                          if (pressedButtons[comment.id] !== 'down') {
-                            e.currentTarget.style.color = isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)';
-                            e.currentTarget.style.opacity = '0.7';
-                          }
                         }}
                       >
                         <ChevronDown className="w-4 h-4" />

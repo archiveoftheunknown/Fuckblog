@@ -12,6 +12,7 @@ export interface IStorage {
   getCommentsByPost(postSlug: string): Promise<Comment[]>;
   createComment(comment: InsertComment): Promise<Comment>;
   voteComment(commentId: string, voteType: 'up' | 'down'): Promise<Comment>;
+  switchVote(commentId: string, fromVote: 'up' | 'down', toVote: 'up' | 'down'): Promise<Comment>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -55,6 +56,24 @@ export class DatabaseStorage implements IStorage {
       .update(comments)
       .set({ 
         [voteType === 'up' ? 'upvotes' : 'downvotes']: sql`${field} + 1`
+      })
+      .where(eq(comments.id, commentId))
+      .returning();
+    return updatedComment;
+  }
+
+  async switchVote(commentId: string, fromVote: 'up' | 'down', toVote: 'up' | 'down'): Promise<Comment> {
+    // When switching votes, we need to:
+    // 1. Decrease the old vote count by 1
+    // 2. Increase the new vote count by 1
+    const fromField = fromVote === 'up' ? comments.upvotes : comments.downvotes;
+    const toField = toVote === 'up' ? comments.upvotes : comments.downvotes;
+    
+    const [updatedComment] = await db
+      .update(comments)
+      .set({ 
+        [fromVote === 'up' ? 'upvotes' : 'downvotes']: sql`GREATEST(0, ${fromField} - 1)`,
+        [toVote === 'up' ? 'upvotes' : 'downvotes']: sql`${toField} + 1`
       })
       .where(eq(comments.id, commentId))
       .returning();

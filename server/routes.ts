@@ -59,14 +59,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ error: "You have already voted on this comment" });
       }
       
-      // If user had a previous opposite vote, we need to undo it first
-      if (previousVote && previousVote !== voteType) {
-        // Undo the previous vote
-        await storage.voteComment(commentId, previousVote === 'up' ? 'down' : 'up');
-      }
+      let updatedComment;
       
-      // Apply the new vote
-      const updatedComment = await storage.voteComment(commentId, voteType);
+      // If user had a previous opposite vote, we need to handle the switch
+      if (previousVote && previousVote !== voteType) {
+        // User is switching vote (e.g., from upvote to downvote)
+        // We need to remove the old vote AND add the new vote
+        // This means: -1 from the old vote count, +1 to the new vote count
+        updatedComment = await storage.switchVote(commentId, previousVote, voteType);
+      } else {
+        // User is voting for the first time
+        updatedComment = await storage.voteComment(commentId, voteType);
+      }
       
       // Track the vote in session
       req.session.votes[commentId] = voteType;

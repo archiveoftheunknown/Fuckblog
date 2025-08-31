@@ -1,3 +1,5 @@
+import postgres from 'postgres';
+
 export default async function handler(req, res) {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -18,10 +20,13 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Database not configured' });
   }
   
+  let sql;
   try {
-    // Dynamic import to work with Vercel's serverless environment
-    const { neon } = await import('@neondatabase/serverless');
-    const sql = neon(process.env.DATABASE_URL);
+    // Create connection for this request
+    sql = postgres(process.env.DATABASE_URL, {
+      ssl: 'require',
+      max: 1 // Single connection for serverless
+    });
     
     const result = await sql`
       SELECT * FROM comments 
@@ -29,13 +34,15 @@ export default async function handler(req, res) {
       ORDER BY created_at DESC
     `;
     
+    await sql.end(); // Close connection
+    
     res.status(200).json(result);
   } catch (error) {
     console.error('Error fetching comments:', error);
+    if (sql) await sql.end();
     res.status(500).json({ 
       error: 'Failed to fetch comments', 
-      details: error.message,
-      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      details: error.message
     });
   }
 }

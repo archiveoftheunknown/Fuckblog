@@ -1,3 +1,5 @@
+import postgres from 'postgres';
+
 export default async function handler(req, res) {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -22,17 +24,19 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Database not configured' });
   }
   
+  let sql;
   try {
-    // Dynamic import to work with Vercel's serverless environment
-    const { neon } = await import('@neondatabase/serverless');
-    const sql = neon(process.env.DATABASE_URL);
+    // Create connection for this request
+    sql = postgres(process.env.DATABASE_URL, {
+      ssl: 'require',
+      max: 1 // Single connection for serverless
+    });
     
-    // Using parameterized query to safely update the field
-    const query = voteType === 'up' 
-      ? sql`UPDATE comments SET upvotes = upvotes + 1 WHERE id = ${commentId} RETURNING *`
-      : sql`UPDATE comments SET downvotes = downvotes + 1 WHERE id = ${commentId} RETURNING *`;
+    const result = voteType === 'up' 
+      ? await sql`UPDATE comments SET upvotes = upvotes + 1 WHERE id = ${commentId} RETURNING *`
+      : await sql`UPDATE comments SET downvotes = downvotes + 1 WHERE id = ${commentId} RETURNING *`;
     
-    const result = await query;
+    await sql.end(); // Close connection
     
     if (result.length === 0) {
       return res.status(404).json({ error: 'Comment not found' });
@@ -41,10 +45,10 @@ export default async function handler(req, res) {
     res.status(200).json(result[0]);
   } catch (error) {
     console.error('Error voting on comment:', error);
+    if (sql) await sql.end();
     res.status(500).json({ 
       error: 'Failed to vote on comment', 
-      details: error.message,
-      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      details: error.message
     });
   }
 }

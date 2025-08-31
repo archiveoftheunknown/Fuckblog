@@ -110,7 +110,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
         <div className="p-6">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="displayName" className="text-gray-900 dark:text-gray-100">
+              <Label htmlFor="displayName" className="text-gray-600 dark:text-gray-300">
                 {translations.displayName}
               </Label>
               <Input
@@ -125,7 +125,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="comment" className="text-gray-900 dark:text-gray-100">
+              <Label htmlFor="comment" className="text-gray-600 dark:text-gray-300">
                 {translations.comment} *
               </Label>
               <Textarea

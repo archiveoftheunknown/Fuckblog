@@ -244,7 +244,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         onClick={() => setPressedButtons({ ...pressedButtons, [comment.id]: pressedButtons[comment.id] === 'up' ? null : 'up' })}
                         style={{ 
                           color: pressedButtons[comment.id] === 'up' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
-                          opacity: pressedButtons[comment.id] === 'up' ? 1 : 0.5
+                          opacity: pressedButtons[comment.id] === 'up' ? 1 : 0.7
                         }}
                         onMouseEnter={(e) => {
                           if (pressedButtons[comment.id] !== 'up') {
@@ -255,7 +255,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         onMouseLeave={(e) => {
                           if (pressedButtons[comment.id] !== 'up') {
                             e.currentTarget.style.color = isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)';
-                            e.currentTarget.style.opacity = '0.5';
+                            e.currentTarget.style.opacity = '0.7';
                           }
                         }}
                       >
@@ -267,7 +267,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         onClick={() => setPressedButtons({ ...pressedButtons, [comment.id]: pressedButtons[comment.id] === 'down' ? null : 'down' })}
                         style={{ 
                           color: pressedButtons[comment.id] === 'down' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
-                          opacity: pressedButtons[comment.id] === 'down' ? 1 : 0.5
+                          opacity: pressedButtons[comment.id] === 'down' ? 1 : 0.7
                         }}
                         onMouseEnter={(e) => {
                           if (pressedButtons[comment.id] !== 'down') {
@@ -278,13 +278,13 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         onMouseLeave={(e) => {
                           if (pressedButtons[comment.id] !== 'down') {
                             e.currentTarget.style.color = isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)';
-                            e.currentTarget.style.opacity = '0.5';
+                            e.currentTarget.style.opacity = '0.7';
                           }
                         }}
                       >
                         <ChevronDown className="w-4 h-4" />
                       </button>
-                      <span className="text-xs" style={{ color: isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)', opacity: 0.5 }}>• {formatDate(comment.createdAt)}</span>
+                      <span className="text-xs" style={{ color: isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)', opacity: 0.7 }}>• {formatDate(comment.createdAt)}</span>
                     </div>
                   </div>
                 </motion.div>

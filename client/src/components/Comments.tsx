@@ -144,7 +144,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
 
   return (
     <div className="mt-12 space-y-6 px-1" data-testid="comments-section">
-      <h2 className="text-2xl font-bold mb-6" style={{ color: isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 35%)' }}>
+      <h2 className="text-2xl font-bold mb-6" style={{ color: isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 50%)' }}>
         {translations.title}
       </h2>
 

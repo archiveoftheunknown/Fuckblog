@@ -1,6 +1,6 @@
-import express from "express";
-import session from "express-session";
-import { registerRoutes } from "../server/routes.js";
+const express = require("express");
+const session = require("express-session");
+const { registerRoutes } = require("../server/routes.js");
 
 const app = express();
 
@@ -23,4 +23,4 @@ app.use(express.urlencoded({ extended: false }));
 registerRoutes(app);
 
 // Export for Vercel
-export default app;
+module.exports = app;

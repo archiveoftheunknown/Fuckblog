@@ -241,7 +241,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                     </div>
                     <div className="flex items-center space-x-4 text-sm mt-2 px-2">
                       <button 
-                        className="flex items-center space-x-1 touch-none select-none"
+                        className="flex items-center space-x-1 touch-none select-none transition-all duration-300 hover:scale-110"
                         onClick={async () => {
                           const newState = pressedButtons[comment.id] === 'up' ? null : 'up';
                           setPressedButtons({ ...pressedButtons, [comment.id]: newState });
@@ -263,14 +263,15 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         }}
                         style={{ 
                           color: pressedButtons[comment.id] === 'up' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
-                          opacity: pressedButtons[comment.id] === 'up' ? 1 : 0.7
+                          opacity: pressedButtons[comment.id] === 'up' ? 1 : 0.7,
+                          transition: 'color 0.3s ease, opacity 0.3s ease, transform 0.2s ease'
                         }}
                       >
                         <ChevronUp className="w-4 h-4" />
                         <span>{comment.upvotes || 0}</span>
                       </button>
                       <button 
-                        className="flex items-center space-x-1 touch-none select-none"
+                        className="flex items-center space-x-1 touch-none select-none transition-all duration-300 hover:scale-110"
                         onClick={async () => {
                           const newState = pressedButtons[comment.id] === 'down' ? null : 'down';
                           setPressedButtons({ ...pressedButtons, [comment.id]: newState });
@@ -292,7 +293,8 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         }}
                         style={{ 
                           color: pressedButtons[comment.id] === 'down' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
-                          opacity: pressedButtons[comment.id] === 'down' ? 1 : 0.7
+                          opacity: pressedButtons[comment.id] === 'down' ? 1 : 0.7,
+                          transition: 'color 0.3s ease, opacity 0.3s ease, transform 0.2s ease'
                         }}
                       >
                         <ChevronDown className="w-4 h-4" />

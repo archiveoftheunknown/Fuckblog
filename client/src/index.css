@@ -776,4 +776,11 @@ aside *::-webkit-scrollbar,
     -webkit-tap-highlight-color: transparent;
   }
   
+  /* Disable hover effects on touch devices to prevent stuck states */
+  @media (hover: none) and (pointer: coarse) {
+    button:hover {
+      transform: none !important;
+    }
+  }
+  
 }

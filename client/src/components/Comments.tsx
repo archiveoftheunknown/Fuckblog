@@ -220,12 +220,12 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         {comment.content}
                       </p>
                     </div>
-                    <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-400 mt-2 px-2">
-                      <button className="flex items-center space-x-1 hover:text-orange-500 dark:hover:text-orange-400 transition-colors">
+                    <div className="flex items-center space-x-4 text-sm mt-2 px-2" style={{ color: '#eeebe2', opacity: 0.5 }}>
+                      <button className="flex items-center space-x-1 hover:text-orange-500 transition-colors hover:opacity-100" style={{ color: 'inherit' }}>
                         <ChevronUp className="w-4 h-4" />
                         <span>0</span>
                       </button>
-                      <button className="hover:text-gray-800 dark:hover:text-gray-300 transition-colors">
+                      <button className="hover:text-orange-500 transition-colors hover:opacity-100" style={{ color: 'inherit' }}>
                         <ChevronDown className="w-4 h-4" />
                       </button>
                       <span className="text-xs">• {formatDate(comment.createdAt)}</span>

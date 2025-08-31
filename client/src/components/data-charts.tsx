@@ -248,8 +248,8 @@ export function InteractivePieChart({
                 cy="50%"
                 labelLine={false}
                 label={renderCustomizedLabel}
-                innerRadius={window.innerWidth < 768 ? 50 : 60}
-                outerRadius={window.innerWidth < 768 ? 100 : 120}
+                innerRadius={typeof window !== 'undefined' && window.innerWidth < 768 ? 50 : 60}
+                outerRadius={typeof window !== 'undefined' && window.innerWidth < 768 ? 100 : 120}
                 paddingAngle={0}
                 fill="#8884d8"
                 dataKey={dataKey}

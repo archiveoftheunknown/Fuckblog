@@ -1,15 +1,13 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, MessageSquare, User } from "lucide-react";
-import { format } from "date-fns";
+import { Loader2, MessageSquare, User, ChevronUp, ChevronDown, Calendar, Link2 } from "lucide-react";
+import { formatDistanceToNow } from "date-fns";
 import { id as idLocale, enUS } from "date-fns/locale";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import type { Comment } from "@shared/schema";
 
 interface CommentsProps {
@@ -33,9 +31,10 @@ interface CommentsProps {
 }
 
 export function Comments({ postSlug, translations, language }: CommentsProps) {
-  const [displayName, setDisplayName] = useState("");
   const [content, setContent] = useState("");
-  const [visibleComments, setVisibleComments] = useState(5); // Initially show 5 comments
+  const [visibleComments, setVisibleComments] = useState(5);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const { toast } = useToast();
 
   const { data: comments = [], isLoading } = useQuery<Comment[]>({
@@ -59,8 +58,11 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
-      setDisplayName("");
       setContent("");
+      setIsExpanded(false);
+      if (textareaRef.current) {
+        textareaRef.current.blur();
+      }
       toast({
         title: translations.commentSuccess,
         duration: 3000,
@@ -75,88 +77,108 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
     },
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     if (!content.trim()) return;
 
     createCommentMutation.mutate({
       postSlug,
-      displayName: displayName.trim() || undefined,
+      displayName: "Anonymous",
       content: content.trim(),
     });
   };
 
+  useEffect(() => {
+    if (content.trim()) {
+      setIsExpanded(true);
+    }
+  }, [content]);
+
   const formatDate = (date: string | Date) => {
     const locale = language === "id" ? idLocale : enUS;
     const dateObj = typeof date === "string" ? new Date(date) : date;
-    return format(dateObj, "d MMMM yyyy, HH:mm", { locale });
+    return formatDistanceToNow(dateObj, { addSuffix: true, locale });
   };
 
   return (
     <div className="mt-12 space-y-6" data-testid="comments-section">
-      <div className="flex items-center gap-2 mb-6">
-        <MessageSquare className="h-6 w-6 text-orange-500" />
-        <h2 className="text-2xl font-bold dark:text-gray-100 text-[#eeebe2]">
-          {translations.title}
-        </h2>
-      </div>
-      {/* Comment Form */}
+      <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+        {translations.title}
+      </h2>
+
+      {/* New Comment Form */}
       <motion.div 
-        className="glass-card rounded-2xl overflow-hidden"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        className="flex items-start space-x-4 mb-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="p-6">
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="displayName" className="text-gray-600 dark:text-gray-300">
-                {translations.displayName}
-              </Label>
-              <Input
-                id="displayName"
-                type="text"
-                placeholder={translations.displayNamePlaceholder}
-                value={displayName}
-                onChange={(e) => setDisplayName(e.target.value)}
-                className="bg-white/10 dark:bg-white/5 border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-800 dark:text-gray-200 placeholder:text-gray-500 dark:placeholder:text-gray-400"
-                data-testid="input-display-name"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="comment" className="text-gray-600 dark:text-gray-300">
-                {translations.comment} *
-              </Label>
-              <Textarea
-                id="comment"
-                placeholder={translations.commentPlaceholder}
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-                required
-                className="min-h-[100px] bg-transparent border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-900 dark:text-gray-100"
-                data-testid="input-comment"
-              />
-            </div>
-
-            <Button
-              type="submit"
-              disabled={createCommentMutation.isPending || !content.trim()}
-              className="w-full sm:w-auto glass-button px-6 py-2 rounded-lg text-white font-medium"
-              data-testid="button-submit-comment"
-            >
-              {createCommentMutation.isPending ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  {translations.submitting}
-                </>
-              ) : (
-                translations.submit
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center flex-shrink-0">
+          <User className="h-5 w-5 text-white" />
+        </div>
+        <div className="flex-1">
+          <div className={`glass-card rounded-xl transition-all duration-300 ${isExpanded ? 'ring-2 ring-orange-500/50' : ''}`}>
+            <Textarea
+              ref={textareaRef}
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+              onFocus={() => setIsExpanded(true)}
+              onBlur={() => !content.trim() && setIsExpanded(false)}
+              placeholder={translations.commentPlaceholder}
+              className={`w-full p-4 bg-transparent border-0 focus:ring-0 resize-none text-gray-700 dark:text-gray-200 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-300 ${
+                isExpanded ? 'min-h-[100px]' : 'min-h-[60px]'
+              }`}
+              data-testid="input-comment"
+            />
+            
+            <AnimatePresence>
+              {isExpanded && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="border-t border-gray-200/20 dark:border-gray-700/20"
+                >
+                  <div className="p-3 flex justify-between items-center">
+                    <div className="flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+                      <button 
+                        type="button"
+                        className="hover:text-orange-500 transition-colors"
+                        title="Add date"
+                      >
+                        <Calendar className="w-5 h-5" />
+                      </button>
+                      <button 
+                        type="button"
+                        className="hover:text-orange-500 transition-colors"
+                        title="Add link"
+                      >
+                        <Link2 className="w-5 h-5" />
+                      </button>
+                    </div>
+                    <Button
+                      onClick={handleSubmit}
+                      disabled={createCommentMutation.isPending || !content.trim()}
+                      className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105"
+                      data-testid="button-submit-comment"
+                    >
+                      {createCommentMutation.isPending ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          {translations.submitting}
+                        </>
+                      ) : (
+                        translations.submit
+                      )}
+                    </Button>
+                  </div>
+                </motion.div>
               )}
-            </Button>
-          </form>
+            </AnimatePresence>
+          </div>
         </div>
       </motion.div>
+
       {/* Comments List */}
       <div className="space-y-4">
         {isLoading ? (
@@ -164,56 +186,74 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
             <Loader2 className="h-8 w-8 animate-spin text-orange-500" />
           </div>
         ) : comments.length === 0 ? (
-          <div className="glass-card rounded-2xl overflow-hidden">
-            <div className="py-8 text-center text-gray-600 dark:text-gray-300 px-6">
+          <motion.div 
+            className="glass-card rounded-xl p-8 text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <p className="text-gray-600 dark:text-gray-300">
               {translations.noComments}
-            </div>
-          </div>
+            </p>
+          </motion.div>
         ) : (
           <>
-            {comments.slice(0, visibleComments).map((comment, index) => (
-              <motion.div
-                key={comment.id}
-                className="glass-card rounded-2xl overflow-hidden"
-                data-testid={`comment-${comment.id}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-              >
-                <div className="p-6 pb-3">
-                  <div className="flex items-center gap-2">
-                    <User className="h-4 w-4 text-gray-500" />
-                    <span className="font-semibold dark:text-gray-100 text-[#eeebe2]">
-                      {comment.displayName || translations.anonymous}
-                    </span>
-                    <span className="text-sm dark:text-gray-400 text-[#c4c4c4]">
-                      • {formatDate(comment.createdAt)}
-                    </span>
+            <AnimatePresence>
+              {comments.slice(0, visibleComments).map((comment, index) => (
+                <motion.div
+                  key={comment.id}
+                  className="flex items-start space-x-4"
+                  data-testid={`comment-${comment.id}`}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.5, delay: index * 0.15 }}
+                >
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center flex-shrink-0">
+                    <User className="h-5 w-5 text-white" />
                   </div>
-                </div>
-                <div className="px-6 pb-6">
-                  <p className="dark:text-gray-200 whitespace-pre-wrap text-[#e2decf]">
-                    {comment.content}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="flex-1">
+                    <div className="glass-card rounded-xl p-4">
+                      <p className="font-semibold text-gray-800 dark:text-gray-100">
+                        {comment.displayName || translations.anonymous}
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-300 mt-1">
+                        {comment.content}
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400 mt-2 px-2">
+                      <button className="flex items-center space-x-1 hover:text-orange-500 transition-colors">
+                        <ChevronUp className="w-4 h-4" />
+                        <span>0</span>
+                      </button>
+                      <button className="hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
+                        <ChevronDown className="w-4 h-4" />
+                      </button>
+                      <span className="text-xs">• {formatDate(comment.createdAt)}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
             
             {/* Load More Button */}
             {comments.length > visibleComments && (
-              <div className="flex justify-center pt-4">
+              <motion.div 
+                className="text-center mt-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+              >
                 <Button
                   onClick={() => setVisibleComments(visibleComments + 5)}
-                  variant="outline"
-                  className="glass-button px-6 py-2 rounded-lg text-orange-600 dark:text-orange-400 font-medium"
+                  className="bg-gray-200/50 dark:bg-gray-700/50 hover:bg-gray-300/50 dark:hover:bg-gray-600/50 text-gray-700 dark:text-gray-300 font-semibold px-6 py-2 rounded-lg transition-all duration-300"
                   data-testid="button-load-more"
                 >
                   {translations.loadMore}
-                  <span className="ml-2 text-sm text-gray-500 dark:text-gray-400">
-                    ({comments.length - visibleComments} {translations.remaining})
+                  <span className="ml-2 text-sm opacity-70">
+                    ({comments.length - visibleComments})
                   </span>
                 </Button>
-              </div>
+              </motion.div>
             )}
           </>
         )}

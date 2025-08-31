@@ -136,10 +136,17 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
     }
   }, [content]);
 
-  const formatDate = (date: string | Date) => {
-    const locale = language === "id" ? idLocale : enUS;
-    const dateObj = typeof date === "string" ? new Date(date) : date;
-    return formatDistanceToNow(dateObj, { addSuffix: true, locale });
+  const formatDate = (date: string | Date | undefined | null) => {
+    if (!date) return '';
+    try {
+      const locale = language === "id" ? idLocale : enUS;
+      const dateObj = typeof date === "string" ? new Date(date) : date;
+      if (isNaN(dateObj.getTime())) return '';
+      return formatDistanceToNow(dateObj, { addSuffix: true, locale });
+    } catch (error) {
+      console.error('Error formatting date:', error);
+      return '';
+    }
   };
 
   return (
@@ -325,7 +332,9 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         <ChevronDown className="w-4 h-4" />
                         <span>{comment.downvotes || 0}</span>
                       </button>
-                      <span className="text-xs" style={{ color: isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)', opacity: 0.7 }}>• {formatDate(comment.createdAt)}</span>
+                      {comment.createdAt && (
+                        <span className="text-xs" style={{ color: isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)', opacity: 0.7 }}>• {formatDate(comment.createdAt)}</span>
+                      )}
                     </div>
                   </div>
                 </motion.div>

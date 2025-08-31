@@ -123,13 +123,14 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
               <Label htmlFor="displayName" className="text-gray-600 dark:text-gray-300">
                 {translations.displayName}
               </Label>
-              <Input
+              <input
                 id="displayName"
                 type="text"
                 placeholder={translations.displayNamePlaceholder}
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                className="bg-white/10 dark:bg-white/5 border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 placeholder:text-gray-500 dark:placeholder:text-gray-400"
+                className="flex h-10 w-full rounded-md px-3 py-2 text-base bg-white/10 dark:bg-white/5 border border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+                style={{ color: isDark ? '#ffffff' : '#000000' }}
                 data-testid="input-display-name"
               />
             </div>

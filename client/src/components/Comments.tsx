@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, MessageSquare, User } from "lucide-react";
@@ -94,7 +96,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
     <div className="mt-12 space-y-6" data-testid="comments-section">
       <div className="flex items-center gap-2 mb-6">
         <MessageSquare className="h-6 w-6 text-orange-500" />
-        <h2 className="text-2xl font-bold dark:text-gray-100 text-[#eeebe2]">
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
           {translations.title}
         </h2>
       </div>
@@ -108,31 +110,31 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
         <div className="p-6">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="displayName" className="text-gray-600 dark:text-gray-300">
+              <Label htmlFor="displayName" className="text-gray-700 dark:text-gray-200">
                 {translations.displayName}
               </Label>
-              <input
+              <Input
                 id="displayName"
                 type="text"
                 placeholder={translations.displayNamePlaceholder}
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                className="flex h-10 w-full rounded-md px-3 py-2 text-base bg-white/10 dark:bg-white/5 border border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+                className="bg-transparent border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-800 dark:text-gray-100 placeholder:text-gray-600 dark:placeholder:text-gray-400"
                 data-testid="input-display-name"
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="comment" className="text-gray-600 dark:text-gray-300">
+              <Label htmlFor="comment" className="text-gray-700 dark:text-gray-200">
                 {translations.comment} *
               </Label>
-              <textarea
+              <Textarea
                 id="comment"
                 placeholder={translations.commentPlaceholder}
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 required
-                className="min-h-[100px] w-full rounded-md px-3 py-2 text-base bg-white/10 dark:bg-white/5 border border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 resize-y"
+                className="min-h-[100px] bg-transparent border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-800 dark:text-gray-100 placeholder:text-gray-600 dark:placeholder:text-gray-400"
                 data-testid="input-comment"
               />
             </div>
@@ -163,7 +165,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
           </div>
         ) : comments.length === 0 ? (
           <div className="glass-card rounded-2xl overflow-hidden">
-            <div className="py-8 text-center text-gray-600 dark:text-gray-300 px-6">
+            <div className="py-8 text-center text-gray-700 dark:text-gray-300 px-6">
               {translations.noComments}
             </div>
           </div>
@@ -181,16 +183,16 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 <div className="p-6 pb-3">
                   <div className="flex items-center gap-2">
                     <User className="h-4 w-4 text-gray-500" />
-                    <span className="font-semibold dark:text-gray-100 text-[#eeebe2]">
+                    <span className="font-semibold text-gray-800 dark:text-gray-100">
                       {comment.displayName || translations.anonymous}
                     </span>
-                    <span className="text-sm dark:text-gray-400 text-[#c4c4c4]">
+                    <span className="text-sm text-gray-600 dark:text-gray-400">
                       • {formatDate(comment.createdAt)}
                     </span>
                   </div>
                 </div>
                 <div className="px-6 pb-6">
-                  <p className="dark:text-gray-200 whitespace-pre-wrap text-[#e2decf]">
+                  <p className="text-gray-800 dark:text-gray-200 whitespace-pre-wrap">
                     {comment.content}
                   </p>
                 </div>

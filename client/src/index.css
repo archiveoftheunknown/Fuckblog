@@ -599,23 +599,4 @@ aside *::-webkit-scrollbar,
     scrollbar-width: thin;
   }
   
-  /* Force comment input text colors */
-  .glass-card input,
-  .glass-card input[type="text"],
-  .glass-card textarea {
-    color: rgb(31 41 55) !important;
-  }
-  
-  .dark .glass-card input,
-  .dark .glass-card input[type="text"],  
-  .dark .glass-card textarea {
-    color: rgb(255 255 255) !important;
-  }
-  
-  /* Extra specificity to ensure it works */
-  body .dark .glass-card input,
-  body .dark .glass-card textarea {
-    color: rgb(255 255 255) !important;
-  }
-  
 }

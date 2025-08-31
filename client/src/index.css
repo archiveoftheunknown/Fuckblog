@@ -614,12 +614,22 @@ aside *::-webkit-scrollbar,
   /* Comment text styles - consistent colors */
   /* Username - bright */
   .glass-card p.font-semibold {
-    color: var(--foreground) !important;
+    color: #eeebe2 !important;
   }
   
   /* Comment content - same as username but slightly muted */
   .glass-card p:not(.font-semibold) {
-    color: var(--foreground) !important;
+    color: #eeebe2 !important;
+    opacity: 0.85 !important;
+  }
+  
+  /* Light mode - use dark color for readability */
+  .light .glass-card p.font-semibold {
+    color: hsl(20, 14%, 45%) !important;
+  }
+  
+  .light .glass-card p:not(.font-semibold) {
+    color: hsl(20, 14%, 45%) !important;
     opacity: 0.85 !important;
   }
   

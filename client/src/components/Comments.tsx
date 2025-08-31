@@ -110,7 +110,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
         <div className="p-6">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="displayName" className="text-gray-700 dark:text-gray-300">
+              <Label htmlFor="displayName" className="text-gray-900 dark:text-gray-100">
                 {translations.displayName}
               </Label>
               <Input
@@ -119,13 +119,13 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 placeholder={translations.displayNamePlaceholder}
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                className="bg-transparent border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-900 dark:text-gray-100"
+                className="bg-transparent border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400"
                 data-testid="input-display-name"
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="comment" className="text-gray-700 dark:text-gray-300">
+              <Label htmlFor="comment" className="text-gray-900 dark:text-gray-100">
                 {translations.comment} *
               </Label>
               <Textarea
@@ -165,7 +165,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
           </div>
         ) : comments.length === 0 ? (
           <div className="glass-card rounded-2xl overflow-hidden">
-            <div className="py-8 text-center text-gray-500 dark:text-gray-400 px-6">
+            <div className="py-8 text-center text-gray-600 dark:text-gray-300 px-6">
               {translations.noComments}
             </div>
           </div>
@@ -192,7 +192,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                   </div>
                 </div>
                 <div className="px-6 pb-6">
-                  <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
+                  <p className="text-gray-800 dark:text-gray-200 whitespace-pre-wrap">
                     {comment.content}
                   </p>
                 </div>

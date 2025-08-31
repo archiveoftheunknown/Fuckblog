@@ -37,6 +37,23 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
   const [pressedButtons, setPressedButtons] = useState<{ [key: string]: 'up' | 'down' | null }>({});
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const { toast } = useToast();
+  
+  // Detect dark mode
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  
+  useEffect(() => {
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains('dark'));
+    };
+    
+    checkDarkMode();
+    
+    // Listen for theme changes
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    
+    return () => observer.disconnect();
+  }, []);
 
   const { data: comments = [], isLoading } = useQuery<Comment[]>({
     queryKey: ["/api/comments", postSlug],
@@ -226,7 +243,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         className="flex items-center space-x-1 transition-all duration-300 hover:-translate-y-1 active:scale-95"
                         onClick={() => setPressedButtons({ ...pressedButtons, [comment.id]: pressedButtons[comment.id] === 'up' ? null : 'up' })}
                         style={{ 
-                          color: pressedButtons[comment.id] === 'up' ? 'hsl(9, 75%, 61%)' : '#eeebe2',
+                          color: pressedButtons[comment.id] === 'up' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
                           opacity: pressedButtons[comment.id] === 'up' ? 1 : 0.5
                         }}
                         onMouseEnter={(e) => {
@@ -237,7 +254,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         }}
                         onMouseLeave={(e) => {
                           if (pressedButtons[comment.id] !== 'up') {
-                            e.currentTarget.style.color = '#eeebe2';
+                            e.currentTarget.style.color = isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)';
                             e.currentTarget.style.opacity = '0.5';
                           }
                         }}
@@ -249,7 +266,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         className="transition-all duration-300 hover:-translate-y-1 active:scale-95"
                         onClick={() => setPressedButtons({ ...pressedButtons, [comment.id]: pressedButtons[comment.id] === 'down' ? null : 'down' })}
                         style={{ 
-                          color: pressedButtons[comment.id] === 'down' ? 'hsl(9, 75%, 61%)' : '#eeebe2',
+                          color: pressedButtons[comment.id] === 'down' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
                           opacity: pressedButtons[comment.id] === 'down' ? 1 : 0.5
                         }}
                         onMouseEnter={(e) => {
@@ -260,14 +277,14 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         }}
                         onMouseLeave={(e) => {
                           if (pressedButtons[comment.id] !== 'down') {
-                            e.currentTarget.style.color = '#eeebe2';
+                            e.currentTarget.style.color = isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)';
                             e.currentTarget.style.opacity = '0.5';
                           }
                         }}
                       >
                         <ChevronDown className="w-4 h-4" />
                       </button>
-                      <span className="text-xs" style={{ color: '#eeebe2', opacity: 0.5 }}>• {formatDate(comment.createdAt)}</span>
+                      <span className="text-xs" style={{ color: isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)', opacity: 0.5 }}>• {formatDate(comment.createdAt)}</span>
                     </div>
                   </div>
                 </motion.div>

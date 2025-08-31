@@ -96,7 +96,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
     <div className="mt-12 space-y-6" data-testid="comments-section">
       <div className="flex items-center gap-2 mb-6">
         <MessageSquare className="h-6 w-6 text-orange-500" />
-        <h2 className="text-2xl font-bold dark:text-gray-100 text-[#ffffff]">
+        <h2 className="text-2xl font-bold dark:text-gray-100 text-[#eeebe2]">
           {translations.title}
         </h2>
       </div>

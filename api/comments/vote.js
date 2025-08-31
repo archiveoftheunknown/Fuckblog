@@ -16,7 +16,8 @@ export default async function handler(req, res) {
 
   const { commentId, voteType } = req.body;
   
-  if (!commentId || (voteType !== 'up' && voteType !== 'down')) {
+  const validVoteTypes = ['up', 'down', 'remove_up', 'remove_down', 'switch_to_up', 'switch_to_down'];
+  if (!commentId || !validVoteTypes.includes(voteType)) {
     return res.status(400).json({ error: 'Invalid request data' });
   }
   
@@ -32,9 +33,41 @@ export default async function handler(req, res) {
       max: 1 // Single connection for serverless
     });
     
-    const result = voteType === 'up' 
-      ? await sql`UPDATE comments SET upvotes = upvotes + 1 WHERE id = ${commentId} RETURNING *`
-      : await sql`UPDATE comments SET downvotes = downvotes + 1 WHERE id = ${commentId} RETURNING *`;
+    let result;
+    switch(voteType) {
+      case 'up':
+        // Add upvote
+        result = await sql`UPDATE comments SET upvotes = upvotes + 1 WHERE id = ${commentId} RETURNING *`;
+        break;
+      case 'down':
+        // Add downvote
+        result = await sql`UPDATE comments SET downvotes = downvotes + 1 WHERE id = ${commentId} RETURNING *`;
+        break;
+      case 'remove_up':
+        // Remove upvote (ensure it doesn't go below 0)
+        result = await sql`UPDATE comments SET upvotes = GREATEST(upvotes - 1, 0) WHERE id = ${commentId} RETURNING *`;
+        break;
+      case 'remove_down':
+        // Remove downvote (ensure it doesn't go below 0)
+        result = await sql`UPDATE comments SET downvotes = GREATEST(downvotes - 1, 0) WHERE id = ${commentId} RETURNING *`;
+        break;
+      case 'switch_to_up':
+        // Switch from downvote to upvote
+        result = await sql`UPDATE comments 
+                          SET upvotes = upvotes + 1, 
+                              downvotes = GREATEST(downvotes - 1, 0)
+                          WHERE id = ${commentId} 
+                          RETURNING *`;
+        break;
+      case 'switch_to_down':
+        // Switch from upvote to downvote
+        result = await sql`UPDATE comments 
+                          SET downvotes = downvotes + 1, 
+                              upvotes = GREATEST(upvotes - 1, 0)
+                          WHERE id = ${commentId} 
+                          RETURNING *`;
+        break;
+    }
     
     await sql.end(); // Close connection
     

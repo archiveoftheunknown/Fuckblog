@@ -34,7 +34,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
   const [content, setContent] = useState("");
   const [visibleComments, setVisibleComments] = useState(5);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [pressedButtons, setPressedButtons] = useState<{ [key: string]: 'up' | 'down' | null }>({});
+  const [userVotes, setUserVotes] = useState<{ [key: string]: 'up' | 'down' | null }>({});
   
   // Generate avatar colors based on comment ID
   const getAvatarColors = (id: string) => {
@@ -79,6 +79,18 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
     
     return () => observer.disconnect();
   }, []);
+
+  // Load saved votes from localStorage
+  useEffect(() => {
+    const savedVotes = localStorage.getItem(`votes_${postSlug}`);
+    if (savedVotes) {
+      try {
+        setUserVotes(JSON.parse(savedVotes));
+      } catch (e) {
+        console.error('Failed to load saved votes:', e);
+      }
+    }
+  }, [postSlug]);
 
   const { data: comments = [], isLoading, refetch } = useQuery<Comment[]>({
     queryKey: ["/api/comments", postSlug],
@@ -275,27 +287,67 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                       <button 
                         className="flex items-center space-x-1 touch-none select-none transition-all duration-300 hover:scale-110"
                         onClick={async () => {
-                          const newState = pressedButtons[comment.id] === 'up' ? null : 'up';
-                          setPressedButtons({ ...pressedButtons, [comment.id]: newState });
-                          try {
-                            const response = await fetch('/api/comments/vote', {
-                              method: 'POST',
-                              headers: { 'Content-Type': 'application/json' },
-                              body: JSON.stringify({ commentId: comment.id, voteType: 'up' })
-                            });
-                            if (response.ok) {
-                              await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
-                            } else {
-                              // If vote failed (already voted), keep the button pressed
-                              setPressedButtons({ ...pressedButtons, [comment.id]: 'up' });
+                          // Check if already voted
+                          const currentVote = userVotes[comment.id];
+                          if (currentVote === 'up') {
+                            // Remove upvote
+                            const newVotes = { ...userVotes, [comment.id]: null };
+                            setUserVotes(newVotes);
+                            localStorage.setItem(`votes_${postSlug}`, JSON.stringify(newVotes));
+                            
+                            try {
+                              const response = await fetch('/api/comments/vote', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ commentId: comment.id, voteType: 'remove_up' })
+                              });
+                              if (response.ok) {
+                                await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
+                              }
+                            } catch (error) {
+                              console.error('Vote removal failed:', error);
                             }
-                          } catch (error) {
-                            console.error('Vote failed:', error);
+                          } else if (currentVote === 'down') {
+                            // Switch from downvote to upvote
+                            const newVotes = { ...userVotes, [comment.id]: 'up' };
+                            setUserVotes(newVotes);
+                            localStorage.setItem(`votes_${postSlug}`, JSON.stringify(newVotes));
+                            
+                            try {
+                              const response = await fetch('/api/comments/vote', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ commentId: comment.id, voteType: 'switch_to_up' })
+                              });
+                              if (response.ok) {
+                                await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
+                              }
+                            } catch (error) {
+                              console.error('Vote switch failed:', error);
+                            }
+                          } else {
+                            // Add new upvote
+                            const newVotes = { ...userVotes, [comment.id]: 'up' };
+                            setUserVotes(newVotes);
+                            localStorage.setItem(`votes_${postSlug}`, JSON.stringify(newVotes));
+                            
+                            try {
+                              const response = await fetch('/api/comments/vote', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ commentId: comment.id, voteType: 'up' })
+                              });
+                              if (response.ok) {
+                                await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
+                              }
+                            } catch (error) {
+                              console.error('Vote failed:', error);
+                            }
                           }
                         }}
                         style={{ 
-                          color: pressedButtons[comment.id] === 'up' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
-                          opacity: pressedButtons[comment.id] === 'up' ? 1 : 0.7,
+                          color: userVotes[comment.id] === 'up' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
+                          opacity: userVotes[comment.id] === 'up' ? 1 : 0.7,
                           transition: 'color 0.3s ease, opacity 0.3s ease, transform 0.2s ease'
                         }}
                       >
@@ -305,27 +357,67 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                       <button 
                         className="flex items-center space-x-1 touch-none select-none transition-all duration-300 hover:scale-110"
                         onClick={async () => {
-                          const newState = pressedButtons[comment.id] === 'down' ? null : 'down';
-                          setPressedButtons({ ...pressedButtons, [comment.id]: newState });
-                          try {
-                            const response = await fetch('/api/comments/vote', {
-                              method: 'POST',
-                              headers: { 'Content-Type': 'application/json' },
-                              body: JSON.stringify({ commentId: comment.id, voteType: 'down' })
-                            });
-                            if (response.ok) {
-                              await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
-                            } else {
-                              // If vote failed (already voted), keep the button pressed
-                              setPressedButtons({ ...pressedButtons, [comment.id]: 'down' });
+                          // Check if already voted
+                          const currentVote = userVotes[comment.id];
+                          if (currentVote === 'down') {
+                            // Remove downvote
+                            const newVotes = { ...userVotes, [comment.id]: null };
+                            setUserVotes(newVotes);
+                            localStorage.setItem(`votes_${postSlug}`, JSON.stringify(newVotes));
+                            
+                            try {
+                              const response = await fetch('/api/comments/vote', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ commentId: comment.id, voteType: 'remove_down' })
+                              });
+                              if (response.ok) {
+                                await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
+                              }
+                            } catch (error) {
+                              console.error('Vote removal failed:', error);
                             }
-                          } catch (error) {
-                            console.error('Vote failed:', error);
+                          } else if (currentVote === 'up') {
+                            // Switch from upvote to downvote
+                            const newVotes = { ...userVotes, [comment.id]: 'down' };
+                            setUserVotes(newVotes);
+                            localStorage.setItem(`votes_${postSlug}`, JSON.stringify(newVotes));
+                            
+                            try {
+                              const response = await fetch('/api/comments/vote', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ commentId: comment.id, voteType: 'switch_to_down' })
+                              });
+                              if (response.ok) {
+                                await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
+                              }
+                            } catch (error) {
+                              console.error('Vote switch failed:', error);
+                            }
+                          } else {
+                            // Add new downvote
+                            const newVotes = { ...userVotes, [comment.id]: 'down' };
+                            setUserVotes(newVotes);
+                            localStorage.setItem(`votes_${postSlug}`, JSON.stringify(newVotes));
+                            
+                            try {
+                              const response = await fetch('/api/comments/vote', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ commentId: comment.id, voteType: 'down' })
+                              });
+                              if (response.ok) {
+                                await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
+                              }
+                            } catch (error) {
+                              console.error('Vote failed:', error);
+                            }
                           }
                         }}
                         style={{ 
-                          color: pressedButtons[comment.id] === 'down' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
-                          opacity: pressedButtons[comment.id] === 'down' ? 1 : 0.7,
+                          color: userVotes[comment.id] === 'down' ? 'hsl(9, 75%, 61%)' : (isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)'),
+                          opacity: userVotes[comment.id] === 'down' ? 1 : 0.7,
                           transition: 'color 0.3s ease, opacity 0.3s ease, transform 0.2s ease'
                         }}
                       >

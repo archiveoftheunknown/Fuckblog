@@ -34,17 +34,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
   const [displayName, setDisplayName] = useState("");
   const [content, setContent] = useState("");
   const [visibleComments, setVisibleComments] = useState(5); // Initially show 5 comments
-  const [isDark, setIsDark] = useState(document.documentElement.classList.contains('dark'));
   const { toast } = useToast();
-  
-  // Listen for theme changes
-  useEffect(() => {
-    const observer = new MutationObserver(() => {
-      setIsDark(document.documentElement.classList.contains('dark'));
-    });
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-    return () => observer.disconnect();
-  }, []);
 
   const { data: comments = [], isLoading } = useQuery<Comment[]>({
     queryKey: ["/api/comments", postSlug],
@@ -127,11 +117,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 placeholder={translations.displayNamePlaceholder}
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                className="flex h-10 w-full rounded-md px-3 py-2 text-base bg-white/10 dark:bg-white/5 border border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
-                style={{ 
-                  color: isDark ? 'white' : 'black',
-                  WebkitTextFillColor: isDark ? 'white' : 'black'
-                }}
+                className="flex h-10 w-full rounded-md px-3 py-2 text-base bg-white/10 dark:bg-white/5 border border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
                 data-testid="input-display-name"
               />
             </div>
@@ -146,11 +132,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 required
-                className="min-h-[100px] w-full rounded-md px-3 py-2 text-base bg-white/10 dark:bg-white/5 border border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 resize-y"
-                style={{ 
-                  color: isDark ? 'white' : 'black',
-                  WebkitTextFillColor: isDark ? 'white' : 'black'
-                }}
+                className="min-h-[100px] w-full rounded-md px-3 py-2 text-base bg-white/10 dark:bg-white/5 border border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 resize-y"
                 data-testid="input-comment"
               />
             </div>

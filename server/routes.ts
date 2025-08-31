@@ -37,7 +37,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Vote on a comment
-  app.post("/api/comments/:commentId/vote", async (req, res) => {
+  app.post("/api/comments/:commentId/vote", async (req: any, res) => {
     try {
       const { commentId } = req.params;
       const { voteType } = req.body; // 'up' or 'down'
@@ -46,7 +46,31 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ error: "Invalid vote type" });
       }
       
+      // Initialize session votes if not exists
+      if (!req.session.votes) {
+        req.session.votes = {};
+      }
+      
+      // Check if user already voted on this comment
+      const previousVote = req.session.votes[commentId];
+      
+      // If user is trying to vote the same way again, reject
+      if (previousVote === voteType) {
+        return res.status(400).json({ error: "You have already voted on this comment" });
+      }
+      
+      // If user had a previous opposite vote, we need to undo it first
+      if (previousVote && previousVote !== voteType) {
+        // Undo the previous vote
+        await storage.voteComment(commentId, previousVote === 'up' ? 'down' : 'up');
+      }
+      
+      // Apply the new vote
       const updatedComment = await storage.voteComment(commentId, voteType);
+      
+      // Track the vote in session
+      req.session.votes[commentId] = voteType;
+      
       res.json(updatedComment);
     } catch (error) {
       console.error("Error voting on comment:", error);

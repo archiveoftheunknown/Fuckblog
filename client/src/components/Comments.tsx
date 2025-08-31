@@ -192,7 +192,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                   </div>
                 </div>
                 <div className="px-6 pb-6">
-                  <p className="text-gray-800 dark:text-gray-200 whitespace-pre-wrap">
+                  <p className="dark:text-gray-200 whitespace-pre-wrap text-[#e2decf]">
                     {comment.content}
                   </p>
                 </div>

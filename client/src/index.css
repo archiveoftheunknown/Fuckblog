@@ -611,26 +611,47 @@ aside *::-webkit-scrollbar,
     color: var(--muted-foreground) !important;
   }
   
-  /* Comment text styles - consistent colors */
-  /* Username - bright */
+  /* Comment text styles - MAXIMUM SPECIFICITY to override everything */
+  /* Dark mode - Username */
+  body:not(.light) .glass-card p.font-semibold,
+  html:not(.light) .glass-card p.font-semibold,
   .glass-card p.font-semibold {
     color: #eeebe2 !important;
+    opacity: 1 !important;
   }
   
-  /* Comment content - same as username but slightly muted */
+  /* Dark mode - Comment content */
+  body:not(.light) .glass-card p:not(.font-semibold),
+  html:not(.light) .glass-card p:not(.font-semibold),
   .glass-card p:not(.font-semibold) {
     color: #eeebe2 !important;
     opacity: 0.85 !important;
   }
   
-  /* Light mode - use dark color for readability */
+  /* Light mode - Username */
+  body.light .glass-card p.font-semibold,
+  html.light .glass-card p.font-semibold,
   .light .glass-card p.font-semibold {
     color: hsl(20, 14%, 45%) !important;
+    opacity: 1 !important;
   }
   
+  /* Light mode - Comment content */
+  body.light .glass-card p:not(.font-semibold),
+  html.light .glass-card p:not(.font-semibold),
   .light .glass-card p:not(.font-semibold) {
     color: hsl(20, 14%, 45%) !important;
     opacity: 0.85 !important;
+  }
+  
+  /* Override any prose styles that might leak in */
+  .prose .glass-card p,
+  .glass-card .prose p,
+  div .glass-card p,
+  main .glass-card p,
+  section .glass-card p,
+  article .glass-card p {
+    color: inherit !important;
   }
   
   /* Upvote/downvote buttons and timestamp - specific color #eeebe2 */

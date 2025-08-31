@@ -599,4 +599,25 @@ aside *::-webkit-scrollbar,
     scrollbar-width: thin;
   }
   
+  /* Comment form input styles */
+  .glass-card input,
+  .glass-card textarea {
+    color: rgb(31 41 55) !important; /* gray-800 */
+  }
+  
+  .dark .glass-card input,
+  .dark .glass-card textarea {
+    color: rgb(229 231 235) !important; /* gray-200 */
+  }
+  
+  .glass-card input::placeholder,
+  .glass-card textarea::placeholder {
+    color: rgb(107 114 128) !important; /* gray-500 */
+  }
+  
+  .dark .glass-card input::placeholder,
+  .dark .glass-card textarea::placeholder {
+    color: rgb(156 163 175) !important; /* gray-400 */
+  }
+  
 }

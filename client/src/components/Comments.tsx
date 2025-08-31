@@ -96,7 +96,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
     <div className="mt-12 space-y-6" data-testid="comments-section">
       <div className="flex items-center gap-2 mb-6">
         <MessageSquare className="h-6 w-6 text-orange-500" />
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
+        <h2 className="text-2xl font-bold dark:text-gray-100 text-[#eeebe2]">
           {translations.title}
         </h2>
       </div>
@@ -110,7 +110,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
         <div className="p-6">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="displayName" className="text-gray-700 dark:text-gray-200">
+              <Label htmlFor="displayName" className="text-gray-600 dark:text-gray-300">
                 {translations.displayName}
               </Label>
               <Input
@@ -119,13 +119,13 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 placeholder={translations.displayNamePlaceholder}
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                className="bg-transparent border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-800 dark:text-gray-100 placeholder:text-gray-600 dark:placeholder:text-gray-400"
+                className="bg-white/10 dark:bg-white/5 border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-800 dark:text-gray-200 placeholder:text-gray-500 dark:placeholder:text-gray-400"
                 data-testid="input-display-name"
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="comment" className="text-gray-700 dark:text-gray-200">
+              <Label htmlFor="comment" className="text-gray-600 dark:text-gray-300">
                 {translations.comment} *
               </Label>
               <Textarea
@@ -134,7 +134,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 required
-                className="min-h-[100px] bg-transparent border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-800 dark:text-gray-100 placeholder:text-gray-600 dark:placeholder:text-gray-400"
+                className="min-h-[100px] bg-transparent border-orange-200/30 dark:border-gray-600/30 focus:border-orange-400 dark:focus:border-orange-500 text-gray-900 dark:text-gray-100"
                 data-testid="input-comment"
               />
             </div>
@@ -165,7 +165,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
           </div>
         ) : comments.length === 0 ? (
           <div className="glass-card rounded-2xl overflow-hidden">
-            <div className="py-8 text-center text-gray-700 dark:text-gray-300 px-6">
+            <div className="py-8 text-center text-gray-600 dark:text-gray-300 px-6">
               {translations.noComments}
             </div>
           </div>
@@ -183,16 +183,16 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 <div className="p-6 pb-3">
                   <div className="flex items-center gap-2">
                     <User className="h-4 w-4 text-gray-500" />
-                    <span className="font-semibold text-gray-800 dark:text-gray-100">
+                    <span className="font-semibold dark:text-gray-100 text-[#eeebe2]">
                       {comment.displayName || translations.anonymous}
                     </span>
-                    <span className="text-sm text-gray-600 dark:text-gray-400">
+                    <span className="text-sm dark:text-gray-400 text-[#c4c4c4]">
                       • {formatDate(comment.createdAt)}
                     </span>
                   </div>
                 </div>
                 <div className="px-6 pb-6">
-                  <p className="text-gray-800 dark:text-gray-200 whitespace-pre-wrap">
+                  <p className="dark:text-gray-200 whitespace-pre-wrap text-[#e2decf]">
                     {comment.content}
                   </p>
                 </div>

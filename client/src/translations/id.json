@@ -85,7 +85,9 @@
     "copyright": "Hak Cipta",
     "contact": "Kontak",
     "allRightsReserved": "Hak cipta dilindungi.",
-    "createdBy": "Platform Independen."
+    "createdBy": "Platform Independen.",
+    "gdprCompliant": "Sesuai GDPR",
+    "sslSecured": "Diamankan SSL"
   },
   "about": {
     "title": "Tentang Arsip Ini",

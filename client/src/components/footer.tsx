@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Shield, Lock } from "lucide-react";
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -127,30 +128,44 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <motion.div
-          className="border-t border-[hsl(25,20%,12%)] mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
+          className="border-t border-[hsl(25,20%,12%)] mt-8 pt-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
           data-testid="footer-bottom"
         >
-          <p className="text-[hsl(25,5%,60%)] text-sm">
-            © 2025 velocitysbeta.com {t("footer.allRightsReserved")}
-          </p>
-          <div className="flex items-center space-x-6 mt-4 md:mt-0 text-sm">
-            <Link href={getLocalizedPath("/about")}>
-              <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
-                 onClick={scrollToTop}
-                 data-testid="link-about">
-                {t("footer.about")}
-              </a>
-            </Link>
-            <Link href={getLocalizedPath("/archives")}>
-              <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
-                 onClick={scrollToTop}
-                 data-testid="link-archives">
-                {t("footer.archives")}
-              </a>
-            </Link>
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-[hsl(25,5%,60%)] text-sm">
+              © 2025 velocitysbeta.com {t("footer.allRightsReserved")}
+            </p>
+            <div className="flex items-center space-x-6 mt-4 md:mt-0 text-sm">
+              <Link href={getLocalizedPath("/about")}>
+                <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
+                   onClick={scrollToTop}
+                   data-testid="link-about">
+                  {t("footer.about")}
+                </a>
+              </Link>
+              <Link href={getLocalizedPath("/archives")}>
+                <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
+                   onClick={scrollToTop}
+                   data-testid="link-archives">
+                  {t("footer.archives")}
+                </a>
+              </Link>
+            </div>
+          </div>
+          
+          {/* Security Badges */}
+          <div className="flex items-center justify-center space-x-6 mt-6 pt-6 border-t border-[hsl(25,20%,12%)]">
+            <div className="flex items-center space-x-2 text-[hsl(25,5%,60%)]">
+              <Shield className="w-4 h-4 text-[hsl(120,40%,50%)]" />
+              <span className="text-xs">{t("footer.gdprCompliant")}</span>
+            </div>
+            <div className="flex items-center space-x-2 text-[hsl(25,5%,60%)]">
+              <Lock className="w-4 h-4 text-[hsl(120,40%,50%)]" />
+              <span className="text-xs">{t("footer.sslSecured")}</span>
+            </div>
           </div>
         </motion.div>
       </div>

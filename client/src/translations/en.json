@@ -85,7 +85,9 @@
     "copyright": "Copyright",
     "contact": "Contact",
     "allRightsReserved": "All rights reserved.",
-    "createdBy": "Independent Platform."
+    "createdBy": "Independent Platform.",
+    "gdprCompliant": "GDPR Compliant",
+    "sslSecured": "SSL Secured"
   },
   "about": {
     "title": "About This Archive",

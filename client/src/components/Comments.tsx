@@ -9,6 +9,7 @@ import { formatDistanceToNow } from "date-fns";
 import { id as idLocale, enUS } from "date-fns/locale";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Comment } from "@shared/schema";
+import { AnimatedNumber } from "./AnimatedNumber";
 
 interface CommentsProps {
   postSlug: string;
@@ -35,6 +36,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
   const [visibleComments, setVisibleComments] = useState(5);
   const [isExpanded, setIsExpanded] = useState(false);
   const [userVotes, setUserVotes] = useState<{ [key: string]: 'up' | 'down' | null }>({});
+  const [optimisticVotes, setOptimisticVotes] = useState<{ [key: string]: { upvotes: number, downvotes: number } }>({});
   
   // Generate avatar colors based on comment ID
   const getAvatarColors = (id: string) => {
@@ -100,6 +102,20 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
       return response.json();
     },
   });
+
+  // Initialize optimistic votes from actual comment data
+  useEffect(() => {
+    if (comments.length > 0) {
+      const initialVotes: { [key: string]: { upvotes: number, downvotes: number } } = {};
+      comments.forEach(comment => {
+        initialVotes[comment.id] = {
+          upvotes: comment.upvotes || 0,
+          downvotes: comment.downvotes || 0
+        };
+      });
+      setOptimisticVotes(initialVotes);
+    }
+  }, [comments]);
 
   const createCommentMutation = useMutation({
     mutationFn: async (data: { postSlug: string; displayName?: string; content: string }) => {
@@ -287,62 +303,52 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                       <button 
                         className="flex items-center space-x-1 touch-none select-none transition-all duration-300 hover:scale-110"
                         onClick={async () => {
-                          // Check if already voted
                           const currentVote = userVotes[comment.id];
+                          const currentCounts = optimisticVotes[comment.id] || { upvotes: comment.upvotes || 0, downvotes: comment.downvotes || 0 };
+                          
+                          // Optimistic update first
+                          let newOptimistic = { ...currentCounts };
+                          let newVotes = { ...userVotes };
+                          let voteType = '';
+                          
                           if (currentVote === 'up') {
                             // Remove upvote
-                            const newVotes = { ...userVotes, [comment.id]: null };
-                            setUserVotes(newVotes);
-                            localStorage.setItem(`votes_${postSlug}`, JSON.stringify(newVotes));
-                            
-                            try {
-                              const response = await fetch('/api/comments/vote', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ commentId: comment.id, voteType: 'remove_up' })
-                              });
-                              if (response.ok) {
-                                await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
-                              }
-                            } catch (error) {
-                              console.error('Vote removal failed:', error);
-                            }
+                            newOptimistic.upvotes = Math.max(0, newOptimistic.upvotes - 1);
+                            newVotes[comment.id] = null;
+                            voteType = 'remove_up';
                           } else if (currentVote === 'down') {
                             // Switch from downvote to upvote
-                            const newVotes = { ...userVotes, [comment.id]: 'up' };
-                            setUserVotes(newVotes);
-                            localStorage.setItem(`votes_${postSlug}`, JSON.stringify(newVotes));
-                            
-                            try {
-                              const response = await fetch('/api/comments/vote', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ commentId: comment.id, voteType: 'switch_to_up' })
-                              });
-                              if (response.ok) {
-                                await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
-                              }
-                            } catch (error) {
-                              console.error('Vote switch failed:', error);
-                            }
+                            newOptimistic.downvotes = Math.max(0, newOptimistic.downvotes - 1);
+                            newOptimistic.upvotes += 1;
+                            newVotes[comment.id] = 'up';
+                            voteType = 'switch_to_up';
                           } else {
                             // Add new upvote
-                            const newVotes = { ...userVotes, [comment.id]: 'up' };
-                            setUserVotes(newVotes);
-                            localStorage.setItem(`votes_${postSlug}`, JSON.stringify(newVotes));
-                            
-                            try {
-                              const response = await fetch('/api/comments/vote', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ commentId: comment.id, voteType: 'up' })
-                              });
-                              if (response.ok) {
-                                await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
-                              }
-                            } catch (error) {
-                              console.error('Vote failed:', error);
+                            newOptimistic.upvotes += 1;
+                            newVotes[comment.id] = 'up';
+                            voteType = 'up';
+                          }
+                          
+                          // Update state immediately for instant feedback
+                          setOptimisticVotes({ ...optimisticVotes, [comment.id]: newOptimistic });
+                          setUserVotes(newVotes);
+                          localStorage.setItem(`votes_${postSlug}`, JSON.stringify(newVotes));
+                          
+                          // Then make API call
+                          try {
+                            const response = await fetch('/api/comments/vote', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({ commentId: comment.id, voteType })
+                            });
+                            if (response.ok) {
+                              await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
                             }
+                          } catch (error) {
+                            console.error('Vote failed:', error);
+                            // Revert on error
+                            setOptimisticVotes({ ...optimisticVotes, [comment.id]: currentCounts });
+                            setUserVotes({ ...userVotes, [comment.id]: currentVote });
                           }
                         }}
                         style={{ 
@@ -352,67 +358,60 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         }}
                       >
                         <ChevronUp className="w-4 h-4" />
-                        <span>{comment.upvotes || 0}</span>
+                        <AnimatedNumber 
+                          value={optimisticVotes[comment.id]?.upvotes ?? comment.upvotes ?? 0} 
+                          direction="up" 
+                        />
                       </button>
                       <button 
                         className="flex items-center space-x-1 touch-none select-none transition-all duration-300 hover:scale-110"
                         onClick={async () => {
-                          // Check if already voted
                           const currentVote = userVotes[comment.id];
+                          const currentCounts = optimisticVotes[comment.id] || { upvotes: comment.upvotes || 0, downvotes: comment.downvotes || 0 };
+                          
+                          // Optimistic update first
+                          let newOptimistic = { ...currentCounts };
+                          let newVotes = { ...userVotes };
+                          let voteType = '';
+                          
                           if (currentVote === 'down') {
                             // Remove downvote
-                            const newVotes = { ...userVotes, [comment.id]: null };
-                            setUserVotes(newVotes);
-                            localStorage.setItem(`votes_${postSlug}`, JSON.stringify(newVotes));
-                            
-                            try {
-                              const response = await fetch('/api/comments/vote', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ commentId: comment.id, voteType: 'remove_down' })
-                              });
-                              if (response.ok) {
-                                await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
-                              }
-                            } catch (error) {
-                              console.error('Vote removal failed:', error);
-                            }
+                            newOptimistic.downvotes = Math.max(0, newOptimistic.downvotes - 1);
+                            newVotes[comment.id] = null;
+                            voteType = 'remove_down';
                           } else if (currentVote === 'up') {
                             // Switch from upvote to downvote
-                            const newVotes = { ...userVotes, [comment.id]: 'down' };
-                            setUserVotes(newVotes);
-                            localStorage.setItem(`votes_${postSlug}`, JSON.stringify(newVotes));
-                            
-                            try {
-                              const response = await fetch('/api/comments/vote', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ commentId: comment.id, voteType: 'switch_to_down' })
-                              });
-                              if (response.ok) {
-                                await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
-                              }
-                            } catch (error) {
-                              console.error('Vote switch failed:', error);
-                            }
+                            newOptimistic.upvotes = Math.max(0, newOptimistic.upvotes - 1);
+                            newOptimistic.downvotes += 1;
+                            newVotes[comment.id] = 'down';
+                            voteType = 'switch_to_down';
                           } else {
                             // Add new downvote
-                            const newVotes = { ...userVotes, [comment.id]: 'down' };
-                            setUserVotes(newVotes);
-                            localStorage.setItem(`votes_${postSlug}`, JSON.stringify(newVotes));
-                            
-                            try {
-                              const response = await fetch('/api/comments/vote', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ commentId: comment.id, voteType: 'down' })
-                              });
-                              if (response.ok) {
-                                await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
-                              }
-                            } catch (error) {
-                              console.error('Vote failed:', error);
+                            newOptimistic.downvotes += 1;
+                            newVotes[comment.id] = 'down';
+                            voteType = 'down';
+                          }
+                          
+                          // Update state immediately for instant feedback
+                          setOptimisticVotes({ ...optimisticVotes, [comment.id]: newOptimistic });
+                          setUserVotes(newVotes);
+                          localStorage.setItem(`votes_${postSlug}`, JSON.stringify(newVotes));
+                          
+                          // Then make API call
+                          try {
+                            const response = await fetch('/api/comments/vote', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({ commentId: comment.id, voteType })
+                            });
+                            if (response.ok) {
+                              await queryClient.invalidateQueries({ queryKey: ["/api/comments", postSlug] });
                             }
+                          } catch (error) {
+                            console.error('Vote failed:', error);
+                            // Revert on error
+                            setOptimisticVotes({ ...optimisticVotes, [comment.id]: currentCounts });
+                            setUserVotes({ ...userVotes, [comment.id]: currentVote });
                           }
                         }}
                         style={{ 
@@ -422,7 +421,10 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                         }}
                       >
                         <ChevronDown className="w-4 h-4" />
-                        <span>{comment.downvotes || 0}</span>
+                        <AnimatedNumber 
+                          value={optimisticVotes[comment.id]?.downvotes ?? comment.downvotes ?? 0} 
+                          direction="down" 
+                        />
                       </button>
                       {comment.createdAt && (
                         <span className="text-xs" style={{ color: isDarkMode ? '#eeebe2' : 'hsl(20, 14%, 45%)', opacity: 0.7 }}>• {formatDate(comment.createdAt)}</span>

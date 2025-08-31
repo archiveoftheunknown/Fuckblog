@@ -611,47 +611,81 @@ aside *::-webkit-scrollbar,
     color: var(--muted-foreground) !important;
   }
   
-  /* Comment text styles - MAXIMUM SPECIFICITY to override everything */
-  /* Dark mode - Username */
-  body:not(.light) .glass-card p.font-semibold,
-  html:not(.light) .glass-card p.font-semibold,
+  /* Comment text styles - ULTRA MAXIMUM SPECIFICITY */
+  /* All comment paragraphs - base dark mode style */
+  .glass-card p {
+    color: #eeebe2 !important;
+  }
+  
+  /* Username in dark mode */
   .glass-card p.font-semibold {
     color: #eeebe2 !important;
     opacity: 1 !important;
   }
   
-  /* Dark mode - Comment content */
-  body:not(.light) .glass-card p:not(.font-semibold),
-  html:not(.light) .glass-card p:not(.font-semibold),
+  /* Comment content in dark mode */
   .glass-card p:not(.font-semibold) {
     color: #eeebe2 !important;
     opacity: 0.85 !important;
   }
   
-  /* Light mode - Username */
+  /* Light mode overrides with MAXIMUM specificity */
+  .light .glass-card p,
+  body.light .glass-card p,
+  html.light .glass-card p,
+  html.light body .glass-card p,
+  .light main .glass-card p,
+  .light div .glass-card p,
+  .light section .glass-card p,
+  .light article .glass-card p {
+    color: hsl(20, 14%, 45%) !important;
+  }
+  
+  .light .glass-card p.font-semibold,
   body.light .glass-card p.font-semibold,
   html.light .glass-card p.font-semibold,
-  .light .glass-card p.font-semibold {
+  html.light body .glass-card p.font-semibold {
     color: hsl(20, 14%, 45%) !important;
     opacity: 1 !important;
   }
   
-  /* Light mode - Comment content */
+  .light .glass-card p:not(.font-semibold),
   body.light .glass-card p:not(.font-semibold),
   html.light .glass-card p:not(.font-semibold),
-  .light .glass-card p:not(.font-semibold) {
+  html.light body .glass-card p:not(.font-semibold) {
     color: hsl(20, 14%, 45%) !important;
     opacity: 0.85 !important;
   }
   
-  /* Override any prose styles that might leak in */
-  .prose .glass-card p,
-  .glass-card .prose p,
-  div .glass-card p,
-  main .glass-card p,
-  section .glass-card p,
-  article .glass-card p {
-    color: inherit !important;
+  /* Media query override protection for wider viewports */
+  @media screen and (min-width: 768px) {
+    .glass-card p {
+      color: #eeebe2 !important;
+    }
+    
+    .light .glass-card p {
+      color: hsl(20, 14%, 45%) !important;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .glass-card p {
+      color: #eeebe2 !important;
+    }
+    
+    .light .glass-card p {
+      color: hsl(20, 14%, 45%) !important;
+    }
+  }
+  
+  @media screen and (min-width: 1280px) {
+    .glass-card p {
+      color: #eeebe2 !important;
+    }
+    
+    .light .glass-card p {
+      color: hsl(20, 14%, 45%) !important;
+    }
   }
   
   /* Upvote/downvote buttons and timestamp - specific color #eeebe2 */

@@ -96,11 +96,10 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
     <div className="mt-12 space-y-6" data-testid="comments-section">
       <div className="flex items-center gap-2 mb-6">
         <MessageSquare className="h-6 w-6 text-orange-500" />
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+        <h2 className="text-2xl font-bold dark:text-gray-100 text-[#ffffff]">
           {translations.title}
         </h2>
       </div>
-
       {/* Comment Form */}
       <Card className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-orange-200 dark:border-gray-700">
         <CardContent className="pt-6">
@@ -153,7 +152,6 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
           </form>
         </CardContent>
       </Card>
-
       {/* Comments List */}
       <div className="space-y-4">
         {isLoading ? (

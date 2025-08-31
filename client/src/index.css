@@ -607,7 +607,7 @@ aside *::-webkit-scrollbar,
   
   .dark .glass-card input,
   .dark .glass-card textarea {
-    color: rgb(229 231 235) !important; /* gray-200 */
+    color: rgb(243 244 246) !important; /* gray-100 - much lighter */
   }
   
   .glass-card input::placeholder,

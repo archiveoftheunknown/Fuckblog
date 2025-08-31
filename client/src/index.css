@@ -611,15 +611,15 @@ aside *::-webkit-scrollbar,
     color: var(--muted-foreground) !important;
   }
   
-  /* Comment text styles - use site's theme variables */
+  /* Comment text styles - consistent colors */
   /* Username - bright */
   .glass-card p.font-semibold {
     color: var(--foreground) !important;
   }
   
-  /* Comment content - slightly muted */
+  /* Comment content - same as username but slightly muted */
   .glass-card p:not(.font-semibold) {
-    color: var(--card-foreground) !important;
+    color: var(--foreground) !important;
     opacity: 0.85 !important;
   }
   

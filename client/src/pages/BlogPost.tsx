@@ -13,10 +13,15 @@ export default function BlogPost() {
   const { toast } = useToast();
   const [location] = useLocation();
   
+  // Add language prefix for English routes
+  const getLocalizedPath = (path: string) => {
+    return language === 'en' ? `/en${path}` : path;
+  };
+  
   // Check if coming from archives
   const urlParams = new URLSearchParams(window.location.search);
   const fromArchives = urlParams.get('from') === 'archives';
-  const backUrl = fromArchives ? '/archives' : '/blog';
+  const backUrl = fromArchives ? getLocalizedPath('/archives') : getLocalizedPath('/blog');
   const backText = fromArchives ? t('blog.backToArchives') : t('blog.backToBlog');
   
   useEffect(() => {
@@ -252,7 +257,7 @@ export default function BlogPost() {
                   <h3 className="font-semibold mb-6 text-lg text-foreground">{t("blog.relatedArticles")}</h3>
                   <div className="space-y-5">
                     {relatedPosts.map(relatedPost => (
-                      <Link key={relatedPost.id} href={`/blog/${relatedPost.slug}`}>
+                      <Link key={relatedPost.id} href={getLocalizedPath(`/blog/${relatedPost.slug}`)}>
                         <a className="block" data-testid={`link-related-${relatedPost.id}`}>
                           <div className="cursor-pointer group">
                             <h4 className="text-sm font-medium text-foreground group-hover:text-primary transition-colors line-clamp-2">

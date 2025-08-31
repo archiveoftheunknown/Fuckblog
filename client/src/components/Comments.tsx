@@ -183,7 +183,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
                 <div className="p-6 pb-3">
                   <div className="flex items-center gap-2">
                     <User className="h-4 w-4 text-gray-500" />
-                    <span className="font-semibold text-gray-900 dark:text-gray-100">
+                    <span className="font-semibold dark:text-gray-100 text-[#eeebe2]">
                       {comment.displayName || translations.anonymous}
                     </span>
                     <span className="text-sm text-gray-500 dark:text-gray-400">

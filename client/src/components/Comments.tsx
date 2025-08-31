@@ -125,7 +125,7 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
 
       {/* New Comment Form */}
       <motion.div 
-        className="flex items-start space-x-4 mb-6"
+        className="flex items-start space-x-4 mb-6 w-full"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -133,8 +133,8 @@ export function Comments({ postSlug, translations, language }: CommentsProps) {
         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center flex-shrink-0">
           <User className="h-5 w-5 text-white" />
         </div>
-        <div className="flex-1">
-          <div className={`glass-card rounded-xl transition-all duration-300 ${isExpanded ? 'ring-2 ring-orange-500/50' : ''}`}>
+        <div className="flex-1 min-w-0">
+          <div className={`glass-card rounded-xl transition-all duration-300 overflow-hidden ${isExpanded ? 'ring-2 ring-orange-500/50' : ''}`}>
             <Textarea
               ref={textareaRef}
               value={content}

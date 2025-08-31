@@ -622,14 +622,26 @@ aside *::-webkit-scrollbar,
     opacity: 0.85 !important;
   }
   
-  /* Upvote/downvote buttons and timestamp - specific targeting */
+  /* Upvote/downvote buttons and timestamp - specific color #eeebe2 */
   .glass-card .flex.items-center.space-x-4.text-sm button,
   .glass-card .flex.items-center.space-x-4.text-sm span {
-    color: var(--foreground) !important;
+    color: #eeebe2 !important;
     opacity: 0.5 !important;
   }
   
   .glass-card .flex.items-center.space-x-4.text-sm button:hover {
+    color: var(--primary) !important;
+    opacity: 1 !important;
+  }
+  
+  /* Also for light mode - ensure same color with opacity */
+  .light .glass-card .flex.items-center.space-x-4.text-sm button,
+  .light .glass-card .flex.items-center.space-x-4.text-sm span {
+    color: #eeebe2 !important;
+    opacity: 0.5 !important;
+  }
+  
+  .light .glass-card .flex.items-center.space-x-4.text-sm button:hover {
     color: var(--primary) !important;
     opacity: 1 !important;
   }

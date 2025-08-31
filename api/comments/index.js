@@ -1,5 +1,3 @@
-import { neon } from '@neondatabase/serverless';
-
 export default async function handler(req, res) {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -25,7 +23,10 @@ export default async function handler(req, res) {
   }
   
   try {
+    // Dynamic import to work with Vercel's serverless environment
+    const { neon } = await import('@neondatabase/serverless');
     const sql = neon(process.env.DATABASE_URL);
+    
     const result = await sql`
       INSERT INTO comments (post_slug, display_name, content, upvotes, downvotes)
       VALUES (${postSlug}, ${displayName || 'Anonymous'}, ${content}, 0, 0)
@@ -35,6 +36,10 @@ export default async function handler(req, res) {
     res.status(200).json(result[0]);
   } catch (error) {
     console.error('Error creating comment:', error);
-    res.status(500).json({ error: 'Failed to create comment', details: error.message });
+    res.status(500).json({ 
+      error: 'Failed to create comment', 
+      details: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    });
   }
 }

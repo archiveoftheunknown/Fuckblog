@@ -1,5 +1,3 @@
-import { neon } from '@neondatabase/serverless';
-
 export default async function handler(req, res) {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -21,7 +19,10 @@ export default async function handler(req, res) {
   }
   
   try {
+    // Dynamic import to work with Vercel's serverless environment
+    const { neon } = await import('@neondatabase/serverless');
     const sql = neon(process.env.DATABASE_URL);
+    
     const result = await sql`
       SELECT * FROM comments 
       WHERE post_slug = ${postSlug} 
@@ -31,6 +32,10 @@ export default async function handler(req, res) {
     res.status(200).json(result);
   } catch (error) {
     console.error('Error fetching comments:', error);
-    res.status(500).json({ error: 'Failed to fetch comments', details: error.message });
+    res.status(500).json({ 
+      error: 'Failed to fetch comments', 
+      details: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    });
   }
 }

@@ -38,16 +38,14 @@ export default function BlogPost() {
           <h1 className="text-4xl font-bold mb-4 text-foreground">{t("blog.articleNotFound")}</h1>
           <p className="text-muted-foreground mb-8">{t("blog.articleNotFoundDesc")}</p>
           <Link href={backUrl}>
-            <a>
-              <motion.button
-                className="glass-button px-6 py-3 rounded-xl font-semibold text-primary-foreground"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                data-testid="button-back-to-blog"
-              >
-                {backText}
-              </motion.button>
-            </a>
+            <motion.button
+              className="glass-button px-6 py-3 rounded-xl font-semibold text-primary-foreground"
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              data-testid="button-back-to-blog"
+            >
+              {backText}
+            </motion.button>
           </Link>
         </div>
       </div>
@@ -129,16 +127,14 @@ export default function BlogPost() {
           transition={{ duration: 0.6 }}
         >
           <Link href={backUrl}>
-            <a>
-              <motion.button
-                className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors duration-300"
-                whileHover={{ x: -4 }}
-                data-testid="button-back-to-blog"
-              >
-                <ArrowLeft className="w-5 h-5" />
-                <span>{backText}</span>
-              </motion.button>
-            </a>
+            <motion.button
+              className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors duration-300"
+              whileHover={{ x: -4 }}
+              data-testid="button-back-to-blog"
+            >
+              <ArrowLeft className="w-5 h-5" />
+              <span>{backText}</span>
+            </motion.button>
           </Link>
         </motion.div>
 

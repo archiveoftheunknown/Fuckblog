@@ -67,12 +67,10 @@ export default function Footer() {
             <ul className="space-y-1 md:space-y-2 text-xs md:text-sm">
               {footerLinks.quickLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href}>
-                    <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
-                       onClick={scrollToTop}
-                       data-testid={`link-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
-                      {link.label}
-                    </a>
+                  <Link href={link.href} className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
+                     onClick={scrollToTop}
+                     data-testid={`link-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -90,12 +88,10 @@ export default function Footer() {
             <ul className="space-y-1 md:space-y-2 text-xs md:text-sm">
               {footerLinks.categories.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href}>
-                    <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
-                       onClick={scrollToTop}
-                       data-testid={`link-category-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
-                      {link.label}
-                    </a>
+                  <Link href={link.href} className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
+                     onClick={scrollToTop}
+                     data-testid={`link-category-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -113,12 +109,10 @@ export default function Footer() {
             <ul className="space-y-1 md:space-y-2 text-xs md:text-sm">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href}>
-                    <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
-                       onClick={scrollToTop}
-                       data-testid={`link-legal-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
-                      {link.label}
-                    </a>
+                  <Link href={link.href} className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
+                     onClick={scrollToTop}
+                     data-testid={`link-legal-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -151,19 +145,15 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex items-center space-x-6 mt-4 md:mt-0 text-sm">
-            <Link href={getLocalizedPath("/about")}>
-              <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
-                 onClick={scrollToTop}
-                 data-testid="link-about">
-                {t("footer.about")}
-              </a>
+            <Link href={getLocalizedPath("/about")} className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
+               onClick={scrollToTop}
+               data-testid="link-about">
+              {t("footer.about")}
             </Link>
-            <Link href={getLocalizedPath("/archives")}>
-              <a className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
-                 onClick={scrollToTop}
-                 data-testid="link-archives">
-                {t("footer.archives")}
-              </a>
+            <Link href={getLocalizedPath("/archives")} className="text-[hsl(25,5%,60%)] hover:text-[hsl(9,75%,61%)] transition-colors duration-300" 
+               onClick={scrollToTop}
+               data-testid="link-archives">
+              {t("footer.archives")}
             </Link>
           </div>
         </motion.div>

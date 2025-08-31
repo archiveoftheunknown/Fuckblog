@@ -5,6 +5,6 @@
     { "source": "/api/comments/vote", "destination": "/api/comments/vote.js" },
     { "source": "/api/comments/:postSlug", "destination": "/api/comments/[postSlug].js" },  
     { "source": "/api/comments", "destination": "/api/comments/index.js" },
-    { "source": "/(.*)", "destination": "/" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
